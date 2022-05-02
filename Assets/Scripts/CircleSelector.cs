@@ -6,6 +6,15 @@ using UnityEngine.AI;
 
 public class CircleSelector : MonoBehaviour
 {
+	int reticleSpriteIndex = 0;
+	[field: SerializeField] public int ReticleSpriteIndex
+    {
+		get => reticleSpriteIndex;
+		set
+        {
+			reticleMaterial.SetFloat("_Index", value);
+        }
+    }
 	[SerializeField] float movementSpeed = 2f;
 	float defaultSize = 3f;
 	float circleSizeModifier = 1f;
@@ -15,8 +24,11 @@ public class CircleSelector : MonoBehaviour
 	Bounds[] levelBounds;
 	Bounds currentBounds;
 
+	Material reticleMaterial;
+
 	private void Start()
 	{
+		reticleMaterial = GetComponent<Renderer>().material;
 		levelBounds = GameObject.FindGameObjectsWithTag("Bounds").Select(b => b.GetComponent<Collider>().bounds).ToArray();
 		// This should never happen dring the game - if this happens fix in editor.
 		currentBounds = CurrentBounds(transform.position) ?? throw new System.Exception("Selector not within bounds");
