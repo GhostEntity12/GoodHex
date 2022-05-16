@@ -1,5 +1,3 @@
-using UnityEngine;
-
 [System.Serializable]
 public class RatData
 {
@@ -15,10 +13,12 @@ public class RatData
 	public int PatienceValue => patience;
 	public float WanderRadius => 5f - patience * 0.25f;
 	public float PatienceDuration => 2f + patience * 0.25f;
+	
+	System.Random rand = new();
 
 	public RatData()
 	{
-		name = GameManager.names[Random.Range(0, GameManager.names.Length)];
+		name = GameManager.names[rand.Next(0, GameManager.names.Length)];
 		for (int i = 0; i < 12; i++)
 		{
 			IncreaseRandomStat();
@@ -27,7 +27,7 @@ public class RatData
 
 	public void IncreaseRandomStat()
 	{
-		int i = Random.Range(0, 2);
+		int i = rand.Next(0, 2);
 		switch (i)
 		{
 			case 0:

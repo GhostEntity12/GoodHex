@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class RatManager : Singleton<RatManager>
@@ -8,7 +6,7 @@ public class RatManager : Singleton<RatManager>
 	/// <summary>
 	/// Rat Data, persistant across levels
 	/// </summary>
-	List<RatData> persistantRatData = new();
+	[SerializeField] List<RatData> persistantRatData = new();
 
 	[SerializeField] GameObject ratPrefab;
 
@@ -17,15 +15,28 @@ public class RatManager : Singleton<RatManager>
     List<Rat> selectedRats = new();
     public List<Rat> AllRats => allRats;
     public List<Rat> SelectedRats => selectedRats;
+    public bool HasSelectedRats => selectedRats.Count > 0;
 
 	private void Start()
 	{
-		allRats = FindObjectsOfType<Rat>().ToList();
+		for (int i = 0; i < 5; i++)
+		{
+			persistantRatData.Add(new());
+		}
+		//allRats = FindObjectsOfType<Rat>().ToList();
+		SpawnRats();
+	}
+
+	public void ClearRats()
+	{
+		selectedRats.ForEach(r => r.Deselect());
+		selectedRats.Clear();
 	}
 
 	public void SelectRats(List<Rat> ratsToSelect)
 	{
-        selectedRats.Clear();
+		ClearRats();
+		ratsToSelect.ForEach(r => r.Select());
         selectedRats.AddRange(ratsToSelect);
 	}
 
@@ -33,7 +44,9 @@ public class RatManager : Singleton<RatManager>
 	{
 		foreach (RatData ratInfo in persistantRatData)
 		{
-			((GameObject)Instantiate(ratPrefab)).GetComponent<Rat>().Setup(ratInfo);
+			Rat rat = Instantiate(ratPrefab).GetComponent<Rat>();
+			rat.AssignInfo(ratInfo);
+			AddRat(rat);
 		}
 	}
 

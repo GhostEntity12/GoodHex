@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Rat : MonoBehaviour
 {
 	[Header("Navigation")]
-	private readonly float stoppingDistance = 1f;
+	private const float StoppingDistance = 1f;
 	[field: SerializeField]	public NavMeshAgent NavAgent { get; private set; }
 	
 
 	private float patience;
-	bool occupied;
+
+	/// <summary>
+	/// Whether the rat is dong a task
+	/// </summary>
+	private bool occupied;
+
 	[field: SerializeField]	public bool Wandering { get; private set; }
 
-	public RatData Info => info;
-
-	RatData info;
+	public RatData Info { get; private set; }
 
 	private void Start()
 	{
@@ -24,16 +25,11 @@ public class Rat : MonoBehaviour
 		SetWander();
 	}
 
-	public void Setup(RatData ratInfo)
-	{
-		info = ratInfo;
-	}
-
 	private void Update()
 	{
 		if (!occupied)
 		{
-			if (Vector3.Distance(transform.position, NavAgent.destination) < stoppingDistance)
+			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
 				//NavAgent.ResetPath();
 				patience -= Time.deltaTime;
@@ -44,11 +40,16 @@ public class Rat : MonoBehaviour
 			}
 		}
 	}
+	public void AssignInfo(RatData ratInfo) => Info = ratInfo;
 
+	/// <summary>
+	/// Gives the rat a destination to move to
+	/// </summary>
+	/// <param name="position"></param>
 	public void SetDestination(Vector3 position)
 	{
 		NavAgent.SetDestination(position);
-		patience = info.PatienceDuration;
+		patience = Info.PatienceDuration;
 		NavAgent.speed = 10f * Info.SpeedModifier;
 		Wandering = false;
 	}
@@ -60,7 +61,7 @@ public class Rat : MonoBehaviour
 	{
 		Wandering = true;
 		NavAgent.speed = 0.75f * Info.SpeedModifier;
-		Vector2 rand = Random.insideUnitCircle * info.WanderRadius;
+		Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
 		Vector3 offsetted = new(transform.position.x + rand.x, transform.position.y, transform.position.z + rand.y);
 		if (NavMesh.SamplePosition(offsetted, out NavMeshHit nMHit, 200f, NavMesh.AllAreas))
 		{
@@ -68,10 +69,22 @@ public class Rat : MonoBehaviour
 		}
 	}
 
+	public void SetTask(Vector3 point)
+	{
+		occupied = true;
+		SetDestination(point);
+	}
+
+	public void UnsetTask() => occupied = false;
+
 	public void Kill()
 	{
 		RatManager.Instance.RemoveRat(this);
 		// Leave corpse?
 		Destroy(gameObject);
 	}
+
+	public void Select() { }
+
+	public void Deselect() { }
 }

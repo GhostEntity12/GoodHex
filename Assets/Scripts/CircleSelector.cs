@@ -1,96 +1,129 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class CircleSelector : MonoBehaviour
 {
-	int reticleSpriteIndex = 0;
-	[field: SerializeField] public int ReticleSpriteIndex
-    {
-		get => reticleSpriteIndex;
-		set
-        {
-			reticleMaterial.SetFloat("_Index", value);
-        }
-    }
+	[Header("Movement")]
 	[SerializeField] float movementSpeed = 2f;
-	float defaultSize = 3f;
-	float circleSizeModifier = 1f;
-
 	[SerializeField] float sizeChangeSpeed = 0.5f;
+	const float DefaultSize = 3f;
+	float circleSizeModifier = 1f;
 
 	Bounds[] levelBounds;
 	Bounds currentBounds;
 
-	Material reticleMaterial;
+	Collider hoverTask;
+
+	Animator anim;
+
+	[Header("Colors")]
+	[SerializeField] Color defaultColor;
+	[SerializeField] Color ratsColor;
+	[SerializeField] Color taskColor;
+	[SerializeField] float colorChangeSpeed = 0.1f;
+	Color targetColor;
+	SpriteRenderer sprite;
 
 	private void Start()
 	{
-		reticleMaterial = GetComponent<Renderer>().material;
+		anim = GetComponentInChildren<Animator>();
+
+		sprite = GetComponentInChildren<SpriteRenderer>();
+		sprite.color = defaultColor;
+		targetColor = defaultColor;
+
 		levelBounds = GameObject.FindGameObjectsWithTag("Bounds").Select(b => b.GetComponent<Collider>().bounds).ToArray();
 		// This should never happen dring the game - if this happens fix in editor.
-		currentBounds = CurrentBounds(transform.position) ?? throw new System.Exception("Selector not within bounds");
+		currentBounds = CurrentBounds(transform.position, ref levelBounds) ?? throw new System.Exception("Selector not within bounds");
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
+		hoverTask = Physics.OverlapSphere(transform.position, 0.5f, 1 << 7).FirstOrDefault();
+
+		targetColor = RatManager.Instance.HasSelectedRats && hoverTask
+			? taskColor
+			: RatManager.Instance.HasSelectedRats ? ratsColor : defaultColor;
+
+		sprite.color = ExtensionMethods.ColorMoveTowards(sprite.color, targetColor, colorChangeSpeed * Time.deltaTime);
 		Vector3 inputVector = UniformInput.GetAnalogStick();
 
 		// Move the circle, multiply by circleSizeModifier to speed up large circle
 		Vector3 destPos = transform.position + circleSizeModifier * movementSpeed * Time.deltaTime * inputVector;
 		Vector3 closestPoint = currentBounds.ClosestPoint(destPos); // Used in the case where it's out of bounds
-		transform.position = InBoundingBox(destPos) ? destPos : new Vector3(closestPoint.x, 0, closestPoint.z);
+		transform.position = InBoundingBox(destPos, ref levelBounds) ? destPos : new Vector3(closestPoint.x, 0, closestPoint.z);
 
 		// Resizing circle
-		transform.localScale += Input.GetAxisRaw("CircleSize") * sizeChangeSpeed * Time.deltaTime * Vector3.one;
 		circleSizeModifier += Input.GetAxisRaw("CircleSize") * Time.deltaTime * sizeChangeSpeed;
+		Vector3 scale = transform.localScale + Input.GetAxisRaw("CircleSize") * sizeChangeSpeed * Time.deltaTime * Vector3.one;
+		transform.localScale = new Vector3(scale.x, 1, scale.z); // Reset Y scale to prevent lifting
 
 		// Selecting characters
 		if (Input.GetButtonDown("Select"))
 		{
-			// Select rats that are within defaultSize * circleSizeModifier
+			Debug.Log("Selecting");
+			// Select rats that are within DefaultSize * circleSizeModifier
 			RatManager.Instance.SelectRats(RatManager.Instance.AllRats.Where(r =>
-				Vector3.Distance(transform.position, r.transform.position) < defaultSize * circleSizeModifier
+				Vector3.Distance(transform.position, r.transform.position) < DefaultSize * circleSizeModifier
 			).ToList());
+
+			if (RatManager.Instance.SelectedRats.Count > 0)
+			{
+				anim.SetBool("Active", true);
+			}
 		}
 
 		// Moving characters to position
-		if (Input.GetButtonDown("Assign"))
+		if (Input.GetButtonDown("Assign") && // Button press
+			NavMesh.SamplePosition(transform.position, out NavMeshHit nMHit, 200f, NavMesh.AllAreas)) // Closest point on Navmesh
 		{
-			if (NavMesh.SamplePosition(transform.position, out NavMeshHit nMHit, 200f, NavMesh.AllAreas))
+			List<Rat> ratsToAssign = new(RatManager.Instance.SelectedRats);
+			if (hoverTask) // Assign to task
 			{
-				RatManager.Instance.SelectedRats.ForEach(m => m.SetDestination(nMHit.position));
+				hoverTask.GetComponent<Task>().AssignRats(ref ratsToAssign);
+			}
+
+			Debug.Log("Assigning");
+			ratsToAssign.ForEach(m => m.SetDestination(nMHit.position));
+
+			if (RatManager.Instance.SelectedRats.Count > 0)
+			{
+				anim.SetBool("Active", false);
 			}
 		}
 	}
 
-	Bounds? CurrentBounds(Vector3 point)
-	{
-		foreach (Bounds bound in levelBounds)
-		{
-			if (bound.Contains(new Vector3(point.x, 0, point.z)))
-			{
-				return bound;
-			}
-		}
-		return null;
-	}
+	/// <summary>
+	/// Gets the first bounds the given point is in
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="bounds">The bounds array to check</param>
+	/// <returns></returns>
+	Bounds? CurrentBounds(Vector3 point, ref Bounds[] bounds) => bounds.FirstOrDefault(b => b.Contains(new Vector3(point.x, 0, point.z)));
 
-	bool InBoundingBox(Vector3 point)
+	/// <summary>
+	/// Returns whether a given point is in any of a array of bounds
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="bounds">The bounds array to check</param>
+	/// <returns></returns>
+	bool InBoundingBox(Vector3 point, ref Bounds[] bounds)
 	{
-		foreach (Bounds bound in levelBounds)
+		foreach (Bounds bound in bounds)
 		{
 			if (bound.Contains(new Vector3(point.x, 0, point.z)))
 			{
+				currentBounds = bound;
 				return true;
 			}
 		}
 		return false;
 	}
 }
+
 
 /// <summary>
 ///  Via https://amorten.com/blog/2017/mapping-square-input-to-circle-in-unity/, modified to use Vector3

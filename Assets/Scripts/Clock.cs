@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -33,6 +31,7 @@ public class Clock : MonoBehaviour
 			time += Time.deltaTime;
 
 			// Rotate the clock sprite
+			// TODO: replace angles
 			clockDisplay.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(45, -230, timePercent));
 
 			// Calculating the time in 24h time
