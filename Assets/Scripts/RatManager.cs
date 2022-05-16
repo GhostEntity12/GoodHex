@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RatManager : Singleton<RatManager>
@@ -11,11 +12,11 @@ public class RatManager : Singleton<RatManager>
 	[SerializeField] GameObject ratPrefab;
 
 	// Rat GameObjects - respawned between levels
-    List<Rat> allRats = new();
-    List<Rat> selectedRats = new();
-    public List<Rat> AllRats => allRats;
-    public List<Rat> SelectedRats => selectedRats;
-    public bool HasSelectedRats => selectedRats.Count > 0;
+	List<Rat> allRats = new();
+	List<Rat> selectedRats = new();
+	public List<Rat> AllRats => allRats;
+	public List<Rat> SelectedRats => selectedRats;
+	public bool HasSelectedRats => selectedRats.Count > 0;
 
 	private void Start()
 	{
@@ -29,22 +30,22 @@ public class RatManager : Singleton<RatManager>
 
 	public void ClearRats()
 	{
-		selectedRats.ForEach(r => r.Deselect());
+		selectedRats.ToList().ForEach(r => r.Deselect());
 		selectedRats.Clear();
 	}
 
 	public void SelectRats(List<Rat> ratsToSelect)
 	{
-		ClearRats();
 		ratsToSelect.ForEach(r => r.Select());
-        selectedRats.AddRange(ratsToSelect);
+		selectedRats.AddRange(ratsToSelect);
 	}
 
 	public void SpawnRats()
 	{
 		foreach (RatData ratInfo in persistantRatData)
 		{
-			Rat rat = Instantiate(ratPrefab).GetComponent<Rat>();
+			Vector2 rand = Random.insideUnitCircle;
+			Rat rat = Instantiate(ratPrefab, new Vector3(rand.x, 0f, rand.y) * 5, Quaternion.identity).GetComponent<Rat>();
 			rat.AssignInfo(ratInfo);
 			AddRat(rat);
 		}
@@ -59,7 +60,7 @@ public class RatManager : Singleton<RatManager>
 
 	public void SetRatDestinations(Vector3 destination, List<Rat> rats = null)
 	{
-		rats ??= selectedRats; 
+		rats ??= selectedRats;
 		foreach (Rat rat in rats)
 		{
 			rat.SetDestination(destination);

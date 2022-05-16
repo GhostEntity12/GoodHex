@@ -19,9 +19,9 @@ public class Task : MonoBehaviour
 
 	}
 
-	public List<Rat> AssignRats(ref List<Rat> rats)
+	public void AssignRats(ref List<Rat> rats)
 	{
-		if (!SlotsAvailable) return null;
+		if (!SlotsAvailable) return;
 
 		Queue<TaskPoint> availablePoints = new(taskPoints.Where(p => p.rat == null));
 		Queue<Rat> ratQueue = new(rats);
@@ -35,7 +35,7 @@ public class Task : MonoBehaviour
 			p.rat = r;
 		}
 
-		return ratQueue.ToList();
+		rats = ratQueue.ToList();
 	}
 
 	private void OnDrawGizmos()

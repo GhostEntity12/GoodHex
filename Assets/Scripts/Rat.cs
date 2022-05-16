@@ -3,10 +3,11 @@ using UnityEngine.AI;
 
 public class Rat : MonoBehaviour
 {
+	[SerializeField] SpriteRenderer graphic;
+
 	[Header("Navigation")]
 	private const float StoppingDistance = 1f;
-	[field: SerializeField]	public NavMeshAgent NavAgent { get; private set; }
-	
+	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
 	private float patience;
 
@@ -15,7 +16,7 @@ public class Rat : MonoBehaviour
 	/// </summary>
 	private bool occupied;
 
-	[field: SerializeField]	public bool Wandering { get; private set; }
+	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
 
@@ -50,7 +51,7 @@ public class Rat : MonoBehaviour
 	{
 		NavAgent.SetDestination(position);
 		patience = Info.PatienceDuration;
-		NavAgent.speed = 10f * Info.SpeedModifier;
+		NavAgent.speed = 2f * Info.SpeedModifier;
 		Wandering = false;
 	}
 
@@ -60,7 +61,7 @@ public class Rat : MonoBehaviour
 	public void SetWander()
 	{
 		Wandering = true;
-		NavAgent.speed = 0.75f * Info.SpeedModifier;
+		NavAgent.speed = 0.25f * Info.SpeedModifier;
 		Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
 		Vector3 offsetted = new(transform.position.x + rand.x, transform.position.y, transform.position.z + rand.y);
 		if (NavMesh.SamplePosition(offsetted, out NavMeshHit nMHit, 200f, NavMesh.AllAreas))
@@ -84,7 +85,13 @@ public class Rat : MonoBehaviour
 		Destroy(gameObject);
 	}
 
-	public void Select() { }
+	public void Select()
+	{
+		graphic.color = Color.green;
+	}
 
-	public void Deselect() { }
+	public void Deselect()
+	{
+		graphic.color = Color.white;
+	}
 }
