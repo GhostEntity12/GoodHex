@@ -1,5 +1,5 @@
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -66,11 +66,11 @@ public class CircleSelector : MonoBehaviour
 		{
 			Debug.Log("Selecting");
 			// Select rats that are within DefaultSize * circleSizeModifier
-			RatManager.Instance.SelectRats(RatManager.Instance.AllRats.Where(r =>
+			RatManager.Instance.SelectRats(RatManager.Instance.allRats.Where(r =>
 				Vector3.Distance(transform.position, r.transform.position) < DefaultSize * circleSizeModifier
 			).ToList());
 
-			if (RatManager.Instance.SelectedRats.Count > 0)
+			if (RatManager.Instance.selectedRats.Count > 0)
 			{
 				anim.SetBool("Active", true);
 			}
@@ -80,16 +80,16 @@ public class CircleSelector : MonoBehaviour
 		if (Input.GetButtonDown("Assign") && // Button press
 			NavMesh.SamplePosition(transform.position, out NavMeshHit nMHit, 200f, NavMesh.AllAreas)) // Closest point on Navmesh
 		{
-			List<Rat> ratsToAssign = new(RatManager.Instance.SelectedRats);
+			List<Rat> ratsToAssign = new(RatManager.Instance.selectedRats);
 			if (hoverTask) // Assign to task
 			{
-				hoverTask.GetComponent<Task>().AssignRats(ref ratsToAssign);
+				hoverTask.GetComponent<Task>().AssignRats(ratsToAssign);
 			}
 
 			Debug.Log("Assigning");
 			ratsToAssign.ForEach(m => m.SetDestination(nMHit.position));
 
-			if (RatManager.Instance.SelectedRats.Count > 0)
+			if (RatManager.Instance.selectedRats.Count > 0)
 			{
 				anim.SetBool("Active", false);
 			}

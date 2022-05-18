@@ -11,11 +11,8 @@ public class Rat : MonoBehaviour
 
 	private float patience;
 
-	/// <summary>
-	/// Whether the rat is dong a task
-	/// </summary>
-	private bool occupied;
-
+	public bool Occupied => Task != null;
+	public TaskPoint Task { get; private set; }
 	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
@@ -28,7 +25,7 @@ public class Rat : MonoBehaviour
 
 	private void Update()
 	{
-		if (!occupied)
+		if (!Occupied)
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
@@ -70,13 +67,13 @@ public class Rat : MonoBehaviour
 		}
 	}
 
-	public void SetTask(Vector3 point)
+	public void SetTask(TaskPoint point)
 	{
-		occupied = true;
-		SetDestination(point);
+		Task = point;
+		SetDestination(point.taskPosition);
 	}
 
-	public void UnsetTask() => occupied = false;
+	public void UnsetTask() => Task = null;
 
 	public void Kill()
 	{

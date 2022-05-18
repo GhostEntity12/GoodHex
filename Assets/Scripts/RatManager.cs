@@ -12,10 +12,8 @@ public class RatManager : Singleton<RatManager>
 	[SerializeField] GameObject ratPrefab;
 
 	// Rat GameObjects - respawned between levels
-	List<Rat> allRats = new();
-	List<Rat> selectedRats = new();
-	public List<Rat> AllRats => allRats;
-	public List<Rat> SelectedRats => selectedRats;
+	public readonly List<Rat> allRats = new();
+	public readonly List<Rat> selectedRats = new();
 	public bool HasSelectedRats => selectedRats.Count > 0;
 
 	private void Start()
@@ -46,6 +44,7 @@ public class RatManager : Singleton<RatManager>
 		{
 			Vector2 rand = Random.insideUnitCircle;
 			Rat rat = Instantiate(ratPrefab, new Vector3(rand.x, 0f, rand.y) * 5, Quaternion.identity).GetComponent<Rat>();
+			rat.gameObject.name = ratInfo.Name;
 			rat.AssignInfo(ratInfo);
 			AddRat(rat);
 		}
@@ -63,6 +62,10 @@ public class RatManager : Singleton<RatManager>
 		rats ??= selectedRats;
 		foreach (Rat rat in rats)
 		{
+			if (rat.Task != null)
+			{
+				rat.Task.UnsetRat();
+			}
 			rat.SetDestination(destination);
 		}
 	}
