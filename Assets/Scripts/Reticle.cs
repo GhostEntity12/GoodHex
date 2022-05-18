@@ -70,10 +70,17 @@ public class Reticle : MonoBehaviour
 
 			hoverTask = c ? c.GetComponent<Task>() : null;
 
-			Collider[] cols = Physics.OverlapSphere(transform.position, 1.5f * circleSize);//, 1 << 6); // For some reason this stops working randomly?
-			List<Rat> rats = cols.Select(c => c.GetComponent<Rat>()).Where(r => r != null).ToList();
+			// For some reason this stops working randomly?
+			/*
+			  Collider[] cols = Physics.OverlapSphere(transform.position, 1.5f * circleSize);//, 1 << 6); 
+			  List<Rat> rats = cols.Select(c => c.GetComponent<Rat>()).Where(r => r != null).ToList();
+			  List<Rat> unselectedRats = rats.Where(r => !RatManager.Instance.SelectedRats.Contains(r)).ToList();
+			  Debug.Log($"CSize {1.5f * circleSize}, Colliders: {cols.Length}, Rats: {rats.Count}, Unselected {unselectedRats.Count}");
+			*/
+
+			// Alt to the OverlapSphere
+			List<Rat> rats = RatManager.Instance.AllRats.Where(r => Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize).ToList();
 			List<Rat> unselectedRats = rats.Where(r => !RatManager.Instance.SelectedRats.Contains(r)).ToList();
-			Debug.Log($"CSize {1.5f * circleSize}, Colliders: {cols.Length}, Rats: {rats.Count}, Unselected {unselectedRats.Count}");
 
 			if (hoverTask)
 			{
