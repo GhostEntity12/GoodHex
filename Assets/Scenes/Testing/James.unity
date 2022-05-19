@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 999631429807953318, guid: 33e7265dca3bc2a46b18014df202ba02,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnpauseGame
+      value: UnpauseButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e7265dca3bc2a46b18014df202ba02, type: 3}

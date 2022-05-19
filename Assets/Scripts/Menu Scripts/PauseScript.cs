@@ -5,28 +5,33 @@ using UnityEngine;
 public class PauseScript : MonoBehaviour
 {
     [SerializeField] Canvas pauseScreen;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
+    public static bool IsPaused;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            IsPaused = !IsPaused;
             PauseGame();
         }
     }
 
     void PauseGame()
     {
-        Time.timeScale = 0f;
-        pauseScreen.gameObject.SetActive(true);
+        if (IsPaused)
+        {
+            Time.timeScale = 0f;
+            pauseScreen.gameObject.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            pauseScreen.gameObject.SetActive(false);
+        }
     }
 
-    public void UnpauseGame()
+    public void UnpauseButton()
     {
         Time.timeScale = 1f;
         pauseScreen.gameObject.SetActive(false);
