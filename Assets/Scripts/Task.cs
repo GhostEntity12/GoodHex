@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Task : MonoBehaviour
 {
-	Renderer r;
-
 	[Header("Task Setup")]
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
@@ -20,7 +18,7 @@ public class Task : MonoBehaviour
 	/// <summary>
 	/// Returns a list of rats that are currently assigned to this task
 	/// </summary>
-	public List<Rat> AssignedRats => taskPoints.Select(tp => tp.AssignedRat).ToList();
+	public List<Rat> AssignedRats => taskPoints.Select(tp => tp.AssignedRat).Where(r => r != null).ToList();
 	/// <summary>
 	/// Returns whether all the slots are filled
 	/// </summary>
@@ -29,11 +27,17 @@ public class Task : MonoBehaviour
 	/// Returns whether all the rats are in range of the task
 	/// </summary>
 	bool RatsInPlace => taskPoints.All(p => p.InRange);
+	/// <summary>
+	/// The Progress bar for the task
+	/// </summary>
+	ProgressBar progressBar;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		r = GetComponent<Renderer>();
+		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.mainCanvas.transform).GetComponent<ProgressBar>();
+		progressBar.Setup(this, taskPoints.Length);
+
 		if (requiredTasks.Length == 0)
 		{
 			OnActivate();
@@ -43,19 +47,19 @@ public class Task : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Available)
+		if (Available && !complete)
 		{
-			if (!complete && // Task conditions
-				RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
+			if (RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
 			{
 				progress += Time.deltaTime / taskDuration;
+				progressBar.SetProgress(progress);
 				if (progress >= 1)
 				{
 					OnComplete();
 				}
 			}
 		}
-		else
+		else if (!Available && !complete)
 		{
 			if (requiredTasks.All(t => t.complete))
 			{
@@ -69,6 +73,7 @@ public class Task : MonoBehaviour
 	/// </summary>
 	public virtual void OnActivate()
 	{
+		progressBar.SetActive(true);
 		Available = true;
 		progress = 0;
 	}
@@ -78,6 +83,8 @@ public class Task : MonoBehaviour
 	/// </summary>
 	public void OnComplete()
 	{
+		progressBar.SetActive(false);
+		Debug.Log(progressBar.gameObject, progressBar.gameObject);
 		Available = false;
 		complete = true;
 
@@ -101,7 +108,6 @@ public class Task : MonoBehaviour
 		Queue<TaskPoint> availablePoints = new(taskPoints.Where(p => p.AssignedRat == null));
 		// Might need some rework to make sure that rats cannot be assigned to the same task multiple times
 		Queue<Rat> ratQueue = new(rats.Where(r => !taskPoints.Contains(r.Task)));
-		Debug.Log($"Rats {ratQueue.Count} Points {availablePoints.Count}");
 
 		while (availablePoints.Count > 0 && ratQueue.Count > 0)
 		{
@@ -113,7 +119,6 @@ public class Task : MonoBehaviour
 		}
 		return ratQueue.ToList();
 	}
-
 
 	/// <summary>
 	/// Draws TaskPoint positions

@@ -34,7 +34,7 @@ public class RatManager : Singleton<RatManager>
 
 	public void SelectRats(List<Rat> ratsToSelect)
 	{
-		if (ratsToSelect == null) return;
+		if (ratsToSelect == null || ratsToSelect.Count == 0) return;
 		ratsToSelect.ForEach(r => r.Select());
 		selectedRats.AddRange(ratsToSelect);
 	}

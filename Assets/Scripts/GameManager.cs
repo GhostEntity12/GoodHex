@@ -15,8 +15,18 @@ public class GameManager : Singleton<GameManager>
 		"Roque",
 		"Rick",
 		"Gru",
-		};
+	};
 
+	public Canvas mainCanvas;
+	[Header("Prefabs")]
+	public GameObject progressBarPrefab;
+	public Camera mainCamera;
+	
+	protected override void Awake()
+	{
+		base.Awake();
+		mainCamera = Camera.main;
+	}
 	public void Restart() => SceneManager.LoadScene(0);
 
 	public void AllTasksComplete()

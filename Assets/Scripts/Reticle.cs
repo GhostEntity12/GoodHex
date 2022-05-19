@@ -80,16 +80,6 @@ public class Reticle : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
-
-			// For some reason this stops working randomly?
-			/*
-			  Collider[] cols = Physics.OverlapSphere(transform.position, 1.5f * circleSize);//, 1 << 6); 
-			  List<Rat> rats = cols.Select(c => c.GetComponent<Rat>()).Where(r => r != null).ToList();
-			  List<Rat> unselectedRats = rats.Where(r => !RatManager.Instance.SelectedRats.Contains(r)).ToList();
-			  Debug.Log($"CSize {1.5f * circleSize}, Colliders: {cols.Length}, Rats: {rats.Count}, Unselected {unselectedRats.Count}");
-			*/
-
-			// Alt to the OverlapSphere
 			// Get all unselected rats within the circle
 			List<Rat> unselectedRats =
 				RatManager.Instance.allRats
@@ -108,6 +98,7 @@ public class Reticle : MonoBehaviour
 				// Set their destinations
 				RatManager.Instance.SetRatDestinations(transform.position);
 				// Reselect the assigned rats for consistency
+				// This currently selects all rats on the task, rework?
 				RatManager.Instance.SelectRats(hoverTask.AssignedRats);
 			}
 			else if (unselectedRats.Count == 0) // Set destination
