@@ -17,9 +17,10 @@ public class GameManager : Singleton<GameManager>
 		"Gru",
 		};
 
-	public GameObject progressBarPrefab;
-
-	public Canvas c;
-
 	public void Restart() => SceneManager.LoadScene(0);
+
+	public void AllTasksComplete()
+	{
+		Debug.Log("All tasks complete");
+	}
 }

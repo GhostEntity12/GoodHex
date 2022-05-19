@@ -7,8 +7,7 @@ public class Task : MonoBehaviour
 	Renderer r;
 
 	[Header("Task Setup")]
-	[SerializeField, Tooltip("Whether the task should be available from the start")] bool startingTask;
-	[SerializeField, Tooltip("Tasks that should become available after this task")] Task[] tasksToSpawn;
+	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 	[SerializeField, Tooltip("How long the task takes")] float taskDuration;
 	/// <summary>
@@ -35,7 +34,7 @@ public class Task : MonoBehaviour
 	void Start()
 	{
 		r = GetComponent<Renderer>();
-		if (startingTask)
+		if (requiredTasks.Length == 0)
 		{
 			OnActivate();
 		}
@@ -44,13 +43,23 @@ public class Task : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Available && !complete && // Task conditions
-			RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
+		if (Available)
 		{
-			progress += Time.deltaTime / taskDuration;
-			if (progress >= 1)
+			if (!complete && // Task conditions
+				RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
 			{
-				OnComplete();
+				progress += Time.deltaTime / taskDuration;
+				if (progress >= 1)
+				{
+					OnComplete();
+				}
+			}
+		}
+		else
+		{
+			if (requiredTasks.All(t => t.complete))
+			{
+				OnActivate();
 			}
 		}
 	}
@@ -58,11 +67,8 @@ public class Task : MonoBehaviour
 	/// <summary>
 	/// Activates the task
 	/// </summary>
-	public void OnActivate()
+	public virtual void OnActivate()
 	{
-		// Debug
-		r.material.color = Color.yellow;
-
 		Available = true;
 		progress = 0;
 	}
@@ -72,9 +78,6 @@ public class Task : MonoBehaviour
 	/// </summary>
 	public void OnComplete()
 	{
-		// Debug
-		r.material.color = Color.green;
-
 		Available = false;
 		complete = true;
 
@@ -83,19 +86,6 @@ public class Task : MonoBehaviour
 		{
 			point.AssignedRat.UnsetTask();
 			point.UnsetRat();
-		}
-
-		// Set new tasks is available
-		if (tasksToSpawn.Length > 0)
-		{
-			foreach (Task task in tasksToSpawn)
-			{
-				task.OnActivate();
-			}
-		}
-		else
-		{
-			Debug.Log("All Tasks Complete");
 		}
 	}
 
@@ -130,6 +120,15 @@ public class Task : MonoBehaviour
 	/// </summary>
 	private void OnDrawGizmos()
 	{
+		SphereCollider c = GetComponent<SphereCollider>();
+		if (c)
+		{
+			Gizmos.color = new Color(0.1f, 0.8f, 0.3f, 0.75f);
+			Gizmos.DrawSphere(transform.position, c.radius);
+			Gizmos.color = Color.green;
+			Gizmos.DrawWireSphere(transform.position, c.radius);
+		}
+
 		if (taskPoints.Length == 0) return;
 
 		foreach (TaskPoint point in taskPoints)
