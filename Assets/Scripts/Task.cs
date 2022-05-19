@@ -49,6 +49,13 @@ public class Task : MonoBehaviour
 	{
 		if (Available && !complete)
 		{
+			foreach (TaskPoint point in taskPoints)
+			{
+				if (point.AssignedRat && point.InRange)
+				{
+					point.AssignedRat.InPlace();
+				}
+			}
 			if (RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
 			{
 				progress += Time.deltaTime / taskDuration;

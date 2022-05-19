@@ -19,9 +19,5 @@ public class ProgressBar : MonoBehaviour
 		gameObject.SetActive(false);
 		transform.position = GameManager.Instance.mainCamera.WorldToScreenPoint(t.transform.position + Vector3.up * 2);
 	}
-	public void SetActive(bool active)
-	{
-		Debug.Log($"Change active state: {active}");
-		gameObject.SetActive(active);
-	}
+	public void SetActive(bool active) => gameObject.SetActive(active);
 }

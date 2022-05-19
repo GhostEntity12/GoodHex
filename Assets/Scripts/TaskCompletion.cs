@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TaskCompletion : Task
 {
-	bool complete = false;
+	bool gameComplete = false;
 	public override void OnActivate()
 	{
-		if (!complete)
+		if (!gameComplete)
 		{
 			GameManager.Instance.AllTasksComplete();
-			complete = true;
+			gameComplete = true;
 		}
 	}
 }

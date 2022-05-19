@@ -32,5 +32,6 @@ public class GameManager : Singleton<GameManager>
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
+		SceneManager.LoadScene("VictoryScreen");
 	}
 }

@@ -4,9 +4,10 @@ using UnityEngine.AI;
 public class Rat : MonoBehaviour
 {
 	[SerializeField] SpriteRenderer graphic;
+	Animator anim;
 
 	[Header("Navigation")]
-	private const float StoppingDistance = 1f;
+	private const float StoppingDistance = 1.5f;
 	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
 	private float patience;
@@ -19,12 +20,16 @@ public class Rat : MonoBehaviour
 
 	private void Start()
 	{
+		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
 		SetWander();
 	}
 
 	private void Update()
 	{
+		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
+		graphic.flipX = NavAgent.velocity.x > 0;
+
 		if (!Occupied)
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
@@ -52,6 +57,11 @@ public class Rat : MonoBehaviour
 		Wandering = false;
 	}
 
+	public void InPlace()
+	{
+		anim.SetBool("occupied", true);
+	}
+
 	/// <summary>
 	/// Sets the rat to wander
 	/// </summary>
@@ -73,9 +83,13 @@ public class Rat : MonoBehaviour
 		SetDestination(point.taskPosition);
 	}
 
-	public void UnsetTask() => Task = null;
+	public void UnsetTask()
+	{
+		Task = null;
+		anim.SetBool("occupied", false);
+	}
 
-	public void Kill()
+		public void Kill()
 	{
 		RatManager.Instance.RemoveRat(this);
 		// Leave corpse?

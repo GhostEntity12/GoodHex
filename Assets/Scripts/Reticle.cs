@@ -104,6 +104,7 @@ public class Reticle : MonoBehaviour
 			else if (unselectedRats.Count == 0) // Set destination
 			{
 				RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
 			}
 			else if (unselectedRats.Count > 0) // Select rats
 			{
