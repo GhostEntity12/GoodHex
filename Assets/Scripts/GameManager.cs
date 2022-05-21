@@ -17,7 +17,7 @@ public class GameManager : Singleton<GameManager>
 		"Gru",
 	};
 
-	public Canvas mainCanvas;
+	public Canvas progressCanvas;
 	[Header("Prefabs")]
 	public GameObject progressBarPrefab;
 	public Camera mainCamera;

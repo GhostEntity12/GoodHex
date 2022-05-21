@@ -12,8 +12,7 @@ public class PauseScript : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			isPaused = !isPaused;
-			PauseGame(isPaused);
+			PauseGame(!isPaused);
 		}
 	}
 

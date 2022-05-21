@@ -19,7 +19,6 @@ public class Clock : MonoBehaviour
 
 	[Header("Debug")]
 	[SerializeField] TextMeshProUGUI text;
-	[SerializeField] TextMeshProUGUI eod;
 
 	// Update is called once per frame
 	void Update()
@@ -32,7 +31,7 @@ public class Clock : MonoBehaviour
 
 			// Rotate the clock sprite
 			// TODO: replace angles
-			clockDisplay.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(45, -230, timePercent));
+			//clockDisplay.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(45, -230, timePercent));
 
 			// Calculating the time in 24h time
 			int time24 = Mathf.FloorToInt(Mathf.Lerp(activeHours.x, activeHours.y, timePercent));
@@ -45,8 +44,8 @@ public class Clock : MonoBehaviour
 		{
 			// TODO: Rewrite at some point
 			// End of day
-			eod.enabled = true;
-			Time.timeScale = 0;
+			//eod.enabled = true;
+			SceneManager.LoadScene("GameOver");
 		}
 	}
 }

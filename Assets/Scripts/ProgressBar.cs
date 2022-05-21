@@ -11,13 +11,23 @@ public class ProgressBar : MonoBehaviour
 	[SerializeField] TextMeshProUGUI number;
 	public void SetProgress(float amount) => fill.fillAmount = amount;
 	public void AddProgress(float amount) => fill.fillAmount += amount;
-
+	Vector3 anchoredPos;
+	float offsetTime;
 	public void Setup(Task t, int ratCount)
 	{
 		number.text = ratCount.ToString();
 		SetProgress(0);
 		gameObject.SetActive(false);
-		transform.position = GameManager.Instance.mainCamera.WorldToScreenPoint(t.transform.position + Vector3.up * 2);
+		anchoredPos = GameManager.Instance.mainCamera.WorldToScreenPoint(t.transform.position + Vector3.up * 2);
 	}
 	public void SetActive(bool active) => gameObject.SetActive(active);
+
+	private void Start()
+	{
+		offsetTime = Random.Range(0f, 3f);
+	}
+	private void Update()
+	{
+		transform.position = anchoredPos + 2f * Mathf.Sin(Time.time + offsetTime) * Vector3.up;
+	}
 }

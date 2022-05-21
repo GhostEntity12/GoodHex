@@ -4,7 +4,7 @@ public class RatData
 	string name;
 	int speed = 1;
 	int strength = 1;
-	int patience = 1;
+	int patience = 4;
 
 	public string Name => name;
 	public float SpeedModifier => 1 + speed / 10f;

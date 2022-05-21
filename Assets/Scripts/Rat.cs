@@ -28,13 +28,20 @@ public class Rat : MonoBehaviour
 	private void Update()
 	{
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
-		graphic.flipX = NavAgent.velocity.x > 0;
+
+		// Reducing flicker
+		graphic.flipX = NavAgent.velocity.x switch
+		{
+			> 0.1f => true,
+			< -0.1f => false,
+			_ => graphic.flipX
+		};
 
 		if (!Occupied)
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
-				//NavAgent.ResetPath();
+				NavAgent.ResetPath();
 				patience -= Time.deltaTime;
 				if (patience <= 0)
 				{
@@ -89,7 +96,7 @@ public class Rat : MonoBehaviour
 		anim.SetBool("occupied", false);
 	}
 
-		public void Kill()
+	public void Kill()
 	{
 		RatManager.Instance.RemoveRat(this);
 		// Leave corpse?

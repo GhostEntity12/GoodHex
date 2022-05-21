@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 779bc1737ec153a4f977fb8dd91b581d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4418835307461461079
+    second: Rat_carry_SS_0
+  - first:
+      213: 7618569610247013952
+    second: Rat_carry_SS_1
+  - first:
+      213: 1258073255968324660
+    second: Rat_carry_SS_2
+  - first:
+      213: -7044255489201465637
+    second: Rat_carry_SS_3
+  - first:
+      213: 1128964762519824569
+    second: Rat_carry_SS_4
+  - first:
+      213: -3156696135637989166
+    second: Rat_carry_SS_5
+  - first:
+      213: 1467798770064627112
+    second: Rat_carry_SS_6
+  - first:
+      213: -2588058319626035951
+    second: Rat_carry_SS_7
+  - first:
+      213: -6101509320481817314
+    second: Rat_carry_SS_8
+  - first:
+      213: -2686715872008456546
+    second: Rat_carry_SS_9
+  - first:
+      213: 2653641388556509378
+    second: Rat_carry_SS_10
+  - first:
+      213: -2125712731914890002
+    second: Rat_carry_SS_11
+  - first:
+      213: 1530386725971371071
+    second: Rat_carry_SS_12
+  - first:
+      213: 5876679509791034059
+    second: Rat_carry_SS_13
+  - first:
+      213: -5916701129469074715
+    second: Rat_carry_SS_14
+  - first:
+      213: 4970086850377841663
+    second: Rat_carry_SS_15
+  - first:
+      213: 8279396061377858976
+    second: Rat_carry_SS_16
+  - first:
+      213: 4867722913790419699
+    second: Rat_carry_SS_17
+  - first:
+      213: 2100324643306114666
+    second: Rat_carry_SS_18
+  - first:
+      213: 3110562212655387795
+    second: Rat_carry_SS_19
+  - first:
+      213: 1397552262106777297
+    second: Rat_carry_SS_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rat_carry_SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab3ec923b42da2c0800000000000000
+      internalID: -4418835307461461079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_1
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0460c5312b89ab960800000000000000
+      internalID: 7618569610247013952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_2
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c3963f5f2957110800000000000000
+      internalID: 1258073255968324660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_3
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd61d0364f6cd3e90800000000000000
+      internalID: -7044255489201465637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_4
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b86de15873eaaf00800000000000000
+      internalID: 1128964762519824569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_5
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8037be6992134d0800000000000000
+      internalID: -3156696135637989166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_6
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51573643bae5410800000000000000
+      internalID: 1467798770064627112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_carry_SS_7
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 3831
+        width: 420
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d12b0abae551cd0800000000000000
+      internalID: -2588058319626035951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 95f622c7546c9d1429849bcfb9f1b2ed
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Rat_carry_SS_2: 1258073255968324660
+      Rat_carry_SS_5: -3156696135637989166
+      Rat_carry_SS_1: 7618569610247013952
+      Rat_carry_SS_3: -7044255489201465637
+      Rat_carry_SS_4: 1128964762519824569
+      Rat_carry_SS_7: -2588058319626035951
+      Rat_carry_SS_6: 1467798770064627112
+      Rat_carry_SS_0: -4418835307461461079
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

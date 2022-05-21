@@ -97,9 +97,9 @@ public class Reticle : MonoBehaviour
 				RatManager.Instance.SelectRats(remainingRats);
 				// Set their destinations
 				RatManager.Instance.SetRatDestinations(transform.position);
-				// Reselect the assigned rats for consistency
-				// This currently selects all rats on the task, rework?
-				RatManager.Instance.SelectRats(hoverTask.AssignedRats);
+				//// Reselect the assigned rats for consistency
+				//// This currently selects all rats on the task, rework?
+				//RatManager.Instance.SelectRats(hoverTask.AssignedRats);
 			}
 			else if (unselectedRats.Count == 0) // Set destination
 			{

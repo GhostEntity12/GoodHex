@@ -35,7 +35,7 @@ public class Task : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.mainCanvas.transform).GetComponent<ProgressBar>();
+		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
 		progressBar.Setup(this, taskPoints.Length);
 
 		if (requiredTasks.Length == 0)
@@ -114,7 +114,10 @@ public class Task : MonoBehaviour
 
 		Queue<TaskPoint> availablePoints = new(taskPoints.Where(p => p.AssignedRat == null));
 		// Might need some rework to make sure that rats cannot be assigned to the same task multiple times
-		Queue<Rat> ratQueue = new(rats.Where(r => !taskPoints.Contains(r.Task)));
+		Queue<Rat> ratQueue = new(rats
+			.Where(r => !taskPoints.Contains(r.Task)) // Eclude rats already on the task
+			.OrderBy(r => Vector3.Distance(r.transform.position, transform.position)) // order by distance (ascending)
+		);
 
 		while (availablePoints.Count > 0 && ratQueue.Count > 0)
 		{
