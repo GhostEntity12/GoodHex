@@ -609,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130.10532, y: -176}
-  m_SizeDelta: {x: 458.4971, y: 851.275}
+  m_AnchoredPosition: {x: -225, y: -168}
+  m_SizeDelta: {x: 520.1643, y: 851.275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975674928
 MonoBehaviour:
@@ -632,26 +632,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Producer:
-
-
-    Art Team:
-
-
-
-    Programming Team:
-
-
-
-    Design Team:
-
-
-
-    Technical
-    Manager:
-
-
-    Special Thanks:'
+  m_text: "Producer:\n\nArt Team:\n\n\nProgramming Team:\n\n\nDesign Team:\n\n\nTechnical
+    Manager: \n\nSpecial Thanks:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -684,7 +666,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -763,8 +745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 275.2328, y: -176.00005}
-  m_SizeDelta: {x: 279.5274, y: 851.275}
+  m_AnchoredPosition: {x: 235.72978, y: -168.00002}
+  m_SizeDelta: {x: 328.6436, y: 851.275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002517088
 MonoBehaviour:
@@ -789,7 +771,7 @@ MonoBehaviour:
   m_text: 'Oliver B
 
 
-    Cherish B
+    Cherish G-M
 
     Jordan C
 
@@ -841,7 +823,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1067,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: -798}
-  m_SizeDelta: {x: 869.5628, y: 92.4601}
+  m_AnchoredPosition: {x: 116, y: -798}
+  m_SizeDelta: {x: 967.5051, y: 92.4601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475930045
 MonoBehaviour:
@@ -1123,7 +1105,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
