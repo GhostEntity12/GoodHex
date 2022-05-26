@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Clock : MonoBehaviour
 {
 	float time = 0;
@@ -13,9 +13,13 @@ public class Clock : MonoBehaviour
 	/// </summary>
 	[SerializeField] Vector2Int activeHours;
 	/// <summary>
-	/// Transform to rotate
+	/// Hand transform to rotate
 	/// </summary>
-	[SerializeField] RectTransform clockDisplay;
+	[SerializeField] RectTransform clockHand;
+	/// <summary>
+	/// Image to track time spent
+	/// </summary>
+	[SerializeField] Image clockFill;
 	/// <summary>
 	/// Starting audio track for scene
 	/// </summary>
@@ -28,12 +32,7 @@ public class Clock : MonoBehaviour
 	/// Bool to check if audio is playing
 	/// </summary>
 	private bool isPlaying = false;
-	/// <summary>
-	/// ProgressBar to track time spent
-	/// </summary>
-	[SerializeField] SimplifiedPB pb;
- 
-	[Header("Debug")]
+
 	[SerializeField] TextMeshProUGUI text;
 
 	// Update is called once per frame
@@ -45,11 +44,11 @@ public class Clock : MonoBehaviour
 		{
 			time += Time.deltaTime;
 
-			pb.AddProgress(Time.deltaTime / dayLength);
+			clockFill.fillAmount = timePercent;
 
 			// Rotate the clock sprite
 			// TODO: replace angles
-			//clockDisplay.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(45, -230, timePercent));
+			clockHand.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(0, -360, timePercent));
 
 			// Calculating the time in 24h time
 			int time24 = Mathf.FloorToInt(Mathf.Lerp(activeHours.x, activeHours.y, timePercent));

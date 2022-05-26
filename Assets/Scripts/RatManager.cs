@@ -11,6 +11,9 @@ public class RatManager : Singleton<RatManager>
 
 	[SerializeField] GameObject ratPrefab;
 
+	[SerializeField] Transform[] spawnPointTransforms;
+	Vector3[] spawnPoints;
+
 	// Rat GameObjects - respawned between levels
 	public readonly List<Rat> allRats = new();
 	public readonly List<Rat> selectedRats = new();
@@ -18,6 +21,7 @@ public class RatManager : Singleton<RatManager>
 
 	private void Start()
 	{
+		spawnPoints = spawnPointTransforms.Select(t => t.position).ToArray();
 		for (int i = 0; i < 5; i++)
 		{
 			persistantRatData.Add(new());
@@ -41,10 +45,10 @@ public class RatManager : Singleton<RatManager>
 
 	public void SpawnRats()
 	{
-		foreach (RatData ratInfo in persistantRatData)
+		for (int i = 0; i < persistantRatData.Count; i++)
 		{
-			Vector2 rand = Random.insideUnitCircle;
-			Rat rat = Instantiate(ratPrefab, new Vector3(rand.x, 0f, rand.y) * 5, Quaternion.identity).GetComponent<Rat>();
+			RatData ratInfo = persistantRatData[i];
+			Rat rat = Instantiate(ratPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
 			rat.gameObject.name = ratInfo.Name;
 			rat.AssignInfo(ratInfo);
 			AddRat(rat);

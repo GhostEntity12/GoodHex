@@ -1,0 +1,2425 @@
+fileFormatVersion: 2
+guid: 0d963e64a0d8f8a43a2601e884785d75
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8297229067165804080
+    second: Potion SS_0
+  - first:
+      213: -5173147473684228595
+    second: Potion SS_1
+  - first:
+      213: -9010055933261044583
+    second: Potion SS_2
+  - first:
+      213: -424252806439320495
+    second: Potion SS_3
+  - first:
+      213: -24011257865525313
+    second: Potion SS_4
+  - first:
+      213: -8652980164637849736
+    second: Potion SS_5
+  - first:
+      213: -1989062189348906800
+    second: Potion SS_6
+  - first:
+      213: -2050515264373814532
+    second: Potion SS_7
+  - first:
+      213: -1555636425039893242
+    second: Potion SS_8
+  - first:
+      213: -7607517322893295665
+    second: Potion SS_9
+  - first:
+      213: 4434752381243017764
+    second: Potion SS_10
+  - first:
+      213: 5970302079643732706
+    second: Potion SS_11
+  - first:
+      213: 2045010059359965389
+    second: Potion SS_12
+  - first:
+      213: -5886017347090281387
+    second: Potion SS_13
+  - first:
+      213: 137952470968806657
+    second: Potion SS_14
+  - first:
+      213: 6417454194345702696
+    second: Potion SS_15
+  - first:
+      213: -7956094212137441704
+    second: Potion SS_16
+  - first:
+      213: 1287183036850773507
+    second: Potion SS_17
+  - first:
+      213: 2234109349121155441
+    second: Potion SS_18
+  - first:
+      213: -5307288660191194522
+    second: Potion SS_19
+  - first:
+      213: -4035556885960383733
+    second: Potion SS_20
+  - first:
+      213: -4885398294397823018
+    second: Potion SS_21
+  - first:
+      213: -1661678799287647258
+    second: Potion SS_22
+  - first:
+      213: -1403209465339396454
+    second: Potion SS_23
+  - first:
+      213: -7899541133436247435
+    second: Potion SS_24
+  - first:
+      213: 2089748468337937773
+    second: Potion SS_25
+  - first:
+      213: 8254623644562350288
+    second: Potion SS_26
+  - first:
+      213: 8379120782415877513
+    second: Potion SS_27
+  - first:
+      213: -6812708303570091871
+    second: Potion SS_28
+  - first:
+      213: 7354790307164083808
+    second: Potion SS_29
+  - first:
+      213: 7850666216756171847
+    second: Potion SS_30
+  - first:
+      213: -7100202039774712188
+    second: Potion SS_31
+  - first:
+      213: 2428335783664718091
+    second: Potion SS_32
+  - first:
+      213: 7773126113422586659
+    second: Potion SS_33
+  - first:
+      213: 5964350717756985048
+    second: Potion SS_34
+  - first:
+      213: -8607053687209792302
+    second: Potion SS_35
+  - first:
+      213: -1138477813745507468
+    second: Potion SS_36
+  - first:
+      213: 3827087902710655167
+    second: Potion SS_37
+  - first:
+      213: -3757940488673736563
+    second: Potion SS_38
+  - first:
+      213: -4448707238891155611
+    second: Potion SS_39
+  - first:
+      213: -1622779634117951260
+    second: Potion SS_40
+  - first:
+      213: -3729816042163949706
+    second: Potion SS_41
+  - first:
+      213: -8198672793025067579
+    second: Potion SS_42
+  - first:
+      213: -2806185373870974100
+    second: Potion SS_43
+  - first:
+      213: -1486263105808551297
+    second: Potion SS_44
+  - first:
+      213: 129703239734466449
+    second: Potion SS_45
+  - first:
+      213: -8200802161342875479
+    second: Potion SS_46
+  - first:
+      213: 5159774288588954474
+    second: Potion SS_47
+  - first:
+      213: -6338295908439824384
+    second: Potion SS_48
+  - first:
+      213: 1085801367558678137
+    second: Potion SS_49
+  - first:
+      213: -4094790824948796467
+    second: Potion SS_50
+  - first:
+      213: 3082409232602736349
+    second: Potion SS_51
+  - first:
+      213: -7878317955889201923
+    second: Potion SS_52
+  - first:
+      213: 4960402254899331968
+    second: Potion SS_53
+  - first:
+      213: -308279349098285587
+    second: Potion SS_54
+  - first:
+      213: 5283156023108989224
+    second: Potion SS_55
+  - first:
+      213: 3702182682987959758
+    second: Potion SS_56
+  - first:
+      213: -7734329302458310020
+    second: Potion SS_57
+  - first:
+      213: -3038806123036626423
+    second: Potion SS_58
+  - first:
+      213: -6476664530170216642
+    second: Potion SS_59
+  - first:
+      213: -5290324565218929333
+    second: Potion SS_60
+  - first:
+      213: -3323128516553984680
+    second: Potion SS_61
+  - first:
+      213: 8631629566697590820
+    second: Potion SS_62
+  - first:
+      213: 4067714045014434047
+    second: Potion SS_63
+  - first:
+      213: -3280645610366458724
+    second: Potion SS_64
+  - first:
+      213: 5561260691976742275
+    second: Potion SS_65
+  - first:
+      213: -5274422494185079009
+    second: Potion SS_66
+  - first:
+      213: 8183407424158495991
+    second: Potion SS_67
+  - first:
+      213: 6115361315144538838
+    second: Potion SS_68
+  - first:
+      213: -8531634755482864821
+    second: Potion SS_69
+  - first:
+      213: 6487846280643384349
+    second: Potion SS_70
+  - first:
+      213: -4444270806632224738
+    second: Potion SS_71
+  - first:
+      213: 7661092134529278223
+    second: Potion SS_72
+  - first:
+      213: 1862062483135053261
+    second: Potion SS_73
+  - first:
+      213: 8190632843413941486
+    second: Potion SS_74
+  - first:
+      213: 4405031764478473818
+    second: Potion SS_75
+  - first:
+      213: 4393051049074988864
+    second: Potion SS_76
+  - first:
+      213: -3279071657357981478
+    second: Potion SS_77
+  - first:
+      213: 3837682167536419915
+    second: Potion SS_78
+  - first:
+      213: -3263136791435999809
+    second: Potion SS_79
+  - first:
+      213: 9036164855673444285
+    second: Potion SS_80
+  - first:
+      213: 365268499401382354
+    second: Potion SS_81
+  - first:
+      213: -7555341712181611929
+    second: Potion SS_82
+  - first:
+      213: -5595331778145293844
+    second: Potion SS_83
+  - first:
+      213: 5347297399425015512
+    second: Potion SS_84
+  - first:
+      213: 4522221125009415387
+    second: Potion SS_85
+  - first:
+      213: -3260921303865518076
+    second: Potion SS_86
+  - first:
+      213: 5579191817148574046
+    second: Potion SS_87
+  - first:
+      213: -4184892750464099319
+    second: Potion SS_88
+  - first:
+      213: -8275823014698436713
+    second: Potion SS_89
+  - first:
+      213: -1543392462942783653
+    second: Potion SS_90
+  - first:
+      213: -4729802369742546614
+    second: Potion SS_91
+  - first:
+      213: -951148970114175638
+    second: Potion SS_92
+  - first:
+      213: 1836078853699966147
+    second: Potion SS_93
+  - first:
+      213: 5715931304543940425
+    second: Potion SS_94
+  - first:
+      213: 7658125446933912413
+    second: Potion SS_95
+  - first:
+      213: 3508490824653986652
+    second: Potion SS_96
+  - first:
+      213: 5522668283931282827
+    second: Potion SS_97
+  - first:
+      213: -4918194841706678021
+    second: Potion SS_98
+  - first:
+      213: 8546246459529546705
+    second: Potion SS_99
+  - first:
+      213: 3417195578442865366
+    second: Potion SS_100
+  - first:
+      213: 93314845194155494
+    second: Potion SS_101
+  - first:
+      213: -5453610546066138157
+    second: Potion SS_102
+  - first:
+      213: -3837072191088239569
+    second: Potion SS_103
+  - first:
+      213: 8959165169485784262
+    second: Potion SS_104
+  - first:
+      213: 7495301015228497520
+    second: Potion SS_105
+  - first:
+      213: -8727787165599714784
+    second: Potion SS_106
+  - first:
+      213: 1887224961077444136
+    second: Potion SS_107
+  - first:
+      213: -6215516434838708462
+    second: Potion SS_108
+  - first:
+      213: -5140767719144334372
+    second: Potion SS_109
+  - first:
+      213: -1204153704005718013
+    second: Potion SS_110
+  - first:
+      213: 321644312880822141
+    second: Potion SS_111
+  - first:
+      213: 8110463126534379437
+    second: Potion SS_112
+  - first:
+      213: -6636453575299361824
+    second: Potion SS_113
+  - first:
+      213: 1733310275231068294
+    second: Potion SS_114
+  - first:
+      213: 9205646213471088906
+    second: Potion SS_115
+  - first:
+      213: -9034609552906486257
+    second: Potion SS_116
+  - first:
+      213: 6703544297302000766
+    second: Potion SS_117
+  - first:
+      213: 1796262839000907916
+    second: Potion SS_118
+  - first:
+      213: 7830632529181180447
+    second: Potion SS_119
+  - first:
+      213: 2084498560699263577
+    second: Potion SS_120
+  - first:
+      213: 379066044076757910
+    second: Potion SS_121
+  - first:
+      213: -5294532633993268357
+    second: Potion SS_122
+  - first:
+      213: -4045099024915362850
+    second: Potion SS_123
+  - first:
+      213: -3970676932664747918
+    second: Potion SS_124
+  - first:
+      213: -4405142357623637552
+    second: Potion SS_125
+  - first:
+      213: -3212706530336518019
+    second: Potion SS_126
+  - first:
+      213: 1276178818754544210
+    second: Potion SS_127
+  - first:
+      213: -8517950326999658012
+    second: Potion SS_128
+  - first:
+      213: 2226431079680673382
+    second: Potion SS_129
+  - first:
+      213: -8794141649313798526
+    second: Potion SS_130
+  - first:
+      213: -2917612417387341690
+    second: Potion SS_131
+  - first:
+      213: -5206239626716020298
+    second: Potion SS_132
+  - first:
+      213: 5407666055228612670
+    second: Potion SS_133
+  - first:
+      213: -8540583341889187193
+    second: Potion SS_134
+  - first:
+      213: 321515690592562203
+    second: Potion SS_135
+  - first:
+      213: 1298859060263953310
+    second: Potion SS_136
+  - first:
+      213: -2739900190437162068
+    second: Potion SS_137
+  - first:
+      213: 507457555771355307
+    second: Potion SS_138
+  - first:
+      213: 6777427901756434714
+    second: Potion SS_139
+  - first:
+      213: -7280387887656237545
+    second: Potion SS_140
+  - first:
+      213: 1172802429544159129
+    second: Potion SS_141
+  - first:
+      213: 8691660746035127093
+    second: Potion SS_142
+  - first:
+      213: -2476608731836795115
+    second: Potion SS_143
+  - first:
+      213: -5544704693369088439
+    second: Potion SS_144
+  - first:
+      213: 4483790518117253042
+    second: Potion SS_145
+  - first:
+      213: 9089408944876589575
+    second: Potion SS_146
+  - first:
+      213: -571655002768391772
+    second: Potion SS_147
+  - first:
+      213: 6844611931523827015
+    second: Potion SS_148
+  - first:
+      213: 7686546372523740310
+    second: Potion SS_149
+  - first:
+      213: -5745610116111807938
+    second: Potion SS_150
+  - first:
+      213: -6064933709900261656
+    second: Potion SS_151
+  - first:
+      213: -7486182934447768848
+    second: Potion SS_152
+  - first:
+      213: -4212317099703670459
+    second: Potion SS_153
+  - first:
+      213: -8760871789394611009
+    second: Potion SS_154
+  - first:
+      213: -1536658929583389528
+    second: Potion SS_155
+  - first:
+      213: 8096127325959323034
+    second: Potion SS_156
+  - first:
+      213: -5034933908079127538
+    second: Potion SS_157
+  - first:
+      213: -1204595596816968579
+    second: Potion SS_158
+  - first:
+      213: -2949041817242684014
+    second: Potion SS_159
+  - first:
+      213: 5250165461887343610
+    second: Potion SS_160
+  - first:
+      213: 95099010550875904
+    second: Potion SS_161
+  - first:
+      213: 573230377943261723
+    second: Potion SS_162
+  - first:
+      213: 640332610155502575
+    second: Potion SS_163
+  - first:
+      213: -5226789561978957262
+    second: Potion SS_164
+  - first:
+      213: 8532246874396124690
+    second: Potion SS_165
+  - first:
+      213: -8191673127559155277
+    second: Potion SS_166
+  - first:
+      213: -1581741905124871903
+    second: Potion SS_167
+  - first:
+      213: 8784566832937127307
+    second: Potion SS_168
+  - first:
+      213: 1919281358445250763
+    second: Potion SS_169
+  - first:
+      213: -5858689943261983890
+    second: Potion SS_170
+  - first:
+      213: 2700715240543081043
+    second: Potion SS_171
+  - first:
+      213: 7597780137549805618
+    second: Potion SS_172
+  - first:
+      213: 3548763742408766505
+    second: Potion SS_173
+  - first:
+      213: -3844120281756078037
+    second: Potion SS_174
+  - first:
+      213: -4103342556581533833
+    second: Potion SS_175
+  - first:
+      213: 6679328406137684721
+    second: Potion SS_176
+  - first:
+      213: -7124083415504104311
+    second: Potion SS_177
+  - first:
+      213: 2233022837707705885
+    second: Potion SS_178
+  - first:
+      213: -8553440036411638301
+    second: Potion SS_179
+  - first:
+      213: -3405359873383011201
+    second: Potion SS_180
+  - first:
+      213: -7692105132299116499
+    second: Potion SS_181
+  - first:
+      213: 1417631648451800135
+    second: Potion SS_182
+  - first:
+      213: 1696577182555207475
+    second: Potion SS_183
+  - first:
+      213: -9071569289577671640
+    second: Potion SS_184
+  - first:
+      213: 7161075333830165651
+    second: Potion SS_185
+  - first:
+      213: -6184750431480681382
+    second: Potion SS_186
+  - first:
+      213: 1875396334046533669
+    second: Potion SS_187
+  - first:
+      213: 6324552683964108512
+    second: Potion SS_188
+  - first:
+      213: 7523135240680662632
+    second: Potion SS_189
+  - first:
+      213: 5841610542645916926
+    second: Potion SS_190
+  - first:
+      213: 6434966771511285546
+    second: Potion SS_191
+  - first:
+      213: 5481528721947703868
+    second: Potion SS_192
+  - first:
+      213: -5489905358895730729
+    second: Potion SS_193
+  - first:
+      213: 1303507792077426125
+    second: Potion SS_194
+  - first:
+      213: 6353962457683956461
+    second: Potion SS_195
+  - first:
+      213: -5286370391258675738
+    second: Potion SS_196
+  - first:
+      213: -451092348927218170
+    second: Potion SS_197
+  - first:
+      213: 7553734051432909312
+    second: Potion SS_198
+  - first:
+      213: -5043681959785129992
+    second: Potion SS_199
+  - first:
+      213: -7395095194748539202
+    second: Potion SS_200
+  - first:
+      213: -6754244488534986369
+    second: Potion SS_201
+  - first:
+      213: 2358195578257274712
+    second: Potion SS_202
+  - first:
+      213: 4916796252111449101
+    second: Potion SS_203
+  - first:
+      213: 2280159401534801827
+    second: Potion SS_204
+  - first:
+      213: -5338156746913617853
+    second: Potion SS_205
+  - first:
+      213: -6079971614339068229
+    second: Potion SS_206
+  - first:
+      213: -3236822679430419665
+    second: Potion SS_207
+  - first:
+      213: 7375711456514825157
+    second: Potion SS_208
+  - first:
+      213: 6271976940286713745
+    second: Potion SS_209
+  - first:
+      213: -1511011842737492018
+    second: Potion SS_210
+  - first:
+      213: -3903528740819113715
+    second: Potion SS_211
+  - first:
+      213: -7799777007355945294
+    second: Potion SS_212
+  - first:
+      213: 8296181266630758992
+    second: Potion SS_213
+  - first:
+      213: -4993383067304125930
+    second: Potion SS_214
+  - first:
+      213: 4476329439775010131
+    second: Potion SS_215
+  - first:
+      213: -1223578080578756614
+    second: Potion SS_216
+  - first:
+      213: 6057328078576896176
+    second: Potion SS_217
+  - first:
+      213: -4652502164007991702
+    second: Potion SS_218
+  - first:
+      213: -781874523563704107
+    second: Potion SS_219
+  - first:
+      213: -7063483895293993050
+    second: Potion SS_220
+  - first:
+      213: -4111072742182124950
+    second: Potion SS_221
+  - first:
+      213: -8578510524496230638
+    second: Potion SS_222
+  - first:
+      213: 8328642991717224094
+    second: Potion SS_223
+  - first:
+      213: 922384378498282829
+    second: Potion SS_224
+  - first:
+      213: 1716094255728266089
+    second: Potion SS_225
+  - first:
+      213: 4922224794470356937
+    second: Potion SS_226
+  - first:
+      213: 6636313750057168937
+    second: Potion SS_227
+  - first:
+      213: 3082288793339012013
+    second: Potion SS_228
+  - first:
+      213: -3022858551920402859
+    second: Potion SS_229
+  - first:
+      213: -5163756606426427384
+    second: Potion SS_230
+  - first:
+      213: -331122203224383206
+    second: Potion SS_231
+  - first:
+      213: -7098900643854198169
+    second: Potion SS_232
+  - first:
+      213: -2446596291633568470
+    second: Potion SS_233
+  - first:
+      213: 2256189985224827702
+    second: Potion SS_234
+  - first:
+      213: -3601821934997578367
+    second: Potion SS_235
+  - first:
+      213: 8464594298099816629
+    second: Potion SS_236
+  - first:
+      213: 1281459682860174593
+    second: Potion SS_237
+  - first:
+      213: -1263867296086198328
+    second: Potion SS_238
+  - first:
+      213: -1911733611884151397
+    second: Potion SS_239
+  - first:
+      213: 8136095318946039812
+    second: Potion SS_240
+  - first:
+      213: 5258130474224829855
+    second: Potion SS_241
+  - first:
+      213: 3536353956913265485
+    second: Potion SS_242
+  - first:
+      213: -3703771116763494652
+    second: Potion SS_243
+  - first:
+      213: -8360592591613209347
+    second: Potion SS_244
+  - first:
+      213: 8287174339432012475
+    second: Potion SS_245
+  - first:
+      213: 1826581489370052256
+    second: Potion SS_246
+  - first:
+      213: 7195636145026306029
+    second: Potion SS_247
+  - first:
+      213: 5038400358167006097
+    second: Potion SS_248
+  - first:
+      213: -668458426615551071
+    second: Potion SS_249
+  - first:
+      213: -8485287148904128485
+    second: Potion SS_250
+  - first:
+      213: 791381496898593741
+    second: Potion SS_251
+  - first:
+      213: 755462544731411297
+    second: Potion SS_252
+  - first:
+      213: -6002927353132333139
+    second: Potion SS_253
+  - first:
+      213: -1319730957970287750
+    second: Potion SS_254
+  - first:
+      213: -4758462321823565053
+    second: Potion SS_255
+  - first:
+      213: -967409663767978388
+    second: Potion SS_256
+  - first:
+      213: -6131578657353177639
+    second: Potion SS_257
+  - first:
+      213: 5217483267581186140
+    second: Potion SS_258
+  - first:
+      213: 1931204584206034905
+    second: Potion SS_259
+  - first:
+      213: -2690519565888486488
+    second: Potion SS_260
+  - first:
+      213: 3212392790437782146
+    second: Potion SS_261
+  - first:
+      213: 5042957803938292510
+    second: Potion SS_262
+  - first:
+      213: 6997340296040782187
+    second: Potion SS_263
+  - first:
+      213: 4472573376259244302
+    second: Potion SS_264
+  - first:
+      213: -4002725376021954596
+    second: Potion SS_265
+  - first:
+      213: -8702955553572045192
+    second: Potion SS_266
+  - first:
+      213: -7396562166344730702
+    second: Potion SS_267
+  - first:
+      213: -7319331011471107552
+    second: Potion SS_268
+  - first:
+      213: 7951364116347908669
+    second: Potion SS_269
+  - first:
+      213: 5255732656988152365
+    second: Potion SS_270
+  - first:
+      213: -1135966899696677721
+    second: Potion SS_271
+  - first:
+      213: -7010896613326171724
+    second: Potion SS_272
+  - first:
+      213: 7455657313419329264
+    second: Potion SS_273
+  - first:
+      213: 5896994091060330012
+    second: Potion SS_274
+  - first:
+      213: 5300848331339399077
+    second: Potion SS_275
+  - first:
+      213: -8500761863328810041
+    second: Potion SS_276
+  - first:
+      213: -275803483144777775
+    second: Potion SS_277
+  - first:
+      213: -8413720266359851530
+    second: Potion SS_278
+  - first:
+      213: -8170674331598566523
+    second: Potion SS_279
+  - first:
+      213: 2810006124989644610
+    second: Potion SS_280
+  - first:
+      213: -8872186781455659114
+    second: Potion SS_281
+  - first:
+      213: -4420743519697153841
+    second: Potion SS_282
+  - first:
+      213: 1971755513621550891
+    second: Potion SS_283
+  - first:
+      213: -2200902930217871411
+    second: Potion SS_284
+  - first:
+      213: 8234456610396195939
+    second: Potion SS_285
+  - first:
+      213: -8440128220914328700
+    second: Potion SS_286
+  - first:
+      213: -116993924127471214
+    second: Potion SS_287
+  - first:
+      213: 936778055055410793
+    second: Potion SS_288
+  - first:
+      213: 4731069559831736366
+    second: Potion SS_289
+  - first:
+      213: -2569632668375973025
+    second: Potion SS_290
+  - first:
+      213: -7707558516389202762
+    second: Potion SS_291
+  - first:
+      213: 6935396329355670997
+    second: Potion SS_292
+  - first:
+      213: 2281386939537877343
+    second: Potion SS_293
+  - first:
+      213: -25407425157772753
+    second: Potion SS_294
+  - first:
+      213: 4782468169689621300
+    second: Potion SS_295
+  - first:
+      213: -8304302444187052412
+    second: Potion SS_296
+  - first:
+      213: -6286789521270760640
+    second: Potion SS_297
+  - first:
+      213: -4047366919548967186
+    second: Potion SS_298
+  - first:
+      213: -5694961374025625412
+    second: Potion SS_299
+  - first:
+      213: -787670712291359620
+    second: Potion SS_300
+  - first:
+      213: -1851089585849950898
+    second: Potion SS_301
+  - first:
+      213: 5914796335517705678
+    second: Potion SS_302
+  - first:
+      213: 5885559449006020513
+    second: Potion SS_303
+  - first:
+      213: 6750970310311615204
+    second: Potion SS_304
+  - first:
+      213: -7190259690024628093
+    second: Potion SS_305
+  - first:
+      213: -3557213637883777493
+    second: Potion SS_306
+  - first:
+      213: 3034253997814149290
+    second: Potion SS_307
+  - first:
+      213: -4217146234727272130
+    second: Potion SS_308
+  - first:
+      213: 1487826770079994244
+    second: Potion SS_309
+  - first:
+      213: -8613145661046249422
+    second: Potion SS_310
+  - first:
+      213: 3128242426659944067
+    second: Potion SS_311
+  - first:
+      213: 2561411843316971859
+    second: Potion SS_312
+  - first:
+      213: -8969461612979901108
+    second: Potion SS_313
+  - first:
+      213: 2968447924017197306
+    second: Potion SS_314
+  - first:
+      213: -5016793979860124038
+    second: Potion SS_315
+  - first:
+      213: -2889338641031850432
+    second: Potion SS_316
+  - first:
+      213: -7342061547183888184
+    second: Potion SS_317
+  - first:
+      213: 6330595870689956360
+    second: Potion SS_318
+  - first:
+      213: 7828156188197371178
+    second: Potion SS_319
+  - first:
+      213: 6403202052255016030
+    second: Potion SS_320
+  - first:
+      213: 2670524750741501584
+    second: Potion SS_321
+  - first:
+      213: -4203163975930578654
+    second: Potion SS_322
+  - first:
+      213: 9059524113875124900
+    second: Potion SS_323
+  - first:
+      213: 3579547063564477442
+    second: Potion SS_324
+  - first:
+      213: -2769454140030369237
+    second: Potion SS_325
+  - first:
+      213: -1414313708855954049
+    second: Potion SS_326
+  - first:
+      213: -83508629813390751
+    second: Potion SS_327
+  - first:
+      213: 4262042812324070276
+    second: Potion SS_328
+  - first:
+      213: -5152479587983431490
+    second: Potion SS_329
+  - first:
+      213: 7990571172880672382
+    second: Potion SS_330
+  - first:
+      213: -4370159766483217525
+    second: Potion SS_331
+  - first:
+      213: -4928052895508412947
+    second: Potion SS_332
+  - first:
+      213: -4355740498539858930
+    second: Potion SS_333
+  - first:
+      213: -1730392735849002580
+    second: Potion SS_334
+  - first:
+      213: -8630211804233951013
+    second: Potion SS_335
+  - first:
+      213: -1974287490641903556
+    second: Potion SS_336
+  - first:
+      213: -6778202219739261527
+    second: Potion SS_337
+  - first:
+      213: 3173598545358889986
+    second: Potion SS_338
+  - first:
+      213: 8548059977782337987
+    second: Potion SS_339
+  - first:
+      213: -1119851171710268398
+    second: Potion SS_340
+  - first:
+      213: -6235112564741007135
+    second: Potion SS_341
+  - first:
+      213: -2440712177873508873
+    second: Potion SS_342
+  - first:
+      213: -4724602349985758226
+    second: Potion SS_343
+  - first:
+      213: -6288800046337909959
+    second: Potion SS_344
+  - first:
+      213: 7021727104435516482
+    second: Potion SS_345
+  - first:
+      213: -412475100235008653
+    second: Potion SS_346
+  - first:
+      213: 7644508873750690466
+    second: Potion SS_347
+  - first:
+      213: 4716730870969717695
+    second: Potion SS_348
+  - first:
+      213: -8090346136189765659
+    second: Potion SS_349
+  - first:
+      213: 3771892362709093857
+    second: Potion SS_350
+  - first:
+      213: -2692792224562579724
+    second: Potion SS_351
+  - first:
+      213: 2578071879190281609
+    second: Potion SS_352
+  - first:
+      213: 3280004844969160842
+    second: Potion SS_353
+  - first:
+      213: -7523303925747394218
+    second: Potion SS_354
+  - first:
+      213: 6696381007423158957
+    second: Potion SS_355
+  - first:
+      213: -7484727534473810350
+    second: Potion SS_356
+  - first:
+      213: 6940141490838876920
+    second: Potion SS_357
+  - first:
+      213: 4628463372766240685
+    second: Potion SS_358
+  - first:
+      213: -8768518394937359186
+    second: Potion SS_359
+  - first:
+      213: 368796920640050122
+    second: Potion SS_360
+  - first:
+      213: -3749359026593605987
+    second: Potion SS_361
+  - first:
+      213: -3339641761763613888
+    second: Potion SS_362
+  - first:
+      213: 7289636265001345924
+    second: Potion SS_363
+  - first:
+      213: -3401533373873305568
+    second: Potion SS_364
+  - first:
+      213: 5924321346662987129
+    second: Potion SS_365
+  - first:
+      213: 4190795492531723692
+    second: Potion SS_366
+  - first:
+      213: 4219462248035949902
+    second: Potion SS_367
+  - first:
+      213: 5562380357787315673
+    second: Potion SS_368
+  - first:
+      213: 7525977549332836688
+    second: Potion SS_369
+  - first:
+      213: -1236230342403252913
+    second: Potion SS_370
+  - first:
+      213: 4304487738267841068
+    second: Potion SS_371
+  - first:
+      213: 8917785144646872268
+    second: Potion SS_372
+  - first:
+      213: -1386746225887751875
+    second: Potion SS_373
+  - first:
+      213: 6106610074675633667
+    second: Potion SS_374
+  - first:
+      213: 2962232670936573510
+    second: Potion SS_375
+  - first:
+      213: 2173438687353251173
+    second: Potion SS_376
+  - first:
+      213: 1189356063567767272
+    second: Potion SS_377
+  - first:
+      213: -4414923848687670267
+    second: Potion SS_378
+  - first:
+      213: -5155985198287655048
+    second: Potion SS_379
+  - first:
+      213: -2363434057717650583
+    second: Potion SS_380
+  - first:
+      213: -3272086714119644805
+    second: Potion SS_381
+  - first:
+      213: 6012993060256092913
+    second: Potion SS_382
+  - first:
+      213: 6924707724260932814
+    second: Potion SS_383
+  - first:
+      213: -5362642912441280374
+    second: Potion SS_384
+  - first:
+      213: -652417532028946615
+    second: Potion SS_385
+  - first:
+      213: 7715932788121266959
+    second: Potion SS_386
+  - first:
+      213: -7048882062836074059
+    second: Potion SS_387
+  - first:
+      213: 5737471973611461057
+    second: Potion SS_388
+  - first:
+      213: -5482735655395174671
+    second: Potion SS_389
+  - first:
+      213: 6013243091792979588
+    second: Potion SS_390
+  - first:
+      213: 7064252630362039223
+    second: Potion SS_391
+  - first:
+      213: 5913474477956080185
+    second: Potion SS_392
+  - first:
+      213: -1198728652627229079
+    second: Potion SS_393
+  - first:
+      213: -5595800524307052651
+    second: Potion SS_394
+  - first:
+      213: -4919190777743155380
+    second: Potion SS_395
+  - first:
+      213: -360114494817116069
+    second: Potion SS_396
+  - first:
+      213: -4149701443618766063
+    second: Potion SS_397
+  - first:
+      213: -8041132271918136073
+    second: Potion SS_398
+  - first:
+      213: 3448862130702307775
+    second: Potion SS_399
+  - first:
+      213: 745352762806172557
+    second: Potion SS_400
+  - first:
+      213: -4337982717146784983
+    second: Potion SS_401
+  - first:
+      213: 3880104463112010566
+    second: Potion SS_402
+  - first:
+      213: 5294501102570043312
+    second: Potion SS_403
+  - first:
+      213: 3059208781840380286
+    second: Potion SS_404
+  - first:
+      213: 386589170427372628
+    second: Potion SS_405
+  - first:
+      213: -7137649343014839006
+    second: Potion SS_406
+  - first:
+      213: 2423230961190263818
+    second: Potion SS_407
+  - first:
+      213: 932477091519372404
+    second: Potion SS_408
+  - first:
+      213: -5783961819964270984
+    second: Potion SS_409
+  - first:
+      213: 1372975537267548246
+    second: Potion SS_410
+  - first:
+      213: -3644405183926966599
+    second: Potion SS_411
+  - first:
+      213: -1262875310985790190
+    second: Potion SS_412
+  - first:
+      213: 7054565297196770584
+    second: Potion SS_413
+  - first:
+      213: -2154434322758089554
+    second: Potion SS_414
+  - first:
+      213: -1886189527281286199
+    second: Potion SS_415
+  - first:
+      213: -385925925975307640
+    second: Potion SS_416
+  - first:
+      213: 3324214550074324472
+    second: Potion SS_417
+  - first:
+      213: -6598723666192207969
+    second: Potion SS_418
+  - first:
+      213: 4694443623154668006
+    second: Potion SS_419
+  - first:
+      213: -185583441704475052
+    second: Potion SS_420
+  - first:
+      213: -1134963523985025180
+    second: Potion SS_421
+  - first:
+      213: -8404817973585799378
+    second: Potion SS_422
+  - first:
+      213: 2902316813039552119
+    second: Potion SS_423
+  - first:
+      213: 7230779309867055117
+    second: Potion SS_424
+  - first:
+      213: 621509084455586463
+    second: Potion SS_425
+  - first:
+      213: 7625398242277460380
+    second: Potion SS_426
+  - first:
+      213: -8123656192266385625
+    second: Potion SS_427
+  - first:
+      213: 5216472445861051336
+    second: Potion SS_428
+  - first:
+      213: 332485416308260629
+    second: Potion SS_429
+  - first:
+      213: -7058024503292977691
+    second: Potion SS_430
+  - first:
+      213: -4588703245589492590
+    second: Potion SS_431
+  - first:
+      213: -6012751421347984707
+    second: Potion SS_432
+  - first:
+      213: -3761447975589767707
+    second: Potion SS_433
+  - first:
+      213: 1931860100903706091
+    second: Potion SS_434
+  - first:
+      213: -8149386858399482530
+    second: Potion SS_435
+  - first:
+      213: 9031877001699099191
+    second: Potion SS_436
+  - first:
+      213: -8421439130117179106
+    second: Potion SS_437
+  - first:
+      213: 1236233155719724703
+    second: Potion SS_438
+  - first:
+      213: 5683956229307618743
+    second: Potion SS_439
+  - first:
+      213: 5793185432954231306
+    second: Potion SS_440
+  - first:
+      213: 6100324519522498203
+    second: Potion SS_441
+  - first:
+      213: 6997874738346497587
+    second: Potion SS_442
+  - first:
+      213: -2458404451399802062
+    second: Potion SS_443
+  - first:
+      213: -2585960883117532750
+    second: Potion SS_444
+  - first:
+      213: 8985637194467056959
+    second: Potion SS_445
+  - first:
+      213: 7795837559534822574
+    second: Potion SS_446
+  - first:
+      213: 874766625659049710
+    second: Potion SS_447
+  - first:
+      213: 4599015831243844589
+    second: Potion SS_448
+  - first:
+      213: -6195564807838595846
+    second: Potion SS_449
+  - first:
+      213: 8223624875887127125
+    second: Potion SS_450
+  - first:
+      213: 6135659482158408804
+    second: Potion SS_451
+  - first:
+      213: -5238335417216280441
+    second: Potion SS_452
+  - first:
+      213: -5599131979523727960
+    second: Potion SS_453
+  - first:
+      213: 4850447630817301994
+    second: Potion SS_454
+  - first:
+      213: -4420146797928890172
+    second: Potion SS_455
+  - first:
+      213: -8746878023363089733
+    second: Potion SS_456
+  - first:
+      213: -931113216828601430
+    second: Potion SS_457
+  - first:
+      213: 5272440283688320540
+    second: Potion SS_458
+  - first:
+      213: -5896501407001309740
+    second: Potion SS_459
+  - first:
+      213: 1208773904091373464
+    second: Potion SS_460
+  - first:
+      213: -6213716482992732758
+    second: Potion SS_461
+  - first:
+      213: -8978729500779833477
+    second: Potion SS_462
+  - first:
+      213: -2851160661675275164
+    second: Potion SS_463
+  - first:
+      213: -4126542851495557428
+    second: Potion SS_464
+  - first:
+      213: 4014485629928971826
+    second: Potion SS_465
+  - first:
+      213: -8745655743994655328
+    second: Potion SS_466
+  - first:
+      213: 9063786488090359455
+    second: Potion SS_467
+  - first:
+      213: 4118881739391108297
+    second: Potion SS_468
+  - first:
+      213: 1648603493718122736
+    second: Potion SS_469
+  - first:
+      213: -6913131425144379242
+    second: Potion SS_470
+  - first:
+      213: -170158756224390561
+    second: Potion SS_471
+  - first:
+      213: 8170198786898842499
+    second: Potion SS_472
+  - first:
+      213: -6922170725491870521
+    second: Potion SS_473
+  - first:
+      213: 3088444129171494647
+    second: Potion SS_474
+  - first:
+      213: -7610459485163229142
+    second: Potion SS_475
+  - first:
+      213: 5100933285008925291
+    second: Potion SS_476
+  - first:
+      213: -4919329613699066010
+    second: Potion SS_477
+  - first:
+      213: 7086883325343735235
+    second: Potion SS_478
+  - first:
+      213: -3419833402053550910
+    second: Potion SS_479
+  - first:
+      213: -8473170829874939194
+    second: Potion SS_480
+  - first:
+      213: -2434688870232071197
+    second: Potion SS_481
+  - first:
+      213: -5798024768645339133
+    second: Potion SS_482
+  - first:
+      213: 5288856751431109004
+    second: Potion SS_483
+  - first:
+      213: -189021308352017191
+    second: Potion SS_484
+  - first:
+      213: -8156439769587852560
+    second: Potion SS_485
+  - first:
+      213: -4498134357931151859
+    second: Potion SS_486
+  - first:
+      213: -939691462589468193
+    second: Potion SS_487
+  - first:
+      213: -5973245983510319565
+    second: Potion SS_488
+  - first:
+      213: 7477103415315589081
+    second: Potion SS_489
+  - first:
+      213: 2518488871032316197
+    second: Potion SS_490
+  - first:
+      213: 960586304848791132
+    second: Potion SS_491
+  - first:
+      213: 8576596255491591182
+    second: Potion SS_492
+  - first:
+      213: 8883951913131690455
+    second: Potion SS_493
+  - first:
+      213: 7869296452215838010
+    second: Potion SS_494
+  - first:
+      213: -1037565115971814001
+    second: Potion SS_495
+  - first:
+      213: 2024884443070304521
+    second: Potion SS_496
+  - first:
+      213: -6153423414457407605
+    second: Potion SS_497
+  - first:
+      213: 884973580372361545
+    second: Potion SS_498
+  - first:
+      213: 415537819991058483
+    second: Potion SS_499
+  - first:
+      213: -3403334549530271032
+    second: Potion SS_500
+  - first:
+      213: 2634350193516054047
+    second: Potion SS_501
+  - first:
+      213: 6421095993379044788
+    second: Potion SS_502
+  - first:
+      213: -4168705530293197479
+    second: Potion SS_503
+  - first:
+      213: -1431497912551317882
+    second: Potion SS_504
+  - first:
+      213: -3655654381785174811
+    second: Potion SS_505
+  - first:
+      213: -2209297507442836486
+    second: Potion SS_506
+  - first:
+      213: 6272509578633728202
+    second: Potion SS_507
+  - first:
+      213: -8813160814463233565
+    second: Potion SS_508
+  - first:
+      213: 4600001019560021430
+    second: Potion SS_509
+  - first:
+      213: 6869546558652641381
+    second: Potion SS_510
+  - first:
+      213: -8798717576970487643
+    second: Potion SS_511
+  - first:
+      213: 9157005452045031124
+    second: Potion SS_512
+  - first:
+      213: 2177664008831948215
+    second: Potion SS_513
+  - first:
+      213: 233333593771867337
+    second: Potion SS_514
+  - first:
+      213: 11562904591749078
+    second: Potion SS_515
+  - first:
+      213: 8062561268722087909
+    second: Potion SS_516
+  - first:
+      213: -9171670093054090533
+    second: Potion SS_517
+  - first:
+      213: -6292417589806670763
+    second: Potion SS_518
+  - first:
+      213: -1618016872199288946
+    second: Potion SS_519
+  - first:
+      213: 2281593958584817498
+    second: Potion SS_520
+  - first:
+      213: 4965718380588553061
+    second: Potion SS_521
+  - first:
+      213: -4151148047191502560
+    second: Potion SS_522
+  - first:
+      213: -4126834689702590574
+    second: Potion SS_523
+  - first:
+      213: 3290984469705014030
+    second: Potion SS_524
+  - first:
+      213: -1316731995261434797
+    second: Potion SS_525
+  - first:
+      213: -6485896180776028089
+    second: Potion SS_526
+  - first:
+      213: 8664808579361495562
+    second: Potion SS_527
+  - first:
+      213: -216908692208449840
+    second: Potion SS_528
+  - first:
+      213: -5661104500317720358
+    second: Potion SS_529
+  - first:
+      213: 7116613085175104469
+    second: Potion SS_530
+  - first:
+      213: 5880015114467321850
+    second: Potion SS_531
+  - first:
+      213: -649465456056870680
+    second: Potion SS_532
+  - first:
+      213: 8660121724057016834
+    second: Potion SS_533
+  - first:
+      213: -2219199527697546081
+    second: Potion SS_534
+  - first:
+      213: 8039075046482612081
+    second: Potion SS_535
+  - first:
+      213: -8164720960969872666
+    second: Potion SS_536
+  - first:
+      213: 5322501105102221939
+    second: Potion SS_537
+  - first:
+      213: 2393903123187346298
+    second: Potion SS_538
+  - first:
+      213: -7163141924568853810
+    second: Potion SS_539
+  - first:
+      213: 2455806836207309407
+    second: Potion SS_540
+  - first:
+      213: 4418822471188816723
+    second: Potion SS_541
+  - first:
+      213: 4326532582130574218
+    second: Potion SS_542
+  - first:
+      213: 8099598789917284563
+    second: Potion SS_543
+  - first:
+      213: -8019882230404666062
+    second: Potion SS_544
+  - first:
+      213: -476255231838026335
+    second: Potion SS_545
+  - first:
+      213: 4587037470349229137
+    second: Potion SS_546
+  - first:
+      213: -2444011714902430649
+    second: Potion SS_547
+  - first:
+      213: 6568477148642397237
+    second: Potion SS_548
+  - first:
+      213: 8626874031397835063
+    second: Potion SS_549
+  - first:
+      213: 1881673279632588383
+    second: Potion SS_550
+  - first:
+      213: -6398142495642049707
+    second: Potion SS_551
+  - first:
+      213: -8503892739123788099
+    second: Potion SS_552
+  - first:
+      213: -4224123200112839616
+    second: Potion SS_553
+  - first:
+      213: -8540552177323592858
+    second: Potion SS_554
+  - first:
+      213: 3904968600212590435
+    second: Potion SS_555
+  - first:
+      213: -8737013102297511704
+    second: Potion SS_556
+  - first:
+      213: -8260749113075058473
+    second: Potion SS_557
+  - first:
+      213: -1748679430185122681
+    second: Potion SS_558
+  - first:
+      213: 8164918123213375520
+    second: Potion SS_559
+  - first:
+      213: 2619356165167724068
+    second: Potion SS_560
+  - first:
+      213: 8096588597959796933
+    second: Potion SS_561
+  - first:
+      213: 5903219508179731313
+    second: Potion SS_562
+  - first:
+      213: -1806107209906969369
+    second: Potion SS_563
+  - first:
+      213: -7728591726284575952
+    second: Potion SS_564
+  - first:
+      213: 6909638372622174434
+    second: Potion SS_565
+  - first:
+      213: 2938262209420297788
+    second: Potion SS_566
+  - first:
+      213: 6869372455921829611
+    second: Potion SS_567
+  - first:
+      213: -3304384208606720347
+    second: Potion SS_568
+  - first:
+      213: 603257683890744385
+    second: Potion SS_569
+  - first:
+      213: -5769910382127310744
+    second: Potion SS_570
+  - first:
+      213: -7157662383725028612
+    second: Potion SS_571
+  - first:
+      213: 8344453964360752389
+    second: Potion SS_572
+  - first:
+      213: -6244732475810833010
+    second: Potion SS_573
+  - first:
+      213: -6424359113047495467
+    second: Potion SS_574
+  - first:
+      213: -3360132747790909531
+    second: Potion SS_575
+  - first:
+      213: -371134627121709391
+    second: Potion SS_576
+  - first:
+      213: -2443801021836067367
+    second: Potion SS_577
+  - first:
+      213: 6961567008026829127
+    second: Potion SS_578
+  - first:
+      213: 4277383304200674290
+    second: Potion SS_579
+  - first:
+      213: -2111449056824635865
+    second: Potion SS_580
+  - first:
+      213: 514332107981142050
+    second: Potion SS_581
+  - first:
+      213: 7798699299056088840
+    second: Potion SS_582
+  - first:
+      213: 2434907493591654366
+    second: Potion SS_583
+  - first:
+      213: -3173017009430454150
+    second: Potion SS_584
+  - first:
+      213: 8120783445190583051
+    second: Potion SS_585
+  - first:
+      213: -2599341689632673218
+    second: Potion SS_586
+  - first:
+      213: 7062630574331782591
+    second: Potion SS_587
+  - first:
+      213: -2838129930251968079
+    second: Potion SS_588
+  - first:
+      213: -4471525425446580995
+    second: Potion SS_589
+  - first:
+      213: -9004425992096712122
+    second: Potion SS_590
+  - first:
+      213: -3241396937840366738
+    second: Potion SS_591
+  - first:
+      213: 7576607941784088200
+    second: Potion SS_592
+  - first:
+      213: -8144116935846630536
+    second: Potion SS_593
+  - first:
+      213: -3849464070052781286
+    second: Potion SS_594
+  - first:
+      213: -662607837482834537
+    second: Potion SS_595
+  - first:
+      213: 2959937475883209532
+    second: Potion SS_596
+  - first:
+      213: 909031621237539588
+    second: Potion SS_597
+  - first:
+      213: -9016717523679401273
+    second: Potion SS_598
+  - first:
+      213: 145291704403419016
+    second: Potion SS_599
+  - first:
+      213: 5225195680263374337
+    second: Potion SS_600
+  - first:
+      213: 258562621692707169
+    second: Potion SS_601
+  - first:
+      213: -2046692240436760457
+    second: Potion SS_602
+  - first:
+      213: -437197872975216499
+    second: Potion SS_603
+  - first:
+      213: -6361131560844836832
+    second: Potion SS_604
+  - first:
+      213: 4268383437633674166
+    second: Potion SS_605
+  - first:
+      213: -3244064126541480983
+    second: Potion SS_606
+  - first:
+      213: -2995840571945672046
+    second: Potion SS_607
+  - first:
+      213: -7400071414275187336
+    second: Potion SS_608
+  - first:
+      213: -4877261049312572974
+    second: Potion SS_609
+  - first:
+      213: 6171414210624203553
+    second: Potion SS_610
+  - first:
+      213: -2475112886411066098
+    second: Potion SS_611
+  - first:
+      213: 2183705056775005014
+    second: Potion SS_612
+  - first:
+      213: -7535993423587954153
+    second: Potion SS_613
+  - first:
+      213: -8053904292747597120
+    second: Potion SS_614
+  - first:
+      213: -1486007614441991310
+    second: Potion SS_615
+  - first:
+      213: 7223178842946995977
+    second: Potion SS_616
+  - first:
+      213: 2279020612479670051
+    second: Potion SS_617
+  - first:
+      213: -5036684402590296332
+    second: Potion SS_618
+  - first:
+      213: 5105587590050503827
+    second: Potion SS_619
+  - first:
+      213: 4106234235169673265
+    second: Potion SS_620
+  - first:
+      213: 5439045018987253613
+    second: Potion SS_621
+  - first:
+      213: 2324725564833243816
+    second: Potion SS_622
+  - first:
+      213: -5159710449869867101
+    second: Potion SS_623
+  - first:
+      213: -4609800929685159130
+    second: Potion SS_624
+  - first:
+      213: -7169098661314239180
+    second: Potion SS_625
+  - first:
+      213: 8074468828260140923
+    second: Potion SS_626
+  - first:
+      213: 2573943269550627966
+    second: Potion SS_627
+  - first:
+      213: 3952850867266742066
+    second: Potion SS_628
+  - first:
+      213: -8184909175643087649
+    second: Potion SS_629
+  - first:
+      213: -3628329879695365328
+    second: Potion SS_0
+  - first:
+      213: 1702454768437901691
+    second: Potion SS_1
+  - first:
+      213: 7533183091593206563
+    second: Potion SS_6
+  - first:
+      213: 4363126587847061225
+    second: Potion SS_7
+  - first:
+      213: -1359485139082006672
+    second: Potion SS_11
+  - first:
+      213: 3035875082227344637
+    second: Potion SS_2
+  - first:
+      213: -1733006774009339136
+    second: Potion SS_3
+  - first:
+      213: -956537876312678102
+    second: Potion SS_4
+  - first:
+      213: 1806652243318576076
+    second: Potion SS_5
+  - first:
+      213: 3838856355398790681
+    second: Potion SS_8
+  - first:
+      213: 799847426185870363
+    second: Potion SS_9
+  - first:
+      213: -952896897924046764
+    second: Potion SS_10
+  - first:
+      213: -4411457786839101266
+    second: Potion SS_12
+  - first:
+      213: -3532863216555313790
+    second: Potion SS_13
+  - first:
+      213: 5248759970922316715
+    second: Potion SS_14
+  - first:
+      213: -8846761509437046328
+    second: Potion SS_15
+  - first:
+      213: -640034020160544991
+    second: Potion SS_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Potion SS_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b62d8b23595adc0800000000000000
+      internalID: 8297229067165804080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_1
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7939e6879550a710800000000000000
+      internalID: -5173147473684228595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_2
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4ee927d48912a20800000000000000
+      internalID: -9010055933261044583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_3
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003e3d9558f13f7e0800000000000000
+      internalID: -424252806439320495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_4
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a212d249ed1b9b2f0800000000000000
+      internalID: -24011257865525313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_5
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 3524
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc39aaba4a4821910800000000000000
+      internalID: -8652980164637849736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b546afb1e3b8860800000000000000
+      internalID: -1989062189348906800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_7
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eeafaac380fc8c30800000000000000
+      internalID: -2050515264373814532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_8
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eab4f148b564530800000000000000
+      internalID: -1555636425039893242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_9
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cb1501ff0a91b00800000000000000
+      internalID: -7607517322893295665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_10
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4506aabe151a6c2f0800000000000000
+      internalID: 4434752381243017764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_11
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 2877
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f28970873222de0800000000000000
+      internalID: 5970302079643732706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_12
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2230
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea013d9048a57c2c0800000000000000
+      internalID: 2045010059359965389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_13
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 2230
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2853d295f9fb8fec0800000000000000
+      internalID: -5886017347090281387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_14
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 2230
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba34d1a626757d840800000000000000
+      internalID: 137952470968806657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_15
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 2230
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c10861874df93580800000000000000
+      internalID: 6417454194345702696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion SS_16
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 2230
+        width: 298
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f5a2023742e17f0800000000000000
+      internalID: -7956094212137441704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 468139268a24c0e48beeb9c25a04561d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Potion SS_8: -1555636425039893242
+      Potion SS_6: -1989062189348906800
+      Potion SS_7: -2050515264373814532
+      Potion SS_15: 6417454194345702696
+      Potion SS_9: -7607517322893295665
+      Potion SS_16: -7956094212137441704
+      Potion SS_5: -8652980164637849736
+      Potion SS_2: -9010055933261044583
+      Potion SS_1: -5173147473684228595
+      Potion SS_4: -24011257865525313
+      Potion SS_3: -424252806439320495
+      Potion SS_12: 2045010059359965389
+      Potion SS_14: 137952470968806657
+      Potion SS_0: 8297229067165804080
+      Potion SS_10: 4434752381243017764
+      Potion SS_11: 5970302079643732706
+      Potion SS_13: -5886017347090281387
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

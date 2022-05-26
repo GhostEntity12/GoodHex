@@ -67,6 +67,7 @@ public class Task : MonoBehaviour
 						point.AssignedRat.InPlace();
 					}
 				}
+				progressBar.SetRats(taskPoints.Where(t => t.InRange).Count());
 				if (RatsInPlace && SlotsFilled == taskPoints.Length)
 				{
 					progress += Time.deltaTime / taskDuration;
