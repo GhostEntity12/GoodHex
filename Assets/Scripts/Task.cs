@@ -33,8 +33,9 @@ public class Task : MonoBehaviour
 	[SerializeField] float progressBarOffset = 2f;
 	Renderer r;
 	[SerializeField] Sprite normalSprite, highlightSprite;
-	Color highlightColor = new(1, 0.9f, 0.5f, 0.8f);
-
+	Color highlightColor = new(0.5f, 1f, 0.3f, 0.8f);
+	[SerializeField] Animator anim;
+	[SerializeField] ParticleSystem particle;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -70,6 +71,14 @@ public class Task : MonoBehaviour
 				progressBar.SetRats(taskPoints.Where(t => t.InRange).Count());
 				if (RatsInPlace && SlotsFilled == taskPoints.Length)
 				{
+					if (anim)
+					{
+						anim.SetBool("active", true);
+					}
+					if (particle)
+					{
+						particle.Play();
+					}
 					progress += Time.deltaTime / taskDuration;
 					progressBar.SetProgress(progress);
 					if (progress >= 1)
@@ -100,6 +109,14 @@ public class Task : MonoBehaviour
 	{
 		progressBar.SetActive(false);
 		TaskState = State.Complete;
+		if (particle)
+		{
+			particle.Stop();
+		}
+		if (anim)
+		{
+			anim.SetBool("active", false);
+		}
 
 		// Unset Rats
 		foreach (TaskPoint point in taskPoints)
@@ -110,7 +127,6 @@ public class Task : MonoBehaviour
 
 	public void Hover(bool hovering)
 	{
-		Debug.Log("Hover");
 		if (TaskState != State.Unlocked) return;
 		if (hovering && RatManager.Instance.HasSelectedRats)
 		{

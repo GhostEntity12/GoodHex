@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StM_KitchenBottle
+  m_Name: StM_TaskKitchen_Bottle
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: New Trigger

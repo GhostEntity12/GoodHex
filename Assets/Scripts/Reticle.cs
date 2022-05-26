@@ -53,35 +53,37 @@ public class Reticle : MonoBehaviour
 					Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize &&
 					!RatManager.Instance.selectedRats.Contains(r))
 				.ToList();
-
-			if (hoverTask) // Assign to task
-			{
-				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
-				// Clear selected rats
-				RatManager.Instance.selectedRats.Clear();
-				// Select the rats without tasks
-				RatManager.Instance.SelectRats(remainingRats);
-				// Set their destinations
-				RatManager.Instance.SetRatDestinations(transform.position);
-				//// Reselect the assigned rats for consistency
-				//// This currently selects all rats on the task, rework?
-				//RatManager.Instance.SelectRats(hoverTask.AssignedRats);
-			}
-			else if (unselectedRats.Count == 0) // Set destination
-			{
-				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
-			}
-			else if (unselectedRats.Count > 0) // Select rats
+			if (unselectedRats.Count > 0) // Select rats
 			{
 				RatManager.Instance.SelectRats(unselectedRats);
 				anim.SetBool("Active", true);
 			}
+			else // Deselect
+			{
+				RatManager.Instance.ClearRats();
+				anim.SetBool("Active", false);
+			}
 		}
-		if (Input.GetMouseButtonDown(1)) // Deselect
+		if (Input.GetMouseButtonDown(1)) 
 		{
-			RatManager.Instance.ClearRats();
-			anim.SetBool("Active", false);
+			if (hoverTask) // Assign to task
+			{
+				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
+				// Clear selected rats
+				RatManager.Instance.ClearRats();
+				// Select the rats without tasks
+				//RatManager.Instance.SelectRats(remainingRats);
+				// Set their destinations
+				//RatManager.Instance.SetRatDestinations(transform.position);
+				//// Reselect the assigned rats for consistency
+				//// This currently selects all rats on the task, rework?
+				//RatManager.Instance.SelectRats(hoverTask.AssignedRats);
+			}
+			else
+			{
+				RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
+			}
 		}
 	}
 

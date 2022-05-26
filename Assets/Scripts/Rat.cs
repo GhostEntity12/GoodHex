@@ -28,6 +28,7 @@ public class Rat : MonoBehaviour
 	private void Update()
 	{
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
+		anim.SetBool("wandering", Wandering);
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
