@@ -110,6 +110,7 @@ public class Task : MonoBehaviour
 
 	public void Hover(bool hovering)
 	{
+		Debug.Log("Hover");
 		if (TaskState != State.Unlocked) return;
 		if (hovering && RatManager.Instance.HasSelectedRats)
 		{
@@ -119,7 +120,7 @@ public class Task : MonoBehaviour
 					m.material.color = highlightColor;
 					break;
 				case SpriteRenderer s:
-					s.sprite = highlightSprite;
+					s.color = highlightColor;
 					break;
 				default:
 					break;
@@ -134,7 +135,7 @@ public class Task : MonoBehaviour
 					m.material.color = new(0, 0, 0, 0);
 					break;
 				case SpriteRenderer s:
-					s.sprite = normalSprite;
+					s.color = new(0, 0, 0, 0);
 					break;
 				default:
 					break;

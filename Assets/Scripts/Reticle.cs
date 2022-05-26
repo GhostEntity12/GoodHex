@@ -56,7 +56,6 @@ public class Reticle : MonoBehaviour
 
 			if (hoverTask) // Assign to task
 			{
-				Debug.Log(("Clicked on task"), this);
 				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
 				// Clear selected rats
 				RatManager.Instance.selectedRats.Clear();
