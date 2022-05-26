@@ -30,7 +30,7 @@ public class NarrativeScript : MonoBehaviour
                 narrative.alpha = Mathf.Lerp(0f, 1f, timer / fadeSpeed);
                 if (narrative.alpha == 1) {
                     delayTime += Time.deltaTime;
-                    if (delayTime > delayAmount) {
+                    if (delayTime > delayAmount || Input.GetMouseButtonDown(0)) {
                         showing = true;
                         timer = 0;
                         delayTime = 0;
