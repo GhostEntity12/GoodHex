@@ -28,6 +28,10 @@ public class Clock : MonoBehaviour
 	/// Bool to check if audio is playing
 	/// </summary>
 	private bool isPlaying = false;
+	/// <summary>
+	/// ProgressBar to track time spent
+	/// </summary>
+	[SerializeField] SimplifiedPB pb;
  
 	[Header("Debug")]
 	[SerializeField] TextMeshProUGUI text;
@@ -40,6 +44,8 @@ public class Clock : MonoBehaviour
 		if (timePercent <= 1f)
 		{
 			time += Time.deltaTime;
+
+			pb.AddProgress(Time.deltaTime / dayLength);
 
 			// Rotate the clock sprite
 			// TODO: replace angles

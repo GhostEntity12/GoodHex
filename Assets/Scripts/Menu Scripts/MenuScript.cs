@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-	public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName);
+	public void LoadScene(string sceneName) => StartCoroutine(DelayLoadScene(sceneName));
+	private IEnumerator DelayLoadScene(string sceneName) {
+		yield return new WaitForSeconds(1);
+		SceneManager.LoadScene(sceneName);
+	}
 	public void Quit()
 	{
 		Application.Quit();
