@@ -2,46 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class NarrativeScript : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI narrative1;
-    [SerializeField] float duration = 0.5f;
-    [SerializeField] int delay = 5;
-    private Color color;
+    [SerializeField] CanvasGroup narrative;
+    [SerializeField] float fadeSpeed;
+    [SerializeField] float delayAmount;
+    [SerializeField] GameObject button;
+    float delayTime;
+    bool showing = false;
+    bool completed = false;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
+        button.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        FadeIn(narrative1);
-        StartCoroutine(Delay(delay));
-        FadeOut(narrative1);
-    }
+        if (!completed) {
+            timer += Time.deltaTime;
 
-    public void FadeOut(TextMeshProUGUI text) { 
-        float currentTime = 0.0f;
-        color = text.color;
-        while (currentTime < duration) {
-            color.a = Mathf.Lerp(1f, 0f, currentTime/duration);
-            text.color = color;
-            currentTime += Time.deltaTime;
+            if (!showing) {
+                narrative.alpha = Mathf.Lerp(0f, 1f, timer / fadeSpeed);
+                if (narrative.alpha == 1) {
+                    delayTime += Time.deltaTime;
+                    if (delayTime > delayAmount) {
+                        showing = true;
+                        timer = 0;
+                        delayTime = 0;
+                    }
+                }
+            } else {
+                narrative.alpha = Mathf.Lerp(1f, 0f, timer / fadeSpeed);
+                if (narrative.alpha == 0) {
+                    //showing = false;
+                    timer = 0;
+                    completed = true;
+                    button.SetActive(true);
+                }
+            }
         }
-    }
-
-    public void FadeIn(TextMeshProUGUI text) {
-        float currentTime = 0.0f;
-        while (currentTime < duration) {
-            color.a = Mathf.Lerp(0f, 1f, currentTime/duration);
-            text.color = color;
-            currentTime += Time.deltaTime;
-        }
-    }
-
-    private IEnumerator Delay(int delayAmount) {
-        yield return new WaitForSeconds(delayAmount);
     }
 }
