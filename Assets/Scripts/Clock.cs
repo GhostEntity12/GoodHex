@@ -16,7 +16,19 @@ public class Clock : MonoBehaviour
 	/// Transform to rotate
 	/// </summary>
 	[SerializeField] RectTransform clockDisplay;
-
+	/// <summary>
+	/// Starting audio track for scene
+	/// </summary>
+	[SerializeField] AudioSource initialTrack;
+	/// <summary>
+	/// Ending audio track for scene
+	/// </summary>
+	[SerializeField] AudioSource endTrack;
+	/// <summary>
+	/// Bool to check if audio is playing
+	/// </summary>
+	private bool isPlaying = false;
+ 
 	[Header("Debug")]
 	[SerializeField] TextMeshProUGUI text;
 
@@ -38,6 +50,15 @@ public class Clock : MonoBehaviour
 
 			// Display the time in 12h time (has a bunch of handling for nighttime levels)
 			text.text = $"{((time24 + 23) % 12) + 1} {((time24 % 24) < 12 ? "AM" : "PM")}";
+
+			if (timePercent >= 0.8f) {
+				if (!isPlaying) {
+					endTrack.timeSamples = initialTrack.timeSamples;
+					initialTrack.Stop();
+					endTrack.Play();
+					isPlaying = true;
+				}
+			}
 		}
 
 		if (timePercent == 1)
