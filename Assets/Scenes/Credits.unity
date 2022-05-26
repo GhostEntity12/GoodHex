@@ -763,8 +763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212.98547, y: -168.00002}
-  m_SizeDelta: {x: 283.155, y: 851.275}
+  m_AnchoredPosition: {x: 235.72978, y: -168.00002}
+  m_SizeDelta: {x: 328.6436, y: 851.275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002517088
 MonoBehaviour:
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_text: 'Oliver B
 
 
-    Cherish B
+    Cherish G-M
 
     Jordan C
 
