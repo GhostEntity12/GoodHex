@@ -29,7 +29,10 @@ namespace Ghost
 				if (matchingPrefab.Length > 0)
 				{
 					successCount++;
-					GameObject obj = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(matchingPrefab[0], fixedAssets.transform);
+					GameObject obj = new();
+#if UNITY_EDITOR
+					obj = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(matchingPrefab[0], fixedAssets.transform);
+#endif
 					obj.transform.position = child.position;
 					obj.transform.rotation = child.rotation;
 					obj.transform.localScale = child.localScale;
