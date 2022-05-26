@@ -5,7 +5,7 @@ using UnityEngine;
 public class TaskCompletion : Task
 {
 	bool gameComplete = false;
-	public override void OnActivate()
+	public override void OnUnlock()
 	{
 		if (!gameComplete)
 		{

@@ -8,7 +8,7 @@ public class Reticle : MonoBehaviour
 	Animator anim;
 	SpriteRenderer graphic;
 
-	float clampedMouseWheelInput;
+	float clampedMouseWheelInput = 2;
 	float circleSize = 1f;
 
 	Task hoverTask;
@@ -30,30 +30,10 @@ public class Reticle : MonoBehaviour
 
 	void Update()
 	{
-		targetColor = RatManager.Instance.HasSelectedRats && hoverTask
-			? taskColor
-			: RatManager.Instance.HasSelectedRats ? ratsColor : defaultColor;
+		SetSize();
+		SetPosition();
 
-		graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, targetColor, colorChangeSpeed * Time.deltaTime);
-
-		// Mouse wheel to set size
-		clampedMouseWheelInput += Input.mouseScrollDelta.y;
-		clampedMouseWheelInput = Mathf.Clamp(clampedMouseWheelInput, 0, 4);
-		circleSize = clampedMouseWheelInput / 2 + 1;
-		transform.localScale = new Vector3(circleSize, 1, circleSize); // Reset Y scale to prevent lifting
-
-		// Raycast to set reticle position
-		// 1 << 8 is Surface, hit.normal is > 0 when it is vaguely upwards
-		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
-		{
-			graphic.enabled = true;
-			transform.position = hit.point;
-		}
-		else
-		{
-			graphic.enabled = false;
-			return;
-		}
+		SetColor();
 
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 		 * LOGIC FOR SELECTION
@@ -63,20 +43,6 @@ public class Reticle : MonoBehaviour
 		 * 4) if rats are selected and clicked on NOT selected rats, select rats
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-		// Task checking/setting
-		Collider taskCollider = Physics.OverlapSphere(transform.position, 0.5f, 1 << 7).FirstOrDefault();
-		if (!taskCollider)
-		{
-			hoverTask = null;
-		}
-		else
-		{
-			Task t = taskCollider.GetComponent<Task>();
-			if (t.Available)
-			{
-				hoverTask = t;
-			}
-		}
 
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -88,8 +54,9 @@ public class Reticle : MonoBehaviour
 					!RatManager.Instance.selectedRats.Contains(r))
 				.ToList();
 
-			if (hoverTask && hoverTask.Available) // Assign to task
+			if (hoverTask) // Assign to task
 			{
+				Debug.Log(("Clicked on task"), this);
 				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
 				// Clear selected rats
 				RatManager.Instance.selectedRats.Clear();
@@ -118,4 +85,41 @@ public class Reticle : MonoBehaviour
 			anim.SetBool("Active", false);
 		}
 	}
+
+	void SetColor()
+	{
+		targetColor =
+			RatManager.Instance.HasSelectedRats
+			? hoverTask
+				? taskColor
+				: ratsColor
+			: defaultColor;
+
+		graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, targetColor, colorChangeSpeed * Time.deltaTime);
+	}
+
+	void SetSize()
+	{
+		// Mouse wheel to set size
+		clampedMouseWheelInput = Mathf.Clamp(clampedMouseWheelInput + Input.mouseScrollDelta.y, 0, 4);
+		circleSize = clampedMouseWheelInput / 2 + 1;
+		transform.localScale = new Vector3(circleSize, 1, circleSize); // Reset Y scale to prevent lifting
+	}
+
+	void SetPosition()
+	{
+		// Raycast to set reticle position
+		// 1 << 8 is Surface, hit.normal is > 0 when it is vaguely upwards
+		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
+		{
+			graphic.enabled = true;
+			transform.position = hit.point;
+		}
+		else
+		{
+			graphic.enabled = false;
+		}
+	}
+
+	public void SetTask(Task task) => hoverTask = task;
 }

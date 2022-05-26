@@ -21,11 +21,14 @@ public class GameManager : Singleton<GameManager>
 	[Header("Prefabs")]
 	public GameObject progressBarPrefab;
 	public Camera mainCamera;
+	public Reticle Reticle { get; private set; }
 	
 	protected override void Awake()
 	{
 		base.Awake();
 		mainCamera = Camera.main;
+
+		Reticle = FindObjectOfType<Reticle>();
 	}
 	public void Restart() => SceneManager.LoadScene(0);
 

@@ -13,12 +13,12 @@ public class ProgressBar : MonoBehaviour
 	public void AddProgress(float amount) => fill.fillAmount += amount;
 	Vector3 anchoredPos;
 	float offsetTime;
-	public void Setup(Task t, int ratCount)
+	public void Setup(Task t, int ratCount, float offsetHeight)
 	{
 		number.text = ratCount.ToString();
 		SetProgress(0);
 		gameObject.SetActive(false);
-		anchoredPos = GameManager.Instance.mainCamera.WorldToScreenPoint(t.transform.position + Vector3.up * 2);
+		anchoredPos = GameManager.Instance.mainCamera.WorldToScreenPoint(t.transform.position + Vector3.up * offsetHeight);
 	}
 	public void SetActive(bool active) => gameObject.SetActive(active);
 

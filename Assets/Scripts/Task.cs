@@ -2,18 +2,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
 public class Task : MonoBehaviour
 {
+	public enum State { Locked, Unlocked, Complete }
 	[Header("Task Setup")]
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 	[SerializeField, Tooltip("How long the task takes")] float taskDuration;
-	/// <summary>
-	/// Whether the task is currently available for completion
-	/// </summary>
-	public bool Available { get; private set; } = false;
 	[Tooltip("How far into completion the task is")] float progress;
-	[Tooltip("Whether the task is completed")] bool complete = false;
+
+	public State TaskState { get; private set; } = State.Locked;
 
 	/// <summary>
 	/// Returns a list of rats that are currently assigned to this task
@@ -31,57 +30,65 @@ public class Task : MonoBehaviour
 	/// The Progress bar for the task
 	/// </summary>
 	ProgressBar progressBar;
+	[SerializeField] float progressBarOffset = 2f;
+	Renderer r;
+	[SerializeField] Sprite normalSprite, highlightSprite;
+	Color highlightColor = new(1, 0.9f, 0.5f, 0.8f);
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
-		progressBar.Setup(this, taskPoints.Length);
+		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 
 		if (requiredTasks.Length == 0)
 		{
-			OnActivate();
+			OnUnlock();
 		}
+		r = GetComponent<Renderer>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (Available && !complete)
+		switch (TaskState)
 		{
-			foreach (TaskPoint point in taskPoints)
-			{
-				if (point.AssignedRat && point.InRange)
+			case State.Locked:
+				if (requiredTasks.All(t => t.TaskState == State.Complete))
 				{
-					point.AssignedRat.InPlace();
+					OnUnlock();
 				}
-			}
-			if (RatsInPlace && SlotsFilled == taskPoints.Length) // Rat conditions
-			{
-				progress += Time.deltaTime / taskDuration;
-				progressBar.SetProgress(progress);
-				if (progress >= 1)
+				break;
+			case State.Unlocked:
+				foreach (TaskPoint point in taskPoints)
 				{
-					OnComplete();
+					if (point.AssignedRat && point.InRange)
+					{
+						point.AssignedRat.InPlace();
+					}
 				}
-			}
-		}
-		else if (!Available && !complete)
-		{
-			if (requiredTasks.All(t => t.complete))
-			{
-				OnActivate();
-			}
+				if (RatsInPlace && SlotsFilled == taskPoints.Length)
+				{
+					progress += Time.deltaTime / taskDuration;
+					progressBar.SetProgress(progress);
+					if (progress >= 1)
+					{
+						OnComplete();
+					}
+				}
+				break;
+			case State.Complete:
+				break;
 		}
 	}
 
 	/// <summary>
 	/// Activates the task
 	/// </summary>
-	public virtual void OnActivate()
+	public virtual void OnUnlock()
 	{
 		progressBar.SetActive(true);
-		Available = true;
+		TaskState = State.Unlocked;
 		progress = 0;
 	}
 
@@ -91,15 +98,47 @@ public class Task : MonoBehaviour
 	public void OnComplete()
 	{
 		progressBar.SetActive(false);
-		Debug.Log(progressBar.gameObject, progressBar.gameObject);
-		Available = false;
-		complete = true;
+		TaskState = State.Complete;
 
 		// Unset Rats
 		foreach (TaskPoint point in taskPoints)
 		{
-			point.AssignedRat.UnsetTask();
-			point.UnsetRat();
+			point.Clear();
+		}
+	}
+
+	public void Hover(bool hovering)
+	{
+		if (TaskState != State.Unlocked) return;
+		if (hovering && RatManager.Instance.HasSelectedRats)
+		{
+			switch (r)
+			{
+				case MeshRenderer m:
+					m.material.color = highlightColor;
+					break;
+				case SpriteRenderer s:
+					s.sprite = highlightSprite;
+					break;
+				default:
+					break;
+			}
+			GameManager.Instance.Reticle.SetTask(this);
+		}
+		else
+		{
+			switch (r)
+			{
+				case MeshRenderer m:
+					m.material.color = new(0, 0, 0, 0);
+					break;
+				case SpriteRenderer s:
+					s.sprite = normalSprite;
+					break;
+				default:
+					break;
+			}
+			GameManager.Instance.Reticle.SetTask(null);
 		}
 	}
 
@@ -135,15 +174,6 @@ public class Task : MonoBehaviour
 	/// </summary>
 	private void OnDrawGizmos()
 	{
-		SphereCollider c = GetComponent<SphereCollider>();
-		if (c)
-		{
-			Gizmos.color = new Color(0.1f, 0.8f, 0.3f, 0.75f);
-			Gizmos.DrawSphere(transform.position, c.radius);
-			Gizmos.color = Color.green;
-			Gizmos.DrawWireSphere(transform.position, c.radius);
-		}
-
 		if (taskPoints.Length == 0) return;
 
 		foreach (TaskPoint point in taskPoints)
@@ -174,4 +204,10 @@ public class TaskPoint
 
 	public void SetRat(Rat r) { AssignedRat = r; }
 	public void UnsetRat() => AssignedRat = null;
+
+	public void Clear()
+	{
+		AssignedRat.UnsetTask();
+		UnsetRat();
+	}
 }
