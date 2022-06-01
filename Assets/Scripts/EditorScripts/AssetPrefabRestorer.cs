@@ -13,9 +13,9 @@ namespace Ghost
 		[ContextMenu("Fix Prefabs")]
 		void FixPrefabs()
 		{
-			List<GameObject> failedObjects = new List<GameObject>();
+			List<GameObject> failedObjects = new();
 
-			GameObject fixedAssets = new GameObject(gameObject.name + " - Fixed");
+			GameObject fixedAssets = new(gameObject.name + " - Fixed");
 			fixedAssets.transform.position = transform.position;
 			fixedAssets.transform.parent = transform.parent;
 			fixedAssets.transform.SetSiblingIndex(transform.GetSiblingIndex());
@@ -33,8 +33,7 @@ namespace Ghost
 #if UNITY_EDITOR
 					obj = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(matchingPrefab[0], fixedAssets.transform);
 #endif
-					obj.transform.position = child.position;
-					obj.transform.rotation = child.rotation;
+					obj.transform.SetPositionAndRotation(child.position, child.rotation);
 					obj.transform.localScale = child.localScale;
 					obj.name = child.name;
 				}

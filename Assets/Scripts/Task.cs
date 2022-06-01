@@ -34,6 +34,7 @@ public class Task : MonoBehaviour
 	Renderer r;
 	[SerializeField] Sprite normalSprite, highlightSprite;
 	Color highlightColor = new(0.5f, 1f, 0.3f, 0.8f);
+	Color highlightColorUnavailable = new(0.5f, 0.5f, 0.5f, 0.8f);
 	[SerializeField] Animator anim;
 	[SerializeField] ParticleSystem particle;
 	// Start is called before the first frame update
@@ -108,6 +109,7 @@ public class Task : MonoBehaviour
 	public void OnComplete()
 	{
 		progressBar.SetActive(false);
+		Hover(false);
 		TaskState = State.Complete;
 		if (particle)
 		{
@@ -127,16 +129,19 @@ public class Task : MonoBehaviour
 
 	public void Hover(bool hovering)
 	{
-		if (TaskState != State.Unlocked) return;
-		if (hovering && RatManager.Instance.HasSelectedRats)
+		Color c = 
+			TaskState == State.Unlocked && RatManager.Instance.HasSelectedRats 
+				? highlightColor 
+				: highlightColorUnavailable;
+		if (hovering)
 		{
 			switch (r)
 			{
 				case MeshRenderer m:
-					m.material.color = highlightColor;
+					m.material.color = c;
 					break;
 				case SpriteRenderer s:
-					s.color = highlightColor;
+					s.color = c;
 					break;
 				default:
 					break;

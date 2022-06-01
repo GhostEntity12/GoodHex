@@ -12,6 +12,7 @@ public class MenuScript : MonoBehaviour
 	{
 		if (sceneToLoad != null)
 		{
+			// Temp fix. Avoid Timescale?
 			Time.timeScale = 1f;
 			timer += Time.deltaTime;
 			fade.alpha = timer / fadeTime;

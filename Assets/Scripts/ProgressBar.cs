@@ -11,7 +11,7 @@ public class ProgressBar : MonoBehaviour
 	[SerializeField] Sprite mouseUnfilled;
 	[SerializeField] Sprite mouseFilled;
 	[SerializeField] Image fill;
-	List<Image> ratSilhouettes = new();
+	readonly List<Image> ratSilhouettes = new();
 	public bool Complete => fill.fillAmount == 1;
 	[SerializeField] TextMeshProUGUI number;
 	public void SetProgress(float amount) => fill.fillAmount = amount;
@@ -43,6 +43,6 @@ public class ProgressBar : MonoBehaviour
 	}
 	private void Update()
 	{
-		transform.position = anchoredPos + 2f * Mathf.Sin(Time.time + offsetTime) * Vector3.up;
+		transform.position = anchoredPos + 4f * GameManager.Instance.CanvasScale * Mathf.Sin(Time.time + offsetTime) * Vector3.up;
 	}
 }

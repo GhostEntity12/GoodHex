@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
 	public GameObject progressBarPrefab;
 	public Camera mainCamera;
 	public Reticle Reticle { get; private set; }
+	public float CanvasScale => progressCanvas.transform.localScale.x;
 	
 	protected override void Awake()
 	{

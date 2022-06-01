@@ -44,10 +44,12 @@ public class Reticle : MonoBehaviour
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButton(0))
 		{
+
 			// Get all unselected rats within the circle
-			List<Rat> unselectedRats =
+
+			List<Rat> unselectedRats = 
 				RatManager.Instance.allRats
 				.Where(r =>
 					Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize &&
@@ -58,13 +60,13 @@ public class Reticle : MonoBehaviour
 				RatManager.Instance.SelectRats(unselectedRats);
 				anim.SetBool("Active", true);
 			}
-			else // Deselect
+			else if (Input.GetMouseButtonDown(0)) // Deselect
 			{
 				RatManager.Instance.ClearRats();
 				anim.SetBool("Active", false);
 			}
 		}
-		if (Input.GetMouseButtonDown(1)) 
+		if (Input.GetMouseButtonDown(1))
 		{
 			if (hoverTask) // Assign to task
 			{
@@ -72,12 +74,14 @@ public class Reticle : MonoBehaviour
 				// Clear selected rats
 				RatManager.Instance.ClearRats();
 				// Select the rats without tasks
-				//RatManager.Instance.SelectRats(remainingRats);
+				RatManager.Instance.SelectRats(remainingRats);
 				// Set their destinations
-				//RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.ClearRats();
 				//// Reselect the assigned rats for consistency
 				//// This currently selects all rats on the task, rework?
 				//RatManager.Instance.SelectRats(hoverTask.AssignedRats);
+				anim.SetBool("Active", false);
 			}
 			else
 			{
@@ -91,7 +95,7 @@ public class Reticle : MonoBehaviour
 	{
 		targetColor =
 			RatManager.Instance.HasSelectedRats
-			? hoverTask
+			? hoverTask && hoverTask.TaskState == Task.State.Unlocked
 				? taskColor
 				: ratsColor
 			: defaultColor;
