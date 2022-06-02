@@ -8,17 +8,12 @@ public class NarrativeScript : MonoBehaviour
 {
     [SerializeField] CanvasGroup narrative;
     [SerializeField] float fadeSpeed;
-    [SerializeField] float delayAmount;
-    [SerializeField] GameObject button;
+    [SerializeField] CanvasGroup fade;
     float delayTime;
     bool showing = false;
     bool completed = false;
     float timer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        button.SetActive(false);
-    }
+    float fadeTime = 1.5f;
 
     // Update is called once per frame
     void Update()
@@ -29,8 +24,7 @@ public class NarrativeScript : MonoBehaviour
             if (!showing) {
                 narrative.alpha = Mathf.Lerp(0f, 1f, timer / fadeSpeed);
                 if (narrative.alpha == 1) {
-                    delayTime += Time.deltaTime;
-                    if (delayTime > delayAmount || Input.GetMouseButtonDown(0)) {
+                    if (Input.GetMouseButtonDown(0)) {
                         showing = true;
                         timer = 0;
                         delayTime = 0;
@@ -41,9 +35,14 @@ public class NarrativeScript : MonoBehaviour
                 if (narrative.alpha == 0) {
                     //showing = false;
                     timer = 0;
-                    completed = true;
-                    button.SetActive(true);
+                    completed = true; 
                 }
+            }
+        } else {
+            timer += Time.deltaTime;
+            fade.alpha = Mathf.Lerp(0f, 1f, timer / fadeTime);
+            if (fade.alpha == 1) {
+                SceneManager.LoadScene("Controls");
             }
         }
     }
