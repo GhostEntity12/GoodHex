@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Task : MonoBehaviour
 {
+	[field: SerializeField] public Sprite TaskImage { get; private set; }
+
 	public enum State { Locked, Unlocked, Complete }
 	[Header("Task Setup")]
-	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
-	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 	[SerializeField, Tooltip("How long the task takes")] float taskDuration;
 	[Tooltip("How far into completion the task is")] float progress;
+	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
+	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 
 	public State TaskState { get; private set; } = State.Locked;
 
@@ -26,17 +28,23 @@ public class Task : MonoBehaviour
 	/// Returns whether all the rats are in range of the task
 	/// </summary>
 	bool RatsInPlace => taskPoints.All(p => p.InRange);
+
+	[Header("Progress Bar")]
+	[SerializeField, Tooltip("How high above the task the progress bar should appear")] float progressBarOffset = 2f;
 	/// <summary>
 	/// The Progress bar for the task
 	/// </summary>
 	ProgressBar progressBar;
-	[SerializeField] float progressBarOffset = 2f;
+
+	[Header("Highlight")]
+	[SerializeField] Sprite normalSprite;
+	[SerializeField] Sprite highlightSprite;
 	Renderer r;
-	[SerializeField] Sprite normalSprite, highlightSprite;
 	Color highlightColor = new(0.5f, 1f, 0.3f, 0.8f);
 	Color highlightColorUnavailable = new(0.5f, 0.5f, 0.5f, 0.8f);
-	[SerializeField] Animator anim;
-	[SerializeField] ParticleSystem particle;
+
+	[Space(20), SerializeField] List<TaskModule> taskModules;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -72,14 +80,7 @@ public class Task : MonoBehaviour
 				progressBar.SetRats(taskPoints.Where(t => t.InRange).Count());
 				if (RatsInPlace && SlotsFilled == taskPoints.Length)
 				{
-					if (anim)
-					{
-						anim.SetBool("active", true);
-					}
-					if (particle)
-					{
-						particle.Play();
-					}
+					taskModules.ForEach(tm => tm.OnActivate());
 					progress += Time.deltaTime / taskDuration;
 					progressBar.SetProgress(progress);
 					if (progress >= 1)
@@ -111,14 +112,7 @@ public class Task : MonoBehaviour
 		progressBar.SetActive(false);
 		Hover(false);
 		TaskState = State.Complete;
-		if (particle)
-		{
-			particle.Stop();
-		}
-		if (anim)
-		{
-			anim.SetBool("active", false);
-		}
+		taskModules.ForEach(tm => tm.OnDeactivate());
 
 		// Unset Rats
 		foreach (TaskPoint point in taskPoints)
@@ -129,9 +123,9 @@ public class Task : MonoBehaviour
 
 	public void Hover(bool hovering)
 	{
-		Color c = 
-			TaskState == State.Unlocked && RatManager.Instance.HasSelectedRats 
-				? highlightColor 
+		Color c =
+			TaskState == State.Unlocked && RatManager.Instance.HasSelectedRats
+				? highlightColor
 				: highlightColorUnavailable;
 		if (hovering)
 		{

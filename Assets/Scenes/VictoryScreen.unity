@@ -1316,7 +1316,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1020.7, y: 103.9}
+  m_SizeDelta: {x: 1020.7, y: 205.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102211278
 MonoBehaviour:
@@ -1340,8 +1340,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Congratulations!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7a933b53d1f867498933b5f9b278c8c, type: 2}
+  m_sharedMaterial: {fileID: 6736631154923919560, guid: d7a933b53d1f867498933b5f9b278c8c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1365,7 +1366,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93
+  m_fontSize: 144
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

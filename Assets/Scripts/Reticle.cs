@@ -2,16 +2,20 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Reticle : MonoBehaviour
 {
 	Camera c;
 	Animator anim;
 	SpriteRenderer graphic;
+	AudioSource aS;
 
 	float clampedMouseWheelInput = 2;
 	float circleSize = 1f;
 
 	Task hoverTask;
+
+	[SerializeField] AudioClip selectClip;
 
 	[Header("Colors")]
 	[SerializeField] Color defaultColor;
@@ -20,9 +24,12 @@ public class Reticle : MonoBehaviour
 	[SerializeField] float colorChangeSpeed = 10f;
 	Color targetColor;
 
+	readonly List<Rat> ratsInHold = new();
+
 	void Awake()
 	{
 		c = Camera.main;
+		aS = GetComponent<AudioSource>();
 
 		anim = GetComponentInChildren<Animator>();
 		graphic = GetComponentInChildren<SpriteRenderer>();
@@ -32,63 +39,10 @@ public class Reticle : MonoBehaviour
 	{
 		SetSize();
 		SetPosition();
-
 		SetColor();
 
-		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-		 * LOGIC FOR SELECTION
-		 * 1) if no rats are selected, focus rats
-		 * 2) if rats are selected and clicked task, send rats to task
-		 * 3) if rats are selected and clicked on selected rats, move to point
-		 * 4) if rats are selected and clicked on NOT selected rats, select rats
-		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-
-		if (Input.GetMouseButton(0))
-		{
-
-			// Get all unselected rats within the circle
-
-			List<Rat> unselectedRats = 
-				RatManager.Instance.allRats
-				.Where(r =>
-					Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize &&
-					!RatManager.Instance.selectedRats.Contains(r))
-				.ToList();
-			if (unselectedRats.Count > 0) // Select rats
-			{
-				RatManager.Instance.SelectRats(unselectedRats);
-				anim.SetBool("Active", true);
-			}
-			else if (Input.GetMouseButtonDown(0)) // Deselect
-			{
-				RatManager.Instance.ClearRats();
-				anim.SetBool("Active", false);
-			}
-		}
-		if (Input.GetMouseButtonDown(1))
-		{
-			if (hoverTask) // Assign to task
-			{
-				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
-				// Clear selected rats
-				RatManager.Instance.ClearRats();
-				// Select the rats without tasks
-				RatManager.Instance.SelectRats(remainingRats);
-				// Set their destinations
-				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.ClearRats();
-				//// Reselect the assigned rats for consistency
-				//// This currently selects all rats on the task, rework?
-				//RatManager.Instance.SelectRats(hoverTask.AssignedRats);
-				anim.SetBool("Active", false);
-			}
-			else
-			{
-				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
-			}
-		}
+		SelectDeselect();
+		Assign();
 	}
 
 	void SetColor()
@@ -123,6 +77,65 @@ public class Reticle : MonoBehaviour
 		else
 		{
 			graphic.enabled = false;
+		}
+	}
+
+	void SelectDeselect()
+	{
+		if (Input.GetMouseButton(0))
+		{
+			// Get all unselected rats within the circle
+			List<Rat> unselectedRats =
+				RatManager.Instance.allRats
+				.Where(r =>
+					Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize &&
+					!RatManager.Instance.selectedRats.Contains(r))
+				.ToList();
+
+			if (unselectedRats.Count > 0) // Select rats
+			{
+				if (RatManager.Instance.selectedRats.Count == 0)
+				{
+					aS.PlayOneShot(selectClip);
+				}
+				RatManager.Instance.SelectRats(unselectedRats);
+				ratsInHold.AddRange(unselectedRats);
+				anim.SetBool("Active", true);
+			}
+		}
+		// Mouse release - Paintbrush select
+		if (Input.GetMouseButtonUp(0))
+		{
+			if (ratsInHold.Count == 0) // Deselect
+			{
+				RatManager.Instance.ClearRats();
+				anim.SetBool("Active", false);
+			}
+			ratsInHold.Clear();
+		}
+	}
+
+	void Assign()
+	{
+		if (Input.GetMouseButtonDown(1))
+		{
+			if (hoverTask) // Assign to task
+			{
+				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
+				// Clear selected rats
+				RatManager.Instance.ClearRats();
+				// Select the rats without tasks
+				RatManager.Instance.SelectRats(remainingRats);
+				// Set their destinations
+				RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.ClearRats();
+				anim.SetBool("Active", false);
+			}
+			else
+			{
+				RatManager.Instance.SetRatDestinations(transform.position);
+				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
+			}
 		}
 	}
 

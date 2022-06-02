@@ -93,6 +93,7 @@ public class Rat : MonoBehaviour
 
 	public void UnsetTask()
 	{
+		Task?.UnsetRat();
 		Task = null;
 		anim.SetBool("occupied", false);
 	}

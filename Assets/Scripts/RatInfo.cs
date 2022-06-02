@@ -36,6 +36,9 @@ public class RatData
 			case 1:
 				IncreaseSpeed();
 				break;
+			case 2:
+				IncreasePatience();
+				break;
 			default:
 				break;
 		}
@@ -44,4 +47,5 @@ public class RatData
 	public void IncreaseStrength(int amount = 1) => strength += amount;
 
 	public void IncreaseSpeed(int amount = 1) => speed += amount;
+	public void IncreasePatience(int amount = 1) => patience += amount;
 }
