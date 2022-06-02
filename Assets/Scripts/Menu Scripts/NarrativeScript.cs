@@ -8,7 +8,7 @@ public class NarrativeScript : MonoBehaviour
 {
     [SerializeField] CanvasGroup narrative;
     [SerializeField] float fadeSpeed;
-    [SerializeField] float delayAmount;
+    //[SerializeField] float delayAmount;
     [SerializeField] GameObject button;
     float delayTime;
     bool showing = false;
@@ -29,8 +29,8 @@ public class NarrativeScript : MonoBehaviour
             if (!showing) {
                 narrative.alpha = Mathf.Lerp(0f, 1f, timer / fadeSpeed);
                 if (narrative.alpha == 1) {
-                    delayTime += Time.deltaTime;
-                    if (delayTime > delayAmount || Input.GetMouseButtonDown(0)) {
+                    //delayTime += Time.deltaTime;
+                    if (Input.GetMouseButtonDown(0)) {
                         showing = true;
                         timer = 0;
                         delayTime = 0;
