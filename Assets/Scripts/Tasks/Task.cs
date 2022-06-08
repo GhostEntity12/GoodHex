@@ -16,19 +16,6 @@ public class Task : MonoBehaviour
 
 	public State TaskState { get; private set; } = State.Locked;
 
-	/// <summary>
-	/// Returns a list of rats that are currently assigned to this task
-	/// </summary>
-	public List<Rat> AssignedRats => taskPoints.Select(tp => tp.AssignedRat).Where(r => r != null).ToList();
-	/// <summary>
-	/// Returns whether all the slots are filled
-	/// </summary>
-	float SlotsFilled => taskPoints.Where(p => p.AssignedRat != null).Count();
-	/// <summary>
-	/// Returns whether all the rats are in range of the task
-	/// </summary>
-	bool RatsInPlace => taskPoints.All(p => p.InRange);
-
 	[Header("Progress Bar")]
 	[SerializeField, Tooltip("How high above the task the progress bar should appear")] float progressBarOffset = 2f;
 	/// <summary>
@@ -45,11 +32,19 @@ public class Task : MonoBehaviour
 
 	[Space(20), SerializeField] List<TaskModule> taskModules;
 
+	int SlotsFilled => slots.Where(p => p.Value!= null && Vector3.Distance(p.Key.taskPosition, p.Value.transform.position) < 0.1f).Count();
+	public Dictionary<TaskPoint, Rat> slots = new();
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
+
+		foreach (TaskPoint taskPoint in taskPoints)
+		{
+			slots.Add(taskPoint, null);
+		}
 
 		if (requiredTasks.Length == 0)
 		{
@@ -72,13 +67,13 @@ public class Task : MonoBehaviour
 			case State.Unlocked:
 				foreach (TaskPoint point in taskPoints)
 				{
-					if (point.AssignedRat && point.InRange)
+					if (slots[point] != null && TaskManager.Instance.RatInPlace(slots[point]))
 					{
-						point.AssignedRat.InPlace();
+						slots[point].AtTaskPoint();
 					}
 				}
-				progressBar.SetRats(taskPoints.Where(t => t.InRange).Count());
-				if (RatsInPlace && SlotsFilled == taskPoints.Length)
+				progressBar.SetRats(SlotsFilled);
+				if (slots.All(s => s.Value && s.Value.AtTask) && SlotsFilled == taskPoints.Length)
 				{
 					taskModules.ForEach(tm => tm.OnActivate());
 					progress += Time.deltaTime / taskDuration;
@@ -91,33 +86,6 @@ public class Task : MonoBehaviour
 				break;
 			case State.Complete:
 				break;
-		}
-	}
-
-	/// <summary>
-	/// Activates the task
-	/// </summary>
-	public virtual void OnUnlock()
-	{
-		progressBar.SetActive(true);
-		TaskState = State.Unlocked;
-		progress = 0;
-	}
-
-	/// <summary>
-	/// Runs on completion of the task
-	/// </summary>
-	public void OnComplete()
-	{
-		progressBar.SetActive(false);
-		Hover(false);
-		TaskState = State.Complete;
-		taskModules.ForEach(tm => tm.OnDeactivate());
-
-		// Unset Rats
-		foreach (TaskPoint point in taskPoints)
-		{
-			point.Clear();
 		}
 	}
 
@@ -160,30 +128,26 @@ public class Task : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Takes a list of rats and assigns them to the task
+	/// Activates the task
 	/// </summary>
-	/// <param name="rats">The rats to assign to the task</param>
-	/// <returns>Any rats that were not assigned</returns>
-	public List<Rat> AssignRats(List<Rat> rats)
+	public virtual void OnUnlock()
 	{
-		if (SlotsFilled == taskPoints.Length) return null;
+		progressBar.SetActive(true);
+		TaskState = State.Unlocked;
+		progress = 0;
+	}
 
-		Queue<TaskPoint> availablePoints = new(taskPoints.Where(p => p.AssignedRat == null));
-		// Might need some rework to make sure that rats cannot be assigned to the same task multiple times
-		Queue<Rat> ratQueue = new(rats
-			.Where(r => !taskPoints.Contains(r.Task)) // Eclude rats already on the task
-			.OrderBy(r => Vector3.Distance(r.transform.position, transform.position)) // order by distance (ascending)
-		);
+	/// <summary>
+	/// Runs on completion of the task
+	/// </summary>
+	public void OnComplete()
+	{
+		progressBar.SetActive(false);
+		Hover(false);
+		TaskState = State.Complete;
+		taskModules.ForEach(tm => tm.OnDeactivate());
 
-		while (availablePoints.Count > 0 && ratQueue.Count > 0)
-		{
-			Rat r = ratQueue.Dequeue();
-			TaskPoint p = availablePoints.Dequeue();
-			r.SetTask(p);
-			r.Deselect();
-			p.SetRat(r);
-		}
-		return ratQueue.ToList();
+		TaskManager.Instance.ClearRatsOnTask(this);
 	}
 
 	/// <summary>
@@ -196,9 +160,9 @@ public class Task : MonoBehaviour
 		foreach (TaskPoint point in taskPoints)
 		{
 			Gizmos.color = new Color(0.5f, 0.3f, 0f, 0.75f);
-			Gizmos.DrawSphere(point.taskPosition, 0.25f);
+			Gizmos.DrawSphere(point.taskPosition, 0.05f);
 			Gizmos.color = Color.green;
-			Gizmos.DrawWireSphere(point.taskPosition, 0.25f);
+			Gizmos.DrawWireSphere(point.taskPosition, 0.05f);
 		}
 	}
 
@@ -216,15 +180,4 @@ public class Task : MonoBehaviour
 public class TaskPoint
 {
 	public Vector3 taskPosition;
-	public Rat AssignedRat { get; private set; }
-	public bool InRange => AssignedRat && Vector3.Distance(taskPosition, AssignedRat.transform.position) < 0.5f;
-
-	public void SetRat(Rat r) { AssignedRat = r; }
-	public void UnsetRat() => AssignedRat = null;
-
-	public void Clear()
-	{
-		AssignedRat.UnsetTask();
-		UnsetRat();
-	}
 }

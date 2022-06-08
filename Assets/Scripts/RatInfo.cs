@@ -7,11 +7,11 @@ public class RatData
 	int patience = 4;
 
 	public string Name => name;
-	public float SpeedModifier => 1 + speed / 10f;
+	public float SpeedModifier => (1 + speed) / 30f;
 	public int SpeedValue => speed;
 	public int Strength => strength;
 	public int PatienceValue => patience;
-	public float WanderRadius => 5f - patience * 0.25f;
+	public float WanderRadius => 1f - patience * 0.025f;
 	public float PatienceDuration => 2f + patience * 0.25f;
 	
 	System.Random rand = new();

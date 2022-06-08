@@ -18,8 +18,7 @@ namespace Ghost
 			{
 				GameObject newObject = PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(gameObject), transform.parent) as GameObject;
 
-				newObject.transform.position = position + m_Spacing;
-				newObject.transform.rotation = rotation;
+				newObject.transform.SetPositionAndRotation(position + m_Spacing, rotation);
 
 				position = newObject.transform.position;
 			}

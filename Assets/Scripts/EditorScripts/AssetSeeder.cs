@@ -71,8 +71,7 @@ public class AssetSeeder : MonoBehaviour
 				if (instantiateAsPrefab)
 				{
 					GameObject obj = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(prefab[randPrefab], parentObject.transform);
-					obj.transform.position = randPoint;
-					obj.transform.rotation = Quaternion.Euler(0, Random.Range(-180f, 180f), 0);
+					obj.transform.SetPositionAndRotation(randPoint, Quaternion.Euler(0, Random.Range(-180f, 180f), 0));
 				}
 				else
 				{

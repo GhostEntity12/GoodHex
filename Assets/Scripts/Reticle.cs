@@ -88,7 +88,7 @@ public class Reticle : MonoBehaviour
 			List<Rat> unselectedRats =
 				RatManager.Instance.allRats
 				.Where(r =>
-					Vector3.Distance(transform.position, r.transform.position) < 1.5f * circleSize &&
+					Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
 					!RatManager.Instance.selectedRats.Contains(r))
 				.ToList();
 
@@ -121,7 +121,7 @@ public class Reticle : MonoBehaviour
 		{
 			if (hoverTask) // Assign to task
 			{
-				List<Rat> remainingRats = hoverTask.AssignRats(RatManager.Instance.selectedRats);
+				List<Rat> remainingRats = TaskManager.Instance.AssignRatsToTask(RatManager.Instance.selectedRats, hoverTask);
 				// Clear selected rats
 				RatManager.Instance.ClearRats();
 				// Select the rats without tasks
@@ -134,7 +134,7 @@ public class Reticle : MonoBehaviour
 			else
 			{
 				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.selectedRats.ForEach(r => r.UnsetTask());
+				RatManager.Instance.selectedRats.ForEach(r => TaskManager.Instance.UnassignRats(r));
 			}
 		}
 	}

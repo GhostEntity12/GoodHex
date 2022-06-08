@@ -67,10 +67,7 @@ public class RatManager : Singleton<RatManager>
 		rats ??= selectedRats;
 		foreach (Rat rat in rats)
 		{
-			if (rat.Task != null)
-			{
-				rat.Task.UnsetRat();
-			}
+			TaskManager.Instance.UnassignRats(rat);
 			rat.SetDestination(destination);
 		}
 	}

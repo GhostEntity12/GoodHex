@@ -7,21 +7,26 @@ public class Rat : MonoBehaviour
 	Animator anim;
 
 	[Header("Navigation")]
-	private const float StoppingDistance = 1.5f;
+	private const float StoppingDistance = 0.15f;
 	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
 	private float patience;
-
-	public bool Occupied => Task != null;
-	public TaskPoint Task { get; private set; }
+	public bool Occupied => TaskManager.Instance.ratTasks[this] != null;
 	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
+
+	public bool AtTask;
 
 	private void Start()
 	{
 		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
+
+		if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
+		{
+			transform.position = hit.position;
+		}
 		SetWander();
 	}
 
@@ -29,12 +34,13 @@ public class Rat : MonoBehaviour
 	{
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
+		anim.SetBool("occupied", Occupied && TaskManager.Instance.RatInPlace(this));
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
 		{
-			> 0.1f => true,
-			< -0.1f => false,
+			< 0.05f => true,
+			> -0.05f => false,
 			_ => graphic.flipX
 		};
 
@@ -65,8 +71,9 @@ public class Rat : MonoBehaviour
 		Wandering = false;
 	}
 
-	public void InPlace()
+	public void AtTaskPoint()
 	{
+		AtTask = true;
 		anim.SetBool("occupied", true);
 	}
 
@@ -83,19 +90,6 @@ public class Rat : MonoBehaviour
 		{
 			NavAgent.SetDestination(nMHit.position);
 		}
-	}
-
-	public void SetTask(TaskPoint point)
-	{
-		Task = point;
-		SetDestination(point.taskPosition);
-	}
-
-	public void UnsetTask()
-	{
-		Task?.UnsetRat();
-		Task = null;
-		anim.SetBool("occupied", false);
 	}
 
 	public void Kill()
