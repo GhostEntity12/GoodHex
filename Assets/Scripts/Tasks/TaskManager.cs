@@ -42,7 +42,7 @@ public class TaskManager : Singleton<TaskManager>
 	public List<Rat> RatsOnTask(Task task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
 	public void ClearRatsOnTask(Task task)
 	{
-		foreach (var slot in task.slots)
+		foreach (var slot in task.slots.ToList())
 		{
 			task.slots[slot.Key] = null;
 		}

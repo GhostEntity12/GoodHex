@@ -39,8 +39,8 @@ public class Rat : MonoBehaviour
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
 		{
-			< 0.05f => true,
-			> -0.05f => false,
+			< 0.01f => true,
+			> -0.01f => false,
 			_ => graphic.flipX
 		};
 
