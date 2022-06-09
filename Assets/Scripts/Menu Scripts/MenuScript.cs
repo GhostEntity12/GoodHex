@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class MenuScript : MonoBehaviour
 	[SerializeField] CanvasGroup fade;
 	[SerializeField] float fadeTime = 1.5f;
 	float timer = 0f;
+	static string previousScene;
+	
 	private void Update()
 	{
 		if (sceneToLoad != null)
@@ -24,6 +27,18 @@ public class MenuScript : MonoBehaviour
 	}
 
 	public void LoadScene(string sceneName) => sceneToLoad = sceneName;
+
+	public void LoadGameOver() {
+		previousScene = SceneManager.GetActiveScene().name;
+		sceneToLoad = "GameOver";
+	}
+
+	public void LoadVictory() {
+		previousScene = SceneManager.GetActiveScene().name;
+		sceneToLoad = "VictoryScreen";
+	}
+
+	public void LoadPreviousScene() => sceneToLoad = previousScene;
 
 	public void Quit()
 	{
