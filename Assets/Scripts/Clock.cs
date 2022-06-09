@@ -71,7 +71,7 @@ public class Clock : MonoBehaviour
 			// TODO: Rewrite at some point
 			// End of day
 			//eod.enabled = true;
-			SceneManager.LoadScene("GameOver");
+			LoadSceneManager.LoadScene("GameOver");
 		}
 	}
 }

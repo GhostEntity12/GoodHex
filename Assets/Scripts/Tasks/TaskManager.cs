@@ -9,7 +9,6 @@ public class TaskManager : Singleton<TaskManager>
 	// Start is called before the first frame update
 	void Start()
 	{
-		Debug.Log("adding");
 		foreach (Rat rat in RatManager.Instance.allRats)
 		{
 			ratTasks.Add(rat, null);
@@ -43,9 +42,9 @@ public class TaskManager : Singleton<TaskManager>
 	public List<Rat> RatsOnTask(Task task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
 	public void ClearRatsOnTask(Task task)
 	{
-		foreach (TaskPoint slot in task.slots.Keys.ToList())
+		foreach (var slot in task.slots)
 		{
-			task.slots[slot] = null;
+			task.slots[slot.Key] = null;
 		}
 		foreach (Rat r in RatsOnTask(task))
 		{

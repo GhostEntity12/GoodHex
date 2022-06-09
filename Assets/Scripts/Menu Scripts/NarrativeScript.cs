@@ -42,7 +42,7 @@ public class NarrativeScript : MonoBehaviour
             timer += Time.deltaTime;
             fade.alpha = Mathf.Lerp(0f, 1f, timer / fadeTime);
             if (fade.alpha == 1) {
-                SceneManager.LoadScene("Controls");
+                LoadSceneManager.LoadScene("Controls");
             }
         }
     }

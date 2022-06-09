@@ -31,11 +31,11 @@ public class GameManager : Singleton<GameManager>
 
 		Reticle = FindObjectOfType<Reticle>();
 	}
-	public void Restart() => SceneManager.LoadScene(0);
+	public void Restart() => LoadSceneManager.LoadScene(0);
 
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
-		SceneManager.LoadScene("VictoryScreen");
+		LoadSceneManager.LoadScene("VictoryScreen");
 	}
 }
