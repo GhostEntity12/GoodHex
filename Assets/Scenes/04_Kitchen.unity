@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 66785370405dfcf48b0a98bf810441a8, type: 2}
+--- !u!223 &16285411 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4837556365470983314, guid: 5119a96ce5c8a3144aa1b8ee55fa7555,
+    type: 3}
+  m_PrefabInstance: {fileID: 359915819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &23597414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 507274417187099031, guid: f31d993a603fabf48acaf41918aeec28,
@@ -1616,7 +1622,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3737980208807069472, guid: f321877fdbfe7784183e34eca868ed53,
     type: 3}
   mainCamera: {fileID: 0}
-  victoryCanvas: {fileID: 0}
+  victoryCanvas: {fileID: 16285411}
 --- !u!4 &963396371
 Transform:
   m_ObjectHideFlags: 0
