@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.173724, g: 0.2171995, b: 0.29933113, a: 1}
+  m_IndirectSpecularColor: {r: 0.17372374, g: 0.21719919, b: 0.29933047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1084,6 +1084,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3737980208807069472, guid: f321877fdbfe7784183e34eca868ed53,
     type: 3}
   mainCamera: {fileID: 0}
+  victoryCanvas: {fileID: 0}
 --- !u!4 &963396371
 Transform:
   m_ObjectHideFlags: 0
@@ -1264,17 +1265,17 @@ PrefabInstance:
     - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
         type: 3}
