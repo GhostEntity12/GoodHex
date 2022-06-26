@@ -2,16 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-
-public class Task : MonoBehaviour
+public class NormalTask : BaseTask
 {
 	[field: SerializeField] public Sprite TaskImage { get; private set; }
 
-	public enum State { Locked, Unlocked, Complete }
 	[Header("Task Setup")]
 	[SerializeField, Tooltip("How long the task takes")] float taskDuration;
 	[Tooltip("How far into completion the task is")] float progress;
-	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] Task[] requiredTasks;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 
 	public State TaskState { get; private set; } = State.Locked;
@@ -38,6 +35,9 @@ public class Task : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		base.Start();
+		r = GetComponent<Renderer>();
+
 		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 
@@ -45,12 +45,6 @@ public class Task : MonoBehaviour
 		{
 			slots.Add(taskPoint, null);
 		}
-
-		if (requiredTasks.Length == 0)
-		{
-			OnUnlock();
-		}
-		r = GetComponent<Renderer>();
 	}
 
 	// Update is called once per frame
@@ -59,7 +53,7 @@ public class Task : MonoBehaviour
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete))
+				if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
 				{
 					OnUnlock();
 				}
@@ -130,7 +124,7 @@ public class Task : MonoBehaviour
 	/// <summary>
 	/// Activates the task
 	/// </summary>
-	public virtual void OnUnlock()
+	protected override void OnUnlock()
 	{
 		progressBar.SetActive(true);
 		TaskState = State.Unlocked;
@@ -140,7 +134,7 @@ public class Task : MonoBehaviour
 	/// <summary>
 	/// Runs on completion of the task
 	/// </summary>
-	public void OnComplete()
+	protected override void OnComplete()
 	{
 		progressBar.SetActive(false);
 		Hover(false);

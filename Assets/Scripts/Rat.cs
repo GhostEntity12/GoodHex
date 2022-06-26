@@ -18,8 +18,11 @@ public class Rat : MonoBehaviour
 
 	public bool AtTask;
 
+	RatEmotes ratEmotes;
+
 	private void Start()
 	{
+		ratEmotes = GetComponentInChildren<RatEmotes>();
 		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
 
@@ -91,6 +94,8 @@ public class Rat : MonoBehaviour
 			NavAgent.SetDestination(nMHit.position);
 		}
 	}
+
+	public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
 
 	public void Kill()
 	{

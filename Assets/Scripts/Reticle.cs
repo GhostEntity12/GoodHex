@@ -13,7 +13,7 @@ public class Reticle : MonoBehaviour
 	float clampedMouseWheelInput = 2;
 	float circleSize = 1f;
 
-	Task hoverTask;
+	NormalTask hoverTask;
 
 	[SerializeField] AudioClip selectClip;
 
@@ -49,7 +49,7 @@ public class Reticle : MonoBehaviour
 	{
 		targetColor =
 			RatManager.Instance.HasSelectedRats
-			? hoverTask && hoverTask.TaskState == Task.State.Unlocked
+			? hoverTask && hoverTask.TaskState == NormalTask.State.Unlocked
 				? taskColor
 				: ratsColor
 			: defaultColor;
@@ -139,5 +139,5 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-	public void SetTask(Task task) => hoverTask = task;
+	public void SetTask(NormalTask task) => hoverTask = task;
 }

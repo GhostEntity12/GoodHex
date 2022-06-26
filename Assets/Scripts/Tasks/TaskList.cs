@@ -20,9 +20,9 @@ public class TaskList : MonoBehaviour
 
 			bool target = task.T.TaskState switch
 			{
-				Task.State.Locked => false,
-				Task.State.Unlocked => true,
-				Task.State.Complete => false,
+				NormalTask.State.Locked => false,
+				NormalTask.State.Unlocked => true,
+				NormalTask.State.Complete => false,
 				_ => throw new System.Exception("Invalid Task State")
 			};
 

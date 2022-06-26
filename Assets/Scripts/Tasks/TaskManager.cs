@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
-	public readonly Dictionary<Rat, Task> ratTasks = new();
+	public readonly Dictionary<Rat, NormalTask> ratTasks = new();
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -15,7 +15,7 @@ public class TaskManager : Singleton<TaskManager>
 		}
 	}
 
-	public List<Rat> AssignRatsToTask(List<Rat> rats, Task task)
+	public List<Rat> AssignRatsToTask(List<Rat> rats, NormalTask task)
 	{
 		Queue<TaskPoint> availableSlots = new(task.slots.Where(s => s.Value == null).Select(s => s.Key));
 		if (availableSlots.Count == 0) return null;
@@ -39,8 +39,8 @@ public class TaskManager : Singleton<TaskManager>
 		return ratQueue.ToList();
 	}
 
-	public List<Rat> RatsOnTask(Task task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
-	public void ClearRatsOnTask(Task task)
+	public List<Rat> RatsOnTask(NormalTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
+	public void ClearRatsOnTask(NormalTask task)
 	{
 		foreach (var slot in task.slots.ToList())
 		{
@@ -58,7 +58,7 @@ public class TaskManager : Singleton<TaskManager>
 			ratTasks[rat] = null;
 		}
 	}
-	public void AssignRats(Task task, params Rat[] rats)
+	public void AssignRats(NormalTask task, params Rat[] rats)
 	{
 		foreach (Rat rat in rats)
 		{

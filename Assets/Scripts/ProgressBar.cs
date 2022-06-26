@@ -18,7 +18,7 @@ public class ProgressBar : MonoBehaviour
 	public void AddProgress(float amount) => fill.fillAmount += amount;
 	Vector3 anchoredPos;
 	float offsetTime;
-	public void Setup(Task t, int ratCount, float offsetHeight)
+	public void Setup(NormalTask t, int ratCount, float offsetHeight)
 	{
 		for (int i = 0; i < ratCount; i++)
 		{

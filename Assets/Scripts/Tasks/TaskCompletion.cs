@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TaskCompletion : Task
+public class TaskCompletion : BaseTask
 {
 	bool gameComplete = false;
-	public override void OnUnlock()
+	protected override void OnUnlock()
 	{
 		if (!gameComplete)
 		{
@@ -13,4 +13,5 @@ public class TaskCompletion : Task
 			gameComplete = true;
 		}
 	}
+	protected override void OnComplete() { }
 }

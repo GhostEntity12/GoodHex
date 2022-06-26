@@ -14,7 +14,7 @@ public class RatData
 	public float WanderRadius => 1f - patience * 0.025f;
 	public float PatienceDuration => 2f + patience * 0.25f;
 	
-	System.Random rand = new();
+	readonly System.Random rand = new();
 
 	public RatData()
 	{
