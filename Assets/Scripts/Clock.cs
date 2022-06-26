@@ -33,6 +33,8 @@ public class Clock : MonoBehaviour
 	/// </summary>
 	private bool isPlaying = false;
 
+	[SerializeField] Canvas gameOverCanvas;
+
 	[SerializeField] TextMeshProUGUI text;
 
 	// Update is called once per frame
@@ -71,7 +73,9 @@ public class Clock : MonoBehaviour
 			// TODO: Rewrite at some point
 			// End of day
 			//eod.enabled = true;
-			LoadSceneManager.LoadScene("GameOver");
+			//LoadSceneManager.LoadScene("GameOver");
+			endTrack.Stop();
+			gameOverCanvas.gameObject.SetActive(true);
 		}
 	}
 }

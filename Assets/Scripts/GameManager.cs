@@ -23,6 +23,7 @@ public class GameManager : Singleton<GameManager>
 	public Camera mainCamera;
 	public Reticle Reticle { get; private set; }
 	public float CanvasScale => progressCanvas.transform.localScale.x;
+	public Canvas victoryCanvas;
 	
 	protected override void Awake()
 	{
@@ -36,6 +37,7 @@ public class GameManager : Singleton<GameManager>
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
-		LoadSceneManager.LoadScene("VictoryScreen");
+		//LoadSceneManager.LoadScene("VictoryScreen");
+		victoryCanvas.gameObject.SetActive(true);
 	}
 }
