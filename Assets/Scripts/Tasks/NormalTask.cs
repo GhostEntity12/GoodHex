@@ -33,13 +33,14 @@ public class NormalTask : BaseTask
 	public Dictionary<TaskPoint, Rat> slots = new();
 
 	// Start is called before the first frame update
-	void Start()
+	new void Start()
 	{
 		base.Start();
 		r = GetComponent<Renderer>();
 
 		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
+		Debug.Log(progressBar);
 
 		foreach (TaskPoint taskPoint in taskPoints)
 		{

@@ -18,10 +18,4 @@ public abstract class BaseTask : MonoBehaviour
             OnUnlock();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

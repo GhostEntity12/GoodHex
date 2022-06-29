@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 080b1ad15941c744994d9eacbb106f50
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - neutral: {instanceID: 0}
+  - angry: {instanceID: 0}
+  - happy: {instanceID: 0}
+  - tired: {instanceID: 0}
+  - bodyBox: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - nameBox: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

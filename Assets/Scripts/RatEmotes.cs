@@ -47,15 +47,15 @@ public class RatEmotes : MonoBehaviour
 			}
 		}
 		// Demo stuff -random auto emotes
-		//else
-		//{
-		//	demoTimer -= Time.deltaTime;
-		//	if (demoTimer <= 0)
-		//	{
-		//		SetEmote((Emotes)Random.Range(0, 8));
-		//		demoTimer = Random.Range(2f, 15f);
-		//	}
-		//}
+		else
+		{
+			demoTimer -= Time.deltaTime;
+			if (demoTimer <= 0)
+			{
+				SetEmote((Emotes)Random.Range(0, 8));
+				demoTimer = Random.Range(2f, 15f);
+			}
+		}
 	}
 
 	public void SetEmote(Emotes emote) => SetEmote(emotes[(int)emote]);
