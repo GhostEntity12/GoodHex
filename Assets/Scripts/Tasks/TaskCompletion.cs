@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskCompletion : BaseTask
@@ -14,4 +15,12 @@ public class TaskCompletion : BaseTask
 		}
 	}
 	protected override void OnComplete() { }
+
+	private void Update()
+	{
+		if (requiredTasks.All(t => t.TaskState == State.Complete))
+		{
+			OnUnlock();
+		}
+	}
 }

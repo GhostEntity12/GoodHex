@@ -22,7 +22,7 @@ public class RatManager : Singleton<RatManager>
 	private void Start()
 	{
 		spawnPoints = spawnPointTransforms.Select(t => t.position).ToArray();
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < spawnPoints.Length; i++)
 		{
 			persistantRatData.Add(new());
 		}

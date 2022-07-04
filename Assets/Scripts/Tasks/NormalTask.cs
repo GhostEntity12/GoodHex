@@ -35,10 +35,10 @@ public class NormalTask : BaseTask
 	// Start is called before the first frame update
 	new void Start()
 	{
-		base.Start();
 		r = GetComponent<Renderer>();
 
 		progressBar = Instantiate(GameManager.Instance.progressBarPrefab, GameManager.Instance.progressCanvas.transform).GetComponent<ProgressBar>();
+		Debug.Log(progressBar);
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 		Debug.Log(progressBar);
 
@@ -46,6 +46,7 @@ public class NormalTask : BaseTask
 		{
 			slots.Add(taskPoint, null);
 		}
+		base.Start();
 	}
 
 	// Update is called once per frame

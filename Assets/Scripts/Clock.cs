@@ -21,14 +21,6 @@ public class Clock : MonoBehaviour
 	/// </summary>
 	[SerializeField] Image clockFill;
 	/// <summary>
-	/// Starting audio track for scene
-	/// </summary>
-	[SerializeField] AudioSource initialTrack;
-	/// <summary>
-	/// Ending audio track for scene
-	/// </summary>
-	[SerializeField] AudioSource endTrack;
-	/// <summary>
 	/// Bool to check if audio is playing
 	/// </summary>
 	private bool isPlaying = false;
@@ -36,6 +28,7 @@ public class Clock : MonoBehaviour
 	[SerializeField] Canvas gameOverCanvas;
 
 	[SerializeField] TextMeshProUGUI text;
+	[SerializeField] BGMManager bgmManager;
 
 	// Update is called once per frame
 	void Update()
@@ -49,8 +42,7 @@ public class Clock : MonoBehaviour
 			clockFill.fillAmount = timePercent;
 
 			// Rotate the clock sprite
-			// TODO: replace angles
-			clockHand.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(0, -360, timePercent));
+			clockHand.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(-360, 0, timePercent));
 
 			// Calculating the time in 24h time
 			int time24 = Mathf.FloorToInt(Mathf.Lerp(activeHours.x, activeHours.y, timePercent));
@@ -59,12 +51,7 @@ public class Clock : MonoBehaviour
 			text.text = $"{((time24 + 23) % 12) + 1} {((time24 % 24) < 12 ? "AM" : "PM")}";
 
 			if (timePercent >= 0.8f) {
-				if (!isPlaying) {
-					endTrack.timeSamples = initialTrack.timeSamples;
-					initialTrack.Stop();
-					endTrack.Play();
-					isPlaying = true;
-				}
+				bgmManager.TriggerEndMusic();
 			}
 		}
 
@@ -74,7 +61,7 @@ public class Clock : MonoBehaviour
 			// End of day
 			//eod.enabled = true;
 			//LoadSceneManager.LoadScene("GameOver");
-			endTrack.Stop();
+			bgmManager.StopAllTracks();
 			gameOverCanvas.gameObject.SetActive(true);
 		}
 	}
