@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
-	public readonly Dictionary<Rat, NormalTask> ratTasks = new();
+	public readonly Dictionary<Rat, StandardTask> ratTasks = new();
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -15,7 +14,7 @@ public class TaskManager : Singleton<TaskManager>
 		}
 	}
 
-	public List<Rat> AssignRatsToTask(List<Rat> rats, NormalTask task)
+	public List<Rat> AssignRatsToTask(List<Rat> rats, StandardTask task)
 	{
 		Queue<TaskPoint> availableSlots = new(task.slots.Where(s => s.Value == null).Select(s => s.Key));
 		if (availableSlots.Count == 0) return null;
@@ -39,8 +38,8 @@ public class TaskManager : Singleton<TaskManager>
 		return ratQueue.ToList();
 	}
 
-	public List<Rat> RatsOnTask(NormalTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
-	public void ClearRatsOnTask(NormalTask task)
+	public List<Rat> RatsOnTask(StandardTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
+	public void ClearRatsOnTask(StandardTask task)
 	{
 		foreach (var slot in task.slots.ToList())
 		{
@@ -58,7 +57,7 @@ public class TaskManager : Singleton<TaskManager>
 			ratTasks[rat] = null;
 		}
 	}
-	public void AssignRats(NormalTask task, params Rat[] rats)
+	public void AssignRats(StandardTask task, params Rat[] rats)
 	{
 		foreach (Rat rat in rats)
 		{

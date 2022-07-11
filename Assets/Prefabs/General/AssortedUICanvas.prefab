@@ -98,9 +98,9 @@ MonoBehaviour:
   activeHours: {x: 9, y: 17}
   clockHand: {fileID: 1537842219871219658}
   clockFill: {fileID: 1537842219262611097}
-  initialTrack: {fileID: 1537842218466008362}
-  endTrack: {fileID: 1537842218466008363}
+  gameOverCanvas: {fileID: 0}
   text: {fileID: 1537842219031685511}
+  bgmManager: {fileID: 0}
 --- !u!82 &1537842218466008362
 AudioSource:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 0
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BGMManager : MonoBehaviour
@@ -14,19 +12,25 @@ public class BGMManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		foreach (AudioSource child in children)
-		{
-			child.timeSamples = parent.timeSamples;
-		}
-
-		if (endMusicActive && children[0].volume < parent.volume)
-		{
-			time += Time.deltaTime;
-
+		if (endMusicActive)
+		{   
+			// Set the children's timesamples to the parent's timesamples
 			foreach (AudioSource child in children)
 			{
-				child.volume = parent.volume * childMusicRampTime * time;
-				child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
+				// Handling the problem that the parent is ever so slightly longer than some of the children
+				child.timeSamples = Mathf.Min(parent.timeSamples, child.clip.samples - 1);
+			}
+
+			// Fading in the volume of the children
+			if (children[0].volume < parent.volume)
+			{
+				time += Time.deltaTime;
+
+				foreach (AudioSource child in children)
+				{
+					child.volume = parent.volume * childMusicRampTime * time;
+					child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
+				}
 			}
 		}
 	}
@@ -39,5 +43,6 @@ public class BGMManager : MonoBehaviour
 		}
 		parent.Stop();
 	}
+
 	public void TriggerEndMusic() => endMusicActive = true;
 }
