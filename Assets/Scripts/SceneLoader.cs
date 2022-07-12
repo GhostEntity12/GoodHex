@@ -14,12 +14,11 @@ public class SceneLoader : MonoBehaviour
 	private void Awake()
 	{
 		aS = GetComponent<AudioSource>();
-		Debug.Log(SceneUtility.GetScenePathByBuildIndex(10));
 	}
 
 	private void Update()
 	{
-		if (sceneToLoad > 0)
+		if (sceneToLoad >= 0)
 		{
 			// Temp fix. Avoid Timescale?
 			Time.timeScale = 1f;
