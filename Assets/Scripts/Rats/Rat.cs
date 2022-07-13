@@ -11,12 +11,13 @@ public class Rat : MonoBehaviour
 	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
 	private float patience;
-	public bool Occupied => TaskManager.Instance.ratTasks[this] != null;
+	public bool Occupied => GameManager.Instance.TaskManager.ratTasks[this] != null;
 	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
 
-	public bool AtTask;
+	public bool atTask;
+	public bool atDestination;
 
 	RatEmotes ratEmotes;
 
@@ -37,7 +38,7 @@ public class Rat : MonoBehaviour
 	{
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
-		anim.SetBool("occupied", Occupied && TaskManager.Instance.RatInPlace(this));
+		anim.SetBool("occupied", Occupied && GameManager.Instance.TaskManager.RatInPlace(this));
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
@@ -51,6 +52,7 @@ public class Rat : MonoBehaviour
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
+				atDestination = true;
 				NavAgent.ResetPath();
 				patience -= Time.deltaTime;
 				if (patience <= 0)
@@ -71,12 +73,14 @@ public class Rat : MonoBehaviour
 		NavAgent.SetDestination(position);
 		patience = Info.PatienceDuration;
 		NavAgent.speed = 2f * Info.SpeedModifier;
+		atDestination = false;
 		Wandering = false;
 	}
 
 	public void AtTaskPoint()
 	{
-		AtTask = true;
+		atDestination = false;
+		atTask = true;
 		anim.SetBool("occupied", true);
 	}
 
@@ -85,6 +89,7 @@ public class Rat : MonoBehaviour
 	/// </summary>
 	public void SetWander()
 	{
+		atDestination = false;
 		Wandering = true;
 		NavAgent.speed = 0.25f * Info.SpeedModifier;
 		Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
@@ -99,7 +104,7 @@ public class Rat : MonoBehaviour
 
 	public void Kill()
 	{
-		RatManager.Instance.RemoveRat(this);
+		GameManager.Instance.RatManager.RemoveRat(this);
 		// Leave corpse?
 		Destroy(gameObject);
 	}

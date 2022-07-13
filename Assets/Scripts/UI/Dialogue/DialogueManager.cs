@@ -78,7 +78,6 @@ public class DialogueManager : Singleton<DialogueManager>
 		rightSpeaker.SetCachesAndPosition(new Vector2(1200, 0));
 		dialogueUI.SetCachesAndPosition(new Vector2(0, -400));
 		skipDialogueDisplay.SetCachesAndPosition(new Vector2(0, 800));
-		QueueDialogue(Resources.Load("Dialogue/Dia_Test") as TextAsset);
 	}
 
 	/// <summary>
@@ -328,7 +327,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		{
 			LeanTween.value(blur.gameObject, Blur, 1, 0, 0.2f);
 		}
-		StopCoroutine(displayDialogueCoroutine); // Stops the typing out
+		if (displayDialogueCoroutine != null) StopCoroutine(displayDialogueCoroutine); // Stops the typing out
 		displayDialogueCoroutine = null;
 		dialogueTextbox.text = characterDialogue; // Fills the textbox with the entirety of the character's line
 		isDisplayingText = false; // Marks the system as no longer typing out
@@ -402,7 +401,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		}
 
 		// Splits the input on its new lines
-		fileLines = file.text.Split(
+		fileLines = file.text.TrimEnd(Environment.NewLine.ToCharArray()).Split(
 			new[] { "\r\n", "\r", "\n", Environment.NewLine },
 			StringSplitOptions.None
 			);
@@ -443,6 +442,7 @@ public class DialogueManager : Singleton<DialogueManager>
 	/// <param name="uiData"></param>
 	public void SwapDialogue(CharacterPortraitContainer character)
 	{
+		Debug.Log(character);
 		dialogueUI.SlideElement(TweenedElement.ScreenState.Offscreen,
 			() => LoadDialogueSkin(character.bodyBox, character.nameBox,
 				() => dialogueUI.SlideElement(TweenedElement.ScreenState.Onscreen)));

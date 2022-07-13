@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TaskManager : Singleton<TaskManager>
+public class TaskManager : MonoBehaviour
 {
 	public readonly Dictionary<Rat, StandardTask> ratTasks = new();
-	// Start is called before the first frame update
-	void Start()
+
+	public void AddRats(params Rat[] rats)
 	{
-		foreach (Rat rat in RatManager.Instance.allRats)
+		foreach (Rat rat in rats)
 		{
 			ratTasks.Add(rat, null);
 		}

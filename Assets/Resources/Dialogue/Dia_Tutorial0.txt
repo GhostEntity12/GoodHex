@@ -1,0 +1,4 @@
+Witch|Happy|Look over there little one, it's another of our friends!
+Witch|Happy|We'll need all the help we can get if we're going to revive me.
+Witch|Happy|I think now is a good time to show you how to use my wand.
+Witch|Happy|Try hovering over them with your magic circle and clicking the <b>Left Mouse Button</b> to select them.

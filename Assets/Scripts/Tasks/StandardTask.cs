@@ -11,8 +11,6 @@ public class StandardTask : BaseTask
 	[Tooltip("How far into completion the task is")] float progress;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
 
-	public State TaskState { get; private set; } = State.Locked;
-
 	[Header("Progress Bar")]
 	[SerializeField, Tooltip("How high above the task the progress bar should appear")] float progressBarOffset = 2f;
 	/// <summary>
@@ -61,13 +59,13 @@ public class StandardTask : BaseTask
 			case State.Unlocked:
 				foreach (TaskPoint point in taskPoints)
 				{
-					if (slots[point] != null && TaskManager.Instance.RatInPlace(slots[point]))
+					if (slots[point] != null && GameManager.Instance.TaskManager.RatInPlace(slots[point]))
 					{
 						slots[point].AtTaskPoint();
 					}
 				}
 				progressBar.SetRats(SlotsFilled);
-				if (slots.All(s => s.Value && s.Value.AtTask) && SlotsFilled == taskPoints.Length)
+				if (slots.All(s => s.Value && s.Value.atTask) && SlotsFilled == taskPoints.Length)
 				{
 					taskModules.ForEach(tm => tm.OnActivate());
 					progress += Time.deltaTime / taskDuration;
@@ -86,7 +84,7 @@ public class StandardTask : BaseTask
 	public void Hover(bool hovering)
 	{
 		Color c =
-			TaskState == State.Unlocked && RatManager.Instance.HasSelectedRats
+			TaskState == State.Unlocked && GameManager.Instance.RatManager.HasSelectedRats
 				? highlightColor
 				: highlightColorUnavailable;
 		if (hovering)
@@ -141,7 +139,7 @@ public class StandardTask : BaseTask
 		TaskState = State.Complete;
 		taskModules.ForEach(tm => tm.OnDeactivate());
 
-		TaskManager.Instance.ClearRatsOnTask(this);
+		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
 
 	/// <summary>

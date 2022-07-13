@@ -2,33 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RatManager : Singleton<RatManager>
+public class RatManager : MonoBehaviour
 {
-	/// <summary>
-	/// Rat Data, persistant across levels
-	/// </summary>
-	[SerializeField] List<RatData> persistantRatData = new();
-
-	[SerializeField] GameObject ratPrefab;
-
-	[SerializeField] Transform[] spawnPointTransforms;
-	Vector3[] spawnPoints;
+	public Rat RatPrefab { private get; set; }
 
 	// Rat GameObjects - respawned between levels
 	public readonly List<Rat> allRats = new();
 	public readonly List<Rat> selectedRats = new();
 	public bool HasSelectedRats => selectedRats.Count > 0;
-
-	private void Start()
-	{
-		spawnPoints = spawnPointTransforms.Select(t => t.position).ToArray();
-		for (int i = 0; i < spawnPoints.Length; i++)
-		{
-			persistantRatData.Add(new());
-		}
-		//allRats = FindObjectsOfType<Rat>().ToList();
-		SpawnRats();
-	}
 
 	public void ClearRats()
 	{
@@ -43,16 +24,20 @@ public class RatManager : Singleton<RatManager>
 		selectedRats.AddRange(ratsToSelect);
 	}
 
-	public void SpawnRats()
+	public List<Rat> SpawnRats(params Vector3[] spawnPoints)
 	{
-		for (int i = 0; i < persistantRatData.Count; i++)
+		List<Rat> spawnedRats = new();
+		for (int i = 0; i < spawnPoints.Length; i++)
 		{
-			RatData ratInfo = persistantRatData[i];
-			Rat rat = Instantiate(ratPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
+			RatData ratInfo = new();
+			Rat rat = Instantiate(RatPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
 			rat.gameObject.name = ratInfo.Name;
 			rat.AssignInfo(ratInfo);
+			spawnedRats.Add(rat);
 			AddRat(rat);
 		}
+		GameManager.Instance.TaskManager.AddRats(spawnedRats.ToArray());
+		return spawnedRats;
 	}
 
 	public void AddRat(Rat rat) => allRats.Add(rat);
@@ -67,7 +52,7 @@ public class RatManager : Singleton<RatManager>
 		rats ??= selectedRats;
 		foreach (Rat rat in rats)
 		{
-			TaskManager.Instance.UnassignRats(rat);
+			GameManager.Instance.TaskManager.UnassignRats(rat);
 			rat.SetDestination(destination);
 		}
 	}

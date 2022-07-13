@@ -26,17 +26,24 @@ public class Reticle : MonoBehaviour
 
 	readonly List<Rat> ratsInHold = new();
 
-	void Awake()
+	RatManager ratManager;
+
+	bool active = true;
+
+	void Start()
 	{
 		c = Camera.main;
 		aS = GetComponent<AudioSource>();
 
 		anim = GetComponentInChildren<Animator>();
 		graphic = GetComponentInChildren<SpriteRenderer>();
+		ratManager = GameManager.Instance.RatManager;
 	}
 
 	void Update()
 	{
+		if (!active) return;
+
 		SetSize();
 		SetPosition();
 		SetColor();
@@ -48,7 +55,7 @@ public class Reticle : MonoBehaviour
 	void SetColor()
 	{
 		targetColor =
-			RatManager.Instance.HasSelectedRats
+			ratManager.HasSelectedRats
 			? hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked
 				? taskColor
 				: ratsColor
@@ -86,19 +93,19 @@ public class Reticle : MonoBehaviour
 		{
 			// Get all unselected rats within the circle
 			List<Rat> unselectedRats =
-				RatManager.Instance.allRats
+				ratManager.allRats
 				.Where(r =>
 					Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
-					!RatManager.Instance.selectedRats.Contains(r))
+					!ratManager.selectedRats.Contains(r))
 				.ToList();
 
 			if (unselectedRats.Count > 0) // Select rats
 			{
-				if (RatManager.Instance.selectedRats.Count == 0)
+				if (ratManager.selectedRats.Count == 0)
 				{
 					aS.PlayOneShot(selectClip);
 				}
-				RatManager.Instance.SelectRats(unselectedRats);
+				ratManager.SelectRats(unselectedRats);
 				ratsInHold.AddRange(unselectedRats);
 				anim.SetBool("Active", true);
 			}
@@ -108,7 +115,7 @@ public class Reticle : MonoBehaviour
 		{
 			if (ratsInHold.Count == 0) // Deselect
 			{
-				RatManager.Instance.ClearRats();
+				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 			}
 			ratsInHold.Clear();
@@ -121,20 +128,20 @@ public class Reticle : MonoBehaviour
 		{
 			if (hoverTask) // Assign to task
 			{
-				List<Rat> remainingRats = TaskManager.Instance.AssignRatsToTask(RatManager.Instance.selectedRats, hoverTask);
+				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
 				// Clear selected rats
-				RatManager.Instance.ClearRats();
+				ratManager.ClearRats();
 				// Select the rats without tasks
-				RatManager.Instance.SelectRats(remainingRats);
+				ratManager.SelectRats(remainingRats);
 				// Set their destinations
-				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.ClearRats();
+				ratManager.SetRatDestinations(transform.position);
+				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 			}
 			else
 			{
-				RatManager.Instance.SetRatDestinations(transform.position);
-				RatManager.Instance.selectedRats.ForEach(r => TaskManager.Instance.UnassignRats(r));
+				ratManager.SetRatDestinations(transform.position);
+				ratManager.selectedRats.ForEach(r => GameManager.Instance.TaskManager.UnassignRats(r));
 			}
 		}
 	}

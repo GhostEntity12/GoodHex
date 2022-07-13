@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +27,8 @@ public class GameManager : Singleton<GameManager>
 	LevelMenus levelMenus;
 	BGMManager bgmManager;
 	ProgressBarManager progressBarManager;
+	public RatManager RatManager { get; private set; }
+	public TaskManager TaskManager { get; private set; }
 
 	public Camera mainCamera;
 	
@@ -33,6 +37,7 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] LevelMenus levelMenusPrefab;
 	[SerializeField] Reticle reticlePrefab;
 	[SerializeField] BGMManager bgmManagerPrefab;
+	[SerializeField] Rat ratPrefab;
 	public Reticle Reticle { get; private set; }
 
 	protected override void Awake()
@@ -69,6 +74,11 @@ public class GameManager : Singleton<GameManager>
 		levelMenus = Instantiate(levelMenusPrefab);
 		bgmManager = Instantiate(bgmManagerPrefab);
 		progressBarManager = Instantiate(progressBarManagerPrefab);
+		GameObject managers = new("Managers");
+		RatManager = managers.AddComponent<RatManager>();
+		TaskManager = managers.AddComponent<TaskManager>();
+		RatManager.RatPrefab = ratPrefab;
+		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
 	}
 
 	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene; 
