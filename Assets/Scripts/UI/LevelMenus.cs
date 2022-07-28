@@ -21,13 +21,13 @@ public class LevelMenus : MonoBehaviour
 
 	public void TriggerVictoryScreen()
 	{
-		sl.PlaySoundClip(victorySting);
+		//sl.PlaySoundClip(victorySting);
 		victoryCanvas.SetActive(true);
 	}
 
 	public void TriggerFailureScreen()
 	{
-		sl.PlaySoundClip(failureSting);
+		//sl.PlaySoundClip(failureSting);
 		failureCanvas.SetActive(true);
 	}
 }
