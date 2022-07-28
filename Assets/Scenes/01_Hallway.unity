@@ -1906,6 +1906,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1537842218466008374, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: dayLength
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 1537842219437793355, guid: 98dee63f6255f184ab8a78f038104cff,
         type: 3}
       propertyPath: m_Name
