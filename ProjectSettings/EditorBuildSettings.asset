@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/04_Kitchen.unity
     guid: f88eb1e1146653c42b84b8840679c06a
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: faac49f83a25fa242ba48ad37500fcfb
   m_configObjects: {}
