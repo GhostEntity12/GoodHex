@@ -28,7 +28,7 @@ public class Reticle : MonoBehaviour
 
 	RatManager ratManager;
 
-	bool active = true;
+	bool paused;
 
 	void Start()
 	{
@@ -42,7 +42,12 @@ public class Reticle : MonoBehaviour
 
 	void Update()
 	{
-		if (!active) return;
+		if (paused)
+		{
+			SetColor(new(0, 0, 0, 0));
+			return;
+		}
+		
 
 		SetSize();
 		SetPosition();
@@ -63,6 +68,8 @@ public class Reticle : MonoBehaviour
 
 		graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, targetColor, colorChangeSpeed * Time.deltaTime);
 	}
+
+	void SetColor(Color color) => graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, color, colorChangeSpeed * Time.deltaTime);
 
 	void SetSize()
 	{
@@ -147,4 +154,6 @@ public class Reticle : MonoBehaviour
 	}
 
 	public void SetTask(StandardTask task) => hoverTask = task;
+
+	public void SetPaused(bool paused) => this.paused = paused;
 }

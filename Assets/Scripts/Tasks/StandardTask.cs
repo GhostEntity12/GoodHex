@@ -48,6 +48,7 @@ public class StandardTask : BaseTask
 	// Update is called once per frame
 	void Update()
 	{
+		if (paused) return;
 		switch (TaskState)
 		{
 			case State.Locked:

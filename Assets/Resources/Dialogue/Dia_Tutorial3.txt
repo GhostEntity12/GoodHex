@@ -1,0 +1,4 @@
+Witch|Happy|Good job!
+Witch|Happy|Now, let's tell our friends to move over to the crank and turn it!
+Witch|Happy|Hover over the crank and press the <b>Right Mouse Button</b>.
+Witch|Happy|You can see how many rats need to be assigned by the outlines above the task.
