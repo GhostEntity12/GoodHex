@@ -18,6 +18,8 @@ public class RatEmotes : MonoBehaviour
 	Camera cam;
 	Canvas c;
 
+	bool paused;
+
 	private void Start()
 	{
 		cam = Camera.main;
@@ -29,6 +31,8 @@ public class RatEmotes : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (paused) return;
+
 		// Not setting position at the moment, as the canvas is parented to the rat
 		if (emoteActive)
 		{
@@ -68,4 +72,6 @@ public class RatEmotes : MonoBehaviour
 		emoteImage.sprite = emote;
 		timer = 0;
 	}
+
+	public void SetPaused(bool paused) => this.paused = paused;
 }

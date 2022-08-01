@@ -1418,6 +1418,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: d3686b2cf76ec7a489388410dfa64186, type: 3}
   - {fileID: 4900000, guid: 106ffb416381166479e1d565a1981330, type: 3}
   - {fileID: 4900000, guid: 9b5ec8d395bbc7043ba6db65d9dede7c, type: 3}
+  - {fileID: 4900000, guid: 779a605779964344397e2a13e441f29c, type: 3}
+  - {fileID: 4900000, guid: ac8327a92395e294e8244cb6406f68e6, type: 3}
   exampleTask: {fileID: 1197149820}
   mouseHole: {fileID: 1637865570}
   mouseHoleExit: {fileID: 939314328}

@@ -9,7 +9,7 @@ public class PauseScript : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (!GameManager.Instance.DialogueManager.DialogueActive && Input.GetKeyDown(KeyCode.Escape))
 		{
 			PauseGame(!isPaused);
 		}
@@ -20,10 +20,8 @@ public class PauseScript : MonoBehaviour
 		isPaused = paused;
 
 		pauseScreen.gameObject.SetActive(paused);
-		
-		// TODO: Implement this at some point
-		//GameManager.Instance.Pause(paused)
-		Time.timeScale = paused ? 0f : 1f;
+
+		GameManager.Instance.SetPaused(isPaused);
 	}
 
 	public void LoadMenu()

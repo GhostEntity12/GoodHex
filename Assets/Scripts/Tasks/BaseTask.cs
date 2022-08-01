@@ -6,6 +6,8 @@ public abstract class BaseTask : MonoBehaviour
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] protected BaseTask[] requiredTasks;
 	public State TaskState { get; protected set; } = State.Locked;
 
+	protected bool paused = false;
+
 	protected abstract void OnUnlock();
 	protected abstract void OnComplete();
 
@@ -17,4 +19,6 @@ public abstract class BaseTask : MonoBehaviour
 			OnUnlock();
 		}
 	}
+
+	public void SetPaused(bool paused) => this.paused = paused;
 }

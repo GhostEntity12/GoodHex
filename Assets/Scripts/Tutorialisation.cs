@@ -33,7 +33,7 @@ public class Tutorialisation : MonoBehaviour
 		{
 			case TutorialState.PreTutorial:
 				timer -= Time.deltaTime;
-				if (timer <= 2)
+				if (timer <= 1)
 				{
 					IncrementState();
 				}

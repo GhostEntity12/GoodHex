@@ -6,6 +6,10 @@ public class TaskManager : MonoBehaviour
 {
 	public readonly Dictionary<Rat, StandardTask> ratTasks = new();
 
+	BaseTask[] tasks;
+
+	public void SetTasks() => tasks = FindObjectsOfType<BaseTask>();
+
 	public void AddRats(params Rat[] rats)
 	{
 		foreach (Rat rat in rats)
@@ -70,5 +74,13 @@ public class TaskManager : MonoBehaviour
 		TaskPoint tp = ratTasks[r].slots.Where(s => s.Value == r).Select(s => s.Key).FirstOrDefault();
 
 		return tp != null && Vector3.Distance(tp.taskPosition, r.transform.position) < 0.1f;
+	}
+
+	public void SetPaused(bool paused)
+	{
+		foreach (BaseTask task in tasks)
+		{
+			task.SetPaused(paused);
+		}
 	}
 }

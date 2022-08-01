@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 	ProgressBarManager progressBarManager;
 	public RatManager RatManager { get; private set; }
 	public TaskManager TaskManager { get; private set; }
-
+	public DialogueManager DialogueManager { get; private set; }
 	public Camera mainCamera;
 	
 	[Header("Prefabs")]
@@ -77,9 +77,18 @@ public class GameManager : Singleton<GameManager>
 		GameObject managers = new("Managers");
 		RatManager = managers.AddComponent<RatManager>();
 		TaskManager = managers.AddComponent<TaskManager>();
+		TaskManager.SetTasks();
 		RatManager.RatPrefab = ratPrefab;
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
+		DialogueManager = FindObjectOfType<DialogueManager>();
 	}
 
 	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene; 
+
+	public void SetPaused(bool paused)
+	{
+		RatManager.allRats.ForEach(r => r.SetPaused(paused));
+		Reticle.SetPaused(paused);
+		TaskManager.SetPaused(paused);
+	}
 }
