@@ -41,7 +41,7 @@ public class GameManager : Singleton<GameManager>
 	public Reticle Reticle { get; private set; }
 
 	public bool IsPaused { get; private set; }
-	public event Action<bool> Pause;
+	public static event Action<bool> Pause;
 
 	protected override void Awake()
 	{

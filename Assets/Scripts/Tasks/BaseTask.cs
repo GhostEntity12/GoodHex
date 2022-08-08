@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class BaseTask : MonoBehaviour
 {
-	public enum State { Locked, Unlocked, Complete }
+	public enum State { Locked, Unlocked, Active, Complete }
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] protected BaseTask[] requiredTasks;
 	public State TaskState { get; protected set; } = State.Locked;
 
@@ -14,7 +14,7 @@ public abstract class BaseTask : MonoBehaviour
 	// Start is called before the first frame update
 	protected void Start()
 	{
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 		if (requiredTasks.Length == 0)
 		{
 			OnUnlock();
@@ -22,4 +22,8 @@ public abstract class BaseTask : MonoBehaviour
 	}
 
 	void SetPaused(bool paused) => this.paused = paused;
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
+	}
 }

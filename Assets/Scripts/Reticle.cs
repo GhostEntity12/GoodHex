@@ -38,7 +38,7 @@ public class Reticle : MonoBehaviour
 		anim = GetComponentInChildren<Animator>();
 		graphic = GetComponentInChildren<SpriteRenderer>();
 		ratManager = GameManager.Instance.RatManager;
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 	}
 
 	void Update()
@@ -133,7 +133,7 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			if (hoverTask) // Assign to task
+			if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
 				// Clear selected rats
@@ -156,4 +156,8 @@ public class Reticle : MonoBehaviour
 	public void SetTask(StandardTask task) => hoverTask = task;
 
 	void SetPaused(bool paused) => this.paused = paused;
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
+	}
 }

@@ -27,7 +27,7 @@ public class RatEmotes : MonoBehaviour
 		c.transform.rotation = Quaternion.Euler(-cam.transform.rotation.eulerAngles.x, 0, 0);
 		demoTimer = Random.Range(2f, 15f);
 
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 	}
 
 	// Update is called once per frame
@@ -75,4 +75,8 @@ public class RatEmotes : MonoBehaviour
 	}
 
 	void SetPaused(bool paused) => this.paused = paused;
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
+	}
 }

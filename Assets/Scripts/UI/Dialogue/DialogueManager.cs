@@ -80,7 +80,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		rightSpeaker.SetCachesAndPosition(new Vector2(1200, 0));
 		dialogueUI.SetCachesAndPosition(new Vector2(0, -400));
 		skipDialogueDisplay.SetCachesAndPosition(new Vector2(0, 800));
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 	}
 
 	void SetPaused(bool paused) => this.paused = paused;

@@ -131,4 +131,8 @@ public class Rat : MonoBehaviour
 	{
 		graphic.color = Color.white;
 	}
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
+	}
 }

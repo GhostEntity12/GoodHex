@@ -28,7 +28,7 @@ public class Tutorialisation : MonoBehaviour
 	{
 		dm = FindObjectOfType<DialogueManager>();
 
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 	}
 
 	void Update()
@@ -82,4 +82,8 @@ public class Tutorialisation : MonoBehaviour
 		state++;
 	}
 	void SetPaused(bool paused) => this.paused = paused;
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
+	}
 }
