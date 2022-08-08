@@ -12,6 +12,16 @@ public class Rat : MonoBehaviour
 
 	private float patience;
 	public bool AssignedToTask => GameManager.Instance.TaskManager.ratTasks.ContainsKey(this);
+	public bool ArrivedAtTask
+	{
+		get
+		{
+			TaskPoint tp = GameManager.Instance.TaskManager.GetTaskPoint(this);
+			if (tp == null) return false;
+
+			return Vector3.Distance(GameManager.Instance.TaskManager.GetTaskPoint(this).taskPosition, transform.position) < 0.1f;
+		}
+	}
 	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
@@ -25,7 +35,7 @@ public class Rat : MonoBehaviour
 
 	private void Start()
 	{
-		GameManager.Instance.Pause += SetPaused;
+		GameManager.Pause += SetPaused;
 
 		ratEmotes = GetComponentInChildren<RatEmotes>();
 		anim = GetComponentInChildren<Animator>();
@@ -44,7 +54,7 @@ public class Rat : MonoBehaviour
 
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
-		anim.SetBool("occupied", AssignedToTask && GameManager.Instance.TaskManager.RatInPlace(this));
+		anim.SetBool("occupied", ArrivedAtTask);
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch

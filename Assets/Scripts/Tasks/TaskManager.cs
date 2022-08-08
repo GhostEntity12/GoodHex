@@ -15,7 +15,7 @@ public class TaskManager : MonoBehaviour
 	public List<Rat> AssignRatsToTask(List<Rat> rats, StandardTask task)
 	{
 		// Get a list of the available slots
-		Queue<TaskPoint> availableSlots = new(task.ratSlots.Where(s => s.Value == null).Select(s => s.Key));
+		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
 
 		// Get a list of viable rats from the provided list
@@ -35,8 +35,11 @@ public class TaskManager : MonoBehaviour
 	public List<Rat> RatsOnTask(StandardTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
 	public void ClearRatsOnTask(StandardTask task)
 	{
-		task.ratSlots.Clear();
-		UnassignRats(RatsOnTask(task).ToArray());
+		foreach (TaskPoint tp in task.TaskPoints)
+		{
+			UnassignRats(tp.rat);
+			tp.rat = null;
+		}
 	}
 
 	public void UnassignRats(params Rat[] rats)
@@ -45,6 +48,7 @@ public class TaskManager : MonoBehaviour
 		{
 			if (ratTasks.ContainsKey(rat))
 			{
+				GetTaskPoint(rat).rat = null;
 				ratTasks.Remove(rat);
 			}
 		}
@@ -55,35 +59,24 @@ public class TaskManager : MonoBehaviour
 		// Register to dictionary
 		ratTasks.Add(rat, task);
 		// Assign to slot
-		task.ratSlots[slot] = rat;
+		slot.rat = rat;
 
 		// Set destination and remove from active selection
 		rat.SetDestination(slot.taskPosition);
 		rat.Deselect();
 	}
 
-	/// <summary>
-	/// Whether the rat is in the acceptable range of the task point
-	/// </summary>
-	/// <param name="r"></param>
-	/// <returns></returns>
-	public bool RatInPlace(Rat r)
-	{
-		// Return false if rat is not assigned to a task
-		if (!ratTasks.ContainsKey(r)) return false;
-
-		// This is a little messy, rework?
-		TaskPoint tp = ratTasks[r].ratSlots.Where(s => s.Value == r).Select(s => s.Key).FirstOrDefault();
-
-		return tp != null && Vector3.Distance(tp.taskPosition, r.transform.position) < 0.1f;
-	}
-
 	public TaskPoint GetTaskPoint(Rat r)
 	{
 		if (!ratTasks.ContainsKey(r)) return null;
 
-		//TaskPoint tp = ratTasks[r].
-
-		return tp;
+		foreach (TaskPoint taskPoint in ratTasks[r].TaskPoints)
+		{
+			if (taskPoint.rat == r)
+			{
+				return taskPoint;
+			}
+		}
+		return null;
 	}
 }
