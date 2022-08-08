@@ -30,6 +30,7 @@ public class Rat : MonoBehaviour
 	public bool atDestination;
 
 	RatEmotes ratEmotes;
+	PickUp pickUp;
 
 	bool paused;
 
@@ -40,6 +41,7 @@ public class Rat : MonoBehaviour
 		ratEmotes = GetComponentInChildren<RatEmotes>();
 		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
+		pickUp = GetComponent<PickUp>();
 
 		if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
 		{
@@ -55,6 +57,7 @@ public class Rat : MonoBehaviour
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
 		anim.SetBool("occupied", ArrivedAtTask);
+		anim.SetBool("carrying", pickUp.IsHoldingItem);
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
