@@ -40,6 +40,9 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] Rat ratPrefab;
 	public Reticle Reticle { get; private set; }
 
+	public bool IsPaused { get; private set; }
+	public static event Action<bool> Pause;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -77,18 +80,12 @@ public class GameManager : Singleton<GameManager>
 		GameObject managers = new("Managers");
 		RatManager = managers.AddComponent<RatManager>();
 		TaskManager = managers.AddComponent<TaskManager>();
-		TaskManager.SetTasks();
 		RatManager.RatPrefab = ratPrefab;
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
 		DialogueManager = FindObjectOfType<DialogueManager>();
 	}
 
-	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene; 
+	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene;
 
-	public void SetPaused(bool paused)
-	{
-		RatManager.allRats.ForEach(r => r.SetPaused(paused));
-		Reticle.SetPaused(paused);
-		TaskManager.SetPaused(paused);
-	}
+	public void SetPause(bool paused) => Pause(paused);
 }

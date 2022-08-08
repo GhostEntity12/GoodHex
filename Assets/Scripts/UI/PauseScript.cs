@@ -21,7 +21,7 @@ public class PauseScript : MonoBehaviour
 
 		pauseScreen.gameObject.SetActive(paused);
 
-		GameManager.Instance.SetPaused(isPaused);
+		GameManager.Instance.SetPause(isPaused);
 	}
 
 	public void LoadMenu()
