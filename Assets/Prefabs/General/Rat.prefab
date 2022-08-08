@@ -393,6 +393,37 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 63a81650914f5fa428c4b4c0c8f53a76, type: 3}
   - {fileID: 21300000, guid: 72f767d8ce1a7a8409f90d97642c3464, type: 3}
   - {fileID: 21300000, guid: 86568c3dd4547a544ab3baa58264c224, type: 3}
+--- !u!1 &7761079570237133471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433758986985517757}
+  m_Layer: 6
+  m_Name: HoldSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433758986985517757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761079570237133471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1771, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685390268341143684}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8700349638139139103
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +437,7 @@ GameObject:
   - component: {fileID: 4951354953605308642}
   - component: {fileID: 6076119070167395738}
   - component: {fileID: 8946176377568179703}
+  - component: {fileID: 424006646270751627}
   m_Layer: 6
   m_Name: Rat
   m_TagString: Untagged
@@ -428,6 +460,7 @@ Transform:
   - {fileID: 7221645126655740733}
   - {fileID: 8403587975921798327}
   - {fileID: 5374079460317071595}
+  - {fileID: 1433758986985517757}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -484,7 +517,8 @@ MonoBehaviour:
   graphic: {fileID: 7885587077838074156}
   <NavAgent>k__BackingField: {fileID: 4951354953605308642}
   <Wandering>k__BackingField: 0
-  AtTask: 0
+  atTask: 0
+  atDestination: 0
 --- !u!136 &8946176377568179703
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -499,6 +533,22 @@ CapsuleCollider:
   m_Height: 0.15
   m_Direction: 1
   m_Center: {x: 0, y: 0.075, z: 0}
+--- !u!114 &424006646270751627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700349638139139103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3901dce9558c94fb14bb4a074d1210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdSpot: {fileID: 1433758986985517757}
+  pickUpMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &8921044086489678571
 GameObject:
   m_ObjectHideFlags: 0
