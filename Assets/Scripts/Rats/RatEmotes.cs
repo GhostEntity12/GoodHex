@@ -26,6 +26,8 @@ public class RatEmotes : MonoBehaviour
 		c = GetComponent<Canvas>();
 		c.transform.rotation = Quaternion.Euler(-cam.transform.rotation.eulerAngles.x, 0, 0);
 		demoTimer = Random.Range(2f, 15f);
+
+		GameManager.Instance.Pause += SetPaused;
 	}
 
 	// Update is called once per frame
@@ -64,7 +66,6 @@ public class RatEmotes : MonoBehaviour
 
 	public void SetEmote(Sprite emote)
 	{
-		Debug.Log("Setting emote");
 		bubbleImage.enabled = true;
 		emoteImage.enabled = true;
 		emoteActive = true;
@@ -73,5 +74,5 @@ public class RatEmotes : MonoBehaviour
 		timer = 0;
 	}
 
-	public void SetPaused(bool paused) => this.paused = paused;
+	void SetPaused(bool paused) => this.paused = paused;
 }

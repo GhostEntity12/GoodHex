@@ -38,6 +38,7 @@ public class Reticle : MonoBehaviour
 		anim = GetComponentInChildren<Animator>();
 		graphic = GetComponentInChildren<SpriteRenderer>();
 		ratManager = GameManager.Instance.RatManager;
+		GameManager.Instance.Pause += SetPaused;
 	}
 
 	void Update()
@@ -46,8 +47,7 @@ public class Reticle : MonoBehaviour
 		{
 			SetColor(new(0, 0, 0, 0));
 			return;
-		}
-		
+		}		
 
 		SetSize();
 		SetPosition();
@@ -155,5 +155,5 @@ public class Reticle : MonoBehaviour
 
 	public void SetTask(StandardTask task) => hoverTask = task;
 
-	public void SetPaused(bool paused) => this.paused = paused;
+	void SetPaused(bool paused) => this.paused = paused;
 }

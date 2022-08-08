@@ -20,20 +20,26 @@ public class Tutorialisation : MonoBehaviour
 
 	[SerializeField] DummyTask dummy;
 
-	float timer = 5f;
+	float timer = 1f;
+
+	bool paused;
 
 	private void Start()
 	{
 		dm = FindObjectOfType<DialogueManager>();
+
+		GameManager.Instance.Pause += SetPaused;
 	}
 
 	void Update()
     {
+		if (paused) return;
+
 		switch (state)
 		{
 			case TutorialState.PreTutorial:
 				timer -= Time.deltaTime;
-				if (timer <= 1)
+				if (timer <= 0)
 				{
 					IncrementState();
 				}
@@ -75,4 +81,5 @@ public class Tutorialisation : MonoBehaviour
 		dm.QueueDialogue(dialogue[(int)state]);
 		state++;
 	}
+	void SetPaused(bool paused) => this.paused = paused;
 }

@@ -14,11 +14,12 @@ public abstract class BaseTask : MonoBehaviour
 	// Start is called before the first frame update
 	protected void Start()
 	{
+		GameManager.Instance.Pause += SetPaused;
 		if (requiredTasks.Length == 0)
 		{
 			OnUnlock();
 		}
 	}
 
-	public void SetPaused(bool paused) => this.paused = paused;
+	void SetPaused(bool paused) => this.paused = paused;
 }

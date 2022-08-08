@@ -25,7 +25,7 @@ public class Rat : MonoBehaviour
 
 	private void Start()
 	{
-		if (paused) return;
+		GameManager.Instance.Pause += SetPaused;
 
 		ratEmotes = GetComponentInChildren<RatEmotes>();
 		anim = GetComponentInChildren<Animator>();
@@ -40,6 +40,7 @@ public class Rat : MonoBehaviour
 
 	private void Update()
 	{
+		if (paused) return;
 
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
@@ -107,12 +108,11 @@ public class Rat : MonoBehaviour
 
 	public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
 
-	public void SetPaused(bool paused)
+	void SetPaused(bool paused)
 	{
 		this.paused = paused;
 		NavAgent.isStopped = paused;
 		anim.speed = paused ? 0 : 1;
-		ratEmotes.SetPaused(paused);
 	}
 
 	public void Kill()

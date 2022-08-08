@@ -63,6 +63,8 @@ public class DialogueManager : Singleton<DialogueManager>
 	CharacterPortraitContainer currentCharacter;
 	Vector2 defaultPortraitSize;
 
+	bool paused;
+
 	private void Start()
 	{
 		foreach (CharacterPortraitContainer characterPortraits in Resources.LoadAll<CharacterPortraitContainer>("CharacterDialogueSprites")) // Creates the dictionary
@@ -78,7 +80,10 @@ public class DialogueManager : Singleton<DialogueManager>
 		rightSpeaker.SetCachesAndPosition(new Vector2(1200, 0));
 		dialogueUI.SetCachesAndPosition(new Vector2(0, -400));
 		skipDialogueDisplay.SetCachesAndPosition(new Vector2(0, 800));
+		GameManager.Instance.Pause += SetPaused;
 	}
+
+	void SetPaused(bool paused) => this.paused = paused;
 
 	/// <summary>
 	/// Clears the dialogue box's name, dialogue and image
@@ -114,7 +119,6 @@ public class DialogueManager : Singleton<DialogueManager>
 		characterExpression = parsedText[1].ToLower();
 		characterDialogue = parsedText[2];
 
-		Debug.Log(currentCharacter);
 		if (sameChar)
 		{
 			StartDisplaying();
@@ -242,8 +246,6 @@ public class DialogueManager : Singleton<DialogueManager>
 	/// <returns></returns>
 	Sprite GetCharacterPortrait(CharacterPortraitContainer character, string expression)
 	{
-		Debug.Log(character);
-		Debug.Log(expression);
 		try { return (Sprite)typeof(CharacterPortraitContainer).GetField(expression).GetValue(character); }
 		catch (Exception exception)
 		{
@@ -372,7 +374,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
 	private void TriggerDialogue(TextAsset _sceneName, float darkenAmount = 0.9f)
 	{
-		GameManager.Instance.SetPaused(true);
+		GameManager.Instance.SetPause(true);
 		LeanTween.alphaCanvas(darkenedBackground, darkenAmount, 0.4f);
 		if (blur)
 		{
@@ -415,7 +417,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		{
 			TriggerDialogue(sceneQueue.Dequeue());
 		}
-		GameManager.Instance.SetPaused(false);
+		GameManager.Instance.SetPause(false);
 	}
 
 	private bool GetAnyKeyDown(params KeyCode[] aKeys)
@@ -451,7 +453,6 @@ public class DialogueManager : Singleton<DialogueManager>
 	/// <param name="uiData"></param>
 	public void SwapDialogue(CharacterPortraitContainer character)
 	{
-		Debug.Log(character);
 		dialogueUI.SlideElement(TweenedElement.ScreenState.Offscreen,
 			() => LoadDialogueSkin(character.bodyBox, character.nameBox,
 				() => dialogueUI.SlideElement(TweenedElement.ScreenState.Onscreen)));

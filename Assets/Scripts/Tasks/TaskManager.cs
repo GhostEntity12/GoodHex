@@ -75,12 +75,4 @@ public class TaskManager : MonoBehaviour
 
 		return tp != null && Vector3.Distance(tp.taskPosition, r.transform.position) < 0.1f;
 	}
-
-	public void SetPaused(bool paused)
-	{
-		foreach (BaseTask task in tasks)
-		{
-			task.SetPaused(paused);
-		}
-	}
 }
