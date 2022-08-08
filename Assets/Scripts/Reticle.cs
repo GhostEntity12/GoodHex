@@ -148,7 +148,7 @@ public class Reticle : MonoBehaviour
 			else
 			{
 				ratManager.SetRatDestinations(transform.position);
-				ratManager.selectedRats.ForEach(r => GameManager.Instance.TaskManager.UnassignRats(r));
+				GameManager.Instance.TaskManager.UnassignRats(ratManager.selectedRats.ToArray());
 			}
 		}
 	}

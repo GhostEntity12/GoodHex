@@ -80,7 +80,6 @@ public class GameManager : Singleton<GameManager>
 		GameObject managers = new("Managers");
 		RatManager = managers.AddComponent<RatManager>();
 		TaskManager = managers.AddComponent<TaskManager>();
-		TaskManager.SetTasks();
 		RatManager.RatPrefab = ratPrefab;
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
 		DialogueManager = FindObjectOfType<DialogueManager>();

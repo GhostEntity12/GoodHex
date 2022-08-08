@@ -27,8 +27,8 @@ public class StandardTask : BaseTask
 
 	[Space(20), SerializeField] List<TaskModule> taskModules;
 
-	int SlotsFilled => slots.Where(p => p.Value!= null && Vector3.Distance(p.Key.taskPosition, p.Value.transform.position) < 0.1f).Count();
-	public Dictionary<TaskPoint, Rat> slots = new();
+	int RatsInPlace => ratSlots.Where(p => p.Value != null && Vector3.Distance(p.Key.taskPosition, p.Value.transform.position) < 0.1f).Count();
+	public Dictionary<TaskPoint, Rat> ratSlots = new();
 
 	// Start is called before the first frame update
 	new void Start()
@@ -40,7 +40,7 @@ public class StandardTask : BaseTask
 
 		foreach (TaskPoint taskPoint in taskPoints)
 		{
-			slots.Add(taskPoint, null);
+			ratSlots.Add(taskPoint, null);
 		}
 		base.Start();
 	}
@@ -60,13 +60,14 @@ public class StandardTask : BaseTask
 			case State.Unlocked:
 				foreach (TaskPoint point in taskPoints)
 				{
-					if (slots[point] != null && GameManager.Instance.TaskManager.RatInPlace(slots[point]))
+					if (ratSlots[point] != null && // if no assigned rat
+						GameManager.Instance.TaskManager.RatInPlace(ratSlots[point]))
 					{
-						slots[point].AtTaskPoint();
+						ratSlots[point].ReachedTaskPoint();
 					}
 				}
-				progressBar.SetRats(SlotsFilled);
-				if (slots.All(s => s.Value && s.Value.atTask) && SlotsFilled == taskPoints.Length)
+				progressBar.SetRats(RatsInPlace);
+				if (ratSlots.All(s => s.Value && s.Value.atTask) && RatsInPlace == taskPoints.Length)
 				{
 					taskModules.ForEach(tm => tm.OnActivate());
 					progress += Time.deltaTime / taskDuration;
