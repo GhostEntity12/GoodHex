@@ -33,6 +33,10 @@ public class StandardTask : BaseTask
 	public GameObject itemToSpawn;
 	public GameObject spawner;
 
+	public string triggerId;
+
+	[field: SerializeField] public bool requiresItem { get; private set; }
+
 
 	// Start is called before the first frame update
 	new void Start()
@@ -55,10 +59,11 @@ public class StandardTask : BaseTask
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
+				if (requiredTasks.All(t => t.TaskState == State.Complete) && requiresItem == false) // if all required tasks are complete
 				{
 					OnUnlock();
 				}
+				
 				break;
 			case State.Unlocked:
 				foreach (TaskPoint point in taskPoints)
@@ -177,6 +182,21 @@ public class StandardTask : BaseTask
 	{
 		Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity);
 	}
+
+	void OnTriggerEnter(Collider collider)
+    {
+		if(collider.gameObject.tag == "Rat")
+        {
+			if (GameObject.FindWithTag("Item") != null)
+			{
+				if (GameObject.FindWithTag("Item").GetComponent<Pickupable>().ReturnItemId() == triggerId)
+				{
+					requiresItem = false;
+					Destroy(GameObject.FindWithTag("Item"));
+				}
+			}
+		}
+    }
 }
 
 [System.Serializable]

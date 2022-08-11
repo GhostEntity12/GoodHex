@@ -156,9 +156,10 @@ GameObject:
   - component: {fileID: 7869986775530975290}
   - component: {fileID: 7869986775530975291}
   - component: {fileID: 6331729194758477657}
+  - component: {fileID: -2000606716094487646}
   m_Layer: 10
   m_Name: OBJ_Bucket
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,3 +261,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.496, y: 0.496, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2000606716094487646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869986775530975284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33f29dfadf68e84e9925c7c3ce94fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: OBJ_Bucket

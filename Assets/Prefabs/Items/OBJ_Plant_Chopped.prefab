@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3241094056800109607}
   - component: {fileID: -1757984949748565071}
   m_Layer: 10
-  m_Name: OBJ_Plant
+  m_Name: OBJ_Plant_Chopped
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33f29dfadf68e84e9925c7c3ce94fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: OBJ_Plant
+  itemId: OBJ_Plant_Chopped

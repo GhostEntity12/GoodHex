@@ -22,5 +22,4 @@ public class TaskCompletion : BaseTask
 			OnUnlock();
 		}
 	}
-
 }
