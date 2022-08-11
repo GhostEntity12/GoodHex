@@ -30,6 +30,10 @@ public class StandardTask : BaseTask
 	int SlotsFilled => slots.Where(p => p.Value!= null && Vector3.Distance(p.Key.taskPosition, p.Value.transform.position) < 0.1f).Count();
 	public Dictionary<TaskPoint, Rat> slots = new();
 
+	public GameObject itemToSpawn;
+	public GameObject spawner;
+
+
 	// Start is called before the first frame update
 	new void Start()
 	{
@@ -139,6 +143,8 @@ public class StandardTask : BaseTask
 		TaskState = State.Complete;
 		taskModules.ForEach(tm => tm.OnDeactivate());
 
+		SpawnItem();
+
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
 
@@ -165,6 +171,11 @@ public class StandardTask : BaseTask
 		{
 			point.taskPosition = transform.position;
 		}
+	}
+
+	void SpawnItem()
+	{
+		Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity);
 	}
 }
 
