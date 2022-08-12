@@ -1,19 +1,42 @@
 using System.Linq;
 using UnityEngine;
 
-public class StandardTask : ProgressTask
+public class RecurringTask : ProgressTask
 {
-	// Update is called once per frame
+	[SerializeField] float timeToReunlock = 5f;
+	float reunlockTimer;
+	bool prerequisitesMet = false;
+
+	new void Start()
+	{
+		reunlockTimer = timeToReunlock;
+		base.Start();
+	}
+
 	void Update()
 	{
 		if (paused) return;
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
+				if (prerequisitesMet)
 				{
-					OnUnlock();
-					onUnlockEvents.ForEach(tm => tm.Trigger());
+					reunlockTimer -= Time.deltaTime;
+					if (reunlockTimer <= 0)
+					{
+						OnUnlock();
+						reunlockTimer = timeToReunlock;
+						onUnlockEvents.ForEach(tm => tm.Trigger());
+					}
+				}
+				else
+				{
+					if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
+					{
+						prerequisitesMet = true;
+						OnUnlock();
+						onUnlockEvents.ForEach(tm => tm.Trigger());
+					}
 				}
 				break;
 			case State.Unlocked:
@@ -60,15 +83,8 @@ public class StandardTask : ProgressTask
 	{
 		progressBar.SetActive(false);
 		Hover(false);
-		TaskState = State.Complete;
+		TaskState = State.Locked;
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
-}
-
-[System.Serializable]
-public class TaskPoint
-{
-	public Vector3 taskPosition;
-	public Rat rat;
 }

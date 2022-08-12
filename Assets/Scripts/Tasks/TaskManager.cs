@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-	public readonly Dictionary<Rat, StandardTask> ratTasks = new();
+	public readonly Dictionary<Rat, ProgressTask> ratTasks = new();
 
 	/// <summary>
 	/// Sets the rats to a task in the <Rat, Task> Dictionary
@@ -12,7 +12,7 @@ public class TaskManager : MonoBehaviour
 	/// <param name="rats"></param>
 	/// <param name="task"></param>
 	/// <returns></returns>
-	public List<Rat> AssignRatsToTask(List<Rat> rats, StandardTask task)
+	public List<Rat> AssignRatsToTask(List<Rat> rats, ProgressTask task)
 	{
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
@@ -32,8 +32,8 @@ public class TaskManager : MonoBehaviour
 		return ratQueue.ToList();
 	}
 
-	public List<Rat> RatsOnTask(StandardTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
-	public void ClearRatsOnTask(StandardTask task)
+	public List<Rat> RatsOnTask(ProgressTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
+	public void ClearRatsOnTask(ProgressTask task)
 	{
 		foreach (TaskPoint tp in task.TaskPoints)
 		{
@@ -54,7 +54,7 @@ public class TaskManager : MonoBehaviour
 		}
 	}
 
-	void AssignRats(StandardTask task, TaskPoint slot, Rat rat)
+	void AssignRats(ProgressTask task, TaskPoint slot, Rat rat)
 	{
 		// Register to dictionary
 		ratTasks.Add(rat, task);
