@@ -2343,7 +2343,7 @@ PrefabInstance:
     - target: {fileID: 3218394627366307151, guid: 1d8b43d0734093242a98658e74995707,
         type: 3}
       propertyPath: m_Name
-      value: temSpawn
+      value: ItemSpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d8b43d0734093242a98658e74995707, type: 3}
