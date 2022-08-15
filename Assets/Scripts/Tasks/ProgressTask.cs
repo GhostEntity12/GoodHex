@@ -12,7 +12,7 @@ public abstract class ProgressTask : BaseTask
 	protected float taskDuration;
 	[Tooltip("How far into completion the task is")]
 	protected float progress;
-	[SerializeField, Tooltip("The points at which rats stand to do the task")] 
+	[SerializeField, Tooltip("The points at which rats stand to do the task")]
 	protected TaskPoint[] taskPoints = new TaskPoint[0];
 
 	[Header("Progress Bar")]
@@ -26,7 +26,7 @@ public abstract class ProgressTask : BaseTask
 	[Header("Highlight")]
 	[SerializeField]
 	protected Sprite normalSprite;
-	[SerializeField] 
+	[SerializeField]
 	protected Sprite highlightSprite;
 	protected Renderer r;
 	protected Color highlightColor = new(0.5f, 1f, 0.3f, 0.8f);
@@ -34,15 +34,18 @@ public abstract class ProgressTask : BaseTask
 
 	[Space(20), SerializeField]
 	protected List<TaskModule> onUnlockEvents;
-	[Space(20), SerializeField] 
+	[Space(20), SerializeField]
 	protected List<TaskModule> onActivateEvents;
-	[Space(20), SerializeField] 
+	[Space(20), SerializeField]
 	protected List<TaskModule> onDeactivateEvents;
-	[Space(20), SerializeField] 
+	[Space(20), SerializeField]
 	protected List<TaskModule> onCompleteEvents;
 
 	protected int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask).Count();
 	public TaskPoint[] TaskPoints => taskPoints;
+	[field: SerializeField] public bool RequiresItem { get; private set; }
+
+	[SerializeField] string triggerId;
 
 	new void Start()
 	{
@@ -53,13 +56,19 @@ public abstract class ProgressTask : BaseTask
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 		base.Start();
 	}
-	public void Hover(bool hovering)
+
+	/// <summary>
+	/// Highlights the task
+	/// </summary>
+	/// <param name="doHighlight"></param>
+	public void Highlight(bool doHighlight)
 	{
 		Color c =
 			TaskState == State.Unlocked && GameManager.Instance.RatManager.HasSelectedRats
 				? highlightColor
 				: highlightColorUnavailable;
-		if (hovering)
+
+		if (doHighlight)
 		{
 			switch (r)
 			{
@@ -115,4 +124,26 @@ public abstract class ProgressTask : BaseTask
 			point.taskPosition = transform.position;
 		}
 	}
+
+	void OnTriggerEnter(Collider collider)
+	{
+		if (collider.gameObject.tag == "Rat")
+		{
+			if (GameObject.FindWithTag("Item") != null)
+			{
+				if (GameObject.FindWithTag("Item").GetComponent<Pickupable>().ReturnItemId() == triggerId)
+				{
+					RequiresItem = false;
+					Destroy(GameObject.FindWithTag("Item"));
+				}
+			}
+		}
+	}
+}
+
+[System.Serializable]
+public class TaskPoint
+{
+	public Vector3 taskPosition;
+	public Rat rat;
 }

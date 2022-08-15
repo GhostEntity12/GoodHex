@@ -1149,8 +1149,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1197149820}
-          m_TargetAssemblyTypeName: StandardTask, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1165,8 +1165,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1197149820}
-          m_TargetAssemblyTypeName: StandardTask, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2831,8 +2831,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8031366411091002825}
-          m_TargetAssemblyTypeName: NormalTask, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2847,8 +2847,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8031366411091002825}
-          m_TargetAssemblyTypeName: NormalTask, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
