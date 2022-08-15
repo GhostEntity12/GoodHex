@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 	ProgressBarManager progressBarManager;
 	public RatManager RatManager { get; private set; }
 	public TaskManager TaskManager { get; private set; }
-
+	public DialogueManager DialogueManager { get; private set; }
 	public Camera mainCamera;
 	
 	[Header("Prefabs")]
@@ -39,6 +39,9 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] BGMManager bgmManagerPrefab;
 	[SerializeField] Rat ratPrefab;
 	public Reticle Reticle { get; private set; }
+
+	public bool IsPaused { get; private set; }
+	public static event Action<bool> Pause;
 
 	protected override void Awake()
 	{
@@ -79,7 +82,10 @@ public class GameManager : Singleton<GameManager>
 		TaskManager = managers.AddComponent<TaskManager>();
 		RatManager.RatPrefab = ratPrefab;
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
+		DialogueManager = FindObjectOfType<DialogueManager>();
 	}
 
-	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene; 
+	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene;
+
+	public void SetPause(bool paused) => Pause(paused);
 }
