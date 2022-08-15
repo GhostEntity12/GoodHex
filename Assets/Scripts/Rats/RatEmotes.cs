@@ -18,17 +18,23 @@ public class RatEmotes : MonoBehaviour
 	Camera cam;
 	Canvas c;
 
+	bool paused;
+
 	private void Start()
 	{
 		cam = Camera.main;
 		c = GetComponent<Canvas>();
 		c.transform.rotation = Quaternion.Euler(-cam.transform.rotation.eulerAngles.x, 0, 0);
 		demoTimer = Random.Range(2f, 15f);
+
+		GameManager.Pause += SetPaused;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if (paused) return;
+
 		// Not setting position at the moment, as the canvas is parented to the rat
 		if (emoteActive)
 		{
@@ -60,12 +66,17 @@ public class RatEmotes : MonoBehaviour
 
 	public void SetEmote(Sprite emote)
 	{
-		Debug.Log("Setting emote");
 		bubbleImage.enabled = true;
 		emoteImage.enabled = true;
 		emoteActive = true;
 
 		emoteImage.sprite = emote;
 		timer = 0;
+	}
+
+	void SetPaused(bool paused) => this.paused = paused;
+	private void OnDestroy()
+	{
+		GameManager.Pause -= SetPaused;
 	}
 }
