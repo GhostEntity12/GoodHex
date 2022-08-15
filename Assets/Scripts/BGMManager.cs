@@ -9,14 +9,6 @@ public class BGMManager : MonoBehaviour
 	bool endMusicActive;
 	float time;
 
-
-	private void Start()
-	{
-		foreach (AudioSource audioSource in children)
-		{
-			audioSource.volume = 0;
-		}
-	}
 	// Update is called once per frame
 	void Update()
 	{
@@ -31,7 +23,7 @@ public class BGMManager : MonoBehaviour
 
 			// Fading in the volume of the children
 			if (children[0].volume < parent.volume)
-			{               
+			{
 				time += Time.deltaTime;
 
 				foreach (AudioSource child in children)

@@ -1,2 +1,2 @@
-Witch|Happy|While our friend is selected, we can tell them to move around the room by clicking the <b>Right Mouse Button</b> on the point we want them to go to.
-Witch|Happy|If we need to deselect everyone, we can press the <b>Left Mouse Button</b> somewhere where no-one is.
+Witch|Happy|While our friend is selected, we can tell them to move around the room by click the <b>Right Mouse Button</b> on the point we want them to go to.
+Witch|Happy|If we need to deselect everyonw, we can press the <b>Left Mouse Button<\b> where there are no are.
