@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bounds
   - SpawnPoints
+  - Rat
+  - Item
+  - KillZone
   layers:
   - Default
   - TransparentFX

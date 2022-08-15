@@ -10,11 +10,12 @@ public class StandardTask : ProgressTask
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
+				if (requiredTasks.All(t => t.TaskState == State.Complete) && requiresItem == false) // if all required tasks are complete
 				{
 					OnUnlock();
 					onUnlockEvents.ForEach(tm => tm.Trigger());
 				}
+				
 				break;
 			case State.Unlocked:
 				progressBar.SetRats(RatsInPlace);
@@ -62,8 +63,55 @@ public class StandardTask : ProgressTask
 		Hover(false);
 		TaskState = State.Complete;
 
+		SpawnItem();
+
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
+
+	/// <summary>
+	/// Draws TaskPoint positions
+	/// </summary>
+	private void OnDrawGizmos()
+	{
+		if (taskPoints.Length == 0) return;
+
+		foreach (TaskPoint point in taskPoints)
+		{
+			Gizmos.color = new Color(0.5f, 0.3f, 0f, 0.75f);
+			Gizmos.DrawSphere(point.taskPosition, 0.05f);
+			Gizmos.color = Color.green;
+			Gizmos.DrawWireSphere(point.taskPosition, 0.05f);
+		}
+	}
+
+	[ContextMenu("Reset Task Positions")]
+	void ResetTaskPositions()
+	{
+		foreach (TaskPoint point in taskPoints)
+		{
+			point.taskPosition = transform.position;
+		}
+	}
+
+	void SpawnItem()
+	{
+		Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity);
+	}
+
+	void OnTriggerEnter(Collider collider)
+    {
+		if(collider.gameObject.tag == "Rat")
+        {
+			if (GameObject.FindWithTag("Item") != null)
+			{
+				if (GameObject.FindWithTag("Item").GetComponent<Pickupable>().ReturnItemId() == triggerId)
+				{
+					requiresItem = false;
+					Destroy(GameObject.FindWithTag("Item"));
+				}
+			}
+		}
+    }
 }
 
 [System.Serializable]

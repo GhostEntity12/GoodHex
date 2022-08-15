@@ -10,6 +10,11 @@ public class PickUp : MonoBehaviour
 
     void Update()
     {
+        CheckForPickup();
+    }
+
+    void CheckForPickup()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (itemHolding)
