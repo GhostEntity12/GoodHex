@@ -6,34 +6,28 @@ public class TaskManager : MonoBehaviour
 {
 	public readonly Dictionary<Rat, StandardTask> ratTasks = new();
 
-	public void AddRats(params Rat[] rats)
-	{
-		foreach (Rat rat in rats)
-		{
-			ratTasks.Add(rat, null);
-		}
-	}
-
+	/// <summary>
+	/// Sets the rats to a task in the <Rat, Task> Dictionary
+	/// </summary>
+	/// <param name="rats"></param>
+	/// <param name="task"></param>
+	/// <returns></returns>
 	public List<Rat> AssignRatsToTask(List<Rat> rats, StandardTask task)
 	{
-		Queue<TaskPoint> availableSlots = new(task.slots.Where(s => s.Value == null).Select(s => s.Key));
+		// Get a list of the available slots
+		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
 
-		// Might need some rework to make sure that rats cannot be assigned to the same task multiple times
+		// Get a list of viable rats from the provided list
 		Queue<Rat> ratQueue = new(rats
 			.Except(RatsOnTask(task)) // Exclude rats already on the task
 			.OrderBy(r => Vector3.Distance(r.transform.position, task.transform.position)) // order by distance (ascending)
 		);
 
+		// While there are both rats and slots available, assign
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
-			Rat r = ratQueue.Dequeue();
-			TaskPoint s = availableSlots.Dequeue();
-
-			AssignRats(task, r);
-			task.slots[s] = r;
-			r.SetDestination(s.taskPosition);
-			r.Deselect();
+			AssignRats(task, availableSlots.Dequeue(), ratQueue.Dequeue());
 		}
 		return ratQueue.ToList();
 	}
@@ -41,34 +35,48 @@ public class TaskManager : MonoBehaviour
 	public List<Rat> RatsOnTask(StandardTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
 	public void ClearRatsOnTask(StandardTask task)
 	{
-		foreach (var slot in task.slots.ToList())
+		foreach (TaskPoint tp in task.TaskPoints)
 		{
-			task.slots[slot.Key] = null;
-		}
-		foreach (Rat r in RatsOnTask(task))
-		{
-			UnassignRats(r);
+			UnassignRats(tp.rat);
+			tp.rat = null;
 		}
 	}
+
 	public void UnassignRats(params Rat[] rats)
 	{
 		foreach (Rat rat in rats)
 		{
-			ratTasks[rat] = null;
+			if (ratTasks.ContainsKey(rat))
+			{
+				GetTaskPoint(rat).rat = null;
+				ratTasks.Remove(rat);
+			}
 		}
 	}
-	public void AssignRats(StandardTask task, params Rat[] rats)
+
+	void AssignRats(StandardTask task, TaskPoint slot, Rat rat)
 	{
-		foreach (Rat rat in rats)
+		// Register to dictionary
+		ratTasks.Add(rat, task);
+		// Assign to slot
+		slot.rat = rat;
+
+		// Set destination and remove from active selection
+		rat.SetDestination(slot.taskPosition);
+		rat.Deselect();
+	}
+
+	public TaskPoint GetTaskPoint(Rat r)
+	{
+		if (!ratTasks.ContainsKey(r)) return null;
+
+		foreach (TaskPoint taskPoint in ratTasks[r].TaskPoints)
 		{
-			ratTasks[rat] = task;
+			if (taskPoint.rat == r)
+			{
+				return taskPoint;
+			}
 		}
-	}
-
-	public bool RatInPlace(Rat r)
-	{
-		TaskPoint tp = ratTasks[r].slots.Where(s => s.Value == r).Select(s => s.Key).FirstOrDefault();
-
-		return tp != null && Vector3.Distance(tp.taskPosition, r.transform.position) < 0.1f;
+		return null;
 	}
 }
