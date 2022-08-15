@@ -26,4 +26,12 @@ public class CatNavigation : MonoBehaviour
     agent.destination = positions[destPoint].position;
     destPoint = (destPoint + 1) % positions.Length;
    }
+
+   private void OnTriggerEnter(Collider rat) {
+    if (rat.gameObject.tag == "Rat") {
+        if (GameObject.FindWithTag("KillZone")) {
+            Destroy(GameObject.FindWithTag("Rat"));
+        }
+    }
+   }
 }
