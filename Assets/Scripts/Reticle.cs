@@ -28,7 +28,7 @@ public class Reticle : MonoBehaviour
 
 	RatManager ratManager;
 
-	bool paused;
+	bool active = true;
 
 	void Start()
 	{
@@ -38,16 +38,11 @@ public class Reticle : MonoBehaviour
 		anim = GetComponentInChildren<Animator>();
 		graphic = GetComponentInChildren<SpriteRenderer>();
 		ratManager = GameManager.Instance.RatManager;
-		GameManager.Pause += SetPaused;
 	}
 
 	void Update()
 	{
-		if (paused)
-		{
-			SetColor(new(0, 0, 0, 0));
-			return;
-		}		
+		if (!active) return;
 
 		SetSize();
 		SetPosition();
@@ -68,8 +63,6 @@ public class Reticle : MonoBehaviour
 
 		graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, targetColor, colorChangeSpeed * Time.deltaTime);
 	}
-
-	void SetColor(Color color) => graphic.color = ExtensionMethods.ColorMoveTowards(graphic.color, color, colorChangeSpeed * Time.deltaTime);
 
 	void SetSize()
 	{
@@ -133,7 +126,7 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
+			if (hoverTask) // Assign to task
 			{
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
 				// Clear selected rats
@@ -148,16 +141,10 @@ public class Reticle : MonoBehaviour
 			else
 			{
 				ratManager.SetRatDestinations(transform.position);
-				GameManager.Instance.TaskManager.UnassignRats(ratManager.selectedRats.ToArray());
+				ratManager.selectedRats.ForEach(r => GameManager.Instance.TaskManager.UnassignRats(r));
 			}
 		}
 	}
 
 	public void SetTask(StandardTask task) => hoverTask = task;
-
-	void SetPaused(bool paused) => this.paused = paused;
-	private void OnDestroy()
-	{
-		GameManager.Pause -= SetPaused;
-	}
 }

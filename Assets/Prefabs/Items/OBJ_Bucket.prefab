@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7869986774011142018}
   - component: {fileID: 7869986774011142022}
   - component: {fileID: 7869986774011142017}
-  - component: {fileID: 7869986774011142016}
   - component: {fileID: 7869986774011142019}
   m_Layer: 0
   m_Name: OBJ_Bucket_Outline
@@ -100,27 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.496, y: 0.496, z: 0.2}
   m_Center: {x: 0, y: 0.000000007450581, z: -0.00000001862645}
---- !u!114 &7869986774011142016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7869986774011142045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 63a81650914f5fa428c4b4c0c8f53a76,
-    type: 3}
-  taskDuration: 1.5
-  taskPoints: []
-  progressBarOffset: 0.1
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  taskModules: []
 --- !u!114 &7869986774011142019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +116,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7869986774011142016}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StandardTask, Assembly-CSharp
           m_MethodName: Hover
           m_Mode: 6
@@ -154,7 +132,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7869986774011142016}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StandardTask, Assembly-CSharp
           m_MethodName: Hover
           m_Mode: 6
@@ -178,9 +156,10 @@ GameObject:
   - component: {fileID: 7869986775530975290}
   - component: {fileID: 7869986775530975291}
   - component: {fileID: 6331729194758477657}
+  - component: {fileID: -2000606716094487646}
   m_Layer: 10
   m_Name: OBJ_Bucket
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,3 +261,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.496, y: 0.496, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2000606716094487646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869986775530975284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33f29dfadf68e84e9925c7c3ce94fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: OBJ_Bucket
