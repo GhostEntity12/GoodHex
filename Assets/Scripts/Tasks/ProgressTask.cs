@@ -100,7 +100,7 @@ public abstract class ProgressTask : BaseTask
 		}
 	}
 
-	/// <summary>
+	/// <summary>  
 	/// Draws TaskPoint positions
 	/// </summary>
 	private void OnDrawGizmos()
