@@ -13,35 +13,55 @@ public class StandardTask : ProgressTask
 				if (requiredTasks.All(t => t.TaskState == State.Complete) && requiresItem == false) // if all required tasks are complete
 				{
 					OnUnlock();
-					onUnlockEvents.ForEach(tm => tm.Trigger());
 				}
 				
 				break;
+
 			case State.Unlocked:
+
+				// Set the number of displayed rats
 				progressBar.SetRats(RatsInPlace);
+
+				// Set state to active if all slots are filled
 				if (taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
 				{
-					TaskState = State.Active;
-					onActivateEvents.ForEach(tm => tm.Trigger());
+					OnActivate();
 				}
 				break;
+
 			case State.Active:
+				// If rats are missing, revert to unlocked state
+				// Not using OnUnlock() because that is for the initial unlock
 				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
 				{
 					TaskState = State.Unlocked;
 					onDeactivateEvents.ForEach(tm => tm.Trigger());
 				}
-				progress += Time.deltaTime / taskDuration;
+
+				// Increase progress
+				progress = Mathf.Clamp01(progress + (Time.deltaTime / taskDuration));
 				progressBar.SetProgress(progress);
-				if (progress >= 1)
+
+				// If progress reaches 1, complete
+				if (progress == 1)
 				{
 					OnComplete();
 					onCompleteEvents.ForEach(tm => tm.Trigger());
 				}
 				break;
+
 			case State.Complete:
 				break;
 		}
+	}
+
+	/// <summary>
+	/// Runs on activation of the task
+	/// </summary>
+	protected override void OnActivate()
+	{
+		TaskState = State.Active;
+		onActivateEvents.ForEach(tm => tm.Trigger());
 	}
 
 	///<summary>
@@ -52,6 +72,7 @@ public class StandardTask : ProgressTask
 		progressBar.SetActive(true);
 		TaskState = State.Unlocked;
 		progress = 0;
+		onUnlockEvents.ForEach(tm => tm.Trigger());
 	}
 
 	/// <summary>
@@ -60,8 +81,9 @@ public class StandardTask : ProgressTask
 	protected override void OnComplete()
 	{
 		progressBar.SetActive(false);
-		Hover(false);
+		Highlight(false);
 		TaskState = State.Complete;
+		IsComplete = true;
 
 		SpawnItem();
 
