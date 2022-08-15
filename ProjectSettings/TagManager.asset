@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoints
   - Rat
   - Item
+  - KillZone
   layers:
   - Default
   - TransparentFX
