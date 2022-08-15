@@ -1,4 +1,2 @@
 Witch|Happy|Sometimes you might need to move more than 1 of your friends at a time.
 Witch|Happy|Just like you did before, use the wand to select our other friend over there.
-Witch|Happy|You can either press and hold the <b>Left Mouse Button</b> and drag over both of your friends, or select the one at a time.
-Witch|Happy|You can also use the scroll wheel to change the size of the circle!

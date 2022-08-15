@@ -11,17 +11,7 @@ public class Rat : MonoBehaviour
 	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
 	private float patience;
-	public bool AssignedToTask => GameManager.Instance.TaskManager.ratTasks.ContainsKey(this);
-	public bool ArrivedAtTask
-	{
-		get
-		{
-			TaskPoint tp = GameManager.Instance.TaskManager.GetTaskPoint(this);
-			if (tp == null) return false;
-
-			return Vector3.Distance(GameManager.Instance.TaskManager.GetTaskPoint(this).taskPosition, transform.position) < 0.1f;
-		}
-	}
+	public bool Occupied => GameManager.Instance.TaskManager.ratTasks[this] != null;
 	[field: SerializeField] public bool Wandering { get; private set; }
 
 	public RatData Info { get; private set; }
@@ -30,18 +20,12 @@ public class Rat : MonoBehaviour
 	public bool atDestination;
 
 	RatEmotes ratEmotes;
-	PickUp pickUp;
-
-	bool paused;
 
 	private void Start()
 	{
-		GameManager.Pause += SetPaused;
-
 		ratEmotes = GetComponentInChildren<RatEmotes>();
 		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
-		pickUp = GetComponent<PickUp>();
 
 		if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
 		{
@@ -52,12 +36,9 @@ public class Rat : MonoBehaviour
 
 	private void Update()
 	{
-		if (paused) return;
-
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
-		anim.SetBool("occupied", ArrivedAtTask);
-		anim.SetBool("carrying", pickUp.IsHoldingItem);
+		anim.SetBool("occupied", Occupied && GameManager.Instance.TaskManager.RatInPlace(this));
 
 		// Reducing flicker
 		graphic.flipX = NavAgent.velocity.x switch
@@ -67,7 +48,7 @@ public class Rat : MonoBehaviour
 			_ => graphic.flipX
 		};
 
-		if (!AssignedToTask)
+		if (!Occupied)
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
@@ -96,7 +77,7 @@ public class Rat : MonoBehaviour
 		Wandering = false;
 	}
 
-	public void ReachedTaskPoint()
+	public void AtTaskPoint()
 	{
 		atDestination = false;
 		atTask = true;
@@ -121,13 +102,6 @@ public class Rat : MonoBehaviour
 
 	public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
 
-	void SetPaused(bool paused)
-	{
-		this.paused = paused;
-		NavAgent.isStopped = paused;
-		anim.speed = paused ? 0 : 1;
-	}
-
 	public void Kill()
 	{
 		GameManager.Instance.RatManager.RemoveRat(this);
@@ -143,9 +117,5 @@ public class Rat : MonoBehaviour
 	public void Deselect()
 	{
 		graphic.color = Color.white;
-	}
-	private void OnDestroy()
-	{
-		GameManager.Pause -= SetPaused;
 	}
 }

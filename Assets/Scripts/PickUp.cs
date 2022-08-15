@@ -8,9 +8,13 @@ public class PickUp : MonoBehaviour
     public LayerMask pickUpMask;
 
     private GameObject itemHolding;
-    public bool IsHoldingItem => itemHolding;
 
     void Update()
+    {
+        CheckForPickup();
+    }
+
+    void CheckForPickup()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {

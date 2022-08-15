@@ -10,7 +10,6 @@ public class StandardTask : BaseTask
 	[SerializeField, Tooltip("How long the task takes")] float taskDuration;
 	[Tooltip("How far into completion the task is")] float progress;
 	[SerializeField, Tooltip("The points at which rats stand to do the task")] TaskPoint[] taskPoints = new TaskPoint[0];
-	public TaskPoint[] TaskPoints => taskPoints;
 
 	[Header("Progress Bar")]
 	[SerializeField, Tooltip("How high above the task the progress bar should appear")] float progressBarOffset = 2f;
@@ -26,12 +25,18 @@ public class StandardTask : BaseTask
 	Color highlightColor = new(0.5f, 1f, 0.3f, 0.8f);
 	Color highlightColorUnavailable = new(0.5f, 0.5f, 0.5f, 0.8f);
 
-	[Space(20), SerializeField] List<TaskModule> onUnlockEvents;
-	[Space(20), SerializeField] List<TaskModule> onActivateEvents;
-	[Space(20), SerializeField] List<TaskModule> onDeactivateEvents;
-	[Space(20), SerializeField] List<TaskModule> onCompleteEvents;
+	[Space(20), SerializeField] List<TaskModule> taskModules;
 
-	int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask).Count();
+	int SlotsFilled => slots.Where(p => p.Value!= null && Vector3.Distance(p.Key.taskPosition, p.Value.transform.position) < 0.1f).Count();
+	public Dictionary<TaskPoint, Rat> slots = new();
+
+	public GameObject itemToSpawn;
+	public GameObject spawner;
+
+	public string triggerId;
+
+	[field: SerializeField] public bool requiresItem { get; private set; }
+
 
 	// Start is called before the first frame update
 	new void Start()
@@ -41,42 +46,43 @@ public class StandardTask : BaseTask
 		progressBar = GameManager.Instance.CreateProgressBar();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 
+		foreach (TaskPoint taskPoint in taskPoints)
+		{
+			slots.Add(taskPoint, null);
+		}
 		base.Start();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (paused) return;
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete)) // if all required tasks are complete
+				if (requiredTasks.All(t => t.TaskState == State.Complete) && requiresItem == false) // if all required tasks are complete
 				{
 					OnUnlock();
-					onUnlockEvents.ForEach(tm => tm.Trigger());
 				}
+				
 				break;
 			case State.Unlocked:
-				progressBar.SetRats(RatsInPlace);
-				if (taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
+				foreach (TaskPoint point in taskPoints)
 				{
-					TaskState = State.Active;
-					onActivateEvents.ForEach(tm => tm.Trigger());
+					if (slots[point] != null && GameManager.Instance.TaskManager.RatInPlace(slots[point]))
+					{
+						slots[point].AtTaskPoint();
+					}
 				}
-				break;
-			case State.Active:
-				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
+				progressBar.SetRats(SlotsFilled);
+				if (slots.All(s => s.Value && s.Value.atTask) && SlotsFilled == taskPoints.Length)
 				{
-					TaskState = State.Unlocked;
-					onDeactivateEvents.ForEach(tm => tm.Trigger());
-				}
-				progress += Time.deltaTime / taskDuration;
-				progressBar.SetProgress(progress);
-				if (progress >= 1)
-				{
-					OnComplete();
-					onCompleteEvents.ForEach(tm => tm.Trigger());
+					taskModules.ForEach(tm => tm.OnActivate());
+					progress += Time.deltaTime / taskDuration;
+					progressBar.SetProgress(progress);
+					if (progress >= 1)
+					{
+						OnComplete();
+					}
 				}
 				break;
 			case State.Complete:
@@ -140,6 +146,9 @@ public class StandardTask : BaseTask
 		progressBar.SetActive(false);
 		Hover(false);
 		TaskState = State.Complete;
+		taskModules.ForEach(tm => tm.OnDeactivate());
+
+		SpawnItem();
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
@@ -168,11 +177,30 @@ public class StandardTask : BaseTask
 			point.taskPosition = transform.position;
 		}
 	}
+
+	void SpawnItem()
+	{
+		Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity);
+	}
+
+	void OnTriggerEnter(Collider collider)
+    {
+		if(collider.gameObject.tag == "Rat")
+        {
+			if (GameObject.FindWithTag("Item") != null)
+			{
+				if (GameObject.FindWithTag("Item").GetComponent<Pickupable>().ReturnItemId() == triggerId)
+				{
+					requiresItem = false;
+					Destroy(GameObject.FindWithTag("Item"));
+				}
+			}
+		}
+    }
 }
 
 [System.Serializable]
 public class TaskPoint
 {
 	public Vector3 taskPosition;
-	public Rat rat;
 }

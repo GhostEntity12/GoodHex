@@ -15,11 +15,11 @@ public class TaskList : MonoBehaviour
 	{
 		foreach (TaskListItem task in tasks)
 		{
+
 			bool target = task.T.TaskState switch
 			{
 				BaseTask.State.Locked => false,
 				BaseTask.State.Unlocked => true,
-				BaseTask.State.Active => true,
 				BaseTask.State.Complete => false,
 				_ => throw new System.Exception("Invalid Task State")
 			};

@@ -12,7 +12,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
 	public static DialogueManager instance;
 
-	public bool DialogueActive { get; private set; }
+	bool dialogueActive;
 	bool isDisplayingText;
 	IEnumerator displayDialogueCoroutine;
 
@@ -63,8 +63,6 @@ public class DialogueManager : Singleton<DialogueManager>
 	CharacterPortraitContainer currentCharacter;
 	Vector2 defaultPortraitSize;
 
-	bool paused;
-
 	private void Start()
 	{
 		foreach (CharacterPortraitContainer characterPortraits in Resources.LoadAll<CharacterPortraitContainer>("CharacterDialogueSprites")) // Creates the dictionary
@@ -80,10 +78,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		rightSpeaker.SetCachesAndPosition(new Vector2(1200, 0));
 		dialogueUI.SetCachesAndPosition(new Vector2(0, -400));
 		skipDialogueDisplay.SetCachesAndPosition(new Vector2(0, 800));
-		GameManager.Pause += SetPaused;
 	}
-
-	void SetPaused(bool paused) => this.paused = paused;
 
 	/// <summary>
 	/// Clears the dialogue box's name, dialogue and image
@@ -294,8 +289,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
 	private void Update()
 	{
-		dialogueCanvas.interactable = dialogueCanvas.blocksRaycasts = DialogueActive;
-		if (Input.GetKeyDown(KeyCode.Escape) && DialogueActive)
+		dialogueCanvas.interactable = dialogueCanvas.blocksRaycasts = dialogueActive;
+		if (Input.GetKeyDown(KeyCode.Escape) && dialogueActive)
 		{
 			skipDialogueDisplay.SlideElement(skipDialogueDisplayActive ? TweenedElement.ScreenState.Offscreen : TweenedElement.ScreenState.Onscreen, tweenSpeed: 0.05f);
 			skipDialogueDisplayActive = !skipDialogueDisplayActive;
@@ -303,7 +298,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		}
 		if (skipDialogueDisplayActive) return;
 
-		if (GetAnyKeyDown(ProgressionKeys) && DialogueActive) // If enter is pressed and the textboxes are visible
+		if (GetAnyKeyDown(ProgressionKeys) && dialogueActive) // If enter is pressed and the textboxes are visible
 		{
 			if (isDisplayingText) // If the system is currently typing out, finish and return
 			{
@@ -346,13 +341,17 @@ public class DialogueManager : Singleton<DialogueManager>
 		SwapFromDialogue();
 		leftCharacter = null;
 		rightCharacter = null;
-		DialogueActive = false;
+		dialogueActive = false;
 		LeanTween.size(bustL.rectTransform, defaultPortraitSize, 0.1f);
 		LeanTween.size(bustR.rectTransform, defaultPortraitSize, 0.1f);
-		leftSpeaker.SlideElement(TweenedElement.ScreenState.Offscreen, FinishDialogue);
+		leftSpeaker.SlideElement(TweenedElement.ScreenState.Offscreen, ClearDialogueBox);
 		rightSpeaker.SlideElement(TweenedElement.ScreenState.Offscreen);
 
 		onFinishDialogueActions.Dequeue()?.Invoke();
+		if (sceneQueue.Count > 0)
+		{
+			TriggerDialogue(sceneQueue.Dequeue());
+		}
 	}
 
 	/// <summary>
@@ -366,7 +365,7 @@ public class DialogueManager : Singleton<DialogueManager>
 		Debug.Log($"<color=#5cd3e0>[Dialogue]</color> Queuing dialogue {_sceneName.name}");
 		sceneQueue.Enqueue(_sceneName);
 		onFinishDialogueActions.Enqueue(onEndAction);
-		if (!DialogueActive)
+		if (!dialogueActive)
 		{
 			TriggerDialogue(sceneQueue.Dequeue(), darkenAmount);
 		}
@@ -374,13 +373,13 @@ public class DialogueManager : Singleton<DialogueManager>
 
 	private void TriggerDialogue(TextAsset _sceneName, float darkenAmount = 0.9f)
 	{
-		GameManager.Instance.SetPause(true);
+		// TODO: Pause game
 		LeanTween.alphaCanvas(darkenedBackground, darkenAmount, 0.4f);
 		if (blur)
 		{
 			LeanTween.value(blur.gameObject, Blur, 0, 1, 0.4f);
 		}
-		DialogueActive = true;
+		dialogueActive = true;
 		ClearDialogueBox();
 		sceneName = _sceneName;
 		Debug.Log($"<color=#5cd3e0>[Dialogue]</color> Starting dialogue {sceneName.name}");
@@ -408,16 +407,6 @@ public class DialogueManager : Singleton<DialogueManager>
 			);
 		currentLine = 0;
 		LoadNewLine();
-	}
-
-	void FinishDialogue()
-	{
-		ClearDialogueBox();
-		if (sceneQueue.Count > 0)
-		{
-			TriggerDialogue(sceneQueue.Dequeue());
-		}
-		GameManager.Instance.SetPause(false);
 	}
 
 	private bool GetAnyKeyDown(params KeyCode[] aKeys)
@@ -453,6 +442,7 @@ public class DialogueManager : Singleton<DialogueManager>
 	/// <param name="uiData"></param>
 	public void SwapDialogue(CharacterPortraitContainer character)
 	{
+		Debug.Log(character);
 		dialogueUI.SlideElement(TweenedElement.ScreenState.Offscreen,
 			() => LoadDialogueSkin(character.bodyBox, character.nameBox,
 				() => dialogueUI.SlideElement(TweenedElement.ScreenState.Onscreen)));
