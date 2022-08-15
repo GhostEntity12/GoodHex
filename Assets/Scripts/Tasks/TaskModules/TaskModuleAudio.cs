@@ -6,7 +6,7 @@ public class TaskModuleAudio : TaskModule
 	AudioSource source;
 	private void Start() => source = GetComponent<AudioSource>();
 
-	public override void OnActivate() => source.PlayOneShot(clip);
-
-	public override void OnDeactivate() { }
+	protected override void OnActivate() => source.PlayOneShot(clip);
+	protected override void OnDeactivate() { }
+	protected override void SetPaused(bool pause) { }
 }
