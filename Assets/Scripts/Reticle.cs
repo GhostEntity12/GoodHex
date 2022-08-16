@@ -13,7 +13,7 @@ public class Reticle : MonoBehaviour
 	float clampedMouseWheelInput = 2;
 	float circleSize = 1f;
 
-	StandardTask hoverTask;
+	ProgressTask hoverTask;
 
 	[SerializeField] AudioClip selectClip;
 
@@ -153,7 +153,7 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-	public void SetTask(StandardTask task) => hoverTask = task;
+	public void SetTask(ProgressTask task) => hoverTask = task;
 
 	void SetPaused(bool paused) => this.paused = paused;
 	private void OnDestroy()

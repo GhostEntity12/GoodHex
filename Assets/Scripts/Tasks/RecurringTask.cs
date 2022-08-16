@@ -1,23 +1,47 @@
 using System.Linq;
 using UnityEngine;
 
-public class StandardTask : ProgressTask
+public class RecurringTask : ProgressTask
 {
-	// Update is called once per frame
+	[SerializeField] float timeToReunlock = 5f;
+	float reunlockTimer;
+	bool prerequisitesMet = false;
+
+	new void Start()
+	{
+		reunlockTimer = timeToReunlock;
+		base.Start();
+	}
+
 	void Update()
 	{
 		if (paused) return;
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete) && RequiresItem == false) // if all required tasks are complete
+				// Prerequisites check is to trigger unlock for the first time
+				if (!prerequisitesMet)
 				{
-					OnUnlock();
+					// If all required tasks are complete, unlock
+					if (requiredTasks.All(t => t.IsComplete) && RequiresItem == false) 
+					{
+						prerequisitesMet = true;
+						OnUnlock();
+					}
+				}
+				// Unlock if the timer reaches 0
+				else
+				{
+					reunlockTimer -= Time.deltaTime;
+					if (reunlockTimer <= 0)
+					{
+						OnUnlock();
+						reunlockTimer = timeToReunlock;
+					}
 				}
 				break;
 
 			case State.Unlocked:
-
 				// Set the number of displayed rats
 				progressBar.SetRats(RatsInPlace);
 
@@ -54,6 +78,15 @@ public class StandardTask : ProgressTask
 	}
 
 	/// <summary>
+	/// Allows quick unlocking of the task if locked
+	/// </summary>
+	public void Unlock()
+	{
+		if (TaskState != State.Locked) return;
+		reunlockTimer = 0;
+	}
+
+	/// <summary>
 	/// Runs on activation of the task
 	/// </summary>
 	protected override void OnActivate()
@@ -62,14 +95,15 @@ public class StandardTask : ProgressTask
 		onActivateEvents.ForEach(tm => tm.Trigger());
 	}
 
-	///<summary>
-	/// Activates the task
+	/// <summary>
+	/// Runs on unlocking of the task
 	/// </summary>
 	protected override void OnUnlock()
 	{
 		progressBar.SetActive(true);
 		TaskState = State.Unlocked;
 		progress = 0;
+		IsComplete = false;
 		onUnlockEvents.ForEach(tm => tm.Trigger());
 	}
 
@@ -80,7 +114,7 @@ public class StandardTask : ProgressTask
 	{
 		progressBar.SetActive(false);
 		Highlight(false);
-		TaskState = State.Complete;
+		TaskState = State.Locked;
 		IsComplete = true;
 		onCompleteEvents.ForEach(tm => tm.Trigger());
 

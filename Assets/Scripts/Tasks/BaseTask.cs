@@ -6,10 +6,12 @@ public abstract class BaseTask : MonoBehaviour
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] protected BaseTask[] requiredTasks;
 	
 	public State TaskState { get; protected set; } = State.Locked;
+	public bool IsComplete { get; protected set; }
 
 	protected bool paused = false;
 
 	protected abstract void OnUnlock();
+	protected abstract void OnActivate();
 	protected abstract void OnComplete();
 
 	// Start is called before the first frame update

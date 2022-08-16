@@ -13,6 +13,8 @@ public class TaskCompletion : BaseTask
 			gameComplete = true;
 		}
 	}
+
+	protected override void OnActivate() { }
 	protected override void OnComplete() { }
 
 	private void Update()

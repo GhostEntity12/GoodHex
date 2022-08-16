@@ -27,7 +27,7 @@ public class ProgressBar : MonoBehaviour
 	public void AddProgress(float amount) => fill.fillAmount += amount;
 	public void SetActive(bool active) => gameObject.SetActive(active);
 
-	public void Setup(StandardTask t, int ratCount, float offsetHeight)
+	public void Setup(ProgressTask t, int ratCount, float offsetHeight)
 	{
 		for (int i = 0; i < ratCount; i++)
 		{

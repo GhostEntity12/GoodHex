@@ -1,25 +1,28 @@
 using System.Linq;
 using UnityEngine;
 
-public class StandardTask : ProgressTask
+public class ContinuousTask : ProgressTask
 {
-	// Update is called once per frame
 	void Update()
 	{
 		if (paused) return;
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete) && RequiresItem == false) // if all required tasks are complete
+				// If all required tasks are complete, unlock
+				if (requiredTasks.All(t => t.IsComplete) && RequiresItem == false) 
 				{
 					OnUnlock();
 				}
 				break;
-
+			
 			case State.Unlocked:
-
 				// Set the number of displayed rats
-				progressBar.SetRats(RatsInPlace);
+				progressBar.SetRats(RatsInPlace); 
+
+				// Decrease progress if not enough rats
+				progress = Mathf.Clamp01(progress - (Time.deltaTime / taskDuration));
+				progressBar.SetProgress(progress);
 
 				// Set state to active if all slots are filled
 				if (taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
@@ -27,7 +30,7 @@ public class StandardTask : ProgressTask
 					OnActivate();
 				}
 				break;
-
+			
 			case State.Active:
 				// If rats are missing, revert to unlocked state
 				// Not using OnUnlock() because that is for the initial unlock
@@ -62,8 +65,8 @@ public class StandardTask : ProgressTask
 		onActivateEvents.ForEach(tm => tm.Trigger());
 	}
 
-	///<summary>
-	/// Activates the task
+	/// <summary>
+	/// Runs on unlocking of the task
 	/// </summary>
 	protected override void OnUnlock()
 	{
@@ -78,10 +81,8 @@ public class StandardTask : ProgressTask
 	/// </summary>
 	protected override void OnComplete()
 	{
-		progressBar.SetActive(false);
 		Highlight(false);
-		TaskState = State.Complete;
-		IsComplete = true;
+		TaskState = State.Unlocked;
 		onCompleteEvents.ForEach(tm => tm.Trigger());
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
