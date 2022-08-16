@@ -96,6 +96,8 @@ public class Reticle : MonoBehaviour
 
 	void SelectDeselect()
 	{
+		if (!(Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)) return;
+
 		if (Input.GetMouseButton(0))
 		{
 			// Get all unselected rats within the circle
@@ -145,7 +147,7 @@ public class Reticle : MonoBehaviour
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 			}
-			else
+			else if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 			{
 				ratManager.SetRatDestinations(transform.position);
 				GameManager.Instance.TaskManager.UnassignRats(ratManager.selectedRats.ToArray());

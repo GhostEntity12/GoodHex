@@ -56,8 +56,14 @@ public class TaskManager : MonoBehaviour
 
 	void AssignRats(ProgressTask task, TaskPoint slot, Rat rat)
 	{
+		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
+		{
+			UnassignRats(rat);
+		}
+		
 		// Register to dictionary
 		ratTasks.Add(rat, task);
+
 		// Assign to slot
 		slot.rat = rat;
 
