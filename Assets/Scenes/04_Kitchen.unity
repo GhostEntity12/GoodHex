@@ -316,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 8654492781496150980, guid: 39c084bf6f3f5474a91dc8e58cc850bd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8654492781496150981, guid: 39c084bf6f3f5474a91dc8e58cc850bd,
         type: 3}
@@ -525,13 +525,13 @@ PrefabInstance:
     - target: {fileID: 3218394627366307149, guid: 1d8b43d0734093242a98658e74995707,
         type: 3}
       propertyPath: item
-      value:
+      value: 
       objectReference: {fileID: 7869986775530975284, guid: 683ed140fc89b964daa5fcb2d42a6989,
         type: 3}
     - target: {fileID: 3218394627366307149, guid: 1d8b43d0734093242a98658e74995707,
         type: 3}
       propertyPath: itemToSpawn
-      value:
+      value: 
       objectReference: {fileID: 7869986775530975284, guid: 683ed140fc89b964daa5fcb2d42a6989,
         type: 3}
     - target: {fileID: 3218394627366307150, guid: 1d8b43d0734093242a98658e74995707,
@@ -613,8 +613,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9afa3d200e491a543a1be357a8bc430d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &592655320
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,8 +664,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 6992014757213630252}
 --- !u!114 &592655323
 MonoBehaviour:
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 7101459321440508407}
 --- !u!114 &609943321
 MonoBehaviour:
@@ -767,8 +767,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -900,8 +900,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Version: 1
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
@@ -981,8 +981,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks: []
   <TaskImage>k__BackingField: {fileID: 21300000, guid: 984d4c75d04d95e4cb7012c2826d9311,
     type: 3}
@@ -999,7 +999,7 @@ MonoBehaviour:
   onCompleteEvents:
   - {fileID: 8383424027162924761}
   <RequiresItem>k__BackingField: 0
-  triggerId:
+  triggerId: 
 --- !u!135 &687675882
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -200}
+  m_AnchoredPosition: {x: 120, y: -229}
   m_SizeDelta: {x: 100, y: -500}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &819547281
@@ -1144,8 +1144,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
     m_Right: 0
@@ -1170,8 +1170,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63f743e3bee4a864eb9c5c62ac32f114, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917395305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Version: 1
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
@@ -1322,8 +1322,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eed879ca2b2cf34d96ef1d7b58bb3c8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &963396370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,8 +1334,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544af07f4342f18479f418227f3fefac, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   progressBarManagerPrefab: {fileID: 6527159874632050681, guid: ff3b479ca263da2448ad80ba73be089d,
     type: 3}
@@ -1372,8 +1372,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d223099f8922d9a489f5e7bf9f96ee10, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &963884251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,8 +1558,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9afa3d200e491a543a1be357a8bc430d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1001426821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1678,8 +1678,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 8338220285585852509}
 --- !u!114 &1072140438
 MonoBehaviour:
@@ -1691,8 +1691,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1746,8 +1746,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e66b2200c638640bb937c07b59bf0d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 2129196506}
 --- !u!4 &1113982115
@@ -1775,8 +1775,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9caeaf17ea1be884c94332a561345ec3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1178685327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202177175335282906, guid: 03caf633963307f4191ed926bd1c3ab0,
@@ -1832,8 +1832,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 8811514995498849575}
 --- !u!114 &1263209042
 MonoBehaviour:
@@ -1845,8 +1845,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1891,6 +1891,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1537842218283270617}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338619343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967216332966592358, guid: 98dee63f6255f184ab8a78f038104cff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1537842218283270617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a876391084da3724e8e271a6ac2dab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1350747281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,8 +1952,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 2856439508324293862}
 --- !u!114 &1350747284
 MonoBehaviour:
@@ -1953,8 +1965,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2006,7 +2018,7 @@ PrefabInstance:
     - target: {fileID: 2302604679907556218, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: LightsModule.light
-      value:
+      value: 
       objectReference: {fileID: 917395306}
     - target: {fileID: 2302604679907556218, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
@@ -2379,8 +2391,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2398,8 +2410,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -2536,8 +2548,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 687675881}
 --- !u!114 &1761848177
 MonoBehaviour:
@@ -2549,8 +2561,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2707,8 +2719,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae52da3b322e5242bd28a25fcb3986e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   <T>k__BackingField: {fileID: 2129196506}
 --- !u!114 &1887691050
 MonoBehaviour:
@@ -2720,8 +2732,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2777,8 +2789,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -2794,8 +2806,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -2946,8 +2958,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -2979,8 +2991,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -2995,8 +3007,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
@@ -3012,8 +3024,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9afa3d200e491a543a1be357a8bc430d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2077383658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
@@ -3030,8 +3042,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9caeaf17ea1be884c94332a561345ec3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2114657548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,8 +3105,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 6992014757213630252}
   <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
@@ -3111,7 +3123,7 @@ MonoBehaviour:
   onDeactivateEvents: []
   onCompleteEvents: []
   <RequiresItem>k__BackingField: 0
-  triggerId:
+  triggerId: 
 --- !u!4 &2129196510
 Transform:
   m_ObjectHideFlags: 0
@@ -3665,7 +3677,7 @@ PrefabInstance:
     - target: {fileID: 1537842218466008374, guid: 98dee63f6255f184ab8a78f038104cff,
         type: 3}
       propertyPath: gameOverCanvas
-      value:
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1537842219437793355, guid: 98dee63f6255f184ab8a78f038104cff,
         type: 3}
@@ -3781,6 +3793,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967216332966592358, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 819547279}
+    - target: {fileID: 4989133015600774964, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1338619343}
+    - target: {fileID: 4989133015600774964, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: whenButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673287685580096815, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
@@ -3900,8 +3932,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -3916,7 +3948,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -3932,7 +3964,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1936496216705424102
@@ -4020,8 +4052,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 8811514995498849575}
   <TaskImage>k__BackingField: {fileID: 21300000, guid: fb4dbfe22433e164f8f9eb396b43ebb8,
@@ -4055,8 +4087,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -4071,7 +4103,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -4087,7 +4119,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!64 &2856439508324293864
@@ -4114,8 +4146,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 8978340877118927433, guid: 5a4c6c9a7525cf640a92c109c0d1f987,
     type: 3}
   spawner: {fileID: 789223726}
@@ -4250,7 +4282,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -4289,7 +4321,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -4396,7 +4428,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -4503,7 +4535,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -4686,8 +4718,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -4702,7 +4734,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -4718,7 +4750,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!33 &3814924825242745454
@@ -5321,8 +5353,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -5337,7 +5369,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -5353,7 +5385,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &6992014757213630252
@@ -5366,8 +5398,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 8338220285585852509}
   - {fileID: 7101459321440508407}
@@ -5552,8 +5584,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -5568,7 +5600,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -5584,7 +5616,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &7101459321440508407
@@ -5597,8 +5629,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 687675881}
   <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
@@ -5915,8 +5947,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks: []
   <TaskImage>k__BackingField: {fileID: 21300000, guid: 36b83aba4a6940841a8e0c11480aed1d,
     type: 3}
@@ -5935,7 +5967,7 @@ MonoBehaviour:
   onDeactivateEvents: []
   onCompleteEvents: []
   <RequiresItem>k__BackingField: 0
-  triggerId:
+  triggerId: 
 --- !u!114 &8338220285585852510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5946,8 +5978,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -5962,7 +5994,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -5978,7 +6010,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!212 &8383424027162924760
@@ -6043,8 +6075,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 7869986775530975284, guid: 683ed140fc89b964daa5fcb2d42a6989,
     type: 3}
   spawner: {fileID: 1283300140}
@@ -6122,8 +6154,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 0
     callback:
@@ -6138,7 +6170,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -6154,7 +6186,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &8811514995498849575
@@ -6167,8 +6199,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9aa730703120145a8d161a1bcbf61c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   requiredTasks: []
   <TaskImage>k__BackingField: {fileID: 21300000, guid: 31a47e5de8ef5814ca0ab6dfd4745a1a,
     type: 3}
@@ -6192,7 +6224,7 @@ MonoBehaviour:
   - {fileID: 1976901383}
   - {fileID: 8811514995498849577}
   <RequiresItem>k__BackingField: 0
-  triggerId:
+  triggerId: 
 --- !u!64 &8811514995498849576
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6217,8 +6249,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 8978340877118927433, guid: 1f07eb7025ec8284387e18f50a5f2c3d,
     type: 3}
   spawner: {fileID: 1848995972}
