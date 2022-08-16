@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &64851916
 GameObject:
@@ -183,9 +183,129 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 679925456}
+  - {fileID: 2077383658}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &82280480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1935148537}
+    m_Modifications:
+    - target: {fileID: 2283685582343941868, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bb2a4489e3e8934d88cfa5758a1f172, type: 3}
 --- !u!1001 &251164416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +963,7 @@ GameObject:
   - component: {fileID: 687675881}
   - component: {fileID: 687675882}
   - component: {fileID: 3652688293128539006}
+  - component: {fileID: 8383424027162924761}
   m_Layer: 7
   m_Name: BucketOutline
   m_TagString: Untagged
@@ -868,15 +989,17 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: 1.086, y: 1.08, z: -1.17}
+    rat: {fileID: 0}
   progressBarOffset: 0.3
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules: []
-  itemToSpawn: {fileID: 7869986775530975284, guid: 683ed140fc89b964daa5fcb2d42a6989,
-    type: 3}
-  spawner: {fileID: 1283300140}
+  onUnlockEvents: []
+  onActivateEvents: []
+  onDeactivateEvents: []
+  onCompleteEvents:
+  - {fileID: 8383424027162924761}
+  <RequiresItem>k__BackingField: 0
   triggerId:
-  <requiresItem>k__BackingField: 0
 --- !u!135 &687675882
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1124,7 +1247,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -0.000000004811909}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 5.852594e-10}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1164,6 +1287,12 @@ Transform:
   m_Father: {fileID: 2077383658}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &928907912 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 82280480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963396368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,7 +1986,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 64851917}
     m_Modifications:
     - target: {fileID: 2123975070189954242, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
@@ -1927,7 +2056,7 @@ PrefabInstance:
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
@@ -1952,17 +2081,17 @@ PrefabInstance:
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6324749829231887752, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
@@ -1982,6 +2111,11 @@ PrefabInstance:
     - target: {fileID: 8606360729854598077, guid: 9d160440b84746e418e045094dedd6da,
         type: 3}
       propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606360729854598077, guid: 9d160440b84746e418e045094dedd6da,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8606360729854598077, guid: 9d160440b84746e418e045094dedd6da,
@@ -2211,6 +2345,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d160440b84746e418e045094dedd6da, type: 3}
+--- !u!1 &1436689168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2123975070189954242, guid: 9d160440b84746e418e045094dedd6da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1428361814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1545705467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,6 +2748,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887691047}
   m_CullTransparentMesh: 1
+--- !u!1 &1935148533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935148537}
+  - component: {fileID: 1935148536}
+  - component: {fileID: 1935148535}
+  - component: {fileID: 1935148534}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1935148534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935148533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1935148535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935148533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1935148536
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935148533}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1935148537
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935148533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 928907912}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1957880648
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +3020,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1428361814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2077383661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436689168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caeaf17ea1be884c94332a561345ec3, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1 &2114657548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,14 +3102,16 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: -1.3800001, y: 1.05, z: -1.17}
+    rat: {fileID: 0}
   progressBarOffset: 0.25
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules: []
-  itemToSpawn: {fileID: 0}
-  spawner: {fileID: 0}
+  onUnlockEvents: []
+  onActivateEvents: []
+  onDeactivateEvents: []
+  onCompleteEvents: []
+  <RequiresItem>k__BackingField: 0
   triggerId:
-  <requiresItem>k__BackingField: 0
 --- !u!4 &2129196510
 Transform:
   m_ObjectHideFlags: 0
@@ -3036,7 +3291,7 @@ Transform:
   - {fileID: 8159867240571719215}
   - {fileID: 769053328}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &568822952411889381
 GameObject:
@@ -3239,7 +3494,7 @@ PrefabInstance:
     - target: {fileID: 537235555496007994, guid: 6e1f870903b03674586903d97fe62f6b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 537235555496007994, guid: 6e1f870903b03674586903d97fe62f6b,
         type: 3}
@@ -3543,6 +3798,7 @@ GameObject:
   - component: {fileID: 2856439508324293862}
   - component: {fileID: 2856439508324293864}
   - component: {fileID: 2856439508324293863}
+  - component: {fileID: 2856439508324293865}
   m_Layer: 7
   m_Name: OBJ_Chopping_board_outline
   m_TagString: Untagged
@@ -3652,8 +3908,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2129196506}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3668,8 +3924,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2129196506}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3773,17 +4029,22 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: -0.94, y: 1.0564561, z: 0.9}
+    rat: {fileID: 0}
   - taskPosition: {x: -1.68, y: 1.0564561, z: 0.79}
+    rat: {fileID: 0}
   progressBarOffset: 0.25
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules:
+  onUnlockEvents: []
+  onActivateEvents:
   - {fileID: 978436555}
-  itemToSpawn: {fileID: 8978340877118927433, guid: 5a4c6c9a7525cf640a92c109c0d1f987,
-    type: 3}
-  spawner: {fileID: 789223726}
+  onDeactivateEvents:
+  - {fileID: 978436555}
+  onCompleteEvents:
+  - {fileID: 2856439508324293865}
+  - {fileID: 978436555}
+  <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Plant
-  <requiresItem>k__BackingField: 1
 --- !u!114 &2856439508324293863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3802,8 +4063,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2856439508324293862}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3818,8 +4079,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2856439508324293862}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3843,6 +4104,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2358199993056008936, guid: d24825f52fcaff54baeda42d102f5419, type: 3}
+--- !u!114 &2856439508324293865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583541470874250088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  itemToSpawn: {fileID: 8978340877118927433, guid: 5a4c6c9a7525cf640a92c109c0d1f987,
+    type: 3}
+  spawner: {fileID: 789223726}
 --- !u!23 &2934551520658333481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4418,8 +4694,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 687675881}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4434,8 +4710,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 687675881}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4482,7 +4758,7 @@ Transform:
   - {fileID: 687675885}
   - {fileID: 1113982115}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4122470935869546453
 GameObject:
@@ -5053,8 +5329,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6992014757213630252}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5069,8 +5345,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6992014757213630252}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5101,16 +5377,21 @@ MonoBehaviour:
   taskDuration: 10
   taskPoints:
   - taskPosition: {x: -1, y: 1.07, z: 0.5218148}
+    rat: {fileID: 0}
   progressBarOffset: 0.5
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules:
-  - {fileID: 1178685324}
+  onUnlockEvents: []
+  onActivateEvents:
   - {fileID: 526482319}
-  itemToSpawn: {fileID: 0}
-  spawner: {fileID: 0}
+  - {fileID: 1178685324}
+  onDeactivateEvents:
+  - {fileID: 526482319}
+  - {fileID: 1178685324}
+  onCompleteEvents:
+  - {fileID: 526482319}
+  <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Plant_Chopped
-  <requiresItem>k__BackingField: 1
 --- !u!135 &6992014757213630253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5279,8 +5560,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7101459321440508407}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5295,8 +5576,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7101459321440508407}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5325,15 +5606,18 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.09, y: 1.05, z: -1.53}
+    rat: {fileID: 0}
   - taskPosition: {x: 0.28, y: 1.05, z: -1.16}
+    rat: {fileID: 0}
   progressBarOffset: 0.2
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules: []
-  itemToSpawn: {fileID: 0}
-  spawner: {fileID: 0}
+  onUnlockEvents: []
+  onActivateEvents: []
+  onDeactivateEvents: []
+  onCompleteEvents: []
+  <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Bucket
-  <requiresItem>k__BackingField: 1
 --- !u!64 &7101459321440508408
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5639,15 +5923,19 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.74, y: 1.07, z: 0.5521964}
+    rat: {fileID: 0}
   - taskPosition: {x: 0.4007832, y: 1.07, z: 0.94}
+    rat: {fileID: 0}
   progressBarOffset: 0.8
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules: []
-  itemToSpawn: {fileID: 0}
-  spawner: {fileID: 0}
+  onUnlockEvents: []
+  onActivateEvents:
+  - {fileID: 2077383661}
+  onDeactivateEvents: []
+  onCompleteEvents: []
+  <RequiresItem>k__BackingField: 0
   triggerId:
-  <requiresItem>k__BackingField: 0
 --- !u!114 &8338220285585852510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5666,8 +5954,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8338220285585852509}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5682,8 +5970,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8338220285585852509}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5745,6 +6033,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8383424027162924761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687675880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  itemToSpawn: {fileID: 7869986775530975284, guid: 683ed140fc89b964daa5fcb2d42a6989,
+    type: 3}
+  spawner: {fileID: 1283300140}
 --- !u!4 &8514424271974655308
 Transform:
   m_ObjectHideFlags: 0
@@ -5801,6 +6104,7 @@ GameObject:
   - component: {fileID: 8811514995498849576}
   - component: {fileID: 8811514995498849575}
   - component: {fileID: 8811514995498849574}
+  - component: {fileID: 8811514995498849577}
   m_Layer: 7
   m_Name: OBJ_Pots_outline
   m_TagString: Untagged
@@ -5826,8 +6130,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8811514995498849575}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5842,8 +6146,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8811514995498849575}
-          m_TargetAssemblyTypeName: Task, Assembly-CSharp
-          m_MethodName: Hover
+          m_TargetAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_MethodName: Highlight
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5871,18 +6175,24 @@ MonoBehaviour:
   taskDuration: 5
   taskPoints:
   - taskPosition: {x: -1.29, y: 1.05, z: -0.18918073}
+    rat: {fileID: 0}
   - taskPosition: {x: -1.65, y: 1.05, z: 0.14}
+    rat: {fileID: 0}
   - taskPosition: {x: -1.74, y: 1.05, z: 0.33}
+    rat: {fileID: 0}
   progressBarOffset: 0.35
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  taskModules:
+  onUnlockEvents: []
+  onActivateEvents:
   - {fileID: 1976901383}
-  itemToSpawn: {fileID: 8978340877118927433, guid: 1f07eb7025ec8284387e18f50a5f2c3d,
-    type: 3}
-  spawner: {fileID: 1848995972}
+  onDeactivateEvents:
+  - {fileID: 1976901383}
+  onCompleteEvents:
+  - {fileID: 1976901383}
+  - {fileID: 8811514995498849577}
+  <RequiresItem>k__BackingField: 0
   triggerId:
-  <requiresItem>k__BackingField: 0
 --- !u!64 &8811514995498849576
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5897,6 +6207,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4539049789780593215, guid: d24825f52fcaff54baeda42d102f5419, type: 3}
+--- !u!114 &8811514995498849577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811514995498849573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a6460cd3c77ee4b953182fedfa69b5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  itemToSpawn: {fileID: 8978340877118927433, guid: 1f07eb7025ec8284387e18f50a5f2c3d,
+    type: 3}
+  spawner: {fileID: 1848995972}
 --- !u!33 &8912488138726311297
 MeshFilter:
   m_ObjectHideFlags: 0
