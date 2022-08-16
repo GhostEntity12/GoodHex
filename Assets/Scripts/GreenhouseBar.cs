@@ -53,4 +53,5 @@ public class GreenhouseBar : MonoBehaviour
 	public void ToggleState() => gettingSun = !gettingSun;
 
 	void OnPaused(bool paused) => this.paused = paused;
+	void OnDestroy() => GameManager.Pause -= OnPaused;
 }
