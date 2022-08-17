@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class KillZone : MonoBehaviour
 {
-    private GameObject rat;
+    //private GameObject rat;
     NavMeshAgent agentCat;
 
     void Start()
@@ -15,19 +15,18 @@ public class KillZone : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Rat") // collider.TryGetComponent(out Rat rat))
+        if (collider.TryGetComponent(out Rat rat))
         {
-            rat = collider.gameObject;
+            //rat = collider.gameObject;
             Debug.Log(agentCat);
             agentCat.isStopped = true;
-            Invoke("Kill", 2f);
-            //rat.Kill();
+            rat.Kill();
+            Invoke("Resume", 0.5f);
         }
     }
 
-    void Kill()
+    void Resume()
     {
-        Destroy(rat);
         agentCat.isStopped = false;
     }
 }

@@ -3,119 +3,127 @@ using UnityEngine.AI;
 
 public class Rat : MonoBehaviour
 {
-	[SerializeField] SpriteRenderer graphic;
-	Animator anim;
+    [SerializeField] SpriteRenderer graphic;
+    Animator anim;
 
-	[Header("Navigation")]
-	private const float StoppingDistance = 0.15f;
-	[field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
+    [Header("Navigation")]
+    private const float StoppingDistance = 0.15f;
+    [field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 
-	private float patience;
-	public bool Occupied => GameManager.Instance.TaskManager.ratTasks[this] != null;
-	[field: SerializeField] public bool Wandering { get; private set; }
+    private float patience;
+    public bool Occupied => GameManager.Instance.TaskManager.ratTasks[this] != null;
+    [field: SerializeField] public bool Wandering { get; private set; }
 
-	public RatData Info { get; private set; }
+    public RatData Info { get; private set; }
 
-	public bool atTask;
-	public bool atDestination;
+    public bool atTask;
+    public bool atDestination;
 
-	RatEmotes ratEmotes;
+    RatEmotes ratEmotes;
 
-	private void Start()
-	{
-		ratEmotes = GetComponentInChildren<RatEmotes>();
-		anim = GetComponentInChildren<Animator>();
-		NavAgent = GetComponent<NavMeshAgent>();
+    private bool isDead = false;
 
-		if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
-		{
-			transform.position = hit.position;
-		}
-		SetWander();
-	}
+    private void Start()
+    {
+        ratEmotes = GetComponentInChildren<RatEmotes>();
+        anim = GetComponentInChildren<Animator>();
+        NavAgent = GetComponent<NavMeshAgent>();
 
-	private void Update()
-	{
-		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
-		anim.SetBool("wandering", Wandering);
-		anim.SetBool("occupied", Occupied && GameManager.Instance.TaskManager.RatInPlace(this));
+        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
+        {
+            transform.position = hit.position;
+        }
+        SetWander();
+    }
 
-		// Reducing flicker
-		graphic.flipX = NavAgent.velocity.x switch
-		{
-			< 0.01f => true,
-			> -0.01f => false,
-			_ => graphic.flipX
-		};
+    private void Update()
+    {
+        anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
+        anim.SetBool("wandering", Wandering);
+        anim.SetBool("occupied", Occupied && GameManager.Instance.TaskManager.RatInPlace(this));
 
-		if (!Occupied)
-		{
-			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
-			{
-				atDestination = true;
-				NavAgent.ResetPath();
-				patience -= Time.deltaTime;
-				if (patience <= 0)
-				{
-					SetWander();
-				}
-			}
-		}
-	}
-	public void AssignInfo(RatData ratInfo) => Info = ratInfo;
+        // Reducing flicker
+        graphic.flipX = NavAgent.velocity.x switch
+        {
+            < 0.01f => true,
+            > -0.01f => false,
+            _ => graphic.flipX
+        };
 
-	/// <summary>
-	/// Gives the rat a destination to move to
-	/// </summary>
-	/// <param name="position"></param>
-	public void SetDestination(Vector3 position)
-	{
-		NavAgent.SetDestination(position);
-		patience = Info.PatienceDuration;
-		NavAgent.speed = 2f * Info.SpeedModifier;
-		atDestination = false;
-		Wandering = false;
-	}
+        if (!Occupied)
+        {
+            if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
+            {
+                atDestination = true;
+                NavAgent.ResetPath();
+                patience -= Time.deltaTime;
+                if (patience <= 0)
+                {
+                    SetWander();
+                }
+            }
+        }
+    }
+    public void AssignInfo(RatData ratInfo) => Info = ratInfo;
 
-	public void AtTaskPoint()
-	{
-		atDestination = false;
-		atTask = true;
-		anim.SetBool("occupied", true);
-	}
+    /// <summary>
+    /// Gives the rat a destination to move to
+    /// </summary>
+    /// <param name="position"></param>
+    public void SetDestination(Vector3 position)
+    {
+        NavAgent.SetDestination(position);
+        patience = Info.PatienceDuration;
+        NavAgent.speed = 2f * Info.SpeedModifier;
+        atDestination = false;
+        Wandering = false;
+    }
 
-	/// <summary>
-	/// Sets the rat to wander
-	/// </summary>
-	public void SetWander()
-	{
-		atDestination = false;
-		Wandering = true;
-		NavAgent.speed = 0.25f * Info.SpeedModifier;
-		Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
-		Vector3 offsetted = new(transform.position.x + rand.x, transform.position.y, transform.position.z + rand.y);
-		if (NavMesh.SamplePosition(offsetted, out NavMeshHit nMHit, 200f, NavMesh.AllAreas))
-		{
-			NavAgent.SetDestination(nMHit.position);
-		}
-	}
+    public void AtTaskPoint()
+    {
+        atDestination = false;
+        atTask = true;
+        anim.SetBool("occupied", true);
+    }
 
-	public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
+    /// <summary>
+    /// Sets the rat to wander
+    /// </summary>
+    public void SetWander()
+    {
+        atDestination = false;
+        Wandering = true;
+        NavAgent.speed = 0.25f * Info.SpeedModifier;
+        Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
+        Vector3 offsetted = new(transform.position.x + rand.x, transform.position.y, transform.position.z + rand.y);
+        if (NavMesh.SamplePosition(offsetted, out NavMeshHit nMHit, 200f, NavMesh.AllAreas))
+        {
+            NavAgent.SetDestination(nMHit.position);
+        }
+    }
 
-	public void Kill()
-	{
-		GameManager.Instance.RatManager.RemoveRat(this);
-		// Leave corpse?
-		Destroy(gameObject);
-	}
+    public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
 
-	public void Select()
-	{
-		graphic.color = Color.green;
-	}
+    public void Kill()
+    {
+        isDead = true;
+        GameManager.Instance.RatManager.RemoveRat(this);
+        // Leave corpse?
+        Invoke("Remove", 0.5f);
+    }
 
-	public void Deselect()
-	{
-		graphic.color = Color.white;
-	}
+    public void Select()
+    {
+        graphic.color = Color.green;
+    }
+
+    public void Deselect()
+    {
+        graphic.color = Color.white;
+    }
+
+    private void Remove()
+    {
+        Destroy(gameObject);
+    }
 }
