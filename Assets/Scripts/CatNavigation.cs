@@ -6,6 +6,7 @@ public class CatNavigation : MonoBehaviour
     [SerializeField] Transform[] positions;
     private NavMeshAgent agent;
     private int destPoint = 0;
+    private bool exceptionThrown = false;
 
     private void Start()
     {
@@ -24,7 +25,19 @@ public class CatNavigation : MonoBehaviour
 
     void GotoNextPoint()
     {
-        if (positions.Length == 0) { return; }
+        if (positions.Length == 0)
+        {
+            if (!exceptionThrown)
+            {
+                Debug.LogError("No Positions Implemented");
+                exceptionThrown = true;
+                return;
+            }
+            else
+            {
+                return;
+            }
+        }
         agent.destination = positions[destPoint].position;
         destPoint = (destPoint + 1) % positions.Length;
     }
