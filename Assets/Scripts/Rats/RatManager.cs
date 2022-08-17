@@ -36,7 +36,6 @@ public class RatManager : MonoBehaviour
 			spawnedRats.Add(rat);
 			AddRat(rat);
 		}
-		GameManager.Instance.TaskManager.AddRats(spawnedRats.ToArray());
 		return spawnedRats;
 	}
 
