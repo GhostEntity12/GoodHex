@@ -34,6 +34,8 @@ public class Rat : MonoBehaviour
 
 	bool paused;
 
+	private bool isDead = false;
+
 	private void Start()
 	{
 		GameManager.Pause += SetPaused;
@@ -130,9 +132,11 @@ public class Rat : MonoBehaviour
 
 	public void Kill()
 	{
+		isDead = true;
+		NavAgent.isStopped = true;
 		GameManager.Instance.RatManager.RemoveRat(this);
 		// Leave corpse?
-		Destroy(gameObject);
+		Invoke("Remove", 0.5f);
 	}
 
 	public void Select()
@@ -147,5 +151,10 @@ public class Rat : MonoBehaviour
 	private void OnDestroy()
 	{
 		GameManager.Pause -= SetPaused;
+	}
+
+	private void Remove() 
+	{
+		Destroy(gameObject);
 	}
 }
