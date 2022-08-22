@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 4701937302025712608}
   - component: {fileID: 4701937302025712607}
   - component: {fileID: 4701937302025712606}
+  - component: {fileID: 989274074260694033}
   m_Layer: 0
   m_Name: CatObject
   m_TagString: Untagged
@@ -380,7 +381,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 5
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -399,9 +400,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4701937302025712604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a84a7c93c3a6a43b14f27afac84f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - {fileID: 4701937300727582422}
+  - {fileID: 4701937301287496038}
+  - {fileID: 4701937301076457915}
+  - {fileID: 4701937300529974825}
+--- !u!114 &989274074260694033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701937302025712604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b6904d5aad1c44fb825629b70b2814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   positions:
