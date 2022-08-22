@@ -42,7 +42,7 @@ public class CameraSwapper : MonoBehaviour
 				}
 			}
 		}
-		else
+		/*else
 		{
 
 			if (Input.GetKeyDown(KeyCode.PageDown))
@@ -53,7 +53,12 @@ public class CameraSwapper : MonoBehaviour
 			{
 				Increment();
 			}
-		}
+		}*/
+	}
+
+	public void whenButtonClicked()
+    {
+		Increment();
 	}
 
 	void Increment()
