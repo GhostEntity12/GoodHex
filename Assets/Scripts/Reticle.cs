@@ -138,7 +138,7 @@ public class Reticle : MonoBehaviour
 			if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit1, Mathf.Infinity, 1 << 10))
 			{
 				Debug.Log("if check hit");
-				if (hit1.transform.FindWithTag("Item") != null)
+				if (hit1.transform.TryGetComponent(out PickUp pickUp))
 				{
 					Debug.Log("second if check hit");
 					ratManager.SetRatDestinations(transform.position);
