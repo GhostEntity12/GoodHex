@@ -138,12 +138,11 @@ public class Reticle : MonoBehaviour
 			if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit1, Mathf.Infinity, 1 << 10))
 			{
 				Debug.Log("if check hit");
-				if (hit1.transform.TryGetComponent(out PickUp pickUp))
+				if (hit1.transform.TryGetComponent<Pickupable>(out Pickupable pickupable))
 				{
-					Debug.Log("second if check hit");
-					ratManager.SetRatDestinations(transform.position);
-					pickUp.CheckForPickup();
-				}			
+					Rat closestRat = ratManager.selectedRats.OrderBy(r => Vector3.Distance(r.transform.position, hit1.transform.position)).FirstOrDefault();
+					pickupable.AssignRat(closestRat);
+				}
 			}
 
 			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
