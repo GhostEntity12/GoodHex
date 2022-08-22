@@ -7,6 +7,5 @@ public class Pickupable : MonoBehaviour
     public string ReturnItemId()
     {
         return itemId;
-        
     }
 }

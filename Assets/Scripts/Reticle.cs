@@ -135,7 +135,18 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
+			if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit1, Mathf.Infinity, 1 << 10))
+			{
+				Debug.Log("if check hit");
+				if (hit1.transform.FindWithTag("Item") != null)
+				{
+					Debug.Log("second if check hit");
+					ratManager.SetRatDestinations(transform.position);
+					pickUp.CheckForPickup();
+				}			
+			}
+
+			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
 				// Clear selected rats
