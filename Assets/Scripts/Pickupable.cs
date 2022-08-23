@@ -18,7 +18,7 @@ public class Pickupable : MonoBehaviour
 
     void Update()
     {
-        if (savedRat && Vector3.Distance(savedRat.transform.position, transform.position) < 0.1f)
+        if (savedRat && Vector3.Distance(savedRat.transform.position, transform.position) < 0.5f)
         {
             savedRat.GetComponent<PickUp>().CheckForPickup();
         }

@@ -147,6 +147,12 @@ public class Reticle : MonoBehaviour
 				}
 			}
 
+			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Locked)
+            {
+				ratManager.SetRatDestinations(transform.position);
+				ratManager.ClearRats();
+			}
+
 			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
