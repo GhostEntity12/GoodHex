@@ -27,6 +27,7 @@ public class Reticle : MonoBehaviour
 	readonly List<Rat> ratsInHold = new();
 
 	RatManager ratManager;
+	PickUp pickUp;
 
 	bool paused;
 
@@ -135,7 +136,24 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
+			//PickUp code
+			if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit1, Mathf.Infinity, 1 << 10))
+			{
+				if (hit1.transform.TryGetComponent(out Pickupable pickupable))
+				{
+					Rat closestRat = ratManager.selectedRats.OrderBy(r => Vector3.Distance(r.transform.position, hit1.transform.position)).FirstOrDefault();
+					ratManager.SetRatDestinations(transform.position);
+					pickupable.AssignRat(closestRat);
+				}
+			}
+
+			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Locked)
+            {
+				ratManager.SetRatDestinations(transform.position);
+				ratManager.ClearRats();
+			}
+
+			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
 				// Clear selected rats

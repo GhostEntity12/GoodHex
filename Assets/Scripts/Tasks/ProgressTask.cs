@@ -125,13 +125,13 @@ public abstract class ProgressTask : BaseTask
 		}
 	}
 
-	void OnTriggerEnter(Collider collider)
+	void OnTriggerEnter(Collider rat)
 	{
-		if (collider.gameObject.tag == "Rat")
+		if (rat.GetComponent<PickUp>())
 		{
-			if (GameObject.FindWithTag("Item") != null)
+			if (rat.GetComponentInChildren<Pickupable>())
 			{
-				if (GameObject.FindWithTag("Item").GetComponent<Pickupable>().ReturnItemId() == triggerId)
+				if (rat.GetComponentInChildren<Pickupable>().ReturnItemId() == triggerId)
 				{
 					RequiresItem = false;
 					Destroy(GameObject.FindWithTag("Item"));
