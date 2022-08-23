@@ -246,7 +246,7 @@ MonoBehaviour:
   <TaskImage>k__BackingField: {fileID: 0}
   taskDuration: 0
   taskPoints:
-  - taskPosition: {x: -0.5, y: 0, z: 0.5}
+  - taskPosition: {x: 0, y: 0, z: 0}
     rat: {fileID: 0}
   progressBarOffset: 2
   normalSprite: {fileID: 0}
