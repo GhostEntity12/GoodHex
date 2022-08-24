@@ -28,7 +28,6 @@ public class GreenhouseBar : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log(Percentage);
 		if (!failed || !paused)
 		{
 			switch (value)
