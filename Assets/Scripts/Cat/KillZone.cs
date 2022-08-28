@@ -18,7 +18,7 @@ public class KillZone : MonoBehaviour
             //rat = collider.gameObject;
             Debug.Log (agentCat);
             agentCat.isStopped = true;
-            rat.Kill();
+            rat.Kill(0.5f);
             Invoke("Resume", 0.5f);
         }
     }

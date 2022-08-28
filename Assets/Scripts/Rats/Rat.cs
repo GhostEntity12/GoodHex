@@ -130,13 +130,13 @@ public class Rat : MonoBehaviour
 		anim.speed = paused ? 0 : 1;
 	}
 
-	public void Kill()
+	public void Kill(float pauseTime)
 	{
 		isDead = true;
 		NavAgent.isStopped = true;
 		GameManager.Instance.RatManager.RemoveRat(this);
 		// Leave corpse?
-		Invoke("Remove", 0.5f);
+		Invoke("Remove", pauseTime);
 	}
 
 	public void Select()
