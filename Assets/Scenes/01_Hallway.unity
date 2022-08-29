@@ -935,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -200}
+  m_AnchoredPosition: {x: 120, y: -232}
   m_SizeDelta: {x: 100, y: -500}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &819547281
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 1743499480}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 72f767d8ce1a7a8409f90d97642c3464,
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
     type: 3}
   taskDuration: 1.5
   taskPoints:
@@ -1206,6 +1206,8 @@ MonoBehaviour:
   onDeactivateEvents: []
   onCompleteEvents:
   - {fileID: 401868940}
+  <RequiresItem>k__BackingField: 0
+  triggerId: 
 --- !u!65 &1197149821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2148,8 +2150,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1967216332966592358, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 819547279}
+    - target: {fileID: 4989133015600774964, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1537842218283270618}
+    - target: {fileID: 4989133015600774964, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: whenButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673287685580096815, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
+--- !u!114 &1537842218283270618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967216332966592358, guid: 98dee63f6255f184ab8a78f038104cff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1537842218283270617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a876391084da3724e8e271a6ac2dab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1771164040641565590
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2872,7 +2906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 1197149820}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 63a81650914f5fa428c4b4c0c8f53a76,
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
     type: 3}
   taskDuration: 0
   taskPoints:
@@ -2887,6 +2921,8 @@ MonoBehaviour:
   onActivateEvents: []
   onDeactivateEvents: []
   onCompleteEvents: []
+  <RequiresItem>k__BackingField: 0
+  triggerId: 
 --- !u!64 &8031366411091002826
 MeshCollider:
   m_ObjectHideFlags: 0
