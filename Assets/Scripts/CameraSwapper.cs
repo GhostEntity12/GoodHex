@@ -18,6 +18,7 @@ public class CameraSwapper : MonoBehaviour
 	void Start()
 	{
 		c = Camera.main;
+		c.transform.SetPositionAndRotation(cameraPositions[index].position, cameraPositions[index].rotation);
 	}
 
 	private void Update()
@@ -42,7 +43,7 @@ public class CameraSwapper : MonoBehaviour
 				}
 			}
 		}
-		/*else
+		else
 		{
 
 			if (Input.GetKeyDown(KeyCode.PageDown))
@@ -53,10 +54,10 @@ public class CameraSwapper : MonoBehaviour
 			{
 				Increment();
 			}
-		}*/
+		}
 	}
 
-	public void whenButtonClicked()
+	public void WhenButtonClicked()
     {
 		Increment();
 	}

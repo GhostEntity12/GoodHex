@@ -47,9 +47,8 @@ public abstract class ProgressTask : BaseTask
 
 	[SerializeField] string triggerId;
 
-	new void Start()
+	protected new void Start()
 	{
-
 		r = GetComponent<Renderer>();
 
 		progressBar = GameManager.Instance.CreateProgressBar();

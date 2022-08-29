@@ -50,7 +50,7 @@ public class Tutorialisation : MonoBehaviour
 				}
 				break;
 			case TutorialState.MoveRat:
-				if (r.atDestination && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
+				if (!r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
 				{
 					IncrementState();
 					GameManager.Instance.RatManager.SpawnRats(mouseHole.position)[0].SetDestination(mouseHoleExit.position);

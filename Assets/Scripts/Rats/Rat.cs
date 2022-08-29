@@ -26,9 +26,6 @@ public class Rat : MonoBehaviour
 
 	public RatData Info { get; private set; }
 
-	public bool atTask;
-	public bool atDestination;
-
 	RatEmotes ratEmotes;
 	PickUp pickUp;
 
@@ -73,7 +70,6 @@ public class Rat : MonoBehaviour
 		{
 			if (Vector3.Distance(transform.position, NavAgent.destination) < StoppingDistance)
 			{
-				atDestination = true;
 				NavAgent.ResetPath();
 				patience -= Time.deltaTime;
 				if (patience <= 0)
@@ -94,15 +90,7 @@ public class Rat : MonoBehaviour
 		NavAgent.SetDestination(position);
 		patience = Info.PatienceDuration;
 		NavAgent.speed = 2f * Info.SpeedModifier;
-		atDestination = false;
 		Wandering = false;
-	}
-
-	public void ReachedTaskPoint()
-	{
-		atDestination = false;
-		atTask = true;
-		anim.SetBool("occupied", true);
 	}
 
 	/// <summary>
@@ -110,7 +98,6 @@ public class Rat : MonoBehaviour
 	/// </summary>
 	public void SetWander()
 	{
-		atDestination = false;
 		Wandering = true;
 		NavAgent.speed = 0.25f * Info.SpeedModifier;
 		Vector2 rand = Random.insideUnitCircle * Info.WanderRadius;
