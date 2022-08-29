@@ -5,17 +5,29 @@ using UnityEngine.AI;
 
 public class Hazard : MonoBehaviour
 {
-    //private NavMeshAgent ratAgent;
+    [SerializeField] Transform position;
+    private bool captured;
+    private Rat rat;
+    void Start()
+    {
+        captured = false;
+    }
+    void Update()
+    {
+        if (rat)
+        {
+            if (rat.NavAgent.remainingDistance < 0.1f)
+            {
+                rat.Kill(1f);
+                rat = null;
+            }
+        } 
+    }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.TryGetComponent(out Rat rat))
+        if (!rat && collider.TryGetComponent(out rat))
         {
-            //ratAgent = rat.GetComponent<NavMeshAgent>();
-            //ratAgent.destination = gameObject.transform.position;
-            //if (ratAgent.transform.position == gameObject.transform.position)
-            rat.Kill(1f);
-            //play animation
-            //deactivate for few seconds
+            rat.NavAgent.SetDestination(position.position);
         }
     }
 }
