@@ -4,7 +4,7 @@ public abstract class BaseTask : MonoBehaviour
 {
 	public enum State { Locked, Unlocked, Active, Complete }
 	[SerializeField, Tooltip("Tasks that are required to be complete before this task triggers task")] protected BaseTask[] requiredTasks;
-	
+
 	public State TaskState { get; protected set; } = State.Locked;
 	public bool IsComplete { get; protected set; }
 
@@ -29,4 +29,6 @@ public abstract class BaseTask : MonoBehaviour
 	{
 		GameManager.Pause -= SetPaused;
 	}
+
+	public void SetState(State state) => TaskState = state;
 }

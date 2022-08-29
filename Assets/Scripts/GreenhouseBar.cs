@@ -28,7 +28,6 @@ public class GreenhouseBar : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log(Percentage);
 		if (!failed || !paused)
 		{
 			switch (value)
@@ -51,6 +50,7 @@ public class GreenhouseBar : MonoBehaviour
 	}
 
 	public void ToggleState() => gettingSun = !gettingSun;
+	public void SetState(bool setSun) => gettingSun = setSun;
 
 	void OnPaused(bool paused) => this.paused = paused;
 	void OnDestroy() => GameManager.Pause -= OnPaused;

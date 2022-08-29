@@ -14,6 +14,12 @@ public class TaskManager : MonoBehaviour
 	/// <returns></returns>
 	public List<Rat> AssignRatsToTask(List<Rat> rats, ProgressTask task)
 	{
+		if (task is RatWarp) 
+		{
+			return AssignRatsToWarp(rats, task as RatWarp);
+		}
+
+
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
@@ -30,6 +36,21 @@ public class TaskManager : MonoBehaviour
 			AssignRats(task, availableSlots.Dequeue(), ratQueue.Dequeue());
 		}
 		return ratQueue.ToList();
+	}
+
+	/// <summary>
+	/// Sets the rats to a task in the <Rat, Task> Dictionary
+	/// </summary>
+	/// <param name="rats"></param>
+	/// <param name="task"></param>
+	/// <returns></returns>
+	public List<Rat> AssignRatsToWarp(List<Rat> rats, RatWarp warp)
+	{
+		foreach (Rat rat in rats)
+		{
+			AssignRats(warp, warp.TaskPoints[0], rat);
+		}
+		return new();
 	}
 
 	public List<Rat> RatsOnTask(ProgressTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();

@@ -7,7 +7,7 @@ public class RecurringTask : ProgressTask
 	float reunlockTimer;
 	bool prerequisitesMet = false;
 
-	new void Start()
+	protected new void Start()
 	{
 		reunlockTimer = timeToReunlock;
 		base.Start();
