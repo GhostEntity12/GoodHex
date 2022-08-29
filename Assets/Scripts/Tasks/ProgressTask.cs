@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(EventTrigger))]
 public abstract class ProgressTask : BaseTask
 {
 	[field: SerializeField]
@@ -46,6 +48,7 @@ public abstract class ProgressTask : BaseTask
 	[field: SerializeField] public bool RequiresItem { get; private set; }
 
 	[SerializeField] string triggerId;
+	public string TriggerID => triggerId;
 
 	protected new void Start()
 	{

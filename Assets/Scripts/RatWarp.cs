@@ -8,26 +8,31 @@ public class RatWarp : ProgressTask
 	protected new void Start()
 	{
 		base.Start();
+		TaskState = State.Unlocked;
 	}
 
 	void Update()
 	{
 		if (paused) return;
 
-		foreach (Rat rat in GameManager.Instance.TaskManager.RatsOnTask(this))
+		if (GameManager.Instance.TaskManager.RatsOnTask(this).Count > 0)
 		{
-			if (rat.ArrivedAtTask)
+			List<Rat> ratsToDeselect = new();
+			foreach (Rat rat in GameManager.Instance.TaskManager.RatsOnTask(this))
 			{
-				WarpRatToObjectPosition(taskPoints[0].rat);
+				if (rat.ArrivedAtTask)
+				{
+					ratsToDeselect.Add(rat);
+					WarpRatToObjectPosition(taskPoints[0].rat);
+				}
 			}
+			GameManager.Instance.TaskManager.UnassignRats(ratsToDeselect.ToArray());
 		}
-
 	}
 
 	public void WarpRatToObjectPosition(Rat r)
 	{
 		r.NavAgent.Warp(warpPosition.position);
-		GameManager.Instance.TaskManager.UnassignRats(r);
 	}
 
 	protected override void OnActivate() { }

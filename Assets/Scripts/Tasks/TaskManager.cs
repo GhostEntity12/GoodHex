@@ -19,7 +19,6 @@ public class TaskManager : MonoBehaviour
 			return AssignRatsToWarp(rats, task as RatWarp);
 		}
 
-
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
@@ -69,7 +68,11 @@ public class TaskManager : MonoBehaviour
 		{
 			if (ratTasks.ContainsKey(rat))
 			{
-				GetTaskPoint(rat).rat = null;
+				if (GetTaskPoint(rat) != null)
+				{
+					Debug.Log($"Unassigning from {ratTasks[rat]}");
+					GetTaskPoint(rat).rat = null;
+				}
 				ratTasks.Remove(rat);
 			}
 		}

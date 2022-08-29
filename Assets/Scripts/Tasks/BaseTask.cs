@@ -18,10 +18,6 @@ public abstract class BaseTask : MonoBehaviour
 	protected void Start()
 	{
 		GameManager.Pause += SetPaused;
-		if (requiredTasks.Length == 0)
-		{
-			OnUnlock();
-		}
 	}
 
 	void SetPaused(bool paused) => this.paused = paused;

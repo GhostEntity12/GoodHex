@@ -34,15 +34,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_27B28BBB: 0.15
+    - Vector1_27B28BBB: 0.2
     - Vector1_29A8EAB: 0.7
     - Vector1_3C2CF0EB: 0.0047
-    - Vector1_42F210BD: 4
+    - Vector1_42F210BD: 10
     - Vector1_53B9698E: 5.3
     - Vector1_598450A8: 5
     - Vector1_5F92C869: 0.3
     - Vector1_6D9DC178: 87.3
-    - Vector1_7A369B30: 1
+    - Vector1_7A369B30: 1.5
     - Vector1_93DCFAA9: 9.91
     - Vector1_95BBCBE0: 37.5
     - Vector1_C5543ECF: 4.9
@@ -54,8 +54,8 @@ Material:
     - _Smoothness: 0
     - _WaterDepth: 1
     - _WaterRefractionScale: 0.25
-    - _WaterRefractionSpeed: 0.2
-    - _WaveAmplitude: 0.018
+    - _WaterRefractionSpeed: 0.25
+    - _WaveAmplitude: 0.025
     - _WaveFrequency: 3
     - _WaveStrength: 0.025
     m_Colors:

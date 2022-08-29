@@ -10,7 +10,7 @@ public class StandardTask : ProgressTask
 		switch (TaskState)
 		{
 			case State.Locked:
-				if (requiredTasks.All(t => t.TaskState == State.Complete) && RequiresItem == false) // if all required tasks are complete
+				if ((requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete)) && !RequiresItem) // if all required tasks are complete
 				{
 					OnUnlock();
 				}

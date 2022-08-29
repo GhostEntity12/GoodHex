@@ -89,7 +89,7 @@ public class Rat : MonoBehaviour
 	{
 		NavAgent.SetDestination(position);
 		patience = Info.PatienceDuration;
-		NavAgent.speed = 2f * Info.SpeedModifier;
+		NavAgent.speed = (pickUp.IsHoldingItem ? 1f : 2f) * Info.SpeedModifier;
 		Wandering = false;
 	}
 
