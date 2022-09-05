@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -138,7 +138,532 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d090df66857522d4891df1b67a1c172f
+      internalID: -714436026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b538f5fb1c20e64983a29c87daed400
+      internalID: -879266362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_2
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4dedb93e313ee4d98c2868e8732589
+      internalID: 1357042430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_3
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb342d96a6e330458b88cba62c500dd
+      internalID: 1749392446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_4
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96632ab7d77b80d49932e84e0ef29ffe
+      internalID: 1428609469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_5
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b60582bacabab54fb975f2eef8c6d68
+      internalID: -420162956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_6
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b21eb56d5fde247bc136034e4992b8
+      internalID: 1641291474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_7
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a66e071b97dac4eb4e3fc15377fcda
+      internalID: -913014845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_8
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3999adb10c6a5ca46a1c597898f44e07
+      internalID: 1870167552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_9
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3ae651f12a8324281e294cfbefc5a5
+      internalID: -2020045890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a1ce180e4d1034ca3f37d04b781195
+      internalID: 1632832605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_11
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f697d00ebd4e61746bfb4f9a82faa7b0
+      internalID: 1726468734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_12
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54a18ad9d875cd41b679373dfd1f858
+      internalID: 1622014781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_13
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff3c9ad5eb339f47ae3ad8e38232e13
+      internalID: 1921384219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_14
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1f9e28ae2250c478b3f166c4ba94f4
+      internalID: -1237706190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_15
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c79d57862612a4386c275317daaaed
+      internalID: 1416387197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_16
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd4d0d5ab4773e40bf98adf9046c171
+      internalID: -1966823720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_17
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed160d17acbaf44dab52b54249aed41
+      internalID: 1345815183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_18
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8521345126b9fc443aa97fa92518889a
+      internalID: 58274287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_19
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230e8916613b4d5408b31ea5688d29f0
+      internalID: 867654650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26a637e022e75349be01e04cbc17a97
+      internalID: -1153249881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_21
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 482
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53af24f9dea3cd942bdf086815726ede
+      internalID: 535422039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_22
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 482
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec446accd443fb4691c5dc1f77bc2ce
+      internalID: 1126455507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_23
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 482
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bc6014dcef7c04983837d84b984d06
+      internalID: -285252934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Witch_Plant_24
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 482
+        width: 348
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423087946add3c743857a9cdf8ca7de2
+      internalID: -782727238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -149,7 +674,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpS_Witch_Plant_13: 1921384219
+      SpS_Witch_Plant_23: -285252934
+      SpS_Witch_Plant_10: 1632832605
+      SpS_Witch_Plant_11: 1726468734
+      SpS_Witch_Plant_14: -1237706190
+      SpS_Witch_Plant_8: 1870167552
+      SpS_Witch_Plant_16: -1966823720
+      SpS_Witch_Plant_15: 1416387197
+      SpS_Witch_Plant_0: -714436026
+      SpS_Witch_Plant_4: 1428609469
+      SpS_Witch_Plant_19: 867654650
+      SpS_Witch_Plant_18: 58274287
+      SpS_Witch_Plant_22: 1126455507
+      SpS_Witch_Plant_6: 1641291474
+      SpS_Witch_Plant_2: 1357042430
+      SpS_Witch_Plant_24: -782727238
+      SpS_Witch_Plant_7: -913014845
+      SpS_Witch_Plant_20: -1153249881
+      SpS_Witch_Plant_9: -2020045890
+      SpS_Witch_Plant_3: 1749392446
+      SpS_Witch_Plant_12: 1622014781
+      SpS_Witch_Plant_1: -879266362
+      SpS_Witch_Plant_17: 1345815183
+      SpS_Witch_Plant_21: 535422039
+      SpS_Witch_Plant_5: -420162956
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

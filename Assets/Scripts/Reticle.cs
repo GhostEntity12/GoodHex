@@ -17,6 +17,10 @@ public class Reticle : MonoBehaviour
 
 	[SerializeField] AudioClip selectClip;
 
+	[Header("Lerping")]
+	[SerializeField] float lerpSpeed;
+	[SerializeField] float rotationAngle;
+
 	[Header("Colors")]
 	[SerializeField] Color defaultColor;
 	[SerializeField] Color ratsColor;
@@ -77,7 +81,7 @@ public class Reticle : MonoBehaviour
 		// Mouse wheel to set size
 		clampedMouseWheelInput = Mathf.Clamp(clampedMouseWheelInput + Input.mouseScrollDelta.y, 0, 4);
 		circleSize = clampedMouseWheelInput / 2 + 1;
-		transform.localScale = new Vector3(circleSize, 1, circleSize); // Reset Y scale to prevent lifting
+		transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(circleSize, 1, circleSize), lerpSpeed); // Reset Y scale to prevent lifting
 	}
 
 	void SetPosition()
