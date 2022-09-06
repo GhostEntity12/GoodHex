@@ -1,17 +1,13 @@
 using UnityEngine;
 
-public class TaskModulePickupable : TaskModule
+public class SpawnPickupable : MonoBehaviour
 {
 
     [SerializeField] GameObject itemToSpawn;
     [SerializeField] GameObject spawner;
 
-	protected override void OnActivate()
+	public void Spawn()
 	{
 		Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity);
 	}
-
-	protected override void OnDeactivate() { }
-
-	protected override void SetPaused(bool pause) {	}
 }

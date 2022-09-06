@@ -1006,8 +1006,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8383424027162924761}
-        m_TargetAssemblyTypeName: TaskModule, Assembly-CSharp
-        m_MethodName: Trigger
+        m_TargetAssemblyTypeName: SpawnPickupable, Assembly-CSharp
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4122,7 +4122,19 @@ MonoBehaviour:
       m_Calls: []
   onCompleteEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2856439508324293865}
+        m_TargetAssemblyTypeName: SpawnPickupable, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Plant
 --- !u!114 &2856439508324293863
@@ -6402,8 +6414,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8811514995498849577}
-        m_TargetAssemblyTypeName: TaskModule, Assembly-CSharp
-        m_MethodName: Trigger
+        m_TargetAssemblyTypeName: SpawnPickupable, Assembly-CSharp
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
