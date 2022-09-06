@@ -121,7 +121,7 @@ public class Rat : MonoBehaviour
         anim.speed = paused ? 0 : 1;
     }
 
-    public void Kill()
+    public void Kill(float timeBeforeDeath = 0f)
     {
         isDead = true;
         //NavAgent.isStopped = true;

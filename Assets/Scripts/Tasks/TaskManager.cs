@@ -70,7 +70,6 @@ public class TaskManager : MonoBehaviour
 			{
 				if (GetTaskPoint(rat) != null)
 				{
-					Debug.Log($"Unassigning from {ratTasks[rat]}");
 					GetTaskPoint(rat).rat = null;
 				}
 				ratTasks.Remove(rat);

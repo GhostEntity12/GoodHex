@@ -26,5 +26,13 @@ public abstract class BaseTask : MonoBehaviour
 		GameManager.Pause -= SetPaused;
 	}
 
-	public void SetState(State state) => TaskState = state;
+	public void SetState(State state)
+	{
+		TaskState = state;
+		if (TaskState != State.Complete)
+		{
+			IsComplete = false;
+
+		}
+	}
 }

@@ -12,12 +12,13 @@ public class GreenhouseBar : MonoBehaviour
 	float value = 0;
 	bool failed;
 
-	[SerializeField] bool gettingSun;
+	bool gettingSun = true;
 
 	[SerializeField] Image slider;
 	[SerializeField] Image indicator;
 	float sliderWidth;
 	[SerializeField] float buffer = 20;
+	bool active;
 
 	private void Start()
 	{
@@ -28,7 +29,7 @@ public class GreenhouseBar : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!failed || !paused)
+		if ((!failed || !paused) && active)
 		{
 			switch (value)
 			{
@@ -49,8 +50,13 @@ public class GreenhouseBar : MonoBehaviour
 		}
 	}
 
+	public void Activate() => active = true;
 	public void ToggleState() => gettingSun = !gettingSun;
-	public void SetState(bool setSun) => gettingSun = setSun;
+	public void SetState(bool setSun)
+	{
+		Debug.Log("Setting State: " + setSun);
+		gettingSun = setSun;
+	}
 
 	void OnPaused(bool paused) => this.paused = paused;
 	void OnDestroy() => GameManager.Pause -= OnPaused;

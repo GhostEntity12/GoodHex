@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class TaskLooper : BaseTask
+public class TaskLooper : MonoBehaviour
 {
-    [SerializeField] List<ProgressTask> tasksToLoop;
+	[SerializeField] List<ProgressTask> tasksToLoop;
 
-	protected override void OnActivate() { }
-
-	protected override void OnComplete() { }
-
-	protected override void OnUnlock()
+	// Update is called once per frame
+	void Update()
 	{
-		foreach (ProgressTask task in tasksToLoop)
+		if (tasksToLoop[^1].IsComplete)
 		{
-			task.SetState(State.Locked);
+			foreach (ProgressTask task in tasksToLoop)
+			{
+				task.SetState(BaseTask.State.Locked);
+			}
+			tasksToLoop[0].SetState(BaseTask.State.Unlocked);
 		}
-		tasksToLoop[0].SetState(State.Unlocked);
 	}
 }

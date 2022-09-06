@@ -57,6 +57,8 @@ MonoBehaviour:
     type: 3}
   ratPrefab: {fileID: 6076119070167395738, guid: c98919fc0cae94a4e9fd956326ad8e46,
     type: 3}
+  highlighterPrefab: {fileID: 7804691615221520642, guid: 9b15c7a88c9adc647b8a8fa97a0bac29,
+    type: 3}
 --- !u!114 &2691864806162428197
 MonoBehaviour:
   m_ObjectHideFlags: 0

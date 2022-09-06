@@ -114,10 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a99731bb5aeb544f8747f6fc0820be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 30
-  gettingSun: 0
-  slider: {fileID: 0}
-  indicator: {fileID: 0}
+  time: 35
+  slider: {fileID: 1314446964944771405}
+  indicator: {fileID: 1314446965096537515}
   buffer: 20
 --- !u!1 &1314446964944771406
 GameObject:

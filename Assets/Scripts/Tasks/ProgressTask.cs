@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(EventTrigger))]
@@ -35,13 +36,13 @@ public abstract class ProgressTask : BaseTask
 	protected Color highlightColorUnavailable = new(0.5f, 0.5f, 0.5f, 0.8f);
 
 	[Space(20), SerializeField]
-	protected List<TaskModule> onUnlockEvents;
+	protected UnityEvent onUnlockEvents;
 	[Space(20), SerializeField]
-	protected List<TaskModule> onActivateEvents;
+	protected UnityEvent onActivateEvents;
 	[Space(20), SerializeField]
-	protected List<TaskModule> onDeactivateEvents;
+	protected UnityEvent onDeactivateEvents;
 	[Space(20), SerializeField]
-	protected List<TaskModule> onCompleteEvents;
+	protected UnityEvent onCompleteEvents;
 
 	protected int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask).Count();
 	public TaskPoint[] TaskPoints => taskPoints;
@@ -53,6 +54,7 @@ public abstract class ProgressTask : BaseTask
 	protected new void Start()
 	{
 		r = GetComponent<Renderer>();
+		GetComponent<Collider>().enabled = false;
 
 		progressBar = GameManager.Instance.CreateProgressBar();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
@@ -70,36 +72,24 @@ public abstract class ProgressTask : BaseTask
 				? highlightColor
 				: highlightColorUnavailable;
 
-		if (doHighlight)
+		GameManager.Instance.Reticle.SetTask(doHighlight ? this : null);
+
+		if (TaskState == State.Unlocked && GameManager.Instance.RatManager.HasSelectedRats)
 		{
-			switch (r)
-			{
-				case MeshRenderer m:
-					m.material.color = c;
-					break;
-				case SpriteRenderer s:
-					s.color = c;
-					break;
-				default:
-					break;
-			}
-			GameManager.Instance.Reticle.SetTask(this);
+			GameManager.Instance.Highlighter.Highlight(r, doHighlight);
 		}
-		else
-		{
-			switch (r)
-			{
-				case MeshRenderer m:
-					m.material.color = new(0, 0, 0, 0);
-					break;
-				case SpriteRenderer s:
-					s.color = new(0, 0, 0, 0);
-					break;
-				default:
-					break;
-			}
-			GameManager.Instance.Reticle.SetTask(null);
-		}
+		
+		//switch (r)
+		//{
+		//	case MeshRenderer m:
+		//		m.material.color = doHighlight ? c : new(0, 0, 0, 0);
+		//		break;
+		//	case SpriteRenderer s:
+		//		s.color = doHighlight ? c : new(0, 0, 0, 0);
+		//		break;
+		//	default:
+		//		break;
+		//}
 	}
 
 	/// <summary>  

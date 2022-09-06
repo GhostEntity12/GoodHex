@@ -58,7 +58,7 @@ public class RecurringTask : ProgressTask
 				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
 				{
 					TaskState = State.Unlocked;
-					onDeactivateEvents.ForEach(tm => tm.Trigger());
+					onDeactivateEvents?.Invoke();
 				}
 
 				// Increase progress
@@ -92,7 +92,7 @@ public class RecurringTask : ProgressTask
 	protected override void OnActivate()
 	{
 		TaskState = State.Active;
-		onActivateEvents.ForEach(tm => tm.Trigger());
+		onActivateEvents?.Invoke();
 	}
 
 	/// <summary>
@@ -100,11 +100,12 @@ public class RecurringTask : ProgressTask
 	/// </summary>
 	protected override void OnUnlock()
 	{
+		GetComponent<Collider>().enabled = true;
 		progressBar.SetActive(true);
 		TaskState = State.Unlocked;
 		progress = 0;
 		IsComplete = false;
-		onUnlockEvents.ForEach(tm => tm.Trigger());
+		onUnlockEvents?.Invoke();
 	}
 
 	/// <summary>
@@ -116,7 +117,7 @@ public class RecurringTask : ProgressTask
 		Highlight(false);
 		TaskState = State.Locked;
 		IsComplete = true;
-		onCompleteEvents.ForEach(tm => tm.Trigger());
+		onCompleteEvents?.Invoke();
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}

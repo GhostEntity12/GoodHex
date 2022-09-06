@@ -28,6 +28,7 @@ public class GameManager : Singleton<GameManager>
 	public RatManager RatManager { get; private set; }
 	public TaskManager TaskManager { get; private set; }
 	public DialogueManager DialogueManager { get; private set; }
+	public Highlighter Highlighter { get; private set; }
 	public Camera mainCamera;
 	
 	[Header("Prefabs")]
@@ -36,6 +37,7 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] Reticle reticlePrefab;
 	[SerializeField] BGMManager bgmManagerPrefab;
 	[SerializeField] Rat ratPrefab;
+	[SerializeField] Highlighter highlighterPrefab;
 	public Reticle Reticle { get; private set; }
 
 	public bool IsPaused { get; private set; }
@@ -81,6 +83,7 @@ public class GameManager : Singleton<GameManager>
 		RatManager.RatPrefab = ratPrefab;
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
 		DialogueManager = FindObjectOfType<DialogueManager>();
+		Highlighter = Instantiate(highlighterPrefab);
 	}
 
 	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene;

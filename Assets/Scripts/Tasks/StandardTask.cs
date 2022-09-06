@@ -34,7 +34,7 @@ public class StandardTask : ProgressTask
 				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
 				{
 					TaskState = State.Unlocked;
-					onDeactivateEvents.ForEach(tm => tm.Trigger());
+					onDeactivateEvents?.Invoke();
 				}
 
 				// Increase progress
@@ -44,6 +44,7 @@ public class StandardTask : ProgressTask
 				// If progress reaches 1, complete
 				if (progress == 1)
 				{
+					progress = 0;
 					OnComplete();
 				}
 				break;
@@ -59,7 +60,7 @@ public class StandardTask : ProgressTask
 	protected override void OnActivate()
 	{
 		TaskState = State.Active;
-		onActivateEvents.ForEach(tm => tm.Trigger());
+		onActivateEvents?.Invoke();
 	}
 
 	///<summary>
@@ -67,10 +68,11 @@ public class StandardTask : ProgressTask
 	/// </summary>
 	protected override void OnUnlock()
 	{
+		GetComponent<Collider>().enabled = true;
 		progressBar.SetActive(true);
 		TaskState = State.Unlocked;
 		progress = 0;
-		onUnlockEvents.ForEach(tm => tm.Trigger());
+		onUnlockEvents?.Invoke();
 	}
 
 	/// <summary>
@@ -78,11 +80,12 @@ public class StandardTask : ProgressTask
 	/// </summary>
 	protected override void OnComplete()
 	{
+		GetComponent<Collider>().enabled = false;
 		progressBar.SetActive(false);
 		Highlight(false);
 		TaskState = State.Complete;
 		IsComplete = true;
-		onCompleteEvents.ForEach(tm => tm.Trigger());
+		onCompleteEvents?.Invoke();
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}

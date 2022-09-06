@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1737235, g: 0.21719892, b: 0.2993296, a: 1}
+  m_IndirectSpecularColor: {r: 0.173724, g: 0.2171995, b: 0.29933113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -993,11 +993,30 @@ MonoBehaviour:
   progressBarOffset: 0.3
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
-  onActivateEvents: []
-  onDeactivateEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onCompleteEvents:
-  - {fileID: 8383424027162924761}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8383424027162924761}
+        m_TargetAssemblyTypeName: TaskModule, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   triggerId: 
 --- !u!135 &687675882
@@ -1467,6 +1486,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03caf633963307f4191ed926bd1c3ab0, type: 3}
+--- !u!198 &963884252 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5202177175335282905, guid: 03caf633963307f4191ed926bd1c3ab0,
+    type: 3}
+  m_PrefabInstance: {fileID: 963884251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &978436555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,6 +2301,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d160440b84746e418e045094dedd6da, type: 3}
+--- !u!198 &1428361815 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2302604679907556218, guid: 9d160440b84746e418e045094dedd6da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1428361814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1436689168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2123975070189954242, guid: 9d160440b84746e418e045094dedd6da,
@@ -3037,10 +3068,18 @@ MonoBehaviour:
   progressBarOffset: 0.25
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
-  onActivateEvents: []
-  onDeactivateEvents: []
-  onCompleteEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteEvents:
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 0
   triggerId: 
 --- !u!4 &2129196510
@@ -4060,14 +4099,30 @@ MonoBehaviour:
   progressBarOffset: 0.25
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onActivateEvents:
-  - {fileID: 978436555}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281113274523746}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: activate
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeactivateEvents:
-  - {fileID: 978436555}
+    m_PersistentCalls:
+      m_Calls: []
   onCompleteEvents:
-  - {fileID: 2856439508324293865}
-  - {fileID: 978436555}
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Plant
 --- !u!114 &2856439508324293863
@@ -5406,15 +5461,78 @@ MonoBehaviour:
   progressBarOffset: 0.5
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onActivateEvents:
-  - {fileID: 526482319}
-  - {fileID: 1178685324}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114075739772}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: activate
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 963884252}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeactivateEvents:
-  - {fileID: 526482319}
-  - {fileID: 1178685324}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114075739772}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 963884252}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCompleteEvents:
-  - {fileID: 526482319}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114075739772}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Plant_Chopped
 --- !u!135 &6992014757213630253
@@ -5637,10 +5755,18 @@ MonoBehaviour:
   progressBarOffset: 0.2
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
-  onActivateEvents: []
-  onDeactivateEvents: []
-  onCompleteEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteEvents:
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 1
   triggerId: OBJ_Bucket
 --- !u!64 &7101459321440508408
@@ -5954,11 +6080,30 @@ MonoBehaviour:
   progressBarOffset: 0.8
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onActivateEvents:
-  - {fileID: 2077383661}
-  onDeactivateEvents: []
-  onCompleteEvents: []
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1428361815}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteEvents:
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 0
   triggerId: 
 --- !u!114 &8338220285585852510
@@ -6208,14 +6353,66 @@ MonoBehaviour:
   progressBarOffset: 0.35
   normalSprite: {fileID: 0}
   highlightSprite: {fileID: 0}
-  onUnlockEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onActivateEvents:
-  - {fileID: 1976901383}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114172393845}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: activate
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeactivateEvents:
-  - {fileID: 1976901383}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114172393845}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
   onCompleteEvents:
-  - {fileID: 1976901383}
-  - {fileID: 8811514995498849577}
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3313281114172393845}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8811514995498849577}
+        m_TargetAssemblyTypeName: TaskModule, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   triggerId: 
 --- !u!64 &8811514995498849576
