@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Reticle : MonoBehaviour
@@ -34,6 +35,10 @@ public class Reticle : MonoBehaviour
 	PickUp pickUp;
 
 	bool paused;
+
+	float pointerDownTimer;
+
+	public float requiredHoldTime;
 
 	void Start()
 	{
@@ -105,28 +110,39 @@ public class Reticle : MonoBehaviour
 
 		if (Input.GetMouseButton(0))
 		{
-			// Get all unselected rats within the circle
-			List<Rat> unselectedRats =
-				ratManager.allRats
-				.Where(r =>
-					Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
-					!ratManager.selectedRats.Contains(r))
-				.ToList();
+			Debug.Log("Button down time = "+pointerDownTimer);
+			pointerDownTimer += Time.deltaTime;
+			
+			if(pointerDownTimer >= requiredHoldTime)
+            {
+				// Get all unselected rats within the circle
+				List<Rat> unselectedRats =
+					ratManager.allRats
+					.Where(r =>
+						Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
+						!ratManager.selectedRats.Contains(r))
+					.ToList();
 
-			if (unselectedRats.Count > 0) // Select rats
-			{
-				if (ratManager.selectedRats.Count == 0)
+				if (unselectedRats.Count > 0) // Select rats
 				{
-					aS.PlayOneShot(selectClip);
+					if (ratManager.selectedRats.Count == 0)
+					{
+						aS.PlayOneShot(selectClip);
+					}
+					ratManager.SelectRats(unselectedRats);
+					ratsInHold.AddRange(unselectedRats);
+					anim.SetBool("Active", true);
 				}
-				ratManager.SelectRats(unselectedRats);
-				ratsInHold.AddRange(unselectedRats);
-				anim.SetBool("Active", true);
 			}
+			
 		}
 		// Mouse release - Paintbrush select
 		if (Input.GetMouseButtonUp(0))
 		{
+			Debug.Log("Button up time = " + pointerDownTimer);
+
+			pointerDownTimer = 0;
+
 			if (ratsInHold.Count == 0) // Deselect
 			{
 				ratManager.ClearRats();
@@ -136,7 +152,7 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-	void Assign()
+    void Assign()
 	{
 		if (Input.GetMouseButtonDown(1))
 		{

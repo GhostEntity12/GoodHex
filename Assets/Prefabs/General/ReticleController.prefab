@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectClip: {fileID: 8300000, guid: ee1ae5c30d882df4fbb19eb02a08cb71, type: 3}
+  lerpSpeed: 0
+  rotationAngle: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ratsColor: {r: 1, g: 0.4575472, b: 0.8849465, a: 1}
   taskColor: {r: 0.46251777, g: 0.8018868, b: 0.4274208, a: 1}
   colorChangeSpeed: 5
+  requiredHoldTime: 1
 --- !u!82 &7461494828251755575
 AudioSource:
   m_ObjectHideFlags: 0
