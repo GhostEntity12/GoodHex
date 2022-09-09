@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Reticle : MonoBehaviour
@@ -33,7 +34,15 @@ public class Reticle : MonoBehaviour
 	RatManager ratManager;
 	PickUp pickUp;
 
+	Vector3 reticlePosition;
+
+	bool mouseLocked = false;
+
 	bool paused;
+
+	float pointerDownTimer;
+
+	public float requiredHoldTime;
 
 	void Start()
 	{
@@ -52,7 +61,30 @@ public class Reticle : MonoBehaviour
 		{
 			SetColor(new(0, 0, 0, 0));
 			return;
-		}		
+		}
+		
+
+		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8 | 1 << 10) && hit.normal.y > 0)
+        {
+			graphic.enabled = true;
+			if (!mouseLocked)
+			{
+				reticlePosition = hit.point;
+			}
+			else
+			{
+				if (Vector3.Distance(hit.point, reticlePosition) > circleSize /2)
+                {
+					mouseLocked = false;
+					anim.SetBool("Active", false);
+					pointerDownTimer = 0;
+				}
+			}
+        }
+        else
+        {
+			graphic.enabled = false;
+        }
 
 		SetSize();
 		SetPosition();
@@ -64,8 +96,15 @@ public class Reticle : MonoBehaviour
 
 	void SetColor()
 	{
+		bool unselectedRats =
+					ratManager.allRats
+					.Where(r =>
+						Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
+						!ratManager.selectedRats.Contains(r))
+					.Any();
+
 		targetColor =
-			ratManager.HasSelectedRats
+			(mouseLocked && unselectedRats) || ratManager.HasSelectedRats
 			? hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked
 				? taskColor
 				: ratsColor
@@ -88,23 +127,29 @@ public class Reticle : MonoBehaviour
 	{
 		// Raycast to set reticle position
 		// 1 << 8 is Surface, hit.normal is > 0 when it is vaguely upwards
-		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
+		if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 		{
-			graphic.enabled = true;
 			transform.position = hit.point;
-		}
-		else
-		{
-			graphic.enabled = false;
 		}
 	}
 
 	void SelectDeselect()
 	{
-		if (!(Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)) return;
-
-		if (Input.GetMouseButton(0))
+		if (!(Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)) return;
+		
+		if (Input.GetMouseButtonDown(0))
 		{
+			mouseLocked = true;
+		}
+
+		if (mouseLocked)
+		{
+		//Debug.Log("Button down time = "+pointerDownTimer);
+		pointerDownTimer += Time.deltaTime;
+		anim.SetBool("Active", true);
+
+		if (pointerDownTimer >= requiredHoldTime)
+        {
 			// Get all unselected rats within the circle
 			List<Rat> unselectedRats =
 				ratManager.allRats
@@ -121,12 +166,17 @@ public class Reticle : MonoBehaviour
 				}
 				ratManager.SelectRats(unselectedRats);
 				ratsInHold.AddRange(unselectedRats);
-				anim.SetBool("Active", true);
 			}
+			mouseLocked = false;
 		}
+	}
 		// Mouse release - Paintbrush select
 		if (Input.GetMouseButtonUp(0))
 		{
+			//Debug.Log("Button up time = " + pointerDownTimer);
+			mouseLocked = false;
+			pointerDownTimer = 0;
+
 			if (ratsInHold.Count == 0) // Deselect
 			{
 				ratManager.ClearRats();
@@ -136,12 +186,12 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-	void Assign()
+    void Assign()
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
 			//PickUp code
-			if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hitPickup, Mathf.Infinity, 1 << 10))
+			if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hitPickup, Mathf.Infinity, 1 << 10))
 			{
 				if (hitPickup.transform.TryGetComponent(out Pickupable pickupable))
 				{
@@ -169,7 +219,7 @@ public class Reticle : MonoBehaviour
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 			}
-			else if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
+			else if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 			{
 				ratManager.SetRatDestinations(transform.position);
 				GameManager.Instance.TaskManager.UnassignRats(ratManager.selectedRats.ToArray());
