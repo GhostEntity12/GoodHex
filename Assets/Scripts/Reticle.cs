@@ -129,12 +129,7 @@ public class Reticle : MonoBehaviour
 		// 1 << 8 is Surface, hit.normal is > 0 when it is vaguely upwards
 		if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 		{
-			graphic.enabled = true;
 			transform.position = hit.point;
-		}
-		else
-		{
-			graphic.enabled = false;
 		}
 	}
 
