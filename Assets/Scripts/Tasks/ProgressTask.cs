@@ -51,10 +51,13 @@ public abstract class ProgressTask : BaseTask
 	[SerializeField] string triggerId;
 	public string TriggerID => triggerId;
 
+	protected Collider col;
+
 	protected new void Start()
 	{
 		r = GetComponent<Renderer>();
-		GetComponent<Collider>().enabled = false;
+		col = GetComponent<Collider>();
+		col.enabled = false;
 
 		progressBar = GameManager.Instance.CreateProgressBar();
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
