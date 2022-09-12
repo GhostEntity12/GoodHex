@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectClip: {fileID: 8300000, guid: ee1ae5c30d882df4fbb19eb02a08cb71, type: 3}
-  lerpSpeed: 1
-  rotationAngle: 0
+  lerpSpeed: 15
+  rotationSpeed: 360
+  rotationAngle: 30
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ratsColor: {r: 1, g: 0.4575472, b: 0.8849465, a: 1}
   taskColor: {r: 0.46251777, g: 0.8018868, b: 0.4274208, a: 1}

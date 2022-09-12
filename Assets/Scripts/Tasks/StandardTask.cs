@@ -10,6 +10,10 @@ public class StandardTask : ProgressTask
 		switch (TaskState)
 		{
 			case State.Locked:
+				if (requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete))
+				{
+					col.enabled = true;
+				}
 				if ((requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete)) && !RequiresItem) // if all required tasks are complete
 				{
 					OnUnlock();
@@ -80,7 +84,6 @@ public class StandardTask : ProgressTask
 	/// </summary>
 	protected override void OnComplete()
 	{
-		GetComponent<Collider>().enabled = false;
 		progressBar.SetActive(false);
 		Highlight(false);
 		TaskState = State.Complete;

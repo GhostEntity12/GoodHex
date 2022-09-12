@@ -20,6 +20,7 @@ public class Reticle : MonoBehaviour
 
 	[Header("Lerping")]
 	[SerializeField] float lerpSpeed;
+	[SerializeField] float rotationSpeed;
 	[SerializeField] float rotationAngle;
 
 	[Header("Colors")]
@@ -62,29 +63,32 @@ public class Reticle : MonoBehaviour
 			SetColor(new(0, 0, 0, 0));
 			return;
 		}
-		
 
-		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8 | 1 << 10) && hit.normal.y > 0)
-        {
-			graphic.enabled = true;
+
+		if (Physics.Raycast(c.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, 1 << 8 | 1 << 10))
+		{
 			if (!mouseLocked)
 			{
 				reticlePosition = hit.point;
 			}
 			else
 			{
-				if (Vector3.Distance(hit.point, reticlePosition) > circleSize /2)
-                {
+				if (Vector3.Distance(hit.point, reticlePosition) > circleSize / 2)
+				{
 					mouseLocked = false;
 					anim.SetBool("Active", false);
 					pointerDownTimer = 0;
 				}
 			}
-        }
-        else
-        {
+			if (hit.normal.y > 0)
+			{
+				graphic.enabled = true;
+			}
+		}
+		else
+		{
 			graphic.enabled = false;
-        }
+		}
 
 		SetSize();
 		SetPosition();
@@ -120,7 +124,8 @@ public class Reticle : MonoBehaviour
 		// Mouse wheel to set size
 		clampedMouseWheelInput = Mathf.Clamp(clampedMouseWheelInput + Input.mouseScrollDelta.y, 0, 4);
 		circleSize = clampedMouseWheelInput / 2 + 1;
-		transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(circleSize, 1, circleSize), lerpSpeed); // Reset Y scale to prevent lifting
+		transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(circleSize, 1, circleSize), lerpSpeed * Time.deltaTime); // Reset Y scale to prevent lifting
+		transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(0, rotationAngle * circleSize, 0), rotationSpeed * Time.deltaTime);
 	}
 
 	void SetPosition()
@@ -136,7 +141,7 @@ public class Reticle : MonoBehaviour
 	void SelectDeselect()
 	{
 		if (!(Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)) return;
-		
+
 		if (Input.GetMouseButtonDown(0))
 		{
 			mouseLocked = true;
@@ -144,32 +149,32 @@ public class Reticle : MonoBehaviour
 
 		if (mouseLocked)
 		{
-		//Debug.Log("Button down time = "+pointerDownTimer);
-		pointerDownTimer += Time.deltaTime;
-		anim.SetBool("Active", true);
+			//Debug.Log("Button down time = "+pointerDownTimer);
+			pointerDownTimer += Time.deltaTime;
+			anim.SetBool("Active", true);
 
-		if (pointerDownTimer >= requiredHoldTime)
-        {
-			// Get all unselected rats within the circle
-			List<Rat> unselectedRats =
-				ratManager.allRats
-				.Where(r =>
-					Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
-					!ratManager.selectedRats.Contains(r))
-				.ToList();
-
-			if (unselectedRats.Count > 0) // Select rats
+			if (pointerDownTimer >= requiredHoldTime)
 			{
-				if (ratManager.selectedRats.Count == 0)
+				// Get all unselected rats within the circle
+				List<Rat> unselectedRats =
+					ratManager.allRats
+					.Where(r =>
+						Vector3.Distance(transform.position, r.transform.position) < 0.25f * circleSize &&
+						!ratManager.selectedRats.Contains(r))
+					.ToList();
+
+				if (unselectedRats.Count > 0) // Select rats
 				{
-					aS.PlayOneShot(selectClip);
+					if (ratManager.selectedRats.Count == 0)
+					{
+						aS.PlayOneShot(selectClip);
+					}
+					ratManager.SelectRats(unselectedRats);
+					ratsInHold.AddRange(unselectedRats);
 				}
-				ratManager.SelectRats(unselectedRats);
-				ratsInHold.AddRange(unselectedRats);
+				mouseLocked = false;
 			}
-			mouseLocked = false;
 		}
-	}
 		// Mouse release - Paintbrush select
 		if (Input.GetMouseButtonUp(0))
 		{
@@ -186,7 +191,7 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-    void Assign()
+	void Assign()
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
@@ -202,7 +207,7 @@ public class Reticle : MonoBehaviour
 			}
 
 			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Locked)
-            {
+			{
 				ratManager.SetRatDestinations(transform.position);
 				ratManager.ClearRats();
 			}
