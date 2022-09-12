@@ -110,7 +110,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HueShift: 0
+    - _HueShift: 0.92
     - _Intensity: 3.06
     - _Metallic: 0
     - _OcclusionStrength: 1
