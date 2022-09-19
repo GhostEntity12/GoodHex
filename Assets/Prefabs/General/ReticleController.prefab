@@ -152,8 +152,8 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ratsColor: {r: 1, g: 0.4575472, b: 0.8849465, a: 1}
   taskColor: {r: 0.46251777, g: 0.8018868, b: 0.4274208, a: 1}
-  colorChangeSpeed: 1
-  requiredHoldTime: 1
+  colorChangeSpeed: 0.35
+  requiredHoldTime: 0.35
 --- !u!82 &7461494828251755575
 AudioSource:
   m_ObjectHideFlags: 0
