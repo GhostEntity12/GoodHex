@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18263811, g: 0.22834933, b: 0.30714747, a: 1}
+  m_IndirectSpecularColor: {r: 0.18263811, g: 0.22834933, b: 0.3071475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13571,10 +13571,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771406, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1376622714855249244, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2275422255647814960, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
@@ -13615,6 +13620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camera_swap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968634418459656694, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: failScene
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d134603935d37a4ea09da60349ce12d, type: 3}
@@ -22324,7 +22334,19 @@ MonoBehaviour:
       m_Calls: []
   onCompleteEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 793427125}
+        m_TargetAssemblyTypeName: GreenhouseBar, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 1
   triggerId: WitchplantSeed
 --- !u!114 &7106645584376212277
