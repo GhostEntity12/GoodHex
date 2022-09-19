@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 699165677}
   - component: {fileID: 699165676}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Pulse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,7 +1128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 5
-  gettingSun: 0
   slider: {fileID: 506401291}
   indicator: {fileID: 354146029}
   buffer: 20
