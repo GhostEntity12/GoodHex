@@ -1,2 +1,6 @@
-Witch|Happy|While our friend is selected, we can tell them to move around the room by clicking the <b>Right Mouse Button</b> on the point we want them to go to.
-Witch|Happy|If we need to deselect everyone, we can press the <b>Left Mouse Button</b> somewhere where no-one is.
+Witch|Happy|Okay, that's a good start, we're still only at 1 fatality.
+Apprentice Rat|Angry|*Cheese Emoji*
+Witch|Tired|I don't have any cheese on me... I'm still dead.
+Apprentice Rat|Tired|*Sad Emoji*
+Witch|Tired|Anyway, let's open up that grate. Please.
+Apprentice Rat|Neutral|*Straight Face Emoji*
