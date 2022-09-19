@@ -13579,7 +13579,7 @@ PrefabInstance:
     - target: {fileID: 1376622714855249244, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2275422255647814960, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
@@ -13620,6 +13620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camera_swap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968634418459656694, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: failScene
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d134603935d37a4ea09da60349ce12d, type: 3}
