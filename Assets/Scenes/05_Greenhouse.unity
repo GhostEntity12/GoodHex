@@ -5731,12 +5731,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &466604571 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1314446964944771406, guid: 8d134603935d37a4ea09da60349ce12d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1436367714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &477704444
 GameObject:
   m_ObjectHideFlags: 0
@@ -22336,10 +22330,10 @@ MonoBehaviour:
   onCompleteEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 466604571}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 793427125}
+        m_TargetAssemblyTypeName: GreenhouseBar, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
