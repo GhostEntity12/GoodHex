@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Tutorialisation : MonoBehaviour
 {
-    enum TutorialState { PreTutorial, HighlightSingle, MoveRat, Multiselect, Task, PostTutorial }
+	// enum TutorialState { PreTutorial, HighlightMovement, MovementTask, Task, PostTutorial }
+	enum TutorialState { PreTutorial, HighlightSingle, MoveRat, Multiselect, Task, PostTutorial }
     TutorialState state = TutorialState.PreTutorial;
 	DialogueManager dm;
 
