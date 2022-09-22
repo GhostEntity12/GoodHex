@@ -34,6 +34,7 @@ public class RatManager : MonoBehaviour
 			rat.gameObject.name = ratInfo.Name;
 			rat.AssignInfo(ratInfo);
 			spawnedRats.Add(rat);
+			rat.SetColor();
 			AddRat(rat);
 		}
 		return spawnedRats;

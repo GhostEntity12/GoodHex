@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RatWarp : ProgressTask
+public class RatWarp : Assignable
 {
 	[SerializeField] Transform warpPosition;
 	protected new void Start()
@@ -20,10 +19,10 @@ public class RatWarp : ProgressTask
 			List<Rat> ratsToDeselect = new();
 			foreach (Rat rat in GameManager.Instance.TaskManager.RatsOnTask(this))
 			{
-				if (rat.ArrivedAtTask)
+				if (rat.ArrivedAtTask())
 				{
 					ratsToDeselect.Add(rat);
-					WarpRatToObjectPosition(taskPoints[0].rat);
+					rat.NavAgent.Warp(warpPosition.position);
 				}
 			}
 			GameManager.Instance.TaskManager.UnassignRats(ratsToDeselect.ToArray());
@@ -32,13 +31,10 @@ public class RatWarp : ProgressTask
 
 	public void WarpRatToObjectPosition(Rat r)
 	{
-		r.NavAgent.Warp(warpPosition.position);
+		
 	}
 
 	protected override void OnActivate() { }
 	protected override void OnComplete() { }
-	protected override void OnUnlock()
-	{
-		TaskState = State.Unlocked;
-	}
+	protected override void OnUnlock() { }
 }
