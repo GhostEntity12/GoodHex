@@ -4,39 +4,82 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    [SerializeField] Transform position;
+    //[SerializeField] Transform position;
     Vector3[] spawnPoints;
-    private bool captured;
+
+    //private bool captured;
     private Rat rat = null;
-    private int selectedSpawn;
+
+    //private int selectedSpawn;
     Bounds bounds;
+
     private bool hazardActivated;
+
     float timer;
+
+    bool sleeping;
+
+    MeshRenderer renderer;
+
+    [SerializeField]
+    float sleepTimer;
+
+    private float setTimer;
+
+    [SerializeField]
+    Material activeMaterial;
+
+    [SerializeField]
+    Material inactiveMaterial;
+
     void Start()
     {
         bounds = GetComponent<Collider>().bounds;
-        captured = false;
-        spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
+
+        //captured = false;
+        spawnPoints =
+            GameObject
+                .FindGameObjectsWithTag("SpawnPoints")
+                .Select(t => t.transform.position)
+                .ToArray();
         timer = 3f;
+        sleeping = true;
+        setTimer = sleepTimer;
+        renderer = GetComponent<MeshRenderer>();
     }
+
     void Update()
     {
-        if (hazardActivated)
+        if (sleeping)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            renderer.material = inactiveMaterial;
+            sleepTimer -= Time.deltaTime;
+            if (sleepTimer <= 0)
             {
-                HazardActivate();
-                
+                sleeping = false;
+                renderer.material = activeMaterial;
+                sleepTimer = setTimer;
             }
-            // if (rat.NavAgent.remainingDistance < 0.1f)
-            // {
-            //     rat.Kill();
-            //     captured = true;
-            //     rat = null;
-            // }
+        }
+        else
+        {
+            if (hazardActivated)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    HazardActivate();
+                }
+                // if (rat.NavAgent.remainingDistance < 0.1f)
+                // {
+                //     rat.Kill();
+                //     captured = true;
+                //     rat = null;
+                // }
+            }
         }
     }
+
     void OnTriggerEnter(Collider collider)
     {
         if (!rat && collider.TryGetComponent(out rat))
@@ -51,7 +94,6 @@ public class Hazard : MonoBehaviour
     //     selectedSpawn = Random.Range(0, spawnPoints.Length);
     //     GameManager.Instance.RatManager.SpawnRats(spawnPoints[selectedSpawn]);
     // }
-
     void HazardActivate()
     {
         Queue<Rat> deadRats = new Queue<Rat>();
@@ -59,12 +101,16 @@ public class Hazard : MonoBehaviour
         {
             if (bounds.Contains(rat.transform.position))
             {
-                deadRats.Enqueue(rat);
+                deadRats.Enqueue (rat);
             }
         }
-        while (deadRats.Count > 0)
+        while (deadRats.Count >= 0)
         {
             deadRats.Dequeue().Kill();
+            if (deadRats.Count <= 0)
+            {
+                sleeping = true;
+            }
         }
     }
 }

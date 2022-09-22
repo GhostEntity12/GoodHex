@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -430,6 +430,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573219919203158821, guid: 0237f031b0d4b1749b134e54d62515e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873669487959007123, guid: 0237f031b0d4b1749b134e54d62515e3,
+        type: 3}
+      propertyPath: sleepTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873669487959007123, guid: 0237f031b0d4b1749b134e54d62515e3,
+        type: 3}
+      propertyPath: activeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d12612cb75fe182439f370215c75a765, type: 2}
+    - target: {fileID: 4873669487959007123, guid: 0237f031b0d4b1749b134e54d62515e3,
+        type: 3}
+      propertyPath: inactiveMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 23790bddef779b64591b9b9d5f46ce79, type: 2}
     - target: {fileID: 4873669487959007123, guid: 0237f031b0d4b1749b134e54d62515e3,
         type: 3}
       propertyPath: spawnPoints.Array.size

@@ -1,4 +1,4 @@
-Witch|Happy|Good job!
-Witch|Happy|Now, let's tell our friends to move over to the crank and turn it!
-Witch|Happy|Hover over the crank and press the <b>Right Mouse Button</b>.
-Witch|Happy|You can see how many rats need to be assigned by the outlines above the task.
+Witch|Neutral|That pipe leads through to the garden.
+Apprentice Rat|Neutral|*Flower Icon*
+Witch|Angry|Don't even think about it. Just because I'm dead, doesn't mean you can mess about with my petunias!
+Apprentice Rat|Angry|*Disgruntled Emoji*
