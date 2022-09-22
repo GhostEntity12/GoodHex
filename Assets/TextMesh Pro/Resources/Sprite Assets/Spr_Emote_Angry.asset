@@ -80,15 +80,15 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Angry
-    m_HashCode: -970106844
+    m_Name: Angry
+    m_HashCode: 74029635
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
       m_Width: 346
       m_Height: 332
-      m_HorizontalBearingX: -173
-      m_HorizontalBearingY: 166
+      m_HorizontalBearingX: 40
+      m_HorizontalBearingY: 280
       m_HorizontalAdvance: 346
     m_GlyphRect:
       m_X: 0

@@ -80,8 +80,8 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Annoyed
-    m_HashCode: 106801649
+    m_Name: Annoyed
+    m_HashCode: -996783978
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:

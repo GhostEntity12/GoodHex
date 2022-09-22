@@ -80,8 +80,8 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Flower
-    m_HashCode: -2061981918
+    m_Name: Flower
+    m_HashCode: -1436018587
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:

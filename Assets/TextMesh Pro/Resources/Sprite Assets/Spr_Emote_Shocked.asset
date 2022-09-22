@@ -80,8 +80,8 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Shocked
-    m_HashCode: 1798642234
+    m_Name: Shocked
+    m_HashCode: 1411787357
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:

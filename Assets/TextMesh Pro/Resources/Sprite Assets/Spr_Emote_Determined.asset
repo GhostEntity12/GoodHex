@@ -80,8 +80,8 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Determined
-    m_HashCode: 1835621422
+    m_Name: Determined
+    m_HashCode: 606315369
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:

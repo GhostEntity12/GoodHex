@@ -43,8 +43,8 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Spr_Emote_Hypnotised
-    m_HashCode: 1072973896
+    m_Name: Hypnotised
+    m_HashCode: -1381499057
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
