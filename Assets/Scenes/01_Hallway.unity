@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.173724, g: 0.2171995, b: 0.29933113, a: 1}
+  m_IndirectSpecularColor: {r: 0.17372374, g: 0.21719919, b: 0.29933047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1055,6 +1055,7 @@ MonoBehaviour:
     type: 3}
   ratPrefab: {fileID: 6076119070167395738, guid: c98919fc0cae94a4e9fd956326ad8e46,
     type: 3}
+  highlighterPrefab: {fileID: 0}
 --- !u!4 &963396371
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,24 +1191,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 1743499480}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
-    type: 3}
-  taskDuration: 1.5
   taskPoints:
   - taskPosition: {x: 0.06, y: 0.2, z: -0.51030546}
     rat: {fileID: 0}
   - taskPosition: {x: 0.23915401, y: 0.2, z: -0.35}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
+    type: 3}
+  taskDuration: 1.5
   progressBarOffset: 0.1
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  onUnlockEvents: []
-  onActivateEvents: []
-  onDeactivateEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
   onCompleteEvents:
-  - {fileID: 401868940}
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!65 &1197149821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1553,6 +1559,10 @@ MonoBehaviour:
   firstMoveSpherePos: {fileID: 1372986389}
   firstMoveSphereRange: 1
   dummy: {fileID: 1743499480}
+  promptOffset: 0.25
+  mouseDownPrompt: {fileID: 0}
+  leftMouse: {fileID: 0}
+  rightMouse: {fileID: 0}
 --- !u!4 &1743499482
 Transform:
   m_ObjectHideFlags: 0
@@ -2168,7 +2178,7 @@ PrefabInstance:
     - target: {fileID: 8673287685580096815, guid: 98dee63f6255f184ab8a78f038104cff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
@@ -2906,23 +2916,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 1197149820}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
-    type: 3}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -1.55, y: 0, z: -0.45}
     rat: {fileID: 0}
   - taskPosition: {x: -1.4112568, y: 0, z: -0.3265784}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
+    type: 3}
+  taskDuration: 0
   progressBarOffset: 0.1
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  onUnlockEvents: []
-  onActivateEvents: []
-  onDeactivateEvents: []
-  onCompleteEvents: []
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteEvents:
+    m_PersistentCalls:
+      m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!64 &8031366411091002826
 MeshCollider:
   m_ObjectHideFlags: 0

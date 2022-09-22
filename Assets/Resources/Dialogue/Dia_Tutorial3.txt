@@ -1,4 +1,0 @@
-Witch|Neutral|That pipe leads through to the garden.
-Apprentice Rat|Neutral|*Flower Icon*
-Witch|Angry|Don't even think about it. Just because I'm dead, doesn't mean you can mess about with my petunias!
-Apprentice Rat|Angry|*Disgruntled Emoji*

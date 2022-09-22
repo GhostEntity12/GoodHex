@@ -4,3 +4,4 @@ Witch|Tired|I don't have any cheese on me... I'm still dead.
 Apprentice Rat|Tired|*Sad Emoji*
 Witch|Tired|Anyway, let's open up that grate. Please.
 Apprentice Rat|Neutral|*Straight Face Emoji*
+Witch|Neutral|Oh, but it looks like he'll need help turning that crank.
