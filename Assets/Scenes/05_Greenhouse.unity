@@ -403,7 +403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  <TriggerId>k__BackingField: 
+  <TriggerId>k__BackingField: Cutters
 --- !u!114 &366906560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13550,7 +13550,7 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -5.351769, y: 0.08698022, z: 0.40114284}
     rat: {fileID: 0}
-  itemId: WitchplantSeed
+  <ItemId>k__BackingField: WitchplantSeed
 --- !u!212 &1531244906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14558,7 +14558,7 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -5.114769, y: 0.08698022, z: -0.026857138}
     rat: {fileID: 0}
-  itemId: WitchplantSeed
+  <ItemId>k__BackingField: FlytrapSeed
 --- !u!212 &1825458743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20870,7 +20870,7 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -1.047, y: 0.035980225, z: -0.102}
     rat: {fileID: 0}
-  itemId: Cutters
+  <ItemId>k__BackingField: Cutters
 --- !u!1 &2733485241494543906
 GameObject:
   m_ObjectHideFlags: 0
@@ -22180,7 +22180,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 1
-  <TriggerId>k__BackingField: 
+  <TriggerId>k__BackingField: WitchplantSeed
 --- !u!114 &7106645584376212277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22427,7 +22427,7 @@ Transform:
   m_GameObject: {fileID: 8323637418039358221}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08019676, y: -0.92644423, z: 0.28310493}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9029846502946758999}
@@ -23067,7 +23067,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  <TriggerId>k__BackingField: 
+  <TriggerId>k__BackingField: FlytrapSeed
 --- !u!114 &8588295076453740437
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,10 +79,7 @@ public class Reticle : MonoBehaviour
 					pointerDownTimer = 0;
 				}
 			}
-			if (hit.normal.y > 0)
-			{
-				graphic.enabled = true;
-			}
+			graphic.enabled = hit.normal.y > 0;
 		}
 		else
 		{
@@ -214,7 +211,7 @@ public class Reticle : MonoBehaviour
 					{
 
 					}
-					
+
 				}
 				ratManager.SetRatDestinations(transform.position);
 				ratManager.ClearRats();
