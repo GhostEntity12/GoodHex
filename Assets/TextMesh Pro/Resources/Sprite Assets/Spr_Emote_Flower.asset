@@ -87,15 +87,15 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 344
       m_Height: 339
-      m_HorizontalBearingX: -172
-      m_HorizontalBearingY: 169.5
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 180
       m_HorizontalAdvance: 344
     m_GlyphRect:
       m_X: 0
       m_Y: 0
       m_Width: 344
       m_Height: 339
-    m_Scale: 1
+    m_Scale: 4
     m_AtlasIndex: 0
     sprite: {fileID: 21300000, guid: 4a357ac7ab3261b4b93f917bab8d8120, type: 3}
   spriteInfoList: []

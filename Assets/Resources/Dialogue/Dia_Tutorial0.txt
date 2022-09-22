@@ -9,7 +9,7 @@ Apprentice Rat|Neutral|.........
 Witch|Angry|I'd like to be not dead.
 Apprentice Rat|Neutral|...........
 Witch|Neutral|Um... Could you ask your friends to help out?
-Apprentice Rat|Neutral|<align="center"><sprite="Spr_Emote_Cheese" index=0></align>
+Apprentice Rat|Neutral|<sprite="Spr_Emote_Cheese" index=0></align>
 Witch|Neutral|Okay, yes, fine. Cheese will be provided upon my revival.
 Apprentice Rat|Neutral|<sprite="Spr_Emote_Happy" index=0>
 Witch|Tired|Let's start simple. Um... Maybe very simple.
