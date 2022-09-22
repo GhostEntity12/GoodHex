@@ -600,9 +600,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 7885587077838074156}
   selectionSprite: {fileID: 1824473025520188436}
+  <NavAgent>k__BackingField: {fileID: 4951354953605308642}
   <Wandering>k__BackingField: 0
   holdSpot: {fileID: 1433758986985517757}
-  itemHolding: {fileID: 0}
+  heldItem: {fileID: 0}
 --- !u!136 &8946176377568179703
 CapsuleCollider:
   m_ObjectHideFlags: 0

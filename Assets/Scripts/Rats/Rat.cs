@@ -12,7 +12,7 @@ public class Rat : MonoBehaviour
 
     [Header("Navigation")]
     private const float StoppingDistance = 0.15f;
-    public NavMeshAgent NavAgent { get; private set; }
+    [field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
 	[field: SerializeField] public bool Wandering { get; private set; }
     public bool AssignedToTask => GameManager.Instance.TaskManager.ratTasks.ContainsKey(this);
 

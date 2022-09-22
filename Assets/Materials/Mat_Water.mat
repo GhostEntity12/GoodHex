@@ -63,7 +63,7 @@ Material:
     - _WaterDepth: 1
     - _WaterRefractionScale: 0.25
     - _WaterRefractionSpeed: 0.5
-    - _WaveAmplitude: 0.025
+    - _WaveAmplitude: 0.01
     - _WaveFrequency: 3
     - _WaveStrength: 0.025
     m_Colors:
