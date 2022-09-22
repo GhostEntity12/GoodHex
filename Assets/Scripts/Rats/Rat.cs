@@ -5,29 +5,29 @@ using UnityEngine.AI;
 public class Rat : MonoBehaviour
 {
     [SerializeField] SpriteRenderer graphic;
+    [SerializeField] SpriteRenderer selectionSprite;
+    public RatData Info { get; private set; }
     Animator anim;
+    RatEmotes ratEmotes;
 
     [Header("Navigation")]
     private const float StoppingDistance = 0.15f;
-    [field: SerializeField] public NavMeshAgent NavAgent { get; private set; }
-
-    private float patience;
+    public NavMeshAgent NavAgent { get; private set; }
+	[field: SerializeField] public bool Wandering { get; private set; }
     public bool AssignedToTask => GameManager.Instance.TaskManager.ratTasks.ContainsKey(this);
 
-	public bool ArrivedAtTask() => GameManager.Instance.TaskManager.GetDistanceToTask(this) < 0.1f;
-	[field: SerializeField] public bool Wandering { get; private set; }
+    [Header("Carrying")]
+    public Transform holdSpot;
+    public Pickupable heldItem;
+    public bool IsHoldingItem => heldItem;
 
-    public RatData Info { get; private set; }
-
-    RatEmotes ratEmotes;
-    PickUp pickUp;
-
-    bool paused;
-
+    private float patience;
     private bool isDead = false;
+    
     Vector3[] spawnPoints;
     private int selectedSpawn;
-    [SerializeField] SpriteRenderer selectionSprite;
+
+    bool paused;
 
     private void Start()
     {
@@ -36,7 +36,6 @@ public class Rat : MonoBehaviour
         ratEmotes = GetComponentInChildren<RatEmotes>();
         anim = GetComponentInChildren<Animator>();
         NavAgent = GetComponent<NavMeshAgent>();
-        pickUp = GetComponent<PickUp>();
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
 
         if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
@@ -53,7 +52,7 @@ public class Rat : MonoBehaviour
         anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
         anim.SetBool("wandering", Wandering);
         anim.SetBool("occupied", ArrivedAtTask());
-        anim.SetBool("carrying", pickUp.IsHoldingItem);
+        anim.SetBool("carrying", IsHoldingItem);
 
         // Reducing flicker
         graphic.flipX = NavAgent.velocity.x switch
@@ -86,7 +85,7 @@ public class Rat : MonoBehaviour
     {
         NavAgent.SetDestination(position);
         patience = Info.PatienceDuration;
-        NavAgent.speed = (pickUp.IsHoldingItem ? 1f : 2f) * Info.SpeedModifier;
+        NavAgent.speed = (IsHoldingItem ? 1f : 2f) * Info.SpeedModifier;
         Wandering = false;
     }
 
@@ -105,6 +104,17 @@ public class Rat : MonoBehaviour
         }
     }
 
+    public void Pickup(Pickupable item)
+    {
+        heldItem = item;
+        heldItem.transform.parent = holdSpot;
+        heldItem.transform.localPosition = Vector3.zero;
+        if (heldItem.TryGetComponent(out Rigidbody rb))
+        {
+            rb.isKinematic = false;
+        }
+    }
+
     public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);
 
     void SetPaused(bool paused)
@@ -112,6 +122,15 @@ public class Rat : MonoBehaviour
         this.paused = paused;
         NavAgent.isStopped = paused;
         anim.speed = paused ? 0 : 1;
+    }
+
+    public bool ArrivedAtTask()
+    {
+        if (GameManager.Instance.TaskManager.GetDistanceToTask(this) == -1)
+        {
+            return false;
+        }
+        else return GameManager.Instance.TaskManager.GetDistanceToTask(this) < 0.1f;
     }
 
     public void Kill(float timeBeforeDeath = 0f)

@@ -45,7 +45,6 @@ public class GameManager : Singleton<GameManager>
 	public DialogueManager DialogueManager { get; private set; }
 	public Highlighter Highlighter { get; private set; }
 	public Camera mainCamera;
-
 	[Header("Prefabs")]
 	[SerializeField] ProgressBarManager progressBarManagerPrefab;
 	[SerializeField] LevelMenus levelMenusPrefab;

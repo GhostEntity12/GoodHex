@@ -29,11 +29,6 @@ public class RatWarp : Assignable
 		}
 	}
 
-	public void WarpRatToObjectPosition(Rat r)
-	{
-		
-	}
-
 	protected override void OnActivate() { }
 	protected override void OnComplete() { }
 	protected override void OnUnlock() { }

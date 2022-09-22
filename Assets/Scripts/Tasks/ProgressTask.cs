@@ -3,11 +3,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(EventTrigger))]
 public abstract class ProgressTask : Assignable
 {
 	[field: SerializeField]
-	public Sprite TaskImage { get; private set; } 
+	public Sprite TaskImage { get; private set; }
 
 	[Header("Task Setup")]
 	[SerializeField, Tooltip("How long the task takes")]
@@ -22,8 +21,6 @@ public abstract class ProgressTask : Assignable
 	/// The Progress bar for the task
 	/// </summary>
 	protected ProgressBar progressBar;
-
-	protected Renderer r;
 
 	[Space(20), SerializeField]
 	protected UnityEvent onUnlockEvents;
@@ -43,7 +40,6 @@ public abstract class ProgressTask : Assignable
 
 	protected new void Start()
 	{
-		r = GetComponent<Renderer>();
 		col = GetComponent<Collider>();
 		col.enabled = false;
 
@@ -52,32 +48,12 @@ public abstract class ProgressTask : Assignable
 		base.Start();
 	}
 
-	/// <summary>
-	/// Highlights the task
-	/// </summary>
-	/// <param name="doHighlight"></param>
-	public void Highlight(bool doHighlight)
+	void OnTriggerEnter(Collider other)
 	{
-		GameManager.Instance.Reticle.SetTask(doHighlight ? this : null);
-
-		if (TaskState == State.Unlocked && GameManager.Instance.RatManager.HasSelectedRats)
+		if (other.TryGetComponent(out Rat rat) && rat.IsHoldingItem && rat.heldItem.ItemId == TriggerId)
 		{
-			GameManager.Instance.Highlighter.Highlight(r, doHighlight);
-		}
-	}
-
-	void OnTriggerEnter(Collider rat)
-	{
-		if (rat.GetComponent<PickUp>())
-		{
-			if (rat.GetComponentInChildren<Pickupable>())
-			{
-				if (rat.GetComponentInChildren<Pickupable>().ReturnItemId() == TriggerId)
-				{
-					RequiresItem = false;
-					Destroy(GameObject.FindWithTag("Item"));
-				}
-			}
+			RequiresItem = false;
+			Destroy(GameObject.FindWithTag("Item"));
 		}
 	}
 }
