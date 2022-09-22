@@ -27,6 +27,7 @@ public class Rat : MonoBehaviour
     private bool isDead = false;
     Vector3[] spawnPoints;
     private int selectedSpawn;
+    [SerializeField] SpriteRenderer selectionSprite;
 
     private void Start()
     {
@@ -126,12 +127,14 @@ public class Rat : MonoBehaviour
 
     public void Select()
     {
-        graphic.color = Color.green;
+        //graphic.color = Color.green;
+        selectionSprite.gameObject.SetActive(true);
     }
 
     public void Deselect()
     {
-        graphic.color = Color.white;
+        //graphic.color = Color.white;
+        selectionSprite.gameObject.SetActive(false);
     }
     private void OnDestroy()
     {
