@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Reticle : MonoBehaviour
@@ -214,7 +213,7 @@ public class Reticle : MonoBehaviour
 
 			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
-				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRatsToTask(ratManager.selectedRats, hoverTask);
+				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(ratManager.selectedRats, hoverTask);
 				// Clear selected rats
 				ratManager.ClearRats();
 				// Select the rats without tasks

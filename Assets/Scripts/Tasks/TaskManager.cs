@@ -4,21 +4,10 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-	public readonly Dictionary<Rat, ProgressTask> ratTasks = new();
+	public readonly Dictionary<Rat, Assignable> ratTasks = new();
 
-	/// <summary>
-	/// Sets the rats to a task in the <Rat, Task> Dictionary
-	/// </summary>
-	/// <param name="rats"></param>
-	/// <param name="task"></param>
-	/// <returns></returns>
-	public List<Rat> AssignRatsToTask(List<Rat> rats, ProgressTask task)
+	public List<Rat> AssignRats(List<Rat> rats, ProgressTask task)
 	{
-		if (task is RatWarp) 
-		{
-			return AssignRatsToWarp(rats, task as RatWarp);
-		}
-
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
@@ -32,7 +21,7 @@ public class TaskManager : MonoBehaviour
 		// While there are both rats and slots available, assign
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
-			AssignRats(task, availableSlots.Dequeue(), ratQueue.Dequeue());
+			RegisterRat(task, availableSlots.Dequeue(), ratQueue.Dequeue());
 		}
 		return ratQueue.ToList();
 	}
@@ -43,17 +32,16 @@ public class TaskManager : MonoBehaviour
 	/// <param name="rats"></param>
 	/// <param name="task"></param>
 	/// <returns></returns>
-	public List<Rat> AssignRatsToWarp(List<Rat> rats, RatWarp warp)
+	public void AssignRats(List<Rat> rats, RatWarp warp)
 	{
 		foreach (Rat rat in rats)
 		{
-			AssignRats(warp, warp.TaskPoints[0], rat);
+			RegisterRat(warp, warp.TaskPoints[0], rat);
 		}
-		return new();
 	}
 
-	public List<Rat> RatsOnTask(ProgressTask task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
-	public void ClearRatsOnTask(ProgressTask task)
+	public List<Rat> RatsOnTask(Assignable task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
+	public void ClearRatsOnTask(Assignable task)
 	{
 		foreach (TaskPoint tp in task.TaskPoints)
 		{
@@ -68,7 +56,7 @@ public class TaskManager : MonoBehaviour
 		{
 			if (ratTasks.ContainsKey(rat))
 			{
-				if (GetTaskPoint(rat) != null)
+				if (ratTasks[rat] is ProgressTask)
 				{
 					GetTaskPoint(rat).rat = null;
 				}
@@ -77,7 +65,7 @@ public class TaskManager : MonoBehaviour
 		}
 	}
 
-	void AssignRats(ProgressTask task, TaskPoint slot, Rat rat)
+	void RegisterRat(Assignable task, TaskPoint slot, Rat rat)
 	{
 		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
 		{
@@ -87,8 +75,11 @@ public class TaskManager : MonoBehaviour
 		// Register to dictionary
 		ratTasks.Add(rat, task);
 
-		// Assign to slot
-		slot.rat = rat;
+		if (task is ProgressTask)
+		{
+			// Assign to slot
+			slot.rat = rat;
+		}
 
 		// Set destination and remove from active selection
 		rat.SetDestination(slot.taskPosition);
@@ -107,5 +98,14 @@ public class TaskManager : MonoBehaviour
 			}
 		}
 		return null;
+	}
+
+	public float GetDistanceToTask(Rat r)
+	{
+		if (ratTasks.ContainsKey(r))
+		{
+			return Vector3.Distance(r.transform.position, ratTasks[r].transform.position);
+		}
+		else return -1;
 	}
 }

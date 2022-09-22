@@ -1,6 +1,6 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Linq;
 
 public class Rat : MonoBehaviour
 {
@@ -13,17 +13,9 @@ public class Rat : MonoBehaviour
 
     private float patience;
     public bool AssignedToTask => GameManager.Instance.TaskManager.ratTasks.ContainsKey(this);
-    public bool ArrivedAtTask
-    {
-        get
-        {
-            TaskPoint tp = GameManager.Instance.TaskManager.GetTaskPoint(this);
-            if (tp == null) return false;
 
-            return Vector3.Distance(GameManager.Instance.TaskManager.GetTaskPoint(this).taskPosition, transform.position) < 0.1f;
-        }
-    }
-    [field: SerializeField] public bool Wandering { get; private set; }
+	public bool ArrivedAtTask() => GameManager.Instance.TaskManager.GetDistanceToTask(this) < 0.1f;
+	[field: SerializeField] public bool Wandering { get; private set; }
 
     public RatData Info { get; private set; }
 
@@ -59,7 +51,7 @@ public class Rat : MonoBehaviour
 
         anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
         anim.SetBool("wandering", Wandering);
-        anim.SetBool("occupied", ArrivedAtTask);
+        anim.SetBool("occupied", ArrivedAtTask());
         anim.SetBool("carrying", pickUp.IsHoldingItem);
 
         // Reducing flicker
@@ -151,4 +143,10 @@ public class Rat : MonoBehaviour
         selectedSpawn = Random.Range(0, spawnPoints.Length);
         GameManager.Instance.RatManager.SpawnRats(spawnPoints[selectedSpawn]);
     }
+
+    public void SetColor()
+	{
+        graphic.material.SetColor("_LitColor", Info.lightColor);
+        graphic.material.SetColor("_ShadowColor", Info.darkColor);
+	}
 }

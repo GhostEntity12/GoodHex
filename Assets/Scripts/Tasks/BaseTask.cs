@@ -32,7 +32,6 @@ public abstract class BaseTask : MonoBehaviour
 		if (TaskState != State.Complete)
 		{
 			IsComplete = false;
-
 		}
 	}
 }

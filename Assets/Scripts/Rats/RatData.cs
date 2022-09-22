@@ -1,3 +1,5 @@
+using UnityEngine;
+
 [System.Serializable]
 public class RatData
 {
@@ -16,6 +18,9 @@ public class RatData
 	
 	readonly System.Random rand = new();
 
+	public Color lightColor;
+	public Color darkColor;
+
 	public RatData()
 	{
 		name = GameManager.names[rand.Next(0, GameManager.names.Length)];
@@ -23,6 +28,12 @@ public class RatData
 		{
 			IncreaseRandomStat();
 		}
+
+		int colIndex = GameManager.RatIndex();
+		lightColor = GameManager.ratColors[0, colIndex];
+		darkColor = GameManager.ratColors[1, colIndex];
+
+
 	}
 
 	public void IncreaseRandomStat()

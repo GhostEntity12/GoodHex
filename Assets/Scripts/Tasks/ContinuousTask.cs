@@ -25,7 +25,7 @@ public class ContinuousTask : ProgressTask
 				progressBar.SetProgress(progress);
 
 				// Set state to active if all slots are filled
-				if (taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
+				if (taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask()))
 				{
 					OnActivate();
 				}
@@ -34,7 +34,7 @@ public class ContinuousTask : ProgressTask
 			case State.Active:
 				// If rats are missing, revert to unlocked state
 				// Not using OnUnlock() because that is for the initial unlock
-				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask))
+				if (!taskPoints.All(p => p.rat != null && p.rat.ArrivedAtTask()))
 				{
 					TaskState = State.Unlocked;
 					onDeactivateEvents?.Invoke();
