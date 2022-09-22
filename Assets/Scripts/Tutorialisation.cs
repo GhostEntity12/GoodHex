@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Tutorialisation : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class Tutorialisation : MonoBehaviour
 
     [SerializeField] TextAsset[] dialogue;
     [SerializeField] StandardTask exampleTask;
+    [SerializeField] StandardTask finishTask;
 
     [SerializeField] Transform mouseHole;
     [SerializeField] Transform mouseHoleExit;
+
+    [SerializeField] Transform deselectPromptPosition;
 
     [SerializeField] Transform firstMoveSpherePos;
     [SerializeField] float firstMoveSphereRange;
@@ -26,7 +30,9 @@ public class Tutorialisation : MonoBehaviour
     bool paused;
 
     [SerializeField] float promptOffset = 0.25f;
-    [SerializeField] SpriteRenderer mouseDownPrompt;
+    [SerializeField] SpriteRenderer mouseDownPrompt1;
+    [SerializeField] SpriteRenderer mouseDownPrompt2;
+    [SerializeField] TextMeshPro holdText;
     [SerializeField] Sprite leftMouse;
     [SerializeField] Sprite rightMouse;
 
@@ -54,7 +60,7 @@ public class Tutorialisation : MonoBehaviour
                 switch (movementState)
                 {
                     case InMovementState.Select:
-                        mouseDownPrompt.transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
+                        mouseDownPrompt1.transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
                         if (GameManager.Instance.RatManager.selectedRats.Count > 0)
                         {
                             movementState = InMovementState.Move;
@@ -62,17 +68,20 @@ public class Tutorialisation : MonoBehaviour
                         }
                         break;
                     case InMovementState.Move:
-                        mouseDownPrompt.transform.position = firstMoveSpherePos.position + Vector3.up * promptOffset;
+                        mouseDownPrompt1.transform.position = firstMoveSpherePos.position + Vector3.up * promptOffset;
                         if (r && !r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
                         {
                             movementState = InMovementState.Deselect;
                         }
                         break;
                     case InMovementState.Deselect:
+                        mouseDownPrompt1.transform.position = deselectPromptPosition.position + Vector3.up * promptOffset;
                         if (GameManager.Instance.RatManager.selectedRats.Count == 0)
                         {
                             GameManager.Instance.RatManager.SpawnRats(mouseHole.position)[0].SetDestination(mouseHoleExit.position);
+                            dummy.SetState(BaseTask.State.Complete);
                             IncrementState();
+                            mouseDownPrompt2.gameObject.SetActive(true);
                         }
                         break;
                     default:
@@ -80,17 +89,35 @@ public class Tutorialisation : MonoBehaviour
                 }
                 break;
             case TutorialState.MovementTask:
-                if (!r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
+                if (!GameManager.Instance.RatManager.selectedRats.Contains(GameManager.Instance.RatManager.allRats[0]) && !GameManager.Instance.RatManager.allRats[0].AssignedToTask)
+                {
+                    mouseDownPrompt1.transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
+                }
+                else
+                {
+                    mouseDownPrompt1.gameObject.SetActive(false);
+                }
+                if (!GameManager.Instance.RatManager.selectedRats.Contains(GameManager.Instance.RatManager.allRats[1]) && !GameManager.Instance.RatManager.allRats[1].AssignedToTask)
+                {
+                    mouseDownPrompt2.transform.position = GameManager.Instance.RatManager.allRats[1].transform.position + Vector3.up * promptOffset;
+                }
+                else
+                {
+                    mouseDownPrompt2.gameObject.SetActive(false);
+                }
+
+                if (GameManager.Instance.RatManager.selectedRats.Count == 2)
+                {
+                    mouseDownPrompt2.transform.position = exampleTask.transform.position + Vector3.up * promptOffset;
+                    mouseDownPrompt2.sprite = rightMouse;
+                }
+                if (exampleTask.IsComplete)
                 {
                     IncrementState();
                 }
                 break;
             case TutorialState.Task:
-                if (GameManager.Instance.RatManager.selectedRats.Count == 2 && !Input.GetMouseButton(0))
-                {
-                    dummy.SetState(BaseTask.State.Complete);
-                    IncrementState();
-                }
+                mouseDownPrompt1.transform.position = finishTask.transform.position + Vector3.up * promptOffset;
                 break;
             default:
                 break;
