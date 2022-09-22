@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18263811, g: 0.22834933, b: 0.3071475, a: 1}
+  m_IndirectSpecularColor: {r: 0.18263811, g: 0.22834933, b: 0.30714747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -384,14 +384,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.07, y: 0.30068016, z: 0.5487428}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 5
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -405,7 +403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  triggerId: Cutters
+  <TriggerId>k__BackingField: 
 --- !u!114 &366906560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,8 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 7
   taskPoints:
   - taskPosition: {x: -5.04, y: 0.148, z: 0.6191428}
     rat: {fileID: 0}
@@ -605,9 +601,9 @@ MonoBehaviour:
     rat: {fileID: 0}
   - taskPosition: {x: -4.98, y: 0.148, z: 0.44}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 7
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -621,7 +617,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!114 &387519954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6798,12 +6794,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
+  taskPoints: []
   <TaskImage>k__BackingField: {fileID: 0}
   taskDuration: 12
-  taskPoints: []
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -6817,7 +6811,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!114 &745891011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7577,28 +7571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: 1.29, y: 0.2, z: -0.11}
     rat: {fileID: 0}
-  progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  onUnlockEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onActivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeactivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onCompleteEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  <RequiresItem>k__BackingField: 0
-  triggerId: 
   warpPosition: {fileID: 711212915}
 --- !u!23 &948762671
 MeshRenderer:
@@ -13290,14 +13265,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -1.11, y: 0.06198025, z: 0.35}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 0
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -13383,7 +13356,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!1 &1423977303
 GameObject:
   m_ObjectHideFlags: 0
@@ -13580,6 +13553,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6376
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6376
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6376
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 922
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1376622714855249244, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
@@ -13997,16 +14020,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.24, y: 0.35, z: 0.44514298}
     rat: {fileID: 0}
   - taskPosition: {x: -0.1, y: 0.35, z: 0.44514298}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 5
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -14020,7 +14041,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  triggerId: Cutters
+  <TriggerId>k__BackingField: 
 --- !u!33 &1683864451
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14275,14 +14296,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 1380658724}
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -3.08, y: 0.08158016, z: 0.05}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 0
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -14368,7 +14387,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!43 &1720221348
 Mesh:
   m_ObjectHideFlags: 0
@@ -19733,14 +19752,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -4.5, y: 0.15, z: 0.64}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 0
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -19754,7 +19771,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!114 &1855466800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20038,14 +20055,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -3.59, y: 0.13, z: 0.55214286}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 0
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -20059,7 +20074,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!212 &1931322362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20349,28 +20364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: -3.3, y: 0.2089802, z: -0.45}
     rat: {fileID: 0}
-  progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  onUnlockEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onActivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeactivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onCompleteEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  <RequiresItem>k__BackingField: 0
-  triggerId: 
   warpPosition: {fileID: 479052188}
 --- !u!23 &2109080978
 MeshRenderer:
@@ -22320,14 +22316,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 366906559}
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: -0.1, y: 0.35, z: 0.44514298}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 0}
+  taskDuration: 5
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -22353,7 +22347,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 1
-  triggerId: WitchplantSeed
+  <TriggerId>k__BackingField: 
 --- !u!114 &7106645584376212277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22981,28 +22975,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 0
   taskPoints:
   - taskPosition: {x: 1.29, y: 0.2, z: -0.11}
     rat: {fileID: 0}
-  progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
-  onUnlockEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onActivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeactivateEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  onCompleteEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  <RequiresItem>k__BackingField: 0
-  triggerId: 
   warpPosition: {fileID: 711212915}
 --- !u!114 &8409085098207676374
 MonoBehaviour:
@@ -23193,12 +23168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
+  taskPoints: []
   <TaskImage>k__BackingField: {fileID: 0}
   taskDuration: 4
-  taskPoints: []
   progressBarOffset: 2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -23212,7 +23185,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  triggerId: FlytrapSeed
+  <TriggerId>k__BackingField: 
 --- !u!114 &8588295076453740437
 MonoBehaviour:
   m_ObjectHideFlags: 0
