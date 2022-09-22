@@ -521,7 +521,6 @@ GameObject:
   - component: {fileID: 4951354953605308642}
   - component: {fileID: 6076119070167395738}
   - component: {fileID: 8946176377568179703}
-  - component: {fileID: 424006646270751627}
   m_Layer: 6
   m_Name: Rat
   m_TagString: Rat
@@ -600,9 +599,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 7885587077838074156}
-  <NavAgent>k__BackingField: {fileID: 4951354953605308642}
-  <Wandering>k__BackingField: 0
   selectionSprite: {fileID: 1824473025520188436}
+  <Wandering>k__BackingField: 0
+  holdSpot: {fileID: 1433758986985517757}
+  itemHolding: {fileID: 0}
 --- !u!136 &8946176377568179703
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -617,23 +617,6 @@ CapsuleCollider:
   m_Height: 0.15
   m_Direction: 1
   m_Center: {x: 0, y: 0.075, z: 0}
---- !u!114 &424006646270751627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8700349638139139103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec3901dce9558c94fb14bb4a074d1210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdSpot: {fileID: 1433758986985517757}
-  pickUpMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  itemHolding: {fileID: 0}
 --- !u!1 &8921044086489678571
 GameObject:
   m_ObjectHideFlags: 0

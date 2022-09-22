@@ -966,15 +966,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 984d4c75d04d95e4cb7012c2826d9311,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: 1.086, y: 1.08, z: -1.17}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 984d4c75d04d95e4cb7012c2826d9311,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.3
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -1000,7 +998,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!135 &687675882
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2987,15 +2985,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 6992014757213630252}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: -1.3800001, y: 1.05, z: -1.17}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9eefd23fc837d7546aa05f3f8b8b1017,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.25
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -3009,7 +3005,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!4 &2129196510
 Transform:
   m_ObjectHideFlags: 0
@@ -4016,17 +4012,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 8811514995498849575}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: fb4dbfe22433e164f8f9eb396b43ebb8,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: -0.94, y: 1.0564561, z: 0.9}
     rat: {fileID: 0}
   - taskPosition: {x: -1.68, y: 1.0564561, z: 0.79}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: fb4dbfe22433e164f8f9eb396b43ebb8,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.25
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -4088,7 +4082,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 1
-  triggerId: OBJ_Plant
+  <TriggerId>k__BackingField: 
 --- !u!114 &2856439508324293863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5413,15 +5407,13 @@ MonoBehaviour:
   - {fileID: 8338220285585852509}
   - {fileID: 7101459321440508407}
   - {fileID: 2856439508324293862}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 2143f80d24b35f54f978643fc82de4e9,
-    type: 3}
-  taskDuration: 10
   taskPoints:
   - taskPosition: {x: -1, y: 1.07, z: 0.5218148}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 2143f80d24b35f54f978643fc82de4e9,
+    type: 3}
+  taskDuration: 10
   progressBarOffset: 0.5
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -5495,7 +5487,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 1
-  triggerId: OBJ_Plant_Chopped
+  <TriggerId>k__BackingField: 
 --- !u!135 &6992014757213630253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5705,17 +5697,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks:
   - {fileID: 687675881}
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.09, y: 1.05, z: -1.53}
     rat: {fileID: 0}
   - taskPosition: {x: 0.28, y: 1.05, z: -1.16}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: f590f2ac90b50b14f8699e3369a4155f,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.2
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -5729,7 +5719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 1
-  triggerId: OBJ_Bucket
+  <TriggerId>k__BackingField: 
 --- !u!64 &7101459321440508408
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6030,17 +6020,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 36b83aba4a6940841a8e0c11480aed1d,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: 0.74, y: 1.07, z: 0.5521964}
     rat: {fileID: 0}
   - taskPosition: {x: 0.4007832, y: 1.07, z: 0.94}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 36b83aba4a6940841a8e0c11480aed1d,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.8
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -6066,7 +6054,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!114 &8338220285585852510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6301,9 +6289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTasks: []
-  <TaskImage>k__BackingField: {fileID: 21300000, guid: 31a47e5de8ef5814ca0ab6dfd4745a1a,
-    type: 3}
-  taskDuration: 5
   taskPoints:
   - taskPosition: {x: -1.29, y: 1.05, z: -0.18918073}
     rat: {fileID: 0}
@@ -6311,9 +6296,10 @@ MonoBehaviour:
     rat: {fileID: 0}
   - taskPosition: {x: -1.74, y: 1.05, z: 0.33}
     rat: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 31a47e5de8ef5814ca0ab6dfd4745a1a,
+    type: 3}
+  taskDuration: 5
   progressBarOffset: 0.35
-  normalSprite: {fileID: 0}
-  highlightSprite: {fileID: 0}
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -6375,7 +6361,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <RequiresItem>k__BackingField: 0
-  triggerId: 
+  <TriggerId>k__BackingField: 
 --- !u!64 &8811514995498849576
 MeshCollider:
   m_ObjectHideFlags: 0
