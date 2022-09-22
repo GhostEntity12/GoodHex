@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d17ff8860b29409b5dc3e543a64a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reticleSize: {x: 0.5, y: 1.5}
   selectClip: {fileID: 8300000, guid: ee1ae5c30d882df4fbb19eb02a08cb71, type: 3}
   lerpSpeed: 15
   rotationSpeed: 360
@@ -137,7 +138,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ratsColor: {r: 1, g: 0.4575472, b: 0.8849465, a: 1}
   taskColor: {r: 0.46251777, g: 0.8018868, b: 0.4274208, a: 1}
-  colorChangeSpeed: 0.35
+  colorChangeSpeed: 3
   requiredHoldTime: 0.35
 --- !u!82 &7461494828251755575
 AudioSource:
@@ -288,7 +289,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d824ede569377484fa0d5197ffc8d563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1907224986, guid: c314fc5e55489744081571adff55d53c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fc2eedd4e31b964a8d84faf2d7042aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -10,10 +10,11 @@ public class Reticle : MonoBehaviour
 	SpriteRenderer graphic;
 	AudioSource aS;
 
+	public Vector2 reticleSize = new(1, 3);
 	float clampedMouseWheelInput = 2;
 	float circleSize = 1f;
 
-	ProgressTask hoverTask;
+	Assignable hoveredAssignable;
 
 	[SerializeField] AudioClip selectClip;
 
@@ -32,7 +33,6 @@ public class Reticle : MonoBehaviour
 	readonly List<Rat> ratsInHold = new();
 
 	RatManager ratManager;
-	PickUp pickUp;
 
 	Vector3 reticlePosition;
 
@@ -79,10 +79,7 @@ public class Reticle : MonoBehaviour
 					pointerDownTimer = 0;
 				}
 			}
-			if (hit.normal.y > 0)
-			{
-				graphic.enabled = true;
-			}
+			graphic.enabled = hit.normal.y > 0;
 		}
 		else
 		{
@@ -108,7 +105,7 @@ public class Reticle : MonoBehaviour
 
 		targetColor =
 			(mouseLocked && unselectedRats) || ratManager.HasSelectedRats
-			? hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked
+			? hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Unlocked
 				? taskColor
 				: ratsColor
 			: defaultColor;
@@ -122,7 +119,7 @@ public class Reticle : MonoBehaviour
 	{
 		// Mouse wheel to set size
 		clampedMouseWheelInput = Mathf.Clamp(clampedMouseWheelInput + Input.mouseScrollDelta.y, 0, 4);
-		circleSize = clampedMouseWheelInput / 2 + 1;
+		circleSize = Mathf.Lerp(reticleSize.x, reticleSize.y, clampedMouseWheelInput / 4f);
 		transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(circleSize, 1, circleSize), lerpSpeed * Time.deltaTime); // Reset Y scale to prevent lifting
 		transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(0, rotationAngle * circleSize, 0), rotationSpeed * Time.deltaTime);
 	}
@@ -194,26 +191,9 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			//PickUp code
-			if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hitPickup, Mathf.Infinity, 1 << 10))
+			if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
-				if (hitPickup.transform.TryGetComponent(out Pickupable pickupable))
-				{
-					Rat closestRat = ratManager.selectedRats.OrderBy(r => Vector3.Distance(r.transform.position, hitPickup.transform.position)).FirstOrDefault();
-					ratManager.SetRatDestinations(transform.position);
-					pickupable.AssignRat(closestRat);
-				}
-			}
-
-			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Locked)
-			{
-				ratManager.SetRatDestinations(transform.position);
-				ratManager.ClearRats();
-			}
-
-			else if (hoverTask && hoverTask.TaskState == BaseTask.State.Unlocked) // Assign to task
-			{
-				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(ratManager.selectedRats, hoverTask);
+				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(hoveredAssignable, ratManager.selectedRats.ToArray());
 				// Clear selected rats
 				ratManager.ClearRats();
 				// Select the rats without tasks
@@ -223,6 +203,19 @@ public class Reticle : MonoBehaviour
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 			}
+			else if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Locked)
+			{
+				if (hoveredAssignable is ProgressTask pt && pt.RequiresItem)
+				{
+					if (GameManager.Instance.RatManager.selectedRats.Any(r => r.IsHoldingItem))
+					{
+
+					}
+
+				}
+				ratManager.SetRatDestinations(transform.position);
+				ratManager.ClearRats();
+			}
 			else if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 			{
 				ratManager.SetRatDestinations(transform.position);
@@ -231,7 +224,7 @@ public class Reticle : MonoBehaviour
 		}
 	}
 
-	public void SetTask(ProgressTask task) => hoverTask = task;
+	public void SetAssignable(Assignable assignable) => hoveredAssignable = assignable;
 
 	void SetPaused(bool paused) => this.paused = paused;
 	private void OnDestroy()

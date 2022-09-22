@@ -1,26 +1,22 @@
 using UnityEngine;
 
-public class Pickupable : MonoBehaviour
+public class Pickupable : Assignable
 {
-    public string itemId;
+	[field: SerializeField] public string ItemId { get; private set; } 
 
-    private Rat savedRat;
+	new protected void Start()
+	{
+        base.Start();
+        TaskState = State.Unlocked;
+	}
 
-    public string ReturnItemId()
+
+	void Update()
     {
-        return itemId;
-    }
-
-    public void AssignRat(Rat rat)
-    {
-        savedRat = rat;
-    }
-
-    void Update()
-    {
-        if (savedRat && Vector3.Distance(savedRat.transform.position, transform.position) < 0.5f)
+        if (taskPoints[0].rat && taskPoints[0].rat.ArrivedAtTask())
         {
-            savedRat.GetComponent<PickUp>().CheckForPickup();
+            taskPoints[0].rat.Pickup(this);
+            TaskState = State.Locked;
         }
     }
 }
