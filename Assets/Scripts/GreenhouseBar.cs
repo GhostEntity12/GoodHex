@@ -18,7 +18,6 @@ public class GreenhouseBar : MonoBehaviour
 	float sliderWidth;
 	[SerializeField] float buffer = 20;
 	bool active;
-	[SerializeField] string failScene;
 
 	private void Start()
 	{
@@ -36,12 +35,12 @@ public class GreenhouseBar : MonoBehaviour
 				case -1:
 					Debug.Log("Lost: Not enough sun");
 					failed = true;
-					SceneManager.LoadScene(failScene);
+					GameManager.Instance.LevelFailed();
 					return;
 				case 1:
 					Debug.Log("Lost: Not enough water");
 					failed = true;
-					SceneManager.LoadScene(failScene);
+					GameManager.Instance.LevelFailed();
 					return;
 				default:
 					value += Time.deltaTime / time * (gettingSun ? 1 : -1);
