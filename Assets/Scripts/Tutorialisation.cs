@@ -69,6 +69,7 @@ public class Tutorialisation : MonoBehaviour
 						{
 							movementState = InMovementState.Move;
 							r = GameManager.Instance.RatManager.selectedRats[0];
+							mouseDownRenderers[0].sprite = rightMouse;
 						}
 						break;
 					case InMovementState.Move:
@@ -76,6 +77,7 @@ public class Tutorialisation : MonoBehaviour
 						if (r && !r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
 						{
 							movementState = InMovementState.Deselect;
+							mouseDownRenderers[0].sprite = leftMouse;
 						}
 						break;
 					case InMovementState.Deselect:
@@ -97,6 +99,7 @@ public class Tutorialisation : MonoBehaviour
 			case TutorialState.MovementTask:
 				if (GameManager.Instance.RatManager.selectedRats.Count == 2)
 				{
+					mouseDownPrompts[0].gameObject.SetActive(false);
 					mouseDownPrompts[1].gameObject.SetActive(true);
 					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * promptOffset;
 					mouseDownRenderers[1].sprite = rightMouse;
@@ -112,7 +115,7 @@ public class Tutorialisation : MonoBehaviour
 						mouseDownPrompts[i].gameObject.SetActive(showPrompt);
 						if (showPrompt)
 						{
-							mouseDownPrompts[i].transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
+							mouseDownPrompts[i].transform.position = GameManager.Instance.RatManager.allRats[i].transform.position + Vector3.up * promptOffset;
 						}
 					}
 				}
