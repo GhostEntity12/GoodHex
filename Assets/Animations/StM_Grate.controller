@@ -61,7 +61,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: active
+    m_ConditionEvent: move
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3930664658572859660}
@@ -112,8 +112,8 @@ AnimatorController:
   m_Name: StM_Grate
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: active
-    m_Type: 4
+  - m_Name: move
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
