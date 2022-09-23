@@ -17,6 +17,7 @@ public class Pickupable : Assignable
         {
             taskPoints[0].rat.Pickup(this);
             TaskState = State.Locked;
+            GameManager.Instance.Highlighter.Highlight(r, false);
         }
     }
 }
