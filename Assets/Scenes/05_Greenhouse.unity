@@ -845,7 +845,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1466721171}
         m_TargetAssemblyTypeName: GrowWitchplant, Assembly-CSharp
         m_MethodName: IncrementGrowthState
         m_Mode: 1
@@ -6656,7 +6656,7 @@ GameObject:
   - component: {fileID: 625874726}
   - component: {fileID: 625874728}
   - component: {fileID: 625874727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OBJ_Witch_Pot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7152,6 +7152,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1469911149}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1466721171}
+        m_TargetAssemblyTypeName: GrowWitchplant, Assembly-CSharp
+        m_MethodName: IncrementGrowthState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24306,6 +24318,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1466721171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1436367716, guid: 8d134603935d37a4ea09da60349ce12d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436367714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ea806a7e0e7141b8a6c117d116406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1469911148
 GameObject:
   m_ObjectHideFlags: 0
@@ -40445,6 +40469,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1466721171}
+        m_TargetAssemblyTypeName: GrowWitchplant, Assembly-CSharp
+        m_MethodName: IncrementGrowthState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   <TriggerId>k__BackingField: 
 --- !u!114 &1855466800
@@ -40544,8 +40580,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1855466802
-BoxCollider:
+--- !u!135 &1855466802
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -40555,8 +40591,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.05}
-  m_Center: {x: 0, y: 0.28, z: 0}
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &1857047943
 GameObject:
   m_ObjectHideFlags: 0
@@ -45536,6 +45572,7 @@ GameObject:
   - component: {fileID: 1931322362}
   - component: {fileID: 1931322363}
   - component: {fileID: 1931322364}
+  - component: {fileID: 1931322365}
   m_Layer: 7
   m_Name: Droplet of potion
   m_TagString: Untagged
@@ -45615,7 +45652,7 @@ MonoBehaviour:
   onCompleteEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1466721171}
         m_TargetAssemblyTypeName: GrowWitchplant, Assembly-CSharp
         m_MethodName: IncrementGrowthState
         m_Mode: 1
@@ -45751,6 +45788,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21428572, y: 0.35714287, z: 0.1}
   m_Center: {x: 0, y: 0.17857143, z: 0}
+--- !u!135 &1931322365
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931322359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.12, z: 0.09}
 --- !u!1 &1964831192
 GameObject:
   m_ObjectHideFlags: 0
@@ -48299,18 +48349,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 986749202}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Grow
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 986749203}
         m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
         m_MethodName: set_sprite
@@ -48769,7 +48807,7 @@ GameObject:
   - component: {fileID: 5752686423298143643}
   - component: {fileID: 8498562778182497201}
   - component: {fileID: 8498562778182497202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OBJ_Witch_Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
