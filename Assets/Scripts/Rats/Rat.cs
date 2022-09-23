@@ -113,6 +113,10 @@ public class Rat : MonoBehaviour
         {
             rb.isKinematic = false;
         }
+		if (heldItem.destinationSprite)
+		{
+            ratEmotes.SetEmote(heldItem.destinationSprite);
+		}
     }
 
     public void SetEmote(RatEmotes.Emotes emote) => ratEmotes.SetEmote(emote);

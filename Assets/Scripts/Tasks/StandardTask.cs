@@ -91,6 +91,7 @@ public class StandardTask : ProgressTask
 	{
 		GetComponent<Collider>().enabled = true;
 		progressBar.SetActive(true);
+		progressBar.SetProgress(progress);
 		TaskState = State.Unlocked;
 		progress = 0;
 		onUnlockEvents?.Invoke();

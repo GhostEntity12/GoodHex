@@ -24178,6 +24178,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771405, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1314446965096537515, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_Enabled
@@ -29245,6 +29250,7 @@ MonoBehaviour:
   - taskPosition: {x: -5.351769, y: 0.08698022, z: 0.40114284}
     rat: {fileID: 0}
   <ItemId>k__BackingField: WitchplantSeed
+  destinationSprite: {fileID: 21300000, guid: 955dcb93c58f02441bbd0b2cf0fbe357, type: 3}
 --- !u!212 &1531244906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35143,6 +35149,7 @@ MonoBehaviour:
   - taskPosition: {x: -5.114769, y: 0.08698022, z: -0.026857138}
     rat: {fileID: 0}
   <ItemId>k__BackingField: FlytrapSeed
+  destinationSprite: {fileID: 21300000, guid: e7f9a9f4dadaf8a4db2ca5ca5557524a, type: 3}
 --- !u!212 &1825458743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46575,6 +46582,7 @@ MonoBehaviour:
   - taskPosition: {x: -1.047, y: 0.035980225, z: -0.102}
     rat: {fileID: 0}
   <ItemId>k__BackingField: Cutters
+  destinationSprite: {fileID: 21300000, guid: 32648a5bd1a59934da90a407f1a6bf4a, type: 3}
 --- !u!1 &2733485241494543906
 GameObject:
   m_ObjectHideFlags: 0
@@ -48316,6 +48324,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1729419805}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 1
   <TriggerId>k__BackingField: WitchplantSeed
 --- !u!114 &7991298833222281563
@@ -48872,7 +48892,7 @@ MonoBehaviour:
   - taskPosition: {x: -1.0449243, y: 0.11356468, z: -0.55}
     rat: {fileID: 0}
   <TaskImage>k__BackingField: {fileID: 0}
-  taskDuration: 4
+  taskDuration: 20
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:

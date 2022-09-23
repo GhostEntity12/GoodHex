@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Pickupable : Assignable
 {
-	[field: SerializeField] public string ItemId { get; private set; } 
-
+	[field: SerializeField] public string ItemId { get; private set; }
+    public Sprite destinationSprite;
 	new protected void Start()
 	{
         base.Start();

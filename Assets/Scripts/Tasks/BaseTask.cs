@@ -30,5 +30,9 @@ public abstract class BaseTask : MonoBehaviour
 	{
 		TaskState = state;
 		IsComplete = TaskState == State.Complete;
+		if (state == State.Unlocked)
+		{
+			OnUnlock();
+		}
 	}
 }
