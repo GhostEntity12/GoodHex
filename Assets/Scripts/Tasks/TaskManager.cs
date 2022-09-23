@@ -33,7 +33,6 @@ public class TaskManager : MonoBehaviour
 			.Except(RatsOnTask(task)) // Exclude rats already on the task
 			.OrderBy(r => Vector3.Distance(r.transform.position, task.transform.position)) // order by distance (ascending)
 		);
-
 		// While there are both rats and slots available, assign
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
@@ -96,6 +95,8 @@ public class TaskManager : MonoBehaviour
 
 	void RegisterRat(Assignable task, TaskPoint slot, Rat rat)
 	{
+		Debug.Log("registering");
+		Debug.Log(task.name);
 		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
 		{
 			UnassignRats(rat);
@@ -110,6 +111,7 @@ public class TaskManager : MonoBehaviour
 			slot.rat = rat;
 		}
 
+		Debug.Log(ratTasks[rat]);
 		// Set destination and remove from active selection
 		rat.SetDestination(slot.taskPosition);
 		rat.Deselect();

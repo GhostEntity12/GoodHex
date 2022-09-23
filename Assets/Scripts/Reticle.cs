@@ -90,7 +90,10 @@ public class Reticle : MonoBehaviour
 		SetPosition();
 		SetColor();
 
-		SelectDeselect();
+		if (hit.normal.y > 0)
+		{
+			SelectDeselect();
+		}
 		Assign();
 	}
 
@@ -207,9 +210,17 @@ public class Reticle : MonoBehaviour
 			{
 				if (hoveredAssignable is ProgressTask pt && pt.RequiresItem)
 				{
-					if (GameManager.Instance.RatManager.selectedRats.Any(r => r.IsHoldingItem))
+					foreach (Rat r in GameManager.Instance.RatManager.selectedRats)
 					{
-
+						if (r.IsHoldingItem && r.heldItem.ItemId == pt.TriggerId)
+						{
+							List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(pt, r);
+							// Clear selected rats
+							ratManager.ClearRats();
+							// Select the rats without tasks
+							ratManager.SelectRats(remainingRats);
+							break;
+						}
 					}
 
 				}

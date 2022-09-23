@@ -50,6 +50,13 @@ public class ProgressBar : MonoBehaviour
 		}
 	}
 
+	[ContextMenu("pos")]
+	public void pos()
+	{
+		Debug.Log(taskPos);
+		Debug.Log(anchoredPos);
+	}
+
 	private void Update()
 	{
 		transform.position = anchoredPos + 4f * canvasScale * Mathf.Sin(Time.time + offsetTime) * Vector3.up;
