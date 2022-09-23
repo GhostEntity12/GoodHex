@@ -137,9 +137,19 @@ public class Rat : MonoBehaviour
     {
         isDead = true;
         //NavAgent.isStopped = true;
+        
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f);
+		foreach (Collider collider in colliders)
+		{
+			Rat r = collider.gameObject.GetComponent<Rat>();
+			if (r)
+			{
+				r.SetEmote(RatEmotes.Emotes.Sad);
+			}
+		}
         GameManager.Instance.RatManager.RemoveRat(this);
+        Invoke("RespawnRats", 3f);
         Destroy(gameObject);
-		Invoke("RespawnRats", 3f);
         // Leave corpse?
         //Invoke("Remove", pauseTime);
     }
