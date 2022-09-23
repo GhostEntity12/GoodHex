@@ -64,16 +64,6 @@ public class TaskManager : MonoBehaviour
 			RegisterRat(pickupable, tp, ratList[0]);
 			ratList.RemoveAt(0);
 		}
-		
-		if (Random.value < 0.5f)
-        {
-            rat.SetEmote(RatEmotes.Emotes.Idea);
-        }
-        
-		if (Random.value > 0.75f)
-        {
-            rat.SetEmote(RatEmotes.Emotes.Angry);
-        }
 
 		return ratList;
 	}
@@ -105,7 +95,16 @@ public class TaskManager : MonoBehaviour
 
 	void RegisterRat(Assignable task, TaskPoint slot, Rat rat)
 	{
-		Debug.Log("registering");
+
+		if (Random.value < 0.5f)
+		{
+			rat.SetEmote(RatEmotes.Emotes.Idea);
+		}
+
+		if (Random.value > 0.75f)
+		{
+			rat.SetEmote(RatEmotes.Emotes.Angry);
+		}
 		Debug.Log(task.name);
 		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
 		{

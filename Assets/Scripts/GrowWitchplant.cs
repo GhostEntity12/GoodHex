@@ -5,17 +5,16 @@ using UnityEngine;
 public class GrowWitchplant : MonoBehaviour
 {
 	int state;
-	Animator anim;
-	private void Start()
-	{
-		anim = GetComponent<Animator>();
-	}
+	[SerializeField] Animator[] anims;
 	public void IncrementGrowthState()
 	{
 		state++;
 		if (state is 1 or 3 or 6 or 9 or 12 or 14)
 		{
-			anim.SetTrigger("Grow");
+			foreach (Animator anim in anims)
+			{
+				anim.SetTrigger("Grow");
+			}
 		}
 
 		if (state == 15)
