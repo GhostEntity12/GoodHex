@@ -51,6 +51,7 @@ public class RatEmotes : MonoBehaviour
 			}
 		}
 		// Demo stuff -random auto emotes
+		/*
 		else
 		{
 			demoTimer -= Time.deltaTime;
@@ -60,6 +61,7 @@ public class RatEmotes : MonoBehaviour
 				demoTimer = Random.Range(2f, 15f);
 			}
 		}
+		*/
 	}
 
 	public void SetEmote(Emotes emote) => SetEmote(emotes[(int)emote]);

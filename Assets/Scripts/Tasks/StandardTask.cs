@@ -101,6 +101,24 @@ public class StandardTask : ProgressTask
 	/// </summary>
 	protected override void OnComplete()
 	{
+		Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+		foreach (Collider collider in colliders)
+		{
+			Rat r = collider.gameObject.GetComponent<Rat>();
+			if (r)
+			{
+				if (Random.value < 0.9f)
+				{
+					r.SetEmote(RatEmotes.Emotes.Celebrate);
+				}
+				else
+				{
+					r.SetEmote(RatEmotes.Emotes.Sleepy);
+				}
+
+			}
+		}
+		
 		progressBar.SetActive(false);
 		Highlight(false);
 		TaskState = State.Complete;
