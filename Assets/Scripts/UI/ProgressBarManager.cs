@@ -28,10 +28,15 @@ public class ProgressBarManager : MonoBehaviour
 		if (canvasScaleCache != progressCanvas.transform.localScale.x)
 		{
             canvasScaleCache = progressCanvas.transform.localScale.x;
-			foreach (ProgressBar pb in progressBars)
-			{
-                pb.CanvasScaleUpdate(canvasScaleCache);
-			}
+            UpdatePositions();
 		}
+    }
+
+    public void UpdatePositions()
+	{
+        foreach (ProgressBar pb in progressBars)
+        {
+            pb.CanvasScaleUpdate(canvasScaleCache);
+        }
     }
 }

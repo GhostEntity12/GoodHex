@@ -30,6 +30,7 @@ public class CameraSwapper : MonoBehaviour
 				{
 					fadingOut = false;
 					c.transform.SetPositionAndRotation(cameraPositions[index].position, cameraPositions[index].rotation);
+					GameManager.Instance.ProgressBarManager.UpdatePositions();
 				}
 			}
 			else

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class RatEmotes : MonoBehaviour
 {
-	public enum Emotes { Happy, Sad, Angry, Celebrate, Food, Idea, Love, Sleepy }
+	public enum Emotes { Happy, Sad, Angry, Celebrate, Food, Idea, Love, Sleepy, Annoyed, Determined, Flower, Hypnotised, Shocked }
 
 	float demoTimer;
 	float timer;

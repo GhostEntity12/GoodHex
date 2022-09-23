@@ -16,7 +16,7 @@ public abstract class ProgressTask : Assignable
 
 	[Header("Progress Bar")]
 	[SerializeField, Tooltip("How high above the task the progress bar should appear")]
-	protected float progressBarOffset = 2f;
+	protected float progressBarOffset = 0.1f;
 	/// <summary>
 	/// The Progress bar for the task
 	/// </summary>

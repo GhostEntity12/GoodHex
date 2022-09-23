@@ -39,7 +39,7 @@ public class GameManager : Singleton<GameManager>
 
 	LevelMenus levelMenus;
 	BGMManager bgmManager;
-	ProgressBarManager progressBarManager;
+	public ProgressBarManager ProgressBarManager { get; private set; }
 	public RatManager RatManager { get; private set; }
 	public TaskManager TaskManager { get; private set; }
 	public DialogueManager DialogueManager { get; private set; }
@@ -65,7 +65,7 @@ public class GameManager : Singleton<GameManager>
 
 	public void Restart() => LoadSceneManager.LoadScene(0);
 
-	public ProgressBar CreateProgressBar() => progressBarManager.CreateProgressBar();
+	public ProgressBar CreateProgressBar() => ProgressBarManager.CreateProgressBar();
 	public void TriggerEndMusic() => bgmManager.TriggerEndMusic();
 
 	public void AllTasksComplete()
@@ -90,7 +90,7 @@ public class GameManager : Singleton<GameManager>
 		Reticle = Instantiate(reticlePrefab);
 		levelMenus = Instantiate(levelMenusPrefab);
 		bgmManager = Instantiate(bgmManagerPrefab);
-		progressBarManager = Instantiate(progressBarManagerPrefab);
+		ProgressBarManager = Instantiate(progressBarManagerPrefab);
 		GameObject managers = new("Managers");
 		RatManager = managers.AddComponent<RatManager>();
 		TaskManager = managers.AddComponent<TaskManager>();
