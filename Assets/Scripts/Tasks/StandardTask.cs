@@ -13,10 +13,27 @@ public class StandardTask : ProgressTask
 				if (requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete))
 				{
 					col.enabled = true;
-				}
-				if ((requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete)) && !RequiresItem) // if all required tasks are complete
-				{
-					OnUnlock();
+					if (RequiresItem)
+					{
+						foreach (TaskPoint taskPoint in TaskPoints)
+						{
+							if (taskPoint.rat &&
+								taskPoint.rat.ArrivedAtTask() &&
+								taskPoint.rat.IsHoldingItem &&
+								taskPoint.rat.heldItem.ItemId == TriggerId)
+							{
+								RequiresItem = false;
+								Destroy(taskPoint.rat.heldItem.gameObject);
+								GameManager.Instance.TaskManager.ClearRatsOnTask(this);
+								break;
+							}
+						}
+					}
+					else
+					{
+						OnUnlock();
+					}
+					break;
 				}
 				break;
 

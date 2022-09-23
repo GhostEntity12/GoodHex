@@ -32,8 +32,7 @@ public abstract class ProgressTask : Assignable
 	protected UnityEvent onCompleteEvents;
 
 	protected int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask()).Count();
-	[field: SerializeField] public bool RequiresItem { get; private set; }
-
+	[field: SerializeField] public bool RequiresItem { get; protected set; }
 	[field: SerializeField] public string TriggerId { get; private set; }
 
 	protected Collider col;
@@ -48,12 +47,17 @@ public abstract class ProgressTask : Assignable
 		base.Start();
 	}
 
-	void OnTriggerEnter(Collider other)
+	public void AssignRatWithItem()
 	{
-		if (other.TryGetComponent(out Rat rat) && rat.IsHoldingItem && rat.heldItem.ItemId == TriggerId)
-		{
-			RequiresItem = false;
-			Destroy(GameObject.FindWithTag("Item"));
-		}
+
 	}
+
+	//void OnTriggerEnter(Collider other)
+	//{
+	//	if (other.TryGetComponent(out Rat rat) && rat.IsHoldingItem && rat.heldItem.ItemId == TriggerId)
+	//	{
+	//		RequiresItem = false;
+	//		Destroy(GameObject.FindWithTag("Item"));
+	//	}
+	//}
 }
