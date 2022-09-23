@@ -119,7 +119,12 @@ public class StandardTask : ProgressTask
 
 			}
 		}
-		
+
+		if (TriggerId != "")
+		{
+			RequiresItem = true;
+		}
+
 		progressBar.SetActive(false);
 		Highlight(false);
 		TaskState = State.Complete;

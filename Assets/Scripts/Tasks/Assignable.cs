@@ -17,7 +17,7 @@ public class Assignable : BaseTask
 	}
 
 	[ContextMenu("Reset Task Positions")]
-	void ResetTaskPositions()
+	protected void ResetTaskPositions()
 	{
 		foreach (TaskPoint point in taskPoints)
 		{

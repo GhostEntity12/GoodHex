@@ -8,7 +8,8 @@ public class Pickupable : Assignable
 	{
         base.Start();
         TaskState = State.Unlocked;
-	}
+        ResetTaskPositions();
+    }
 
 
 	void Update()

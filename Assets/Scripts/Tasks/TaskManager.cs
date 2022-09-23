@@ -120,7 +120,6 @@ public class TaskManager : MonoBehaviour
 			slot.rat = rat;
 		}
 
-		Debug.Log(ratTasks[rat]);
 		// Set destination and remove from active selection
 		rat.SetDestination(slot.taskPosition);
 		rat.Deselect();
