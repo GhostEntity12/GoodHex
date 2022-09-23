@@ -29,9 +29,6 @@ public abstract class BaseTask : MonoBehaviour
 	public void SetState(State state)
 	{
 		TaskState = state;
-		if (TaskState != State.Complete)
-		{
-			IsComplete = false;
-		}
+		IsComplete = TaskState == State.Complete;
 	}
 }

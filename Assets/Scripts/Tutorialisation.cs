@@ -101,7 +101,7 @@ public class Tutorialisation : MonoBehaviour
 				{
 					mouseDownPrompts[0].gameObject.SetActive(false);
 					mouseDownPrompts[1].gameObject.SetActive(true);
-					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * promptOffset;
+					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * (promptOffset + 0.1f);
 					mouseDownRenderers[1].sprite = rightMouse;
 				}
 				else
@@ -128,7 +128,9 @@ public class Tutorialisation : MonoBehaviour
 				break;
 			case TutorialState.Task:
 				mouseDownPrompts[0].gameObject.SetActive(true);
-				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * promptOffset;
+				mouseDownRenderers[0].sprite = rightMouse;
+				mouseDownPrompts[1].gameObject.SetActive(false);
+				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + 0.1f) + Vector3.right * 0.5f;
 				break;
 			default:
 				break;
