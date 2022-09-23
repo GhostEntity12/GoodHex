@@ -51,7 +51,12 @@ public class GreenhouseBar : MonoBehaviour
 		}
 	}
 
-	public void Activate() => active = true;
+	public void Activate()
+	{
+		slider.enabled = true;
+		indicator.enabled = true;
+		active = true;
+	}
 	public void ToggleState() => gettingSun = !gettingSun;
 	public void SetState(bool setSun)
 	{
