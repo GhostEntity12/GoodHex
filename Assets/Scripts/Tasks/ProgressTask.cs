@@ -37,6 +37,9 @@ public abstract class ProgressTask : Assignable
 
 	protected Collider col;
 
+	public bool Locked => locked;
+	protected bool locked;
+
 	protected new void Start()
 	{
 		col = GetComponent<Collider>();
@@ -46,18 +49,13 @@ public abstract class ProgressTask : Assignable
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 		base.Start();
 	}
+	public void UpdateBar() => progressBar.UpdateTaskPos(this);
 
-	public void AssignRatWithItem()
+	public void Lock(bool locked)
 	{
-
+		this.locked = locked;
+		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
+		progressBar.SetActive(!locked && (TaskState == State.Unlocked));
+		progress = 0;
 	}
-
-	//void OnTriggerEnter(Collider other)
-	//{
-	//	if (other.TryGetComponent(out Rat rat) && rat.IsHoldingItem && rat.heldItem.ItemId == TriggerId)
-	//	{
-	//		RequiresItem = false;
-	//		Destroy(GameObject.FindWithTag("Item"));
-	//	}
-	//}
 }

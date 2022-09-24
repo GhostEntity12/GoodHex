@@ -24,6 +24,8 @@ public class TaskManager : MonoBehaviour
 
 	public List<Rat> AssignRats(ProgressTask task, params Rat[] rats)
 	{
+		//if (task.Locked) return rats.ToList();
+
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return null;
@@ -103,6 +105,7 @@ public class TaskManager : MonoBehaviour
 	{
 		foreach (Rat rat in rats)
 		{
+			if (!rat) continue;
 			if (ratTasks.ContainsKey(rat))
 			{
 				if (ratTasks[rat] is not RatWarp)
@@ -125,7 +128,6 @@ public class TaskManager : MonoBehaviour
 		{
 			rat.SetEmote(RatEmotes.Emotes.Angry);
 		}
-		Debug.Log(task.name);
 		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
 		{
 			UnassignRats(rat);

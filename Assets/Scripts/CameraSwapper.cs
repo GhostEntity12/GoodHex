@@ -13,7 +13,7 @@ public class CameraSwapper : MonoBehaviour
 	[SerializeField] CanvasGroup fade;
 	[SerializeField] float fadeDuration;
 
-	void Start()
+void Start()
 	{
 		c = Camera.main;
 		c.transform.SetPositionAndRotation(cameraPositions[index].position, cameraPositions[index].rotation);

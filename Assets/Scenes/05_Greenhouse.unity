@@ -28615,7 +28615,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 82c9bf96bfcd2ab479839595599eb28c, type: 2}
+      objectReference: {fileID: 2100000, guid: 00e5d54ca9a864a42859e9a0adf423a9, type: 2}
     - target: {fileID: 4024299346073896332, guid: 23937e295786e1a4e94197525c12bb9b,
         type: 3}
       propertyPath: m_RootOrder
@@ -28706,6 +28706,7 @@ GameObject:
   - component: {fileID: 1380658721}
   - component: {fileID: 1380658722}
   - component: {fileID: 1380658723}
+  - component: {fileID: 1380658725}
   m_Layer: 7
   m_Name: Lever (Lower)
   m_TagString: Untagged
@@ -28943,8 +28944,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1380658725}
+        m_TargetAssemblyTypeName: TaskLocker, Assembly-CSharp
+        m_MethodName: Lock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1701876738}
+        m_TargetAssemblyTypeName: TaskLocker, Assembly-CSharp
+        m_MethodName: Lock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   <TriggerId>k__BackingField: 
+--- !u!114 &1380658725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380658711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf25a8ffd29d5f4c9032d4fda92bfa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasksToLock:
+  - {fileID: 366906559}
+  - {fileID: 745891010}
 --- !u!1 &1395860622
 GameObject:
   m_ObjectHideFlags: 0
@@ -39858,6 +39898,7 @@ GameObject:
   - component: {fileID: 1701876736}
   - component: {fileID: 1701876735}
   - component: {fileID: 1701876734}
+  - component: {fileID: 1701876738}
   m_Layer: 7
   m_Name: Lever (Upper)
   m_TagString: Untagged
@@ -40095,8 +40136,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1380658725}
+        m_TargetAssemblyTypeName: TaskLocker, Assembly-CSharp
+        m_MethodName: Lock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1701876738}
+        m_TargetAssemblyTypeName: TaskLocker, Assembly-CSharp
+        m_MethodName: Lock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   <TriggerId>k__BackingField: 
+--- !u!114 &1701876738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701876732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf25a8ffd29d5f4c9032d4fda92bfa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasksToLock:
+  - {fileID: 1931322361}
+  - {fileID: 387519953}
+  - {fileID: 5250842587162513501}
+  - {fileID: 1855466799}
 --- !u!1 &1729419802
 GameObject:
   m_ObjectHideFlags: 0
@@ -56946,7 +57028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498562778182497200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04835945, y: -1.5762146, z: 0.63740975}
+  m_LocalPosition: {x: 0.04835945, y: -1.576215, z: 0.63740975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58008,6 +58090,7 @@ GameObject:
   - component: {fileID: 6393616696810073371}
   - component: {fileID: 7106645584376212273}
   - component: {fileID: 7106645584376212275}
+  - component: {fileID: 7106645584376212276}
   m_Layer: 7
   m_Name: OBJ_Witch_Pot
   m_TagString: Untagged
@@ -58051,6 +58134,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: -0.64, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &7106645584376212276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106645584376212272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de43945d0986964ea7b8a35d6a80bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7182949981630690919
 Transform:
   m_ObjectHideFlags: 0
@@ -58283,7 +58378,7 @@ Transform:
   m_GameObject: {fileID: 8323637418039358221}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08019676, y: -0.92644423, z: 0.28310493}
-  m_LocalScale: {x: 1, y: 1.05, z: 1}
+  m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9029846502946758999}
