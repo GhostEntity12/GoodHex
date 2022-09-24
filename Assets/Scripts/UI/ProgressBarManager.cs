@@ -6,10 +6,12 @@ public class ProgressBarManager : MonoBehaviour
     Canvas progressCanvas;
 
     [SerializeField] ProgressBar progressBarPrefab;
+    public float CanvasScaleCache => canvasScaleCache;
     float canvasScaleCache;
     readonly List<ProgressBar> progressBars = new();
 
-    public ProgressBar CreateProgressBar()
+
+	public ProgressBar CreateProgressBar()
     {
         ProgressBar pb = Instantiate(progressBarPrefab, progressCanvas.transform);
         pb.CanvasScaleUpdate(canvasScaleCache);

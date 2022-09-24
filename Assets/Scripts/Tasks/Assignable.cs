@@ -47,7 +47,6 @@ public class Assignable : BaseTask
 	/// <param name="doHighlight"></param>
 	public void Highlight(bool doHighlight)
 	{
-		Debug.Log(gameObject);
 		GameManager.Instance.Reticle.SetAssignable(doHighlight ? this : null);
 
 		if (TaskState == State.Unlocked && (GameManager.Instance.RatManager.HasSelectedRats || !doHighlight))

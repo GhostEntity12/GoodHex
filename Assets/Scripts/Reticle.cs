@@ -17,6 +17,12 @@ public class Reticle : MonoBehaviour
 	Assignable hoveredAssignable;
 
 	[SerializeField] AudioClip selectClip;
+	[Header("Pulse")]
+	[SerializeField] Transform pulse;
+	[SerializeField] float pulseLength = 0.1f;
+	Material pulseMat;
+	bool doPulse;
+	float pulseTimer;
 
 	[Header("Lerping")]
 	[SerializeField] float lerpSpeed;
@@ -53,6 +59,8 @@ public class Reticle : MonoBehaviour
 		graphic = GetComponentInChildren<SpriteRenderer>();
 		ratManager = GameManager.Instance.RatManager;
 		GameManager.Pause += SetPaused;
+		pulse.transform.parent = null;
+		pulseMat = pulse.GetComponentInChildren<Renderer>().material;
 	}
 
 	void Update()
@@ -95,6 +103,18 @@ public class Reticle : MonoBehaviour
 			SelectDeselect();
 		}
 		Assign();
+
+		if (doPulse)
+		{
+			pulseTimer += Time.deltaTime / pulseLength;
+			if (pulseTimer >= pulseLength)
+			{
+				doPulse = false;
+				pulseTimer = 0;
+			}
+			float percent = pulseTimer / pulseLength;
+			pulseMat.SetFloat("_PulseValue", Mathf.PingPong(percent * 2, 1));
+		}
 	}
 
 	void SetColor()
@@ -164,17 +184,17 @@ public class Reticle : MonoBehaviour
 
 				if (unselectedRats.Count > 0) // Select rats
 				{
-					if (ratManager.selectedRats.Count == 0)
-					{
-						aS.PlayOneShot(selectClip);
-					}
+					aS.PlayOneShot(selectClip);
+					doPulse = true;
+					pulse.position = transform.position;
+					pulse.localScale = new Vector3(circleSize, 3 / 4f * circleSize, circleSize);
 					ratManager.SelectRats(unselectedRats);
 					ratsInHold.AddRange(unselectedRats);
 				}
 				mouseLocked = false;
 			}
 		}
-		// Mouse release - Paintbrush select
+		// Mouse release
 		if (Input.GetMouseButtonUp(0))
 		{
 			//Debug.Log("Button up time = " + pointerDownTimer);

@@ -30,15 +30,26 @@ public class TaskManager : MonoBehaviour
 
 		// Get a list of viable rats from the provided list
 		Queue<Rat> ratQueue = new(rats
-			.Except(RatsOnTask(task)) // Exclude rats already on the task
+			.Except(RatsOnTask(task)) // Exclude rats already on the task or holding items
 			.OrderBy(r => Vector3.Distance(r.transform.position, task.transform.position)) // order by distance (ascending)
 		);
+		List<Rat> heldItemRats = new();
 		// While there are both rats and slots available, assign
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
-			RegisterRat(task, availableSlots.Dequeue(), ratQueue.Dequeue());
+			Rat r = ratQueue.Dequeue();
+			if (!r.IsHoldingItem || (r.heldItem.ItemId == task.TriggerId))
+			{
+				RegisterRat(task, availableSlots.Dequeue(), r);
+			}
+			else
+			{
+				heldItemRats.Add(r);
+			}
 		}
-		return ratQueue.ToList();
+		List<Rat> unassigned = ratQueue.ToList();
+		unassigned.AddRange(heldItemRats);
+		return unassigned;
 	}
 
 	public void AssignRats(RatWarp warp, params Rat[] rats)
@@ -51,21 +62,31 @@ public class TaskManager : MonoBehaviour
 
 	public List<Rat> AssignRats(Pickupable pickupable, params Rat[] rats)
 	{
-		TaskPoint tp = pickupable.TaskPoints[0]; 
+		TaskPoint tp = pickupable.TaskPoints[0];
 		if (tp.rat) return null;
 
 		// Get a list of viable rats from the provided list
-		List<Rat> ratList = rats
+		Queue<Rat> ratQueue = new(rats
 			.Except(RatsOnTask(pickupable)) // Exclude rats already on the task
-			.OrderBy(r => Vector3.Distance(r.transform.position, pickupable.transform.position)).ToList();
+			.OrderBy(r => Vector3.Distance(r.transform.position, pickupable.transform.position)));
 
-		if (ratList.Count > 0)
+		List<Rat> heldItemRats = new();
+		while (ratQueue.Count > 0)
 		{
-			RegisterRat(pickupable, tp, ratList[0]);
-			ratList.RemoveAt(0);
+			Rat r = ratQueue.Dequeue();
+			if (r.IsHoldingItem)
+			{
+				heldItemRats.Add(r);
+			}
+			else
+			{
+				RegisterRat(pickupable, tp, r);
+				break;
+			}
 		}
-
-		return ratList;
+		List<Rat> unassigned = ratQueue.ToList();
+		unassigned.AddRange(heldItemRats);
+		return unassigned;
 	}
 
 	public List<Rat> RatsOnTask(Assignable task) => ratTasks.Where(p => p.Value == task).Select(p => p.Key).ToList();
@@ -95,7 +116,6 @@ public class TaskManager : MonoBehaviour
 
 	void RegisterRat(Assignable task, TaskPoint slot, Rat rat)
 	{
-
 		if (Random.value < 0.5f)
 		{
 			rat.SetEmote(RatEmotes.Emotes.Idea);
@@ -110,7 +130,7 @@ public class TaskManager : MonoBehaviour
 		{
 			UnassignRats(rat);
 		}
-		
+
 		// Register to dictionary
 		ratTasks.Add(rat, task);
 

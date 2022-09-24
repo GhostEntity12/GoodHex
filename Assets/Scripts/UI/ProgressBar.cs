@@ -42,6 +42,7 @@ public class ProgressBar : MonoBehaviour
 		offsetTime = Random.Range(0f, 3f);
 	}
 
+	public void UpdateTaskPos(ProgressTask task) => taskPos = task.transform.position;
 	public void SetRats(int rats)
 	{
 		for (int i = 0; i < ratSilhouettes.Count; i++)
