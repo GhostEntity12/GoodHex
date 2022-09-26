@@ -43,7 +43,7 @@ public class DialogueManager : Singleton<DialogueManager>
 	[SerializeField] float m_TweenSpeed = 0.2f;
 
 	[Header("File")]
-	[SerializeField, Tooltip("The scene to load")] TextAsset sceneName;
+	[Tooltip("The scene to load")] TextAsset sceneName;
 	[SerializeField, Tooltip("Whether to clear the scene after it has run")] bool clearAfterScene;
 	readonly Queue<TextAsset> sceneQueue = new();
 	readonly Queue<Action> onFinishDialogueActions = new();
@@ -354,6 +354,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
 		onFinishDialogueActions.Dequeue()?.Invoke();
 	}
+
+	public void QueueDialogue(TextAsset _sceneName) => QueueDialogue(_sceneName, 0.9f, null); 
 
 	/// <summary>
 	/// Queues a dialogue file to be read

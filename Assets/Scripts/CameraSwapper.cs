@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraSwapper : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class CameraSwapper : MonoBehaviour
 	bool fadingOut;
 
 	[SerializeField] Transform[] cameraPositions;
-	
+	[SerializeField] Sprite[] swapImageSprites;
+	[SerializeField] Image swapImage;
+
 	[SerializeField] CanvasGroup fade;
 	[SerializeField] float fadeDuration;
 
@@ -30,6 +33,7 @@ void Start()
 				{
 					fadingOut = false;
 					c.transform.SetPositionAndRotation(cameraPositions[index].position, cameraPositions[index].rotation);
+					swapImage.sprite = swapImageSprites[index];
 					GameManager.Instance.ProgressBarManager.UpdatePositions();
 					GameManager.Instance.RatManager.ClearRats();
 				}

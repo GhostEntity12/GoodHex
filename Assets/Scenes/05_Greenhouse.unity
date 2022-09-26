@@ -16011,6 +16011,10 @@ MonoBehaviour:
   cameraPositions:
   - {fileID: 8679851057772879971}
   - {fileID: 8005733127486109923}
+  swapImageSprites:
+  - {fileID: 21300000, guid: a17c69e03f507264da09b02c8eb0ab1a, type: 3}
+  - {fileID: 21300000, guid: 7dc489d89e604fd4c938e1408c2f30e4, type: 3}
+  swapImage: {fileID: 1402706263}
   fade: {fileID: 604501112}
   fadeDuration: 0.2
 --- !u!114 &540561057
@@ -17197,6 +17201,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 853053478}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &776884547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 853053478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ba1e1b59c5c064b9fee6e1efd57c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &793427125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6968634418459656694, guid: 8d134603935d37a4ea09da60349ce12d,
@@ -17610,6 +17626,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: sceneName
+      value: 
+      objectReference: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: initialScene
+      value: 
+      objectReference: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb2a4489e3e8934d88cfa5758a1f172, type: 3}
 --- !u!1 &856773616
@@ -23307,13 +23333,14 @@ GameObject:
   - component: {fileID: 1298478390}
   - component: {fileID: 1298478389}
   - component: {fileID: 1298478388}
+  - component: {fileID: 1298478392}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1298478388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23396,6 +23423,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1298478392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298478387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee59b0f10402eac44badb8a2f62b5135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScene: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
+  timeToDialogue: 0.9
 --- !u!43 &1310987837
 Mesh:
   m_ObjectHideFlags: 0
@@ -29065,6 +29106,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1829808080}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <RequiresItem>k__BackingField: 0
   <TriggerId>k__BackingField: 
 --- !u!114 &1380658725
@@ -33961,6 +34014,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1402706263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3560466194687116310, guid: 8d134603935d37a4ea09da60349ce12d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436367714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423977303
 GameObject:
   m_ObjectHideFlags: 0
@@ -34178,6 +34243,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -285747238726962164, guid: 3c53a1c73f4f7b84d90555eb872a974c,
         type: 2}
+    - target: {fileID: 5750383033870971868, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093404127804378705, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_Color.a
@@ -40299,6 +40369,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: TaskLocker, Assembly-CSharp
         m_MethodName: Lock
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1829808080}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -58758,6 +58840,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 776884547}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: QueueDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 15d35e5ca1454424496a80f02239b9f8,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
