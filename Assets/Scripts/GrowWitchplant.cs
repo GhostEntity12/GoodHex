@@ -6,6 +6,7 @@ public class GrowWitchplant : MonoBehaviour
 {
 	int state;
 	[SerializeField] Animator[] anims;
+	[SerializeField] GreenhouseBar bar;
 	public void IncrementGrowthState()
 	{
 		state++;
@@ -20,6 +21,7 @@ public class GrowWitchplant : MonoBehaviour
 		if (state == 15)
 		{
 			GameManager.Instance.AllTasksComplete();
+			bar.SetActive(false);
 		}
 	}
 }
