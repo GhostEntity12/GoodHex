@@ -34,7 +34,7 @@ public class Tutorialisation : MonoBehaviour
 	[SerializeField] float promptOffset = 0.25f;
 	[SerializeField] List<GameObject> mouseDownPrompts;
 	List<SpriteRenderer> mouseDownRenderers;
-	[SerializeField] TextMeshPro holdText;
+	List<TextMeshPro> holdText;
 	[SerializeField] Sprite leftMouse;
 	[SerializeField] Sprite rightMouse;
 
@@ -45,6 +45,7 @@ public class Tutorialisation : MonoBehaviour
 		GameManager.Pause += SetPaused;
 
 		mouseDownRenderers = mouseDownPrompts.Select(p => p.transform.GetChild(0).GetComponent<SpriteRenderer>()).ToList();
+		holdText = mouseDownRenderers.Select(r => r.GetComponentInChildren<TextMeshPro>()).ToList();
 	}
 
 	void Update()
