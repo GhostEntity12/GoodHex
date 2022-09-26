@@ -15,11 +15,12 @@ public class GreenhouseBar : MonoBehaviour
 
 	[SerializeField] Image slider;
 	[SerializeField] Image indicator;
-	[SerializeField] Image vignetteWater;
-	[SerializeField] Image vignetteSun;
+	[SerializeField] CanvasGroup vingnetteWater;
+	[SerializeField] CanvasGroup vingnetteSun;
 	float sliderWidth;
 	[SerializeField] float buffer = 20;
 	bool active;
+	float vignetteAppearPercent;
 
 	private void Start()
 	{
@@ -50,6 +51,8 @@ public class GreenhouseBar : MonoBehaviour
 			}
 			value = Mathf.Clamp(value, -1, 1);
 			indicator.rectTransform.anchoredPosition = new(Percentage * sliderWidth + buffer / 2, 0);
+			vingnetteWater.alpha = Mathf.Clamp01((value - (1 - vignetteAppearPercent) * (1 / vignetteAppearPercent)));
+			vingnetteSun.alpha = Mathf.Clamp01((value + (1 - vignetteAppearPercent) * (1 / vignetteAppearPercent)));
 		}
 	}
 
