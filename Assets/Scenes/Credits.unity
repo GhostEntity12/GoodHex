@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Producer:\n\nArt Team:\n\n\nProgramming Team:\n\n\nDesign Team:\n\n\nTechnical
+  m_text: "Producer:\n\nArt Team:\n\n\nProgramming Team:\n\n\n\nDesign Team:\n\n\nTechnical
     Manager: \n\nComposer:\n\nSpecial Thanks:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7a933b53d1f867498933b5f9b278c8c, type: 2}
@@ -754,13 +754,15 @@ MonoBehaviour:
     Jordan C
 
 
+    Josh H
+
     Matthew K
 
-    Maziz YR
+    Maziz
+    YR
 
 
-    James
-    L
+    James L
 
     Mitchell W
 
