@@ -15,6 +15,8 @@ public class GreenhouseBar : MonoBehaviour
 
 	[SerializeField] Image slider;
 	[SerializeField] Image indicator;
+	[SerializeField] Image vignetteWater;
+	[SerializeField] Image vignetteSun;
 	float sliderWidth;
 	[SerializeField] float buffer = 20;
 	bool active;
