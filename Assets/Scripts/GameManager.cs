@@ -102,5 +102,8 @@ public class GameManager : Singleton<GameManager>
 
 	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene;
 
-	public void SetPause(bool paused) => Pause(paused);
+	public void SetPause(bool paused)
+	{
+		Pause(paused);
+	}
 }
