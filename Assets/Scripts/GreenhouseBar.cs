@@ -20,18 +20,18 @@ public class GreenhouseBar : MonoBehaviour
 	float sliderWidth;
 	[SerializeField] float buffer = 20;
 	bool active;
-	float vignetteAppearPercent;
+	[SerializeField] float vignetteAppearPercent = 0.3f;
 
 	private void Start()
 	{
 		GameManager.Pause += OnPaused;
-		sliderWidth = slider.rectTransform.sizeDelta.x - buffer;
+		sliderWidth = slider.rectTransform.sizeDelta.x;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if ((!failed || !paused) && active)
+		if (!failed && !paused && active)
 		{
 			switch (value)
 			{
@@ -50,9 +50,9 @@ public class GreenhouseBar : MonoBehaviour
 					break;
 			}
 			value = Mathf.Clamp(value, -1, 1);
-			indicator.rectTransform.anchoredPosition = new(Percentage * sliderWidth + buffer / 2, 0);
-			vingnetteWater.alpha = Mathf.Clamp01((value - (1 - vignetteAppearPercent) * (1 / vignetteAppearPercent)));
-			vingnetteSun.alpha = Mathf.Clamp01((value + (1 - vignetteAppearPercent) * (1 / vignetteAppearPercent)));
+			indicator.rectTransform.anchoredPosition = new(Mathf.Lerp(buffer / 2, sliderWidth - (buffer / 2), Percentage), 0);
+			vingnetteSun.alpha = Mathf.Clamp01((value - (1 - vignetteAppearPercent)) * (1 / vignetteAppearPercent));
+			vingnetteWater.alpha = Mathf.Clamp01(-(value - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
 		}
 	}
 

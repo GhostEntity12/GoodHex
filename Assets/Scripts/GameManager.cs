@@ -104,6 +104,7 @@ public class GameManager : Singleton<GameManager>
 
 	public void SetPause(bool paused)
 	{
+		Debug.Log("Paused:" + paused);
 		Pause(paused);
 	}
 }
