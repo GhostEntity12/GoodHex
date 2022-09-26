@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1314446963943414703}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -109,11 +109,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3748720358094192142}
+  - {fileID: 5448477642616890235}
   - {fileID: 1314446964944771407}
   - {fileID: 1376622714855249244}
   - {fileID: 7893386138526606651}
-  - {fileID: 3748720358094192142}
-  - {fileID: 5448477642616890235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,6 +198,8 @@ MonoBehaviour:
   time: 40
   slider: {fileID: 1314446964944771405}
   indicator: {fileID: 1314446965096537515}
+  vignetteWater: {fileID: 0}
+  vignetteSun: {fileID: 0}
   buffer: 40
 --- !u!114 &1436367716
 MonoBehaviour:
@@ -247,7 +249,7 @@ RectTransform:
   m_Children:
   - {fileID: 1314446965096537513}
   m_Father: {fileID: 1314446963943414703}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -399,7 +401,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1314446963943414703}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -475,7 +477,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1314446963943414703}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -553,7 +555,7 @@ RectTransform:
   m_Children:
   - {fileID: 6840653362629830286}
   m_Father: {fileID: 1314446963943414703}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
