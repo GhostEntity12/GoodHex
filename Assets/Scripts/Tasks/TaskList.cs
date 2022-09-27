@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class TaskList : MonoBehaviour
 {
+	[SerializeField] TweenedElement listObject;
+	[SerializeField] TweenedElement revealObject;
 	TaskListItem[] tasks;
 
 	private void Start()
 	{
 		tasks = GetComponentsInChildren<TaskListItem>();
+		listObject.SetCachesAndPosition(new(0, 1000));
+		revealObject.SetCachesAndPosition(new(0, 100));
+		revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, tweenType: LeanTweenType.easeOutCubic);
 	}
 
 
@@ -29,5 +34,20 @@ public class TaskList : MonoBehaviour
 				task.gameObject.SetActive(target);
 			}
 		}
+	}
+	[ContextMenu("In")]
+	public void DropDown()
+	{
+		revealObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
+			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack, 0.5f),
+			LeanTweenType.easeOutCubic, 0.2f);
+	}
+
+	[ContextMenu("Out")]
+	public void RaiseUp()
+	{
+		listObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
+			revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutCubic, 0.2f),
+		LeanTweenType.easeInBack, 0.5f);
 	}
 }
