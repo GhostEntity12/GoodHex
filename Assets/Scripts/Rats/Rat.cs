@@ -29,13 +29,16 @@ public class Rat : MonoBehaviour
 
     bool paused;
 
-    private void Start()
-    {
+	private void Awake()
+	{
         GameManager.Pause += SetPaused;
-
         ratEmotes = GetComponentInChildren<RatEmotes>();
         anim = GetComponentInChildren<Animator>();
         NavAgent = GetComponent<NavMeshAgent>();
+	}
+
+	private void Start()
+    {
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
 
         if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))

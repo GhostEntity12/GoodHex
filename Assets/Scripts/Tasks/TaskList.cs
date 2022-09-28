@@ -1,40 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TaskList : MonoBehaviour
 {
+	[SerializeField] TaskListItem[] taskSlots;
+
+	Dictionary<ProgressTask, TaskListItem> taskDict = new();
+	Queue<ProgressTask> taskQueue = new();
+	Queue<TaskListItem> tliQueue;
+
 	[SerializeField] TweenedElement listObject;
 	[SerializeField] TweenedElement revealObject;
-	TaskListItem[] tasks;
 
 	private void Start()
 	{
-		tasks = GetComponentsInChildren<TaskListItem>();
 		listObject.SetCachesAndPosition(new(0, 1100));
 		revealObject.SetCachesAndPosition(new(0, 300));
 		revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, tweenType: LeanTweenType.easeOutCubic);
+
+		tliQueue = new(taskSlots);
 	}
 
 
 	// Update is called once per frame
 	void Update()
 	{
-		foreach (TaskListItem task in tasks)
+		if (taskQueue.Count > 0 && tliQueue.Count > 0)
 		{
-			bool target = task.T.TaskState switch
-			{
-				BaseTask.State.Locked => false,
-				BaseTask.State.Unlocked => true,
-				BaseTask.State.Active => true,
-				BaseTask.State.Complete => false,
-				_ => throw new System.Exception("Invalid Task State")
-			};
-
-			if (task.gameObject.activeInHierarchy != target)
-			{
-				task.gameObject.SetActive(target);
-			}
+			Register(taskQueue.Dequeue());
 		}
 	}
+
+	public void Complete(ProgressTask task)
+	{
+		if (taskDict.ContainsKey(task))
+		{
+			taskDict[task].Depopulate();
+		}
+	}
+	void Register(ProgressTask task)
+	{
+		if (task.TaskImage)
+		{
+			TaskListItem tli = tliQueue.Dequeue();
+			tli.transform.SetAsLastSibling();
+			taskDict.Add(task, tli);
+			tli.gameObject.SetActive(true);
+			tli.Populate(task.TaskImage);
+		}
+	}
+	public void Deregister(TaskListItem tli)
+	{
+		tliQueue.Enqueue(tli);
+		tli.transform.SetAsFirstSibling();
+		taskDict.Remove(tli.Task);
+		gameObject.SetActive(false);
+	}
+
+	public void AddTaskToList(ProgressTask task)
+	{
+		if (tliQueue.Count == 0) taskQueue.Enqueue(task);
+		else Register(task);
+	}
+
+
 	[ContextMenu("In")]
 	public void DropDown()
 	{
