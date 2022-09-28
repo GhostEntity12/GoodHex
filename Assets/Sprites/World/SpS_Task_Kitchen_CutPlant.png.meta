@@ -1,0 +1,534 @@
+fileFormatVersion: 2
+guid: 015816a3bebac7c40b6e4148b5f1d7e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5934306622864160801
+    second: Chopping_0
+  - first:
+      213: 6744468224395045836
+    second: Chopping_1
+  - first:
+      213: -4639371834331023577
+    second: Chopping_2
+  - first:
+      213: 8333434481421887303
+    second: Chopping_3
+  - first:
+      213: -6846162874524432200
+    second: Chopping_4
+  - first:
+      213: 2582181664895878738
+    second: Chopping_5
+  - first:
+      213: 7256348023951704828
+    second: Chopping_6
+  - first:
+      213: -1941620285467176903
+    second: Chopping_7
+  - first:
+      213: -1645478487396159384
+    second: Chopping_8
+  - first:
+      213: -7479670881264720836
+    second: Chopping_9
+  - first:
+      213: 6672288067168291540
+    second: Chopping_10
+  - first:
+      213: 505947416431527073
+    second: Chopping_11
+  - first:
+      213: -3024182882261378343
+    second: Chopping_12
+  - first:
+      213: 361550661327848785
+    second: Chopping_13
+  - first:
+      213: 9035823507674588769
+    second: Chopping_14
+  - first:
+      213: -5218352070430691750
+    second: Chopping_15
+  - first:
+      213: 8614062015824906725
+    second: Chopping_16
+  - first:
+      213: 5112216511788566510
+    second: Chopping_17
+  - first:
+      213: -3330743899870474192
+    second: Chopping_18
+  - first:
+      213: -8475578871952821670
+    second: Chopping_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3350
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c0f0b1cecd8dd42bb60802050b8ac7
+      internalID: -1928338349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_1
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 3350
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c7f2a9193f2bf4ea5732f17e8616b0
+      internalID: 1032361721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_2
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 3350
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d103698f856e3294095dbbc0cab1f935
+      internalID: 1926717237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_3
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 3350
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7495a0268d26f0c43a8e884aecc76341
+      internalID: 627755578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2600
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ff477cddfdf8149984247f9d995393
+      internalID: -256903888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_5
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2600
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f061066604e30841b5b5320ab19c1f9
+      internalID: -1312068920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_6
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 2600
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4882108b642fb0d4b9ae2e50314fa47e
+      internalID: -802163954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_7
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 2600
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1411a8e7b70326b4b966d4c8a78c3405
+      internalID: 414430363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1850
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e653f335a0ac145a1d41408e764e90
+      internalID: -759463840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_9
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1850
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddeb26f76b93ee4d9120f5df06b8d58
+      internalID: -1786574170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_10
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1850
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a0f321e0ae7eb44938357e9f63ae9a
+      internalID: -2054354804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_11
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 1850
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6836b0cb31f36a4eb1afed32f4bd5fc
+      internalID: 1017154240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e6cc7bc2e086d4ea5a78107c4bc737
+      internalID: -1459510841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_13
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1100
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ee374a5710d584ea82418f52584917
+      internalID: 824506425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_14
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1100
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782b007436b68a1429256b7dd27035ca
+      internalID: -392334865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_CutPlant_15
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 1100
+        width: 976
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97551c4fd4387f541aa72f5de2335223
+      internalID: 830603771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6cbc28466225c0e4bb56577a4251f758
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Task_Kitchen_CutPlant_15: 830603771
+      SpS_Task_Kitchen_CutPlant_11: 1017154240
+      SpS_Task_Kitchen_CutPlant_9: -1786574170
+      SpS_Task_Kitchen_CutPlant_5: -1312068920
+      SpS_Task_Kitchen_CutPlant_0: -1928338349
+      SpS_Task_Kitchen_CutPlant_8: -759463840
+      SpS_Task_Kitchen_CutPlant_10: -2054354804
+      SpS_Task_Kitchen_CutPlant_12: -1459510841
+      SpS_Task_Kitchen_CutPlant_13: 824506425
+      SpS_Task_Kitchen_CutPlant_14: -392334865
+      SpS_Task_Kitchen_CutPlant_7: 414430363
+      SpS_Task_Kitchen_CutPlant_6: -802163954
+      SpS_Task_Kitchen_CutPlant_1: 1032361721
+      SpS_Task_Kitchen_CutPlant_4: -256903888
+      SpS_Task_Kitchen_CutPlant_3: 627755578
+      SpS_Task_Kitchen_CutPlant_2: 1926717237
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

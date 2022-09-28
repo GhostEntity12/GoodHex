@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6fc2eedd4e31b964a8d84faf2d7042aa
+guid: c314fc5e55489744081571adff55d53c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
-  spriteExtrude: 10
-  spriteMeshType: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -164,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reticle_8
+      name: SpS_Reticle_Select_Sliced_8
       rect:
         serializedVersion: 2
         x: 0
@@ -172,20 +172,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d63c01928470243aeec5c3bd909933
-      internalID: -112778116
+      spriteID: e6090f302324aa7499bd76220c54a218
+      internalID: 79274793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_9
+      name: SpS_Reticle_Select_Sliced_9
       rect:
         serializedVersion: 2
         x: 1024
@@ -193,20 +193,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 564a3a36e22eea544b32ce71eb814500
-      internalID: -70691787
+      spriteID: 7955dc75de887044cb90632d68c797b6
+      internalID: -1419409524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_10
+      name: SpS_Reticle_Select_Sliced_10
       rect:
         serializedVersion: 2
         x: 2048
@@ -214,20 +214,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fc42708698b5494984aefd849599b96
-      internalID: 2068382041
+      spriteID: fd74552a447049b409fc061ef3674901
+      internalID: -753131072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_11
+      name: SpS_Reticle_Select_Sliced_11
       rect:
         serializedVersion: 2
         x: 3072
@@ -235,20 +235,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d616464c33e6f547b11a158b3b75a54
-      internalID: 116205073
+      spriteID: 872cfb0c324f1c240b76ed89c5fd23e3
+      internalID: 1363751519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_4
+      name: SpS_Reticle_Select_Sliced_4
       rect:
         serializedVersion: 2
         x: 0
@@ -256,20 +256,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9878c14e1800d4a9118a76d2e69a09
-      internalID: 379130691
+      spriteID: 0e0f5f15bd240ec41a15771b7795c4d1
+      internalID: -1421691471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_5
+      name: SpS_Reticle_Select_Sliced_5
       rect:
         serializedVersion: 2
         x: 1024
@@ -277,20 +277,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5c4e8d07d2625c40935de53bf530f51
-      internalID: -1169944925
+      spriteID: 6cfea16d11a53da42b79657171d2e0cb
+      internalID: 1527756218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_6
+      name: SpS_Reticle_Select_Sliced_6
       rect:
         serializedVersion: 2
         x: 2048
@@ -298,20 +298,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 841ee565a2e414d40911103ea628adbe
-      internalID: 1417464808
+      spriteID: 4feb25ce705a5214dab552453028f327
+      internalID: 2100022305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_7
+      name: SpS_Reticle_Select_Sliced_7
       rect:
         serializedVersion: 2
         x: 3072
@@ -319,20 +319,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb97324991027f4a90c98fa7b779157
-      internalID: -310140418
+      spriteID: 8806f2f77ef3b92489e322abffe279f8
+      internalID: -194701472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_0
+      name: SpS_Reticle_Select_Sliced_0
       rect:
         serializedVersion: 2
         x: 0
@@ -340,41 +340,41 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 338fdaf46a03d7a4597f6b0c25896636
-      internalID: 1907224986
+      spriteID: 0b96f1d40fb936d40bb731b805baed74
+      internalID: -120085856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_1
+      name: SpS_Reticle_Select_Sliced_1
       rect:
         serializedVersion: 2
-        x: 1023
+        x: 1024
         y: 0
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6a905d7aab22d7468997c4f0a35e887
-      internalID: -1292970121
+      spriteID: e34e47fed2722a64ca7a6d69a00c3e96
+      internalID: 726949837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_2
+      name: SpS_Reticle_Select_Sliced_2
       rect:
         serializedVersion: 2
         x: 2048
@@ -382,20 +382,20 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb21b178124cae44b83c0ae35b78b936
-      internalID: 1427751279
+      spriteID: 4eb5e27e8fcd9c9458b4654e10cbb059
+      internalID: 1205274148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reticle_3
+      name: SpS_Reticle_Select_Sliced_3
       rect:
         serializedVersion: 2
         x: 3072
@@ -403,14 +403,14 @@ TextureImporter:
         width: 1024
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 991d5311774e9984fa624717cf3b2557
-      internalID: 454658461
+      spriteID: d7163aca1f37e94408489aba7e909597
+      internalID: -221798385
       vertices: []
       indices: 
       edges: []
@@ -426,19 +426,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reticle_7: -310140418
-      Reticle_2: 1427751279
-      Reticle_4: 379130691
-      Reticle_1: -1292970121
-      Reticle_6: 1417464808
-      SlicedMagicCircle_0: -1286045389
-      Reticle_5: -1169944925
-      Reticle_10: 2068382041
-      Reticle_11: 116205073
-      Reticle_3: 454658461
-      Reticle_8: -112778116
-      Reticle_9: -70691787
-      Reticle_0: 1907224986
+      SpS_Reticle_Select_Sliced_0: -120085856
+      SpS_Reticle_Select_Sliced_3: -221798385
+      SpS_Reticle_Select_Sliced_10: -753131072
+      SpS_Reticle_Select_Sliced_5: 1527756218
+      SpS_Reticle_Select_Sliced_1: 726949837
+      SpS_Reticle_Select_Sliced_8: -1419409524
+      SpS_Reticle_Select_Sliced_4: -1421691471
+      SpS_Reticle_Select_Sliced_11: 1363751519
+      SpS_Reticle_Select_Sliced_6: 2100022305
+      SpS_Reticle_Select_Sliced_2: 79274793
+      SpS_Reticle_Select_Sliced_7: -194701472
+      SpS_Reticle_Select_Sliced_9: -1419409524
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

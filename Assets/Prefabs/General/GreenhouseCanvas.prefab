@@ -214,6 +214,7 @@ MonoBehaviour:
   vingnetteWater: {fileID: 8875975116975122459}
   vingnetteSun: {fileID: 8100799071129069222}
   buffer: 40
+  vignetteAppearPercent: 0.3
 --- !u!114 &1436367716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 08ff34f9e9724904384a6404c31a958a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e11419b09c6023f4c85d5bc50d7413d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -9,8 +9,8 @@ public class TaskList : MonoBehaviour
 	private void Start()
 	{
 		tasks = GetComponentsInChildren<TaskListItem>();
-		listObject.SetCachesAndPosition(new(0, 1000));
-		revealObject.SetCachesAndPosition(new(0, 100));
+		listObject.SetCachesAndPosition(new(0, 1100));
+		revealObject.SetCachesAndPosition(new(0, 300));
 		revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, tweenType: LeanTweenType.easeOutCubic);
 	}
 
@@ -39,7 +39,7 @@ public class TaskList : MonoBehaviour
 	public void DropDown()
 	{
 		revealObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
-			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack, 0.5f),
+			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack, 0.4f),
 			LeanTweenType.easeOutCubic, 0.2f);
 	}
 
@@ -48,6 +48,6 @@ public class TaskList : MonoBehaviour
 	{
 		listObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
 			revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutCubic, 0.2f),
-		LeanTweenType.easeInBack, 0.5f);
+		LeanTweenType.easeInBack, 0.4f);
 	}
 }

@@ -1,0 +1,709 @@
+fileFormatVersion: 2
+guid: 20f77e4b374812f42925575fd9eb62ba
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2e980e4cce05e499e5ebc286fd96b1
+      internalID: 2115310458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_1
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec758c6c07638d45a878277f8bb4fbd
+      internalID: 1153527727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_2
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6682e85f584baa498f6dcb0a9d7d59e
+      internalID: 1715385930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_3
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d85aac52b6f56e4cb117c69f5a36590
+      internalID: -393057222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_4
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f808ff7c746dd7409771fdde59f3514
+      internalID: 269896507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_5
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e3d8d53ce492d409693182ab20a5a7
+      internalID: -1909718545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_6
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450e60edd19456b43bba4e721bdc98bb
+      internalID: -56374897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_7
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bb207cc275b3441b85b8f48a1d6f02
+      internalID: 1319584068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_8
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf3fdb2a9f5dd4488d51eb459214cc4
+      internalID: 1925229354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_9
+      rect:
+        serializedVersion: 2
+        x: 3474
+        y: 1526
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e7eb45530068a4fbf0dfc8946fb551
+      internalID: 566445130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07fe9978ae85b74fb14f5ab2cef9612
+      internalID: -613316323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_11
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f0b90c12083a94388cc12a4fcfe808
+      internalID: 423080813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_12
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11c8d5cc5e8b31478c9fe04b7d1891b
+      internalID: -177047973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_13
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5759f2f362390d04cb60f1bb11ae3407
+      internalID: 191941114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_14
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5677bb85d273a4a995d80d2a76f30d
+      internalID: 2129608728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_15
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1ea1327ec713048bc9177df78e3a65
+      internalID: -1502834653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_16
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a179f182a5e71240bcaa92044a9004e
+      internalID: 1313649689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_17
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d13dcdddc7089a41af41314e9ef7628
+      internalID: 1598371276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_18
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488c6fb58f0575c4c9c4832a592e28ea
+      internalID: 635782869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_19
+      rect:
+        serializedVersion: 2
+        x: 3474
+        y: 1004
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347de265bc0752f449d60f4701d4bcd2
+      internalID: -666356072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bbf357bc0f3cd649a670231c530ebf9
+      internalID: 1679890390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_21
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 482
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c36aee4644298246856548eae1a319f
+      internalID: 1530247071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_22
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 482
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fafeeffc9352fe4ba811e19aa0d9171
+      internalID: -1212571977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_23
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 482
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a0f6f79a0b5974485a34508d699992
+      internalID: -1381366737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Witchplant_24
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 482
+        width: 348
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2d0f6c0cb31ce42bc25427d2399675
+      internalID: -839585831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Task_Greenhouse_Witchplant_22: -1212571977
+      SpS_Task_Greenhouse_Witchplant_8: 1925229354
+      SpS_Task_Greenhouse_Witchplant_7: 1319584068
+      SpS_Task_Greenhouse_Witchplant_1: 1153527727
+      SpS_Task_Greenhouse_Witchplant_21: 1530247071
+      SpS_Task_Greenhouse_Witchplant_25: -2121462344
+      SpS_Task_Greenhouse_Witchplant_23: -1381366737
+      SpS_Task_Greenhouse_Witchplant_9: 566445130
+      SpS_Task_Greenhouse_Witchplant_13: 191941114
+      SpS_Task_Greenhouse_Witchplant_15: -1502834653
+      SpS_Task_Greenhouse_Witchplant_20: 1679890390
+      SpS_Task_Greenhouse_Witchplant_12: -177047973
+      SpS_Task_Greenhouse_Witchplant_10: -613316323
+      SpS_Task_Greenhouse_Witchplant_16: 1313649689
+      SpS_Task_Greenhouse_Witchplant_2: 1715385930
+      SpS_Task_Greenhouse_Witchplant_3: -393057222
+      SpS_Task_Greenhouse_Witchplant_14: 2129608728
+      SpS_Task_Greenhouse_Witchplant_4: 269896507
+      SpS_Task_Greenhouse_Witchplant_0: 2115310458
+      SpS_Task_Greenhouse_Witchplant_17: 1598371276
+      SpS_Task_Greenhouse_Witchplant_6: -56374897
+      SpS_Task_Greenhouse_Witchplant_11: 423080813
+      SpS_Task_Greenhouse_Witchplant_18: 635782869
+      SpS_Task_Greenhouse_Witchplant_19: -666356072
+      SpS_Task_Greenhouse_Witchplant_24: -839585831
+      SpS_Task_Greenhouse_Witchplant_5: -1909718545
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

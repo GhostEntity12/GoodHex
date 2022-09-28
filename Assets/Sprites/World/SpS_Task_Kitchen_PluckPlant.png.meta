@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: e4027c4f73bde394e89373a4b0b6f00f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7693944405717800580
+    second: Pot plant_0
+  - first:
+      213: 1559603632267495791
+    second: Pot plant_1
+  - first:
+      213: 2530885485520955798
+    second: Pot plant_2
+  - first:
+      213: -2285724957946652090
+    second: Pot plant_3
+  - first:
+      213: -575045471425253800
+    second: Pot plant_4
+  - first:
+      213: 2549033183985281261
+    second: Pot plant_5
+  - first:
+      213: -2369662919616890301
+    second: Pot plant_6
+  - first:
+      213: 5143898389497155072
+    second: Pot plant_7
+  - first:
+      213: 5613622102127340788
+    second: Pot plant_8
+  - first:
+      213: 1081193491828984344
+    second: Pot plant_9
+  - first:
+      213: 2629528010096575334
+    second: Pot plant_10
+  - first:
+      213: 1598226259346690594
+    second: Pot plant_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3354
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8a751f3e4706a4da81039ca4a26a0d
+      internalID: -1134263051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_1
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 3354
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40cd6301909cae46ae07ee0c0251393
+      internalID: -748894356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_2
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 3354
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c05f9960cb00c6488f424a4e072a097
+      internalID: -725094613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2612
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22d360948b6aa049bba6176f221d189
+      internalID: 1934479551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 2612
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ef57a5c3a22454aad9a024a1a132d9
+      internalID: 1139207981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_5
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 2612
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f5ccb2d21c3d541838fa48389a0263
+      internalID: -1429719500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1870
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd11c7ff9a3c8f4b8fc1f425678098a
+      internalID: 1662461301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_7
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1870
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843c101078a55b149a6868f7ef087a02
+      internalID: -957060036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Kitchen_PluckPlant_8
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 1870
+        width: 1096
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfd2ada52a5cc343a0c3c111de80362
+      internalID: 156069953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d2ffeae8b78bb60498ed1d4125ea03d0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Task_Kitchen_PluckPlant_5: -1429719500
+      SpS_Task_Kitchen_PluckPlant_4: 1139207981
+      SpS_Task_Kitchen_PluckPlant_7: -957060036
+      SpS_Task_Kitchen_PluckPlant_6: 1662461301
+      SpS_Task_Kitchen_PluckPlant_2: -725094613
+      SpS_Task_Kitchen_PluckPlant_3: 1934479551
+      SpS_Task_Kitchen_PluckPlant_8: 156069953
+      SpS_Task_Kitchen_PluckPlant_1: -748894356
+      SpS_Task_Kitchen_PluckPlant_0: -1134263051
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

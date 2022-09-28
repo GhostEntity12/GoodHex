@@ -1,0 +1,518 @@
+fileFormatVersion: 2
+guid: 12a654a61558a2847bd7230a8b8870ef
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 900
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1646
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f0a12ee5831c84a960b12b972f3a06
+      internalID: -794884196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_1
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1646
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc4628b77b463942a61c83b42bbfb3d
+      internalID: 2057218985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_2
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1646
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7937ea0ef41e82d43b95615871a184d3
+      internalID: 935225068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_3
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 1646
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb3a3ffc7e32d44685e61d7c014d761
+      internalID: -1346028566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1244
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce382735e85c4284bb798e7188642fa6
+      internalID: 935364533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1244
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c1819e41c1957449e4eb9630de4261
+      internalID: 1100962553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_6
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1244
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9359cf5d5ca4c40a698ae4da4e9344
+      internalID: -656600411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_7
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 1244
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff857636efb5e2f42a5935ffb2606841
+      internalID: -1268405724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 842
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2bca4faef3ba44c89d8793527f7727
+      internalID: 722214402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_9
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 842
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faae8493f5f32a748b9351e6403dcc60
+      internalID: 189540896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_10
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 842
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49258e63af986e54389482019c50fa91
+      internalID: 120151784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_11
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 842
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19dcf40380d499e4582937f30b61fc21
+      internalID: 933876340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a686e3071f381a49a6522ba2e05d5bd
+      internalID: 2013394178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_13
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 440
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f78a2d8428deb418fd271c84a94ff0
+      internalID: 1585775081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_14
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 440
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0301f7343a202304c98a34ff41befdf7
+      internalID: -1605460165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_15
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 440
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e4b2a89a2e36b468e677282ef1d3e7
+      internalID: 1941949959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63669ca48b637741936819e9c091046
+      internalID: 1625749931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Flytrap_17
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 38
+        width: 509
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943958db1d95ed6418387beea0e36b12
+      internalID: 744744859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: eab6f00e9ca443d40944e9aa8151a626
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Task_Greenhouse_Flytrap_13: 1585775081
+      SpS_Task_Greenhouse_Flytrap_16: 1625749931
+      SpS_Task_Greenhouse_Flytrap_5: 1100962553
+      SpS_Task_Greenhouse_Flytrap_1: 2057218985
+      SpS_Task_Greenhouse_Flytrap_0: -794884196
+      SpS_Task_Greenhouse_Flytrap_17: 744744859
+      SpS_Task_Greenhouse_Flytrap_7: -1268405724
+      SpS_Task_Greenhouse_Flytrap_15: 1941949959
+      SpS_Task_Greenhouse_Flytrap_6: -656600411
+      SpS_Task_Greenhouse_Flytrap_11: 933876340
+      SpS_Task_Greenhouse_Flytrap_12: 2013394178
+      SpS_Task_Greenhouse_Flytrap_3: -1346028566
+      SpS_Task_Greenhouse_Flytrap_9: 189540896
+      SpS_Task_Greenhouse_Flytrap_2: 935225068
+      SpS_Task_Greenhouse_Flytrap_14: -1605460165
+      SpS_Task_Greenhouse_Flytrap_4: 935364533
+      SpS_Task_Greenhouse_Flytrap_10: 120151784
+      SpS_Task_Greenhouse_Flytrap_8: 722214402
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
