@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2178948786866511386}
   - component: {fileID: 6527159874632050681}
   m_Layer: 5
-  m_Name: ProgressCanvas
+  m_Name: Canvas_ProgressBars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

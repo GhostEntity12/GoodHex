@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7771126918616074380}
   - component: {fileID: 6903572836576118727}
   m_Layer: 0
-  m_Name: RatManager
+  m_Name: Manager_Rats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

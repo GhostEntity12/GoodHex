@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7475781153065077619}
   - component: {fileID: 7461494828251755575}
   m_Layer: 0
-  m_Name: ReticleController
+  m_Name: Reticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

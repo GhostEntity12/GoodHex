@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1537842219437793354}
   - component: {fileID: 1967216332966592358}
   m_Layer: 5
-  m_Name: AssortedUICanvas
+  m_Name: TaskCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
