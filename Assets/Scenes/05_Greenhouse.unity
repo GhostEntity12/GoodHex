@@ -39629,9 +39629,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 1436367715}
   fadeTime: 1.5
-  idleTime: 10
   idleEnabled: 1
-  idleScene: 0
+  idleTime: 300
+  idleScene: 5
+  idleScreen: 0
 --- !u!23 &1594602767 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 378290677960734121, guid: 23937e295786e1a4e94197525c12bb9b,
