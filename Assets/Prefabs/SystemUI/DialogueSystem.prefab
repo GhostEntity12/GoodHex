@@ -710,7 +710,7 @@ MonoBehaviour:
   bustR: {fileID: 3193251783560465577}
   darkenedBackground: {fileID: 346143262557195234}
   skipDialogueDisplay:
-    rectTransform: {fileID: 3724190519200617865}
+    <rectTransform>k__BackingField: {fileID: 3724190519200617865}
   ProgressionKeys: 0d0000004301000020000000
   delay: 0.025
   m_TweenSpeed: 0.2
@@ -718,11 +718,11 @@ MonoBehaviour:
   defaultCharacterSprite: {fileID: 21300000, guid: f462e6c092fe3784ca241a76eb84bc7a,
     type: 3}
   leftSpeaker:
-    rectTransform: {fileID: 2283685583659455412}
+    <rectTransform>k__BackingField: {fileID: 2283685583659455412}
   rightSpeaker:
-    rectTransform: {fileID: 5752278317063931115}
+    <rectTransform>k__BackingField: {fileID: 5752278317063931115}
   dialogueUI:
-    rectTransform: {fileID: 2283685583685784856}
+    <rectTransform>k__BackingField: {fileID: 2283685583685784856}
 --- !u!1 &2283685583460280064
 GameObject:
   m_ObjectHideFlags: 0

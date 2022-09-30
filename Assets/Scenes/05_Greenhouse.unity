@@ -5105,12 +5105,6 @@ Transform:
   m_Father: {fileID: 827721259}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &156297503 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2283685583685784856, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-    type: 3}
-  m_PrefabInstance: {fileID: 853053478}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203174353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5147,12 +5141,6 @@ Transform:
   m_Father: {fileID: 547603088}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &251329198 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2283685583659455412, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-    type: 3}
-  m_PrefabInstance: {fileID: 853053478}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297636582
 GameObject:
   m_ObjectHideFlags: 0
@@ -10275,8 +10263,9 @@ GameObject:
   - component: {fileID: 366906559}
   - component: {fileID: 366906561}
   - component: {fileID: 366906562}
+  - component: {fileID: 366906563}
   m_Layer: 7
-  m_Name: KillViciousPlant
+  m_Name: KillThorns
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10290,7 +10279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366906554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012, y: 0.122, z: -0.072}
+  m_LocalPosition: {x: 0.012, y: 0.122, z: 0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10419,7 +10408,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd25fb203c24b204297880f681ae89b3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10464,6 +10453,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.588, y: 0.388, z: 0.05}
   m_Center: {x: 0, y: 0.194, z: 0}
+--- !u!95 &366906563
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366906554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75aa9c7bb0a50104eb8ec81f72f9b3ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &373654397
 GameObject:
   m_ObjectHideFlags: 0
@@ -17672,26 +17681,6 @@ PrefabInstance:
       propertyPath: initialScene
       value: 
       objectReference: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
-    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-        type: 3}
-      propertyPath: dialogueUI.<rectTransform>k__BackingField
-      value: 
-      objectReference: {fileID: 156297503}
-    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-        type: 3}
-      propertyPath: leftSpeaker.<rectTransform>k__BackingField
-      value: 
-      objectReference: {fileID: 251329198}
-    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-        type: 3}
-      propertyPath: rightSpeaker.<rectTransform>k__BackingField
-      value: 
-      objectReference: {fileID: 1131457901}
-    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-        type: 3}
-      propertyPath: skipDialogueDisplay.<rectTransform>k__BackingField
-      value: 
-      objectReference: {fileID: 2017898536}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb2a4489e3e8934d88cfa5758a1f172, type: 3}
 --- !u!1 &856773616
@@ -17995,7 +17984,7 @@ SpriteRenderer:
   m_Size: {x: 0.344, y: 0.521}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1003050298
@@ -23154,12 +23143,6 @@ OffMeshLink:
   m_BiDirectional: 1
   m_Activated: 1
   m_AutoUpdatePositions: 0
---- !u!224 &1131457901 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5752278317063931115, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-    type: 3}
-  m_PrefabInstance: {fileID: 853053478}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1161934300
 GameObject:
   m_ObjectHideFlags: 0
@@ -56182,12 +56165,6 @@ Transform:
   m_Father: {fileID: 827721259}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &2017898536 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3724190519200617865, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-    type: 3}
-  m_PrefabInstance: {fileID: 853053478}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036154672
 GameObject:
   m_ObjectHideFlags: 0
