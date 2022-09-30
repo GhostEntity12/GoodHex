@@ -24,7 +24,7 @@ public class TaskManager : MonoBehaviour
 
 	public List<Rat> AssignRats(ProgressTask task, params Rat[] rats)
 	{
-		//if (task.Locked) return rats.ToList();
+		if (task.Locked) return rats.ToList();
 
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));

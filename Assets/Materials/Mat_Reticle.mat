@@ -139,6 +139,7 @@ Material:
     - _LitColor: {r: 0.43529406, g: 0.5647059, b: 0.7882353, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _ShadowColor: {r: 0.33725488, g: 0.31764707, b: 0.6078432, a: 0}
+    - _Size: {r: 4, g: 4, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _TeethColor: {r: 0.945098, g: 0.9254902, b: 0.737255, a: 0}
   m_BuildTextureStacks: []
