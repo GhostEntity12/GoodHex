@@ -1304,8 +1304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4153aafd07669c84fbcd77c357ad3d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 0}
+  fade: {fileID: 1537842218283270618}
   fadeTime: 1.5
+  idleTime: 300
+  idleEnabled: 1
+  idleScene: 0
 --- !u!114 &963396374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,6 +2778,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
+--- !u!225 &1537842218283270618 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8585257188880873545, guid: 98dee63f6255f184ab8a78f038104cff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1537842218283270617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &1771164040641565590
 MeshFilter:
   m_ObjectHideFlags: 0

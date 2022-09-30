@@ -9,6 +9,11 @@ public class SceneLoader : MonoBehaviour
 	float timer = 0f;
 	AudioSource aS;
 
+	[SerializeField] public bool idleEnabled;
+	[SerializeField] public float idleTime;
+	[SerializeField] public int idleScene;
+	private float idleCounter = 0.0f;
+
 	private void Awake()
 	{
 		aS = GetComponent<AudioSource>();
@@ -26,6 +31,25 @@ public class SceneLoader : MonoBehaviour
 			{
 				fade.blocksRaycasts = true;
 				SceneManager.LoadScene(sceneToLoad);
+			}
+		}
+		//idle check
+		if (idleEnabled == true)
+		{
+			Debug.Log("idle Counter = " + idleCounter);
+			if (Input.anyKey)
+			{
+				idleCounter = 0.0f;  // reset counter  
+			}
+			else
+			{
+				idleCounter += Time.deltaTime; // increment counter
+			}
+
+			if (idleCounter > idleTime)
+			{
+				//Debug.Log("idleTime = idleCounter");
+				LoadScene(idleScene);
 			}
 		}
 	}
