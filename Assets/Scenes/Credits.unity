@@ -305,6 +305,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 2095260237}
   fadeTime: 1.5
+  idleEnabled: 1
+  idleTime: 300
+  idleScene: 5
+  idleScreen: 0
 --- !u!114 &575551868
 MonoBehaviour:
   m_ObjectHideFlags: 0

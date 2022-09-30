@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
 	[SerializeField] public float idleTime;
 	[SerializeField] public int idleScene;
 	private float idleCounter = 0.0f;
+	[SerializeField] public bool idleScreen;
 
 	private void Awake()
 	{
@@ -52,6 +53,14 @@ public class SceneLoader : MonoBehaviour
 				LoadScene(idleScene);
 			}
 		}
+
+		if(idleScreen == true)
+        {
+			if(Input.anyKey)
+            {
+				LoadScene(0);
+            }
+        }
 	}
 
 	public void PlaySoundClip(AudioClip clip) => aS.PlayOneShot(clip);
