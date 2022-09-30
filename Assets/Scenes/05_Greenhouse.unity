@@ -5015,8 +5015,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128538389}
   m_LocalRotation: {x: -0, y: -0.9980792, z: -0, w: -0.061951146}
-  m_LocalPosition: {x: -0.1, y: -1.7749997, z: -0.286}
-  m_LocalScale: {x: 1.9563901, y: 1.9563904, z: 1.9563901}
+  m_LocalPosition: {x: -0.017, y: -0.185, z: -0.235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1035797763}
@@ -5073,7 +5073,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &150482213
 GameObject:
   m_ObjectHideFlags: 0
@@ -5105,6 +5105,12 @@ Transform:
   m_Father: {fileID: 827721259}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &156297503 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2283685583685784856, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 853053478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203174353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,6 +5147,12 @@ Transform:
   m_Father: {fileID: 547603088}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &251329198 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2283685583659455412, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 853053478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297636582
 GameObject:
   m_ObjectHideFlags: 0
@@ -17201,18 +17213,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 853053478}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &776884547 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
-    type: 3}
-  m_PrefabInstance: {fileID: 853053478}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54ba1e1b59c5c064b9fee6e1efd57c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &793427125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6968634418459656694, guid: 8d134603935d37a4ea09da60349ce12d,
@@ -17552,6 +17552,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 2283685582343941868, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2283685582343941869, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
         type: 3}
       propertyPath: m_Pivot.x
@@ -17667,6 +17672,26 @@ PrefabInstance:
       propertyPath: initialScene
       value: 
       objectReference: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: dialogueUI.<rectTransform>k__BackingField
+      value: 
+      objectReference: {fileID: 156297503}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: leftSpeaker.<rectTransform>k__BackingField
+      value: 
+      objectReference: {fileID: 251329198}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: rightSpeaker.<rectTransform>k__BackingField
+      value: 
+      objectReference: {fileID: 1131457901}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
+      propertyPath: skipDialogueDisplay.<rectTransform>k__BackingField
+      value: 
+      objectReference: {fileID: 2017898536}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb2a4489e3e8934d88cfa5758a1f172, type: 3}
 --- !u!1 &856773616
@@ -18163,6 +18188,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1044020646 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1314446964944771407, guid: 8d134603935d37a4ea09da60349ce12d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436367714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1084469767
 GameObject:
   m_ObjectHideFlags: 0
@@ -23123,6 +23154,12 @@ OffMeshLink:
   m_BiDirectional: 1
   m_Activated: 1
   m_AutoUpdatePositions: 0
+--- !u!224 &1131457901 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5752278317063931115, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 853053478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1161934300
 GameObject:
   m_ObjectHideFlags: 0
@@ -34236,6 +34273,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1314446964944771405, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1314446965096537513, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -34250,6 +34292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314446965096537515, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2275422255647814960, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
@@ -34366,6 +34413,11 @@ PrefabInstance:
       propertyPath: vignetteAppearPercent
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6968634418459656694, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: slider.<rectTransform>k__BackingField
+      value: 
+      objectReference: {fileID: 1044020646}
     - target: {fileID: 8100799071129069222, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_Alpha
@@ -39825,7 +39877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607533899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0, y: -0.202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45534,7 +45586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738986234}
   m_LocalRotation: {x: -0, y: 0.2588186, z: -0, w: 0.965926}
-  m_LocalPosition: {x: 0.0008625984, y: -0.7436785, z: -0.034340143}
+  m_LocalPosition: {x: 0.0008625984, y: -0.306, z: -0.034340143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56160,6 +56212,12 @@ Transform:
   m_Father: {fileID: 827721259}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2017898536 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3724190519200617865, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+    type: 3}
+  m_PrefabInstance: {fileID: 853053478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036154672
 GameObject:
   m_ObjectHideFlags: 0
@@ -56224,7 +56282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106236872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.106, y: -0.545, z: -0.032}
+  m_LocalPosition: {x: 0.106, y: -0.24, z: -0.032}
   m_LocalScale: {x: 1.9563901, y: 1.9563904, z: 1.9563901}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58939,11 +58997,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 793427125}
         m_TargetAssemblyTypeName: GreenhouseBar, Assembly-CSharp
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: TriggerWitchPlantDialogue
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4900000, guid: 15d35e5ca1454424496a80f02239b9f8,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -58961,19 +59020,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 986749203}
-        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: -714436026, guid: 20f77e4b374812f42925575fd9eb62ba,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1729419805}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Stop
@@ -58986,14 +59032,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 776884547}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: QueueDialogue
-        m_Mode: 2
+      - m_Target: {fileID: 1466721171}
+        m_TargetAssemblyTypeName: GrowWitchplant, Assembly-CSharp
+        m_MethodName: IncrementGrowthState
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 15d35e5ca1454424496a80f02239b9f8,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

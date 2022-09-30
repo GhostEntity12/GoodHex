@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class Rat : MonoBehaviour
 {
     [SerializeField] SpriteRenderer graphic;
-    [SerializeField] SpriteRenderer selectionSprite;
     public RatData Info { get; private set; }
     Animator anim;
     RatEmotes ratEmotes;
@@ -21,6 +20,13 @@ public class Rat : MonoBehaviour
     public Pickupable heldItem;
     public bool IsHoldingItem => heldItem;
 
+    [Header("Selector")]
+    [SerializeField] SpriteRenderer selectionSprite;
+    [SerializeField] float selectionBobSpeed = 2f;
+    [SerializeField] float selectionBobHeight = 0.015f;
+    Vector3 selectionCachePos;
+    float selectionBobOffset;
+
     private float patience;
     private bool isDead = false;
     
@@ -35,6 +41,8 @@ public class Rat : MonoBehaviour
         ratEmotes = GetComponentInChildren<RatEmotes>();
         anim = GetComponentInChildren<Animator>();
         NavAgent = GetComponent<NavMeshAgent>();
+        selectionCachePos = selectionSprite.transform.localPosition;
+        selectionBobOffset = Random.value;
 	}
 
 	private void Start()
@@ -77,6 +85,7 @@ public class Rat : MonoBehaviour
                 }
             }
         }
+        selectionSprite.transform.localPosition = selectionCachePos + (selectionBobHeight * Vector3.up * Mathf.Sin((Time.time + selectionBobOffset) * selectionBobSpeed));
     }
     public void AssignInfo(RatData ratInfo) => Info = ratInfo;
 
@@ -164,13 +173,13 @@ public class Rat : MonoBehaviour
     public void Select()
     {
         //graphic.color = Color.green;
-        selectionSprite.gameObject.SetActive(true);
+        LeanTween.scaleY(selectionSprite.gameObject, 1, 0.1f).setEaseOutBack();
     }
 
     public void Deselect()
     {
         //graphic.color = Color.white;
-        selectionSprite.gameObject.SetActive(false);
+        LeanTween.scaleY(selectionSprite.gameObject, 0, 0.1f).setEaseInBack();
     }
     private void OnDestroy()
     {

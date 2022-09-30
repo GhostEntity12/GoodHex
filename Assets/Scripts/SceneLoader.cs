@@ -12,7 +12,8 @@ public class SceneLoader : MonoBehaviour
 	[SerializeField] public bool idleEnabled;
 	[SerializeField] public float idleTime;
 	[SerializeField] public int idleScene;
-	private float idleCounter = 0.0f;
+	[SerializeField] public KeyCode idleKey = KeyCode.F12;
+ 	private float idleCounter = 0.0f;
 	[SerializeField] public bool idleScreen;
 
 	private void Awake()
@@ -24,8 +25,6 @@ public class SceneLoader : MonoBehaviour
 	{
 		if (sceneToLoad >= 0)
 		{
-			// Temp fix. Avoid Timescale?
-			Time.timeScale = 1f;
 			timer += Time.deltaTime;
 			fade.alpha = timer / fadeTime;
 			if (timer >= fadeTime)
@@ -37,7 +36,6 @@ public class SceneLoader : MonoBehaviour
 		//idle check
 		if (idleEnabled == true)
 		{
-			Debug.Log("idle Counter = " + idleCounter);
 			if (Input.anyKey)
 			{
 				idleCounter = 0.0f;  // reset counter  
@@ -47,7 +45,7 @@ public class SceneLoader : MonoBehaviour
 				idleCounter += Time.deltaTime; // increment counter
 			}
 
-			if (idleCounter > idleTime)
+			if (idleCounter > idleTime || Input.GetKeyDown(idleKey))
 			{
 				//Debug.Log("idleTime = idleCounter");
 				LoadScene(idleScene);
