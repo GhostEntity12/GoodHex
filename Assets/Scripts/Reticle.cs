@@ -17,6 +17,12 @@ public class Reticle : MonoBehaviour
 	Assignable hoveredAssignable;
 
 	[SerializeField] AudioClip selectClip;
+
+	[Header("Particle System")]
+	[SerializeField] ParticleSystem particleDrawIn;
+	[SerializeField] ParticleSystem particleRelease;
+	[SerializeField] ParticleSystem particleReleaseTask;
+
 	[Header("Pulse")]
 	[SerializeField] Transform pulse;
 	[SerializeField] float pulseLength = 0.1f;
@@ -82,6 +88,7 @@ public class Reticle : MonoBehaviour
 			{
 				if (Vector3.Distance(hit.point, reticlePosition) > circleSize / 2)
 				{
+					particleDrawIn.Stop();
 					mouseLocked = false;
 					anim.SetBool("Active", false);
 					pointerDownTimer = 0;
@@ -92,6 +99,7 @@ public class Reticle : MonoBehaviour
 		else
 		{
 			graphic.enabled = false;
+			particleDrawIn.Stop();
 		}
 
 		SetSize();
@@ -164,6 +172,7 @@ public class Reticle : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			mouseLocked = true;
+			particleDrawIn.Play();
 		}
 
 		if (mouseLocked)
@@ -190,8 +199,10 @@ public class Reticle : MonoBehaviour
 					pulse.localScale = new Vector3(circleSize, 3 / 4f * circleSize, circleSize);
 					ratManager.SelectRats(unselectedRats);
 					ratsInHold.AddRange(unselectedRats);
+					particleRelease.Play();
 				}
 				mouseLocked = false;
+				particleDrawIn.Stop();
 			}
 		}
 		// Mouse release
@@ -199,6 +210,7 @@ public class Reticle : MonoBehaviour
 		{
 			//Debug.Log("Button up time = " + pointerDownTimer);
 			mouseLocked = false;
+			particleDrawIn.Stop();
 			pointerDownTimer = 0;
 
 			if (ratsInHold.Count == 0) // Deselect
@@ -225,6 +237,7 @@ public class Reticle : MonoBehaviour
 				ratManager.SetRatDestinations(transform.position);
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
+				particleReleaseTask.Play();
 			}
 			else if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Locked)
 			{
@@ -234,6 +247,7 @@ public class Reticle : MonoBehaviour
 					{
 						if (r.IsHoldingItem && r.heldItem.ItemId == pt.TriggerId)
 						{
+							particleReleaseTask.Play();
 							List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(pt, r);
 							// Clear selected rats
 							ratManager.ClearRats();

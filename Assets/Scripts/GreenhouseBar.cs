@@ -13,7 +13,7 @@ public class GreenhouseBar : MonoBehaviour
 
 	bool gettingSun = true;
 
-	[SerializeField] Image slider;
+	[SerializeField] TweenedElement slider;
 	[SerializeField] Image indicator;
 	[SerializeField] CanvasGroup vingnetteWater;
 	[SerializeField] CanvasGroup vingnetteSun;
@@ -21,16 +21,22 @@ public class GreenhouseBar : MonoBehaviour
 	[SerializeField] float buffer = 20;
 	bool active;
 	[SerializeField] float vignetteAppearPercent = 0.3f;
+	[SerializeField] float vignetteHoldPercent = 0.2f;
 
 	private void Start()
 	{
 		GameManager.Pause += OnPaused;
+		slider.SetCachesAndPosition(new(0, 200));
 		sliderWidth = slider.rectTransform.sizeDelta.x;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		//if (!active && )
+		//{
+
+		//}
 		if (!failed && !paused && active)
 		{
 			switch (value)
@@ -51,15 +57,19 @@ public class GreenhouseBar : MonoBehaviour
 			}
 			value = Mathf.Clamp(value, -1, 1);
 			indicator.rectTransform.anchoredPosition = new(Mathf.Lerp(buffer / 2, sliderWidth - (buffer / 2), Percentage), 0);
-			vingnetteSun.alpha = Mathf.Clamp01((value - (1 - vignetteAppearPercent)) * (1 / vignetteAppearPercent));
-			vingnetteWater.alpha = Mathf.Clamp01(-(value - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
+			vingnetteSun.alpha = Mathf.Clamp01(((value + vignetteHoldPercent) - (1 - vignetteAppearPercent)) * (1 / vignetteAppearPercent));
+			vingnetteWater.alpha = Mathf.Clamp01(-((value - vignetteHoldPercent) - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
 		}
+	}
+
+	public void TriggerWitchPlantDialogue(TextAsset dialogue)
+	{
+		GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () => SetActive(true));
 	}
 
 	public void SetActive(bool active)
 	{
-		slider.enabled = active;
-		indicator.enabled = active;
+		slider.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack);
 		this.active = active;
 	}
 	public void ToggleState() => gettingSun = !gettingSun;

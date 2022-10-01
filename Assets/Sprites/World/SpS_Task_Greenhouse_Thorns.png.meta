@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 6d305cb067eb05b4098bee8e8ec8acc9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 700
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3824
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d9afb7dcf38534aa5d1db8c0d04547
+      internalID: -491016526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_1
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 3824
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfb2442dc062f341996360183a60515
+      internalID: -1178610967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3549
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1358358bd58bf44ea4ae39a369c6d68
+      internalID: -1763156815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_3
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 3549
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2ed9f7a2f28044780fad231574e23e
+      internalID: -378357379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3274
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c478889aeed10743a3465be6e1e862c
+      internalID: 908252574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 3274
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c314e65e83c3b4a84de0d0ae22bf07
+      internalID: 1234712236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2999
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53fa09781e50a94581719a131c871ae
+      internalID: -1596562060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_7
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2999
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee1b1f3d5681d64b8f1b4593099cf7a
+      internalID: -741563204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2724
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ad1717c9906cb48b900f2143250b7b
+      internalID: -1107432182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_9
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2724
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02099dd784e242b4b92fbc5ae3d4b4f0
+      internalID: -604170871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2449
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884fc88b96329f34ba1c5b2a8e04c542
+      internalID: 559610246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_11
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2449
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45de56adf36d714aa745031669bc7e2
+      internalID: 1776437040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2174
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffe45bc6881b814eb678e0dfe72ae3d
+      internalID: 643605155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2174
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f2c6719346416408c4044e46e48a56
+      internalID: 12496857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1899
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5a07c4f276e334d803cf5e505a7098
+      internalID: 1865175950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_15
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1899
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c782b1c9ff515124c8c5874ae2a39689
+      internalID: -1105942031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1624
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861ab7ed8d9882a45a730af20aa0bb51
+      internalID: -1019613615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_17
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1624
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f532939f1c4a5c04399e40ca04d90e38
+      internalID: -1143885211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1349
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65fecf927be2254db05a7ac22e612b2
+      internalID: 756314925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_19
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1349
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d30a397ddfbb6842ac35822c57bbc11
+      internalID: 1591743389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1074
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ac8961ee75a7e42b7f0ee0760ac857
+      internalID: -1720669705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_21
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1074
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15d4b553a4e75545a13ba0419adcba2
+      internalID: 2136339455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 799
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0806a10e3bbb14ea687469f0dfea66
+      internalID: 23862192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_23
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 799
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc48725e44a02944902c6d97a5e3bf3
+      internalID: 875575482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 524
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3366542d19d06154fbe5478dd5d68f4f
+      internalID: -723078816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_25
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 524
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbe6a39e6167b94e841315d9ad84ebe
+      internalID: -311397883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Task_Greenhouse_Thorns_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 249
+        width: 400
+        height: 271
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41cfb915255f3a438f21c6f58015b63
+      internalID: -443580511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ee562082f12cdfd4b8a1a7f9f8cae56b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Task_Greenhouse_Thorns_11: 1776437040
+      SpS_Task_Greenhouse_Thorns_20: -1720669705
+      SpS_Task_Greenhouse_Thorns_7: -741563204
+      SpS_Task_Greenhouse_Thorns_17: -1143885211
+      SpS_Task_Greenhouse_Thorns_19: 1591743389
+      SpS_Task_Greenhouse_Thorns_4: 908252574
+      SpS_Task_Greenhouse_Thorns_0: -491016526
+      SpS_Task_Greenhouse_Thorns_13: 12496857
+      SpS_Task_Greenhouse_Thorns_10: 559610246
+      SpS_Task_Greenhouse_Thorns_8: -1107432182
+      SpS_Task_Greenhouse_Thorns_1: -1178610967
+      SpS_Task_Greenhouse_Thorns_18: 756314925
+      SpS_Task_Greenhouse_Thorns_3: -378357379
+      SpS_Task_Greenhouse_Thorns_16: -1019613615
+      SpS_Task_Greenhouse_Thorns_12: 643605155
+      SpS_Task_Greenhouse_Thorns_21: 2136339455
+      SpS_Task_Greenhouse_Thorns_9: -604170871
+      SpS_Task_Greenhouse_Thorns_15: -1105942031
+      SpS_Task_Greenhouse_Thorns_2: -1763156815
+      SpS_Task_Greenhouse_Thorns_6: -1596562060
+      SpS_Task_Greenhouse_Thorns_14: 1865175950
+      SpS_Task_Greenhouse_Thorns_25: -311397883
+      SpS_Task_Greenhouse_Thorns_24: -723078816
+      SpS_Task_Greenhouse_Thorns_23: 875575482
+      SpS_Task_Greenhouse_Thorns_26: -443580511
+      SpS_Task_Greenhouse_Thorns_22: 23862192
+      SpS_Task_Greenhouse_Thorns_5: 1234712236
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5246531995707562102
 Transform:
   m_ObjectHideFlags: 0
@@ -186,14 +186,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3861203537871021748}
-  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 0.035, y: 0.2, z: -0.024}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.035, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 685390268341143684}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1824473025520188436
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0742be474cf4b974aa93325f886bd08f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -254,7 +254,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3861203537871021748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 41a98694f7fbe76499500fe7036efb22, type: 2}
   m_CullingMode: 0
@@ -625,11 +625,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 7885587077838074156}
-  selectionSprite: {fileID: 1824473025520188436}
   <NavAgent>k__BackingField: {fileID: 4951354953605308642}
   <Wandering>k__BackingField: 0
   holdSpot: {fileID: 1433758986985517757}
   heldItem: {fileID: 0}
+  selectionSprite: {fileID: 1824473025520188436}
+  selectionBobSpeed: 2
+  selectionBobHeight: 0.015
 --- !u!136 &8946176377568179703
 CapsuleCollider:
   m_ObjectHideFlags: 0

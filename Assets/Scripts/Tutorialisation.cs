@@ -45,7 +45,7 @@ public class Tutorialisation : MonoBehaviour
 		GameManager.Pause += SetPaused;
 
 		mouseDownRenderers = mouseDownPrompts.Select(p => p.transform.GetChild(0).GetComponent<SpriteRenderer>()).ToList();
-		holdText = mouseDownRenderers.Select(r => r.GetComponentInChildren<TextMeshPro>()).ToList();
+		holdText = mouseDownPrompts.Select(r => r.GetComponentInChildren<TextMeshPro>()).ToList();
 	}
 
 	void Update()
@@ -66,11 +66,13 @@ public class Tutorialisation : MonoBehaviour
 				{
 					case InMovementState.Select:
 						mouseDownPrompts[0].transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
+						holdText[0].enabled = true;
 						if (GameManager.Instance.RatManager.selectedRats.Count > 0)
 						{
 							movementState = InMovementState.Move;
 							r = GameManager.Instance.RatManager.selectedRats[0];
 							mouseDownRenderers[0].sprite = rightMouse;
+							holdText[0].enabled = false;
 						}
 						break;
 					case InMovementState.Move:
@@ -83,14 +85,17 @@ public class Tutorialisation : MonoBehaviour
 						break;
 					case InMovementState.Deselect:
 						mouseDownPrompts[0].transform.position = deselectPromptPosition.position + Vector3.up * promptOffset;
+						holdText[0].enabled = false;
 						if (GameManager.Instance.RatManager.selectedRats.Count == 0)
 						{
 							Rat r = GameManager.Instance.RatManager.SpawnRats(mouseHole.position)[0];
 							Debug.Log(r);
 							r.SetDestination(mouseHoleExit.position);
 							dummy.SetState(BaseTask.State.Complete);
-							IncrementState();
 							mouseDownPrompts[1].gameObject.SetActive(true);
+							holdText[0].enabled = true;
+							holdText[1].enabled = true;
+							IncrementState();
 						}
 						break;
 					default:
@@ -100,6 +105,8 @@ public class Tutorialisation : MonoBehaviour
 			case TutorialState.MovementTask:
 				if (GameManager.Instance.RatManager.selectedRats.Count == 2)
 				{
+					holdText[0].enabled = false;
+					holdText[1].enabled = false;
 					mouseDownPrompts[0].gameObject.SetActive(false);
 					mouseDownPrompts[1].gameObject.SetActive(true);
 					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * (promptOffset + 0.1f);

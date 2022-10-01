@@ -9,6 +9,13 @@ public class SceneLoader : MonoBehaviour
 	float timer = 0f;
 	AudioSource aS;
 
+	[SerializeField] public bool idleEnabled;
+	[SerializeField] public float idleTime;
+	[SerializeField] public int idleScene;
+	[SerializeField] public KeyCode idleKey = KeyCode.F12;
+ 	private float idleCounter = 0.0f;
+	[SerializeField] public bool idleScreen;
+
 	private void Awake()
 	{
 		aS = GetComponent<AudioSource>();
@@ -18,8 +25,6 @@ public class SceneLoader : MonoBehaviour
 	{
 		if (sceneToLoad >= 0)
 		{
-			// Temp fix. Avoid Timescale?
-			Time.timeScale = 1f;
 			timer += Time.deltaTime;
 			fade.alpha = timer / fadeTime;
 			if (timer >= fadeTime)
@@ -28,6 +33,32 @@ public class SceneLoader : MonoBehaviour
 				SceneManager.LoadScene(sceneToLoad);
 			}
 		}
+		//idle check
+		if (idleEnabled == true)
+		{
+			if (Input.anyKey)
+			{
+				idleCounter = 0.0f;  // reset counter  
+			}
+			else
+			{
+				idleCounter += Time.deltaTime; // increment counter
+			}
+
+			if (idleCounter > idleTime || Input.GetKeyDown(idleKey))
+			{
+				//Debug.Log("idleTime = idleCounter");
+				LoadScene(idleScene);
+			}
+		}
+
+		if(idleScreen == true)
+        {
+			if(Input.anyKey)
+            {
+				LoadScene(0);
+            }
+        }
 	}
 
 	public void PlaySoundClip(AudioClip clip) => aS.PlayOneShot(clip);

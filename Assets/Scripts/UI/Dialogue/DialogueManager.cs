@@ -257,7 +257,11 @@ public class DialogueManager : Singleton<DialogueManager>
 			{
 				return (Sprite)typeof(CharacterPortraitContainer).GetField("neutral").GetValue(character);
 			}
-			else throw exception;
+			else
+			{
+				FinishDialogue();
+				throw exception;
+			}
 
 		}
 	}
@@ -485,7 +489,7 @@ public class TweenedElement
 {
 	public enum ScreenState { Onscreen, Offscreen }
 
-	[SerializeField] RectTransform rectTransform;
+	[field: SerializeField] public RectTransform rectTransform { get; private set;}
 	internal Vector2[] cache = new Vector2[2];
 
 	/// <summary>
