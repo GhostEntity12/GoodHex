@@ -13,6 +13,8 @@ public class TaskList : MonoBehaviour
 	[SerializeField] TweenedElement listObject;
 	[SerializeField] TweenedElement revealObject;
 
+	bool paused;
+
 	private void Start()
 	{
 		listObject.SetCachesAndPosition(new(0, 1100));
@@ -20,6 +22,7 @@ public class TaskList : MonoBehaviour
 		revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, tweenType: LeanTweenType.easeOutCubic);
 
 		tliQueue = new(taskSlots);
+		GameManager.Pause += Pause;
 	}
 
 
@@ -64,10 +67,13 @@ public class TaskList : MonoBehaviour
 		else Register(task);
 	}
 
+	void Pause(bool paused) => this.paused = paused;
+
 
 	[ContextMenu("In")]
 	public void DropDown()
 	{
+		if (paused) return;
 		revealObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
 			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack, 0.4f),
 			LeanTweenType.easeOutCubic, 0.2f);
@@ -76,6 +82,7 @@ public class TaskList : MonoBehaviour
 	[ContextMenu("Out")]
 	public void RaiseUp()
 	{
+		if (paused) return;
 		listObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
 			revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutCubic, 0.2f),
 		LeanTweenType.easeInBack, 0.4f);
