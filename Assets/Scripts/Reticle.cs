@@ -238,6 +238,7 @@ public class Reticle : MonoBehaviour
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
 				particleReleaseTask.Play();
+				GameManager.Instance.Highlighter.StopHighlight();
 			}
 			else if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Locked)
 			{

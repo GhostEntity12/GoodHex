@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(EventTrigger))]
@@ -49,9 +50,16 @@ public class Assignable : BaseTask
 	{
 		GameManager.Instance.Reticle.SetAssignable(doHighlight ? this : null);
 
-		if (TaskState == State.Unlocked && (GameManager.Instance.RatManager.HasSelectedRats || !doHighlight))
+		if (TaskState == State.Unlocked && GameManager.Instance.RatManager.HasSelectedRats)
 		{
-			GameManager.Instance.Highlighter.Highlight(r, doHighlight);
+			if (doHighlight)
+			{
+				GameManager.Instance.Highlighter.Highlight(r);
+			}
+			else
+			{
+				GameManager.Instance.Highlighter.StopHighlight();
+			}
 		}
 	}
 

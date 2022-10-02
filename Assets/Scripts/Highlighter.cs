@@ -3,7 +3,7 @@ using UnityEngine;
 public class Highlighter : MonoBehaviour
 {
 	[SerializeField] ParticleSystem meshHighlighter, spriteHighlighter;
-	public void Highlight(Renderer renderer, bool doHighlight)
+	public void Highlight(Renderer renderer)
 	{
 		ParticleSystem.ShapeModule shape;
 		ParticleSystem system = null;
@@ -13,22 +13,22 @@ public class Highlighter : MonoBehaviour
 			case SpriteRenderer s:
 				system = spriteHighlighter;
 				shape = system.shape;
-				shape.spriteRenderer = doHighlight ? s : null;
+				shape.spriteRenderer = s;
 				break;
 			case MeshRenderer m:
 				system = meshHighlighter;
 				shape = system.shape;
-				shape.meshRenderer = doHighlight ? m : null;
+				shape.meshRenderer = m;
 				break;
 		}
+		system.Play();
+	}
 
-		if (doHighlight)
-		{
-			system.Play();
-		}
-		else
-		{
-			system.Stop();
-		}
+	public void StopHighlight()
+	{
+		meshHighlighter.Stop();
+		meshHighlighter.Clear();
+		spriteHighlighter.Stop();
+		spriteHighlighter.Clear();
 	}
 }
