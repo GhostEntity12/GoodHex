@@ -6,14 +6,13 @@ public class TaskListItem : MonoBehaviour
 	enum State { Inactive, Growing, Active, Shrinking }
 	public StandardTask Task { get; private set; }
 
-	TaskList list;
+	[SerializeField] TaskList list;
 	Image image;
 	
 	State state = State.Inactive;
 	
 	private void Start()
 	{
-		list = transform.parent.GetComponent<TaskList>();
 		image = GetComponent<Image>();
 		(transform as RectTransform).sizeDelta = Vector3.one * -25;
 		gameObject.SetActive(false);

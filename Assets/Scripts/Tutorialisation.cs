@@ -62,6 +62,7 @@ public class Tutorialisation : MonoBehaviour
 				}
 				break;
 			case TutorialState.HighlightMovement:
+				mouseDownPrompts[0].SetActive(true);
 				switch (movementState)
 				{
 					case InMovementState.Select:
@@ -147,8 +148,12 @@ public class Tutorialisation : MonoBehaviour
 
 	void IncrementState()
 	{
-		dm.QueueDialogue(dialogue[(int)state], onEndAction: () => state++);
-		state++;
+		mouseDownPrompts[0].SetActive(false);
+		mouseDownPrompts[1].SetActive(false);
+		dm.QueueDialogue(dialogue[(int)state], onEndAction: () =>
+		{
+			state++;
+		});
 	}
 	void SetPaused(bool paused) => this.paused = paused;
 	private void OnDestroy()
