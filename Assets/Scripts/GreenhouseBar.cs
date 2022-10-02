@@ -33,10 +33,6 @@ public class GreenhouseBar : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		//if (!active && )
-		//{
-
-		//}
 		if (!failed && !paused && active)
 		{
 			switch (value)
@@ -61,6 +57,8 @@ public class GreenhouseBar : MonoBehaviour
 			vingnetteWater.alpha = Mathf.Clamp01(-((value - vignetteHoldPercent) - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
 		}
 	}
+	[ContextMenu("QuickTrigger")]
+	void test() => SetActive(true);
 
 	public void TriggerWitchPlantDialogue(TextAsset dialogue)
 	{
