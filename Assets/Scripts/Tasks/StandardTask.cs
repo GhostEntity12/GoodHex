@@ -18,10 +18,10 @@ public class StandardTask : ProgressTask
                     col.enabled = true;
                     if (RequiresItem)
                     {
-                        if (taskSprite != null)
+                        /*if (taskSprite != null)
                         {
                             taskSprite.SetActive(true);
-                        }
+                        } */
                         foreach (TaskPoint taskPoint in TaskPoints)
                         {
                             if (
