@@ -4,7 +4,7 @@ using UnityEngine;
 public class TaskLooper : MonoBehaviour
 {
 	[SerializeField] List<ProgressTask> tasksToLoop;
-
+	[SerializeField] bool relockFirstTask = false;
 	// Update is called once per frame
 	void Update()
 	{
@@ -14,7 +14,10 @@ public class TaskLooper : MonoBehaviour
 			{
 				task.SetState(BaseTask.State.Locked);
 			}
-			tasksToLoop[0].SetState(BaseTask.State.Unlocked);
+			if (!relockFirstTask)
+			{
+				tasksToLoop[0].SetState(BaseTask.State.Unlocked);
+			}
 		}
 	}
 }
