@@ -147,7 +147,7 @@ public class Tutorialisation : MonoBehaviour
 
 	void IncrementState()
 	{
-		dm.QueueDialogue(dialogue[(int)state]);
+		dm.QueueDialogue(dialogue[(int)state], onEndAction: () => state++);
 		state++;
 	}
 	void SetPaused(bool paused) => this.paused = paused;
