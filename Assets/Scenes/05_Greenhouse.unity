@@ -16973,6 +16973,7 @@ GameObject:
   - component: {fileID: 540561056}
   - component: {fileID: 540561057}
   - component: {fileID: 540561058}
+  - component: {fileID: 540561059}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17133,6 +17134,23 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: b38e6e2d7530a3444be6bfe8a0d06ab7, type: 2}
+--- !u!114 &540561059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540561051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: af7c0206813b33b4da6f2d5030174d39, type: 2}
 --- !u!1 &541371760
 GameObject:
   m_ObjectHideFlags: 0
@@ -24994,6 +25012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
         type: 3}
+      propertyPath: blur
+      value: 
+      objectReference: {fileID: 540561059}
+    - target: {fileID: 2474658254774195239, guid: 0bb2a4489e3e8934d88cfa5758a1f172,
+        type: 3}
       propertyPath: sceneName
       value: 
       objectReference: {fileID: 4900000, guid: 85fc65311e3c63244abf8f2f73135d92, type: 3}
@@ -31803,7 +31826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1298478388
 MonoBehaviour:
   m_ObjectHideFlags: 0
