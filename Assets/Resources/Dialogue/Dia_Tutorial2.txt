@@ -1,6 +1,6 @@
 Witch|Happy|Good, good. This is definitely progress.
-Apprentice Rat|Happy|<sprite="Spr_Emote_Happy" index=0>
+Apprentice Rat|Happy| <sprite="Spr_Emote_Happy" index=0>
 Witch|Neutral|Alright Apprentice, that pipe leads through to the garden.
-Apprentice Rat|Neutral|<sprite="Spr_Emote_Flower" index=0>
+Apprentice Rat|Neutral| <sprite="Spr_Emote_Flower" index=0>
 Witch|Angry|Don't even think about it. Just because I'm dead, doesn't mean you can mess about with my petunias!
-Apprentice Rat|Angry|<sprite="Spr_Emote_Annoyed" index=0>
+Apprentice Rat|Angry| <sprite="Spr_Emote_Annoyed" index=0>
