@@ -1,0 +1,8 @@
+Witch|Angry|It's uh... definitely a plant.
+Apprentice Rat|Angry| <sprite="Spr_Emote_Shocked" index=0>
+Witch|Neutral|I'll level with you, Apprentice. I think we've may have overlooked a few things.
+Witch|Neutral|This new body... It doesn't have arms. Or legs. Or a face.
+Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0>
+Witch|Neutral|Well then. Plan B it is.
+Apprentice Rat|Neutral| <sprite="Spr_Emote_Tired" index=0>
+Witch|Neutral|Maybe after PAX though. I think we need a bit of a break.

@@ -1,7 +1,7 @@
 Witch|Neutral|Alright, Apprentice. Now that seed is planted, it'll need to be taken care of.
 Witch|Neutral|They're very finicky, so you'll need to make sure it gets the right amount of water and sunlight.
 Witch|Neutral|Oh, also it needs lots of help to grow, so make sure to-
-Apprentice Rat|Angry|<sprite="Spr_Emote_Annoyed" index=0>
+Apprentice Rat|Angry| <sprite="Spr_Emote_Annoyed" index=0>
 Witch|Neutral|Yes, well last time you weren't micromanaged, I exploded.
 Apprentice Rat|Angry|....
 Witch|Neutral|I'll leave you to it then.
