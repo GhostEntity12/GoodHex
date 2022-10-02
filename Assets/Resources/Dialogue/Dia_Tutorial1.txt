@@ -1,7 +1,7 @@
 Witch|Happy|Okay, that's a good start, we're still only at 1 fatality.
-Apprentice Rat|Angry|<sprite="Spr_Emote_Cheese" index=0>
+Apprentice Rat|Angry| <sprite="Spr_Emote_Cheese" index=0>
 Witch|Tired|I don't have any cheese on me... I'm still dead.
-Apprentice Rat|Tired|<sprite="Spr_Emote_Sad" index=0>
+Apprentice Rat|Tired| <sprite="Spr_Emote_Sad" index=0>
 Witch|Tired|Anyway, let's open up that grate. Please.
-Apprentice Rat|Neutral|<sprite="Spr_Emote_Annoyed" index=0>
+Apprentice Rat|Neutral| <sprite="Spr_Emote_Annoyed" index=0>
 Witch|Neutral|Oh, but it looks like he'll need help turning that crank.

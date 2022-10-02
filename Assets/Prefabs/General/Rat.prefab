@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 4951354953605308642}
   - component: {fileID: 6076119070167395738}
   - component: {fileID: 8946176377568179703}
+  - component: {fileID: 7190355145514567229}
   m_Layer: 6
   m_Name: Rat
   m_TagString: Rat
@@ -605,7 +606,7 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 0
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.125
@@ -646,6 +647,43 @@ CapsuleCollider:
   m_Height: 0.15
   m_Direction: 1
   m_Center: {x: 0, y: 0.075, z: 0}
+--- !u!114 &7190355145514567229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700349638139139103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c186ad41e4d62542b7ca20cfe75015e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Method: 3
+  m_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8921044086489678571
 GameObject:
   m_ObjectHideFlags: 0
