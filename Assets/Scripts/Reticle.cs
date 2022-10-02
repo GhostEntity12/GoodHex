@@ -228,7 +228,12 @@ public class Reticle : MonoBehaviour
 		{
 			if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
+				int startRats = GameManager.Instance.RatManager.selectedRats.Count;
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(hoveredAssignable, ratManager.selectedRats.ToArray());
+				if (startRats - remainingRats.Count > 0)
+				{
+					particleReleaseTask.Play();
+				}
 				// Clear selected rats
 				ratManager.ClearRats();
 				// Select the rats without tasks
@@ -237,7 +242,6 @@ public class Reticle : MonoBehaviour
 				ratManager.SetRatDestinations(transform.position);
 				ratManager.ClearRats();
 				anim.SetBool("Active", false);
-				particleReleaseTask.Play();
 				GameManager.Instance.Highlighter.StopHighlight();
 			}
 			else if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Locked)
