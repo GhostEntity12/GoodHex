@@ -136,6 +136,8 @@ public class Tutorialisation : MonoBehaviour
 				}
 				break;
 			case TutorialState.Task:
+				holdText[0].enabled = false;
+				holdText[1].enabled = false;
 				mouseDownPrompts[0].gameObject.SetActive(true);
 				mouseDownRenderers[0].sprite = rightMouse;
 				mouseDownPrompts[1].gameObject.SetActive(false);
