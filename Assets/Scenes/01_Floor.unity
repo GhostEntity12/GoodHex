@@ -1308,7 +1308,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963396371}
   - component: {fileID: 963396370}
-  - component: {fileID: 963396373}
   - component: {fileID: 963396374}
   m_Layer: 0
   m_Name: Managers
@@ -1357,25 +1356,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963396373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963396368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4153aafd07669c84fbcd77c357ad3d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fade: {fileID: 1537842218283270618}
-  fadeTime: 1.5
-  idleEnabled: 1
-  idleTime: 180
-  idleScene: 1
-  idleKey: 293
-  idleScreen: 0
 --- !u!114 &963396374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3271,12 +3251,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
---- !u!225 &1537842218283270618 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 8585257188880873545, guid: 98dee63f6255f184ab8a78f038104cff,
-    type: 3}
-  m_PrefabInstance: {fileID: 1537842218283270617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &1771164040641565590
 MeshFilter:
   m_ObjectHideFlags: 0
