@@ -58302,6 +58302,18 @@ MonoBehaviour:
           m_StringArgument: activate
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 745891008}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDeactivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -58339,6 +58351,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 745891008}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onCompleteEvents:
@@ -58402,6 +58426,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: deactivate
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 610593517}
@@ -59660,7 +59696,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4493590120424069204}
-  - {fileID: 1459996298}
   m_Father: {fileID: 9029846502946758999}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91172,7 +91207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1298478388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106722,7 +106757,7 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -1.11, y: 0.06198025, z: 0.35}
     rat: {fileID: 0}
-  sparkle: {fileID: 0}
+  sparkle: {fileID: 128792202}
   <TaskImage>k__BackingField: {fileID: 0}
   taskDuration: 1
   progressBarOffset: 0.25
@@ -112751,7 +112786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459996297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0506, y: -1.415, z: 0.8777}
+  m_LocalPosition: {x: 0.002240602, y: 0.16121507, z: 0.24029022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112762,8 +112797,8 @@ Transform:
   - {fileID: 38005058}
   - {fileID: 1423461498}
   - {fileID: 1732573975}
-  m_Father: {fileID: 856773617}
-  m_RootOrder: 1
+  m_Father: {fileID: 4493590120424069204}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463010920
 GameObject:
@@ -163053,6 +163088,7 @@ Transform:
   - {fileID: 625874726}
   - {fileID: 1835741629}
   - {fileID: 4487934}
+  - {fileID: 1459996298}
   m_Father: {fileID: 856773617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
