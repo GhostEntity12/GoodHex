@@ -663,8 +663,8 @@ MonoBehaviour:
   fade: {fileID: 1174220088}
   fadeTime: 1.5
   idleEnabled: 1
-  idleTime: 300
-  idleScene: 5
+  idleTime: 180
+  idleScene: 1
   idleKey: 293
   idleScreen: 0
 --- !u!1 &875234821
