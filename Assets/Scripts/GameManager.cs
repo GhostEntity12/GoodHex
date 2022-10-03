@@ -38,12 +38,13 @@ public class GameManager : Singleton<GameManager>
 	static readonly string[] nonLevelScenes = new string[] { "MainMenu", "Controls", "Credits" };
 
 	LevelMenus levelMenus;
-	BGMManager bgmManager;
 	public ProgressBarManager ProgressBarManager { get; private set; }
 	public RatManager RatManager { get; private set; }
 	public TaskManager TaskManager { get; private set; }
 	public DialogueManager DialogueManager { get; private set; }
 	public Highlighter Highlighter { get; private set; }
+	public BGMManager BGMManager { get; private set; }
+
 	public Camera mainCamera;
 	[Header("Prefabs")]
 	[SerializeField] ProgressBarManager progressBarManagerPrefab;
@@ -66,18 +67,18 @@ public class GameManager : Singleton<GameManager>
 	public void Restart() => LoadSceneManager.LoadScene(0);
 
 	public ProgressBar CreateProgressBar() => ProgressBarManager.CreateProgressBar();
-	public void TriggerEndMusic() => bgmManager.TriggerEndMusic();
+	public void TriggerEndMusic() => BGMManager.SetEndMusicStateActive(false);
 
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
-		bgmManager.StopAllTracks();
+		BGMManager.StopAllTracks();
 		levelMenus.TriggerVictoryScreen();
 	}
 
 	public void LevelFailed()
 	{
-		bgmManager.StopAllTracks();
+		BGMManager.StopAllTracks();
 		levelMenus.TriggerFailureScreen();
 	}
 
@@ -89,7 +90,7 @@ public class GameManager : Singleton<GameManager>
 
 		Reticle = Instantiate(reticlePrefab);
 		levelMenus = Instantiate(levelMenusPrefab);
-		bgmManager = Instantiate(bgmManagerPrefab);
+		BGMManager = Instantiate(bgmManagerPrefab);
 		ProgressBarManager = Instantiate(progressBarManagerPrefab);
 		GameObject managers = new("Managers");
 		RatManager = managers.AddComponent<RatManager>();
