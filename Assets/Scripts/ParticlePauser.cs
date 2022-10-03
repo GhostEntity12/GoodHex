@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticlePauser : ComponentPauser
 {
 	ParticleSystem ps;
+	bool active;
 	protected override void Awake()
 	{
 		base.Awake();
@@ -15,11 +16,19 @@ public class ParticlePauser : ComponentPauser
 		base.Pause(paused);
 		if (paused)
 		{
-			ps.Pause();
+			active = ps.isPlaying;
 		}
-		else
+
+		if (active)
 		{
-			ps.Play();
+			if (paused)
+			{
+				ps.Pause();
+			}
+			else
+			{
+				ps.Play();
+			}
 		}
 	}
 }

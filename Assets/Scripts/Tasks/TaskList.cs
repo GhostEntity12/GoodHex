@@ -8,7 +8,7 @@ public class TaskList : MonoBehaviour
 
 	Dictionary<ProgressTask, TaskListItem> taskDict = new();
 	Queue<ProgressTask> taskQueue = new();
-	Queue<TaskListItem> tliQueue;
+	Queue<TaskListItem> tliQueue = new();
 
 	[SerializeField] TweenedElement listObject;
 	[SerializeField] TweenedElement revealObject;
