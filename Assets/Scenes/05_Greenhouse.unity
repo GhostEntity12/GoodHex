@@ -10906,6 +10906,12 @@ Transform:
   m_Father: {fileID: 443128610}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &374489456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7092845879123275676, guid: d25f97b758b320043a64b0f64b154df0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7092845878380209580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &375697042
 GameObject:
   m_ObjectHideFlags: 0
@@ -79671,6 +79677,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7092845879123275674, guid: d25f97b758b320043a64b0f64b154df0,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092845879123275674, guid: d25f97b758b320043a64b0f64b154df0,
+        type: 3}
       propertyPath: spriteName
       value: FlyTrapIndicator
       objectReference: {fileID: 0}
@@ -79684,10 +79695,20 @@ PrefabInstance:
       propertyPath: <SpriteName>k__BackingField
       value: FlyTrapIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 7092845879123275675, guid: d25f97b758b320043a64b0f64b154df0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7092845879123275676, guid: d25f97b758b320043a64b0f64b154df0,
         type: 3}
       propertyPath: m_Name
       value: FlytrapSeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092845879123275676, guid: d25f97b758b320043a64b0f64b154df0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7092845879123275677, guid: d25f97b758b320043a64b0f64b154df0,
         type: 3}
@@ -80330,6 +80351,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 374489456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   <RequiresItem>k__BackingField: 1
   <TriggerId>k__BackingField: WitchplantSeed
