@@ -4874,10 +4874,13 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -5.351769, y: 0.08698022, z: 0.40114284}
     rat: {fileID: 0}
+  sparkle: {fileID: 4906536954492834877}
   <ItemId>k__BackingField: WitchplantSeed
   destinationSprite: {fileID: 21300000, guid: 955dcb93c58f02441bbd0b2cf0fbe357, type: 3}
-  <SpriteName>k__BackingField: WitchPlantIndicator
   shadow: {fileID: 8044290471412961296}
+  onUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &5156618334201632692
 SpriteRenderer:
   m_ObjectHideFlags: 0

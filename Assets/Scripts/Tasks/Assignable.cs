@@ -68,19 +68,11 @@ public class Assignable : BaseTask
 	protected override void OnActivate() { }
 	protected override void OnComplete()
 	{
-		if (sparkle)
-		{
-			sparkle?.Stop();
-
-		}
+		sparkle.Stop();
 	}
 	protected override void OnUnlock()
 	{
-		if (sparkle)
-		{
-			sparkle.Play();
-
-		}
+		sparkle.Play();
 	}
 }
 

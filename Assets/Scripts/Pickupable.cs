@@ -16,6 +16,7 @@ public class Pickupable : Assignable
     {
         base.Start();
         TaskState = State.Unlocked;
+        OnUnlock();
         onUnlockEvents?.Invoke();
         ResetTaskPositions();
     }
@@ -27,6 +28,7 @@ public class Pickupable : Assignable
             taskPoints[0].rat.Pickup(this);
             TaskState = State.Complete;
             IsComplete = true;
+            OnComplete();
             shadow.SetActive(false);
         }
     }
