@@ -3,7 +3,7 @@ Apprentice Rat|Neutral| <sprite="Spr_Emote_Happy" index=0>
 Witch|Neutral|Please don't break them though, I'm still paying off the loan.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Annoyed" index=0>
 Witch|Angry|Well we also wouldn't be in crushing financial debt if I was alive.
-Witch|Happy|Good, good. This is definitely progress.
+Witch|Happy|But this is good! It's definitely progress.
 Apprentice Rat|Happy| <sprite="Spr_Emote_Happy" index=0>
 Witch|Neutral|Alright Apprentice, that pipe leads through to the garden.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Flower" index=0>
