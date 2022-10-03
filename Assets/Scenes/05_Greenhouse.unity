@@ -53803,6 +53803,12 @@ PrefabInstance:
       propertyPath: anims.Array.data[1]
       value: 
       objectReference: {fileID: 1835741627}
+    - target: {fileID: 1294357490594793616, guid: 8d134603935d37a4ea09da60349ce12d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 26d8b58b4356edf4595dcc683072e7e5,
+        type: 3}
     - target: {fileID: 1314446963943414691, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_Name
