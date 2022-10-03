@@ -141,7 +141,7 @@ public class Tutorialisation : MonoBehaviour
 				mouseDownPrompts[0].gameObject.SetActive(true);
 				mouseDownRenderers[0].sprite = rightMouse;
 				mouseDownPrompts[1].gameObject.SetActive(false);
-				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + 0.1f) + Vector3.right * 0.5f;
+				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + - 0.25f) + Vector3.right * 0.25f;
 				break;
 			default:
 				break;
