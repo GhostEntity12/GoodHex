@@ -10380,7 +10380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309011825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.317, z: -0.13}
+  m_LocalPosition: {x: 0.1547, y: 0.317, z: -0.0982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10639,12 +10639,25 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: 0.07, y: 0.35, z: 0.64}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 9d5e0571af43a0a47813b70d8f770453,
+    type: 3}
   taskDuration: 5
   progressBarOffset: 0.2
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 366906559}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -10673,6 +10686,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 366906559}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11068,12 +11093,25 @@ MonoBehaviour:
     rat: {fileID: 0}
   - taskPosition: {x: -4.98, y: 0.148, z: 0.44}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 28d9c53b99a682c438cc72d8882101be,
+    type: 3}
   taskDuration: 7
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 387519953}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -11126,6 +11164,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 387519953}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11463,7 +11513,7 @@ Transform:
   - {fileID: 586858651}
   - {fileID: 477704445}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455876146
 GameObject:
@@ -17331,7 +17381,7 @@ Transform:
   - {fileID: 434930209}
   - {fileID: 203174354}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550096987
 GameObject:
@@ -23062,7 +23112,7 @@ RectTransform:
   m_Children:
   - {fileID: 604501111}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -23675,12 +23725,25 @@ MonoBehaviour:
     rat: {fileID: 0}
   - taskPosition: {x: 0.834, y: 0.052, z: 1}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: a2e14e4c3793bdc438c6060b7636ae5f,
+    type: 3}
   taskDuration: 12
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 745891010}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -23829,6 +23892,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 745891010}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24098,7 +24173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &815223448
 GameObject:
@@ -24488,7 +24563,7 @@ Transform:
   - {fileID: 1697508422}
   - {fileID: 722054508}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833715494
 GameObject:
@@ -31902,7 +31977,7 @@ RectTransform:
   m_Children:
   - {fileID: 776884546}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37251,7 +37326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1373938741
 PrefabInstance:
@@ -42902,6 +42977,237 @@ Transform:
   m_Father: {fileID: 1677975663}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 4.145, z: -26.871}
+--- !u!1001 &1421607987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1537842219437793355, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_Name
+      value: TaskCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537842219437793359, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177572550926034854, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177572550926034854, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177572550926034854, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177572550926034854, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556684807729162685, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556684807729162685, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556684807729162685, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556684807729162685, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851135502977063275, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851135502977063275, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851135502977063275, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851135502977063275, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266434776786678582, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266434776786678582, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266434776786678582, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266434776786678582, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573036874011461486, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573036874011461486, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573036874011461486, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573036874011461486, guid: 98dee63f6255f184ab8a78f038104cff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98dee63f6255f184ab8a78f038104cff, type: 3}
+--- !u!114 &1421607988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3875097617790323074, guid: 98dee63f6255f184ab8a78f038104cff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1421607987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f743e3bee4a864eb9c5c62ac32f114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423977303
 GameObject:
   m_ObjectHideFlags: 0
@@ -42993,7 +43299,7 @@ PrefabInstance:
     - target: {fileID: 1314446963943414703, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1314446963943414703, guid: 8d134603935d37a4ea09da60349ce12d,
         type: 3}
@@ -49122,7 +49428,7 @@ PrefabInstance:
     - target: {fileID: 2691864806162428199, guid: c1cfc9decf6488345ab43138c8ea6d00,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2691864806162428199, guid: c1cfc9decf6488345ab43138c8ea6d00,
         type: 3}
@@ -60764,12 +61070,25 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -4.5, y: 0.15, z: 0.64}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 188333400d7ebf643b54cc37666e07cb,
+    type: 3}
   taskDuration: 4
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1855466799}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -60822,6 +61141,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1855466799}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -71020,12 +71351,25 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -3.59, y: 0.13, z: 0.55214286}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 701f192f1da7cf74ba49761676d40599,
+    type: 3}
   taskDuration: 2
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1931322361}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -71078,6 +71422,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1931322361}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -73901,7 +74257,8 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -3.8406444, y: 0.15, z: 0.86}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: 76c1965989743be44ab2254976d809be,
+    type: 3}
   taskDuration: 4
   progressBarOffset: 0.1
   onUnlockEvents:
@@ -73938,6 +74295,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5250842587162513501}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -73995,6 +74364,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5250842587162513501}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -74961,7 +75342,7 @@ Transform:
   - {fileID: 479052188}
   - {fileID: 1993007309}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7790074125070563636
 Transform:
@@ -75078,12 +75459,25 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -0.04, y: 0.35, z: 0.62}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: f43ed54e6588d6649bc8c501190e6a2d,
+    type: 3}
   taskDuration: 3
   progressBarOffset: 0.2
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7991298833222281562}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -75161,6 +75555,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7991298833222281562}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -75723,12 +76129,25 @@ MonoBehaviour:
   taskPoints:
   - taskPosition: {x: -1.0449243, y: 0.11356468, z: -0.55}
     rat: {fileID: 0}
-  <TaskImage>k__BackingField: {fileID: 0}
+  <TaskImage>k__BackingField: {fileID: 21300000, guid: abe9a6bc2f28d6145b3bf20c720802a7,
+    type: 3}
   taskDuration: 20
   progressBarOffset: 0.1
   onUnlockEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: AddTaskToList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8588295076453740436}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActivateEvents:
     m_PersistentCalls:
       m_Calls:
@@ -75769,6 +76188,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1421607988}
+        m_TargetAssemblyTypeName: TaskList, Assembly-CSharp
+        m_MethodName: Complete
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8588295076453740436}
+          m_ObjectArgumentAssemblyTypeName: ProgressTask, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -75916,7 +76347,7 @@ Transform:
   - {fileID: 711212915}
   - {fileID: 1677975663}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9037933597819141162
 GameObject:
