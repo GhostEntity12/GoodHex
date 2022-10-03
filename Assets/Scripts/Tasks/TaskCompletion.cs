@@ -1,16 +1,28 @@
 using System.Linq;
+using UnityEngine;
 
 public class TaskCompletion : BaseTask
 {
 	bool gameComplete = false;
-
+	[SerializeField] TextAsset dialogue;
 
 	protected override void OnUnlock()
 	{
 		if (!gameComplete)
 		{
-			GameManager.Instance.AllTasksComplete();
-			gameComplete = true;
+			if (dialogue)
+			{
+				GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () =>
+				{
+					GameManager.Instance.AllTasksComplete();
+					gameComplete = true;
+				});
+			}
+			else
+			{
+				GameManager.Instance.AllTasksComplete();
+				gameComplete = true;
+			}
 		}
 	}
 
