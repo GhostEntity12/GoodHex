@@ -11,6 +11,7 @@ public class ParticlePauser : ComponentPauser
 		base.Awake();
 		ps = GetComponent<ParticleSystem>();
 	}
+	public void SetActive(bool active) => this.active = active;
 	protected override void Pause(bool paused)
 	{
 		base.Pause(paused);

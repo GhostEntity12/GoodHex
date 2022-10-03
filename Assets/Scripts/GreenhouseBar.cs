@@ -61,7 +61,7 @@ public class GreenhouseBar : MonoBehaviour
 
 	public void TriggerWitchPlantDialogue(TextAsset dialogue)
 	{
-		GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () => SetActive(true));
+		LeanTween.delayedCall(2f, () => GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () => SetActive(true)));
 	}
 
 	public void SetActive(bool active)
