@@ -6,3 +6,5 @@ Witch|Angry|My garden! How? I've only been dead for an hour.
 Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0><sprite="Spr_Emote_Angry" index=0>
 Witch|Angry|Apprentice, it's time to do some gardening!
 Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0><sprite="Spr_Emote_Determined" index=0>
+Witch|Angry|Cut down that horrible weed!
+Apprentice Rat|Angry| <sprite="Spr_Emote_Clippers" index=0><sprite="Spr_Emote_Determined" index=0>

@@ -12,6 +12,8 @@ public class Pickupable : Assignable
 
     private GameObject indicatorSprite;
 
+    [SerializeField] GameObject shadow;
+
     protected new void Start()
     {
         base.Start();
@@ -29,6 +31,7 @@ public class Pickupable : Assignable
         {
             taskPoints[0].rat.Pickup(this);
             TaskState = State.Locked;
+            shadow.SetActive(false);
             if (indicatorSprite != null)
             {
                 indicatorSprite.GetComponent<SpriteRenderer>().enabled = true;

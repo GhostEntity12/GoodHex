@@ -622,6 +622,7 @@ MonoBehaviour:
   idleEnabled: 1
   idleTime: 300
   idleScene: 5
+  idleKey: 293
   idleScreen: 0
 --- !u!1 &1350698464
 GameObject:
@@ -755,7 +756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1401414048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -796,19 +797,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MAIN MENU
-
-'
+  m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
+  m_sharedMaterial: {fileID: -285747238726962164, guid: 3c53a1c73f4f7b84d90555eb872a974c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287709227
+  m_fontColor: {r: 0.16862746, g: 0.2509804, b: 0.5686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74
+  m_fontSize: 83.75
   m_fontSizeBase: 39.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1100,8 +1100,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Thanks for Playing!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
+  m_sharedMaterial: {fileID: -285747238726962164, guid: 3c53a1c73f4f7b84d90555eb872a974c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1125,13 +1126,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 125
-  m_fontSizeBase: 125
+  m_fontSize: 160
+  m_fontSizeBase: 160
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1304,8 +1305,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7a74e9aea87fdf44863661c3989fde3, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 26d8b58b4356edf4595dcc683072e7e5, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1313,7 +1314,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &1854544251
 CanvasRenderer:
   m_ObjectHideFlags: 0
