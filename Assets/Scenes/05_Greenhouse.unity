@@ -70540,7 +70540,7 @@ MonoBehaviour:
   <TaskImage>k__BackingField: {fileID: 21300000, guid: 188333400d7ebf643b54cc37666e07cb,
     type: 3}
   taskDuration: 4
-  progressBarOffset: 0.1
+  progressBarOffset: 0.5
   onUnlockEvents:
     m_PersistentCalls:
       m_Calls:
