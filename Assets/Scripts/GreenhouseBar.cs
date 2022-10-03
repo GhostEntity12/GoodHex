@@ -55,6 +55,7 @@ public class GreenhouseBar : MonoBehaviour
 			indicator.rectTransform.anchoredPosition = new(Mathf.Lerp(buffer / 2, sliderWidth - (buffer / 2), Percentage), 0);
 			vingnetteSun.alpha = Mathf.Clamp01(((value + vignetteHoldPercent) - (1 - vignetteAppearPercent)) * (1 / vignetteAppearPercent));
 			vingnetteWater.alpha = Mathf.Clamp01(-((value - vignetteHoldPercent) - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
+			GameManager.Instance.BGMManager.SetEndMusicStateActive(time < -0.5 || time > 0.5f);
 		}
 	}
 	[ContextMenu("QuickTrigger")]
