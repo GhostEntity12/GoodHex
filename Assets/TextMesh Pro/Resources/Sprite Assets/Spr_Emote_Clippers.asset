@@ -50,15 +50,15 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 388
       m_Height: 400
-      m_HorizontalBearingX: -194
-      m_HorizontalBearingY: 400
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 180
       m_HorizontalAdvance: 388
     m_GlyphRect:
       m_X: 0
       m_Y: 0
       m_Width: 388
       m_Height: 400
-    m_Scale: 1
+    m_Scale: 4
     m_AtlasIndex: 0
     sprite: {fileID: 21300000, guid: 164e5767d2a1eb84089bfca9364003a0, type: 3}
   spriteInfoList: []
