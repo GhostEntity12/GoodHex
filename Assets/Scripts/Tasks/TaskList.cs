@@ -58,7 +58,7 @@ public class TaskList : MonoBehaviour
 		taskDict.Remove(tli.Task);
 		tliQueue.Enqueue(tli);
 		tli.transform.SetAsFirstSibling();
-		gameObject.SetActive(false);
+		tli.gameObject.SetActive(false);
 	}
 
 	public void AddTaskToList(ProgressTask task)
