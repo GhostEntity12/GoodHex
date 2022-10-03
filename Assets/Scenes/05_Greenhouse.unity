@@ -78843,10 +78843,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2066027489691432571, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066027489691432571, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066027489691432571, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9013050229124716801, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
         type: 3}
       propertyPath: m_Name
       value: Cutters
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182009775718106567, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182009775718106567, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182009775718106567, guid: 4cfe4259b8c32cc4ab0e80d446b627f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfe4259b8c32cc4ab0e80d446b627f6, type: 3}
