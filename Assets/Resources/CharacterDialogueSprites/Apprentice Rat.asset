@@ -17,4 +17,4 @@ MonoBehaviour:
   happy: {fileID: 21300000, guid: 4b244eee10c5fa346b8979c2fc86a407, type: 3}
   tired: {fileID: 21300000, guid: 4b244eee10c5fa346b8979c2fc86a407, type: 3}
   bodyBox: {fileID: 21300000, guid: d3a9af1033359344b8656b70c7df2b01, type: 3}
-  nameBox: {fileID: 21300000, guid: d3a9af1033359344b8656b70c7df2b01, type: 3}
+  nameBox: {fileID: 21300000, guid: 26d8b58b4356edf4595dcc683072e7e5, type: 3}
