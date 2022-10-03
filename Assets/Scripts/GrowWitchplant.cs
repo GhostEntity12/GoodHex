@@ -22,4 +22,18 @@ public class GrowWitchplant : MonoBehaviour
 			bar.SetActive(false);
 		}
 	}
+	public void IncrementGrowthState(int count)
+	{
+		state += count;
+		foreach (Animator anim in anims)
+		{
+			anim.SetInteger("GrowthStage", state);
+		}
+
+		if (state == 15)
+		{
+			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
+			bar.SetActive(false);
+		}
+	}
 }

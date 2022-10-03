@@ -67,7 +67,7 @@ public class GameManager : Singleton<GameManager>
 	public void Restart() => LoadSceneManager.LoadScene(0);
 
 	public ProgressBar CreateProgressBar() => ProgressBarManager.CreateProgressBar();
-	public void TriggerEndMusic() => BGMManager.TriggerEndMusic();
+	public void TriggerEndMusic() => BGMManager.SetEndMusicStateActive(false);
 
 	public void AllTasksComplete()
 	{
