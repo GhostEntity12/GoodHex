@@ -85,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1.2725, y: 1.005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4268881973636490337
@@ -171,6 +171,7 @@ MonoBehaviour:
     rat: {fileID: 0}
   <ItemId>k__BackingField: Flytrap
   destinationSprite: {fileID: 0}
+  <SpriteName>k__BackingField: FlyPlantIndicator
 --- !u!65 &5856584987900913930
 BoxCollider:
   m_ObjectHideFlags: 0
