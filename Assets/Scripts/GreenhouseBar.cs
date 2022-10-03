@@ -58,8 +58,6 @@ public class GreenhouseBar : MonoBehaviour
 			GameManager.Instance.BGMManager.SetEndMusicStateActive(time < -0.5 || time > 0.5f);
 		}
 	}
-	[ContextMenu("QuickTrigger")]
-	void test() => SetActive(true);
 
 	public void TriggerWitchPlantDialogue(TextAsset dialogue)
 	{

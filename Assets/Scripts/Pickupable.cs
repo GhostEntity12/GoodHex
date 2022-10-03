@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pickupable : Assignable
 {
@@ -7,22 +8,16 @@ public class Pickupable : Assignable
 
     public Sprite destinationSprite;
 
-    [field: SerializeField]
-    public string SpriteName { get; private set; }
-
-    private GameObject indicatorSprite;
-
     [SerializeField] GameObject shadow;
+    [Space(20), SerializeField]
+    protected UnityEvent onUnlockEvents;
 
     protected new void Start()
     {
         base.Start();
         TaskState = State.Unlocked;
+        onUnlockEvents?.Invoke();
         ResetTaskPositions();
-        if (SpriteName != null)
-        {
-            indicatorSprite = GameObject.Find(SpriteName);
-        }
     }
 
     void Update()
@@ -30,12 +25,9 @@ public class Pickupable : Assignable
         if (taskPoints[0].rat && taskPoints[0].rat.ArrivedAtTask())
         {
             taskPoints[0].rat.Pickup(this);
-            TaskState = State.Locked;
+            TaskState = State.Complete;
+            IsComplete = true;
             shadow.SetActive(false);
-            if (indicatorSprite != null)
-            {
-                indicatorSprite.GetComponent<SpriteRenderer>().enabled = true;
-            }
         }
     }
 }

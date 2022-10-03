@@ -26,7 +26,6 @@ public class TaskListItem : MonoBehaviour
 	{
 		LeanTween.size(transform as RectTransform, Vector3.one * -25, 0.2f).setEaseInBack().setOnComplete(() => {
 			image.sprite = null;
-			Debug.Log(this);
 			list.Deregister(this);
 			});
 	}

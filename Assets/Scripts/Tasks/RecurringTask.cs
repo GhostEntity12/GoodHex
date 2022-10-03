@@ -23,7 +23,7 @@ public class RecurringTask : ProgressTask
 				if (!prerequisitesMet)
 				{
 					// If all required tasks are complete, unlock
-					if ((requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete)) && !RequiresItem) 
+					if (requiredTasks.Length == 0 || requiredTasks.All(t => t.IsComplete)) 
 					{
 						prerequisitesMet = true;
 						OnUnlock();
