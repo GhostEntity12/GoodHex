@@ -8,6 +8,11 @@ public class GrowWitchplant : MonoBehaviour
 	[SerializeField] Animator[] anims;
 	[SerializeField] GreenhouseBar bar;
 	[SerializeField] TextAsset finalDialogue;
+
+	[SerializeField] Renderer[] runes1;
+	[SerializeField] Renderer[] runes2;
+	bool[] activeRunes = new bool[7];
+
 	public void IncrementGrowthState()
 	{
 		state++;
@@ -22,6 +27,7 @@ public class GrowWitchplant : MonoBehaviour
 			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
 			bar.SetActive(false);
 		}
+		UpdateRunes();
 	}
 	public void IncrementGrowthState(int count)
 	{
@@ -36,5 +42,46 @@ public class GrowWitchplant : MonoBehaviour
 			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
 			bar.SetActive(false);
 		}
+		UpdateRunes();
+	}
+
+	void UpdateRunes()
+	{
+		if (state > 14)
+		{
+			ActivateRunes(6);
+		}
+		if (state > 12)
+		{
+			ActivateRunes(5);
+		}
+		if (state > 9)
+		{
+			ActivateRunes(4);
+		}
+		if (state > 7)
+		{
+			ActivateRunes(3);
+		}
+		if (state > 5)
+		{
+			ActivateRunes(2);
+		}
+		if (state > 2)
+		{
+			ActivateRunes(1);
+		}
+		if (state > 0)
+		{
+			ActivateRunes(0);
+		}
+	}
+
+	void ActivateRunes(int index)
+	{
+		runes1[index].material.SetFloat("_Saturation", 1);
+		runes1[index].material.SetFloat("_Intensity", 6);
+		runes2[index].material.SetFloat("_Saturation", 1);
+		runes2[index].material.SetFloat("_Intensity", 6);
 	}
 }
