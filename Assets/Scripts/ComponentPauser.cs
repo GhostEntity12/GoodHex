@@ -10,4 +10,9 @@ public abstract class ComponentPauser : MonoBehaviour
 		GameManager.Pause += Pause;
 	}
 	protected virtual void Pause(bool paused) => this.paused = paused;
+
+	private void OnDestroy()
+	{
+		GameManager.Pause -= Pause;
+	}
 }
