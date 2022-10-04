@@ -246,7 +246,12 @@ public class Reticle : MonoBehaviour
 			}
 			else if (hoveredAssignable && hoveredAssignable is DeliveryTask dt && dt.TaskState == BaseTask.State.Unlocked)
 			{
+				int startRats = GameManager.Instance.RatManager.selectedRats.Count;
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(dt, GameManager.Instance.RatManager.selectedRats.ToArray());
+				if (remainingRats != null && startRats - remainingRats.Count > 0)
+				{
+					particleReleaseTask.Play();
+				}
 				// Clear selected rats
 				ratManager.ClearRats();
 				// Select the rats without tasks

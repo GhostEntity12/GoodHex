@@ -4834,7 +4834,7 @@ GameObject:
   - component: {fileID: 5156618334201632692}
   - component: {fileID: 5156618334201632693}
   - component: {fileID: 5156618334201632690}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: WitchplantSeed
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -5001,7 +5001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164920081815495255}
   - component: {fileID: 1658659870177430845}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

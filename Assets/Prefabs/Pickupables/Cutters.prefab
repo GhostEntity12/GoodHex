@@ -4831,7 +4831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6749607327406200535}
   - component: {fileID: 9182009775718106567}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4918,7 +4918,7 @@ GameObject:
   - component: {fileID: 2066027489691432571}
   - component: {fileID: 2066027489691432570}
   - component: {fileID: 2066027489691432569}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cutters
   m_TagString: Item
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
