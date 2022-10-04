@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 9116655606047955400}
   - {fileID: 9116655606047955401}
   - {fileID: 9116655606047955402}
-  childMusicRampTime: 0.1
+  childMusicRampTime: 5
 --- !u!82 &9116655606047955406
 AudioSource:
   m_ObjectHideFlags: 0
