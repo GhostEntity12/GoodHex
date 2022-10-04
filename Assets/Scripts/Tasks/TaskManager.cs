@@ -28,7 +28,7 @@ public class TaskManager : MonoBehaviour
 	{
 		// Get a list of the available slots
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
-		if (availableSlots.Count == 0) rats.ToList();
+		if (availableSlots.Count == 0) return rats.ToList();
 
 		Rat validRat = rats.FirstOrDefault(r => r.IsHoldingItem && r.heldItem.ItemId == task.TriggerId);
 		if (validRat)
