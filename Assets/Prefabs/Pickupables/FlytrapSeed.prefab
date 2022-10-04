@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 398582653258111251}
   - component: {fileID: 5180447326229882792}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7092845879123275675}
   - component: {fileID: 7092845879123275668}
   - component: {fileID: 7092845879123275669}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: FlytrapSeed
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
