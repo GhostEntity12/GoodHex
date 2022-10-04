@@ -19,7 +19,7 @@ public class GrowWitchplant : MonoBehaviour
 			anim.SetInteger("GrowthStage", state);
 		}
 
-		if (state == 15)
+		if (state >= 15)
 		{
 			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
 			bar.SetActive(false);
@@ -34,7 +34,7 @@ public class GrowWitchplant : MonoBehaviour
 			anim.SetInteger("GrowthStage", state);
 		}
 
-		if (state == 15)
+		if (state >= 15)
 		{
 			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
 			bar.SetActive(false);
