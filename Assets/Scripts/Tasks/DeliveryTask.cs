@@ -99,6 +99,7 @@ public class DeliveryTask : Assignable
 	{
 		base.OnComplete();
 		renderer.enabled = false;
+		col.enabled = false;
 		Highlight(false);
 		TaskState = State.Complete;
 		IsComplete = true;
