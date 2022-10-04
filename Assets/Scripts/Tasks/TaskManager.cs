@@ -54,12 +54,23 @@ public class TaskManager : MonoBehaviour
 			.Except(RatsOnTask(task)) // Exclude rats already on the task or holding items
 			.OrderBy(r => Vector3.Distance(r.transform.position, task.transform.position)) // order by distance (ascending)
 		);
+		List<Rat> heldItemRats = new();
 		// While there are both rats and slots available, assign
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
 			Rat r = ratQueue.Dequeue();
-			RegisterRat(task, availableSlots.Dequeue(), r);
+			if (!r.IsHoldingItem)
+			{
+				RegisterRat(task, availableSlots.Dequeue(), r);
+			}
+			else
+			{
+				heldItemRats.Add(r);
+			}
+			//RegisterRat(task, availableSlots.Dequeue(), r);
 		}
+		List<Rat> unassigned = ratQueue.ToList();
+		unassigned.AddRange(heldItemRats);
 		return ratQueue.ToList();
 	}
 
