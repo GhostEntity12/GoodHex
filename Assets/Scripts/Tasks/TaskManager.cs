@@ -78,6 +78,7 @@ public class TaskManager : MonoBehaviour
 	{
 		foreach (Rat rat in rats)
 		{
+			if (ratTasks.ContainsKey(rat) && ratTasks[rat] == warp) continue;
 			RegisterRat(warp, warp.TaskPoints[0], rat);
 		}
 	}
