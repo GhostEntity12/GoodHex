@@ -10,19 +10,8 @@ public class TaskCompletion : BaseTask
 	{
 		if (!gameComplete)
 		{
-			if (dialogue)
-			{
-				GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () =>
-				{
-					GameManager.Instance.AllTasksComplete();
-					gameComplete = true;
-				});
-			}
-			else
-			{
-				GameManager.Instance.AllTasksComplete();
-				gameComplete = true;
-			}
+			GameManager.Instance.AllTasksComplete();
+			gameComplete = true;
 		}
 	}
 
