@@ -81,11 +81,7 @@ public class StandardTask : ProgressTask
 		col.enabled = true;
 		progressBar.SetActive(true);
 		progressBar.SetProgress(progress);
-		progressBar
-			.CanvasScaleUpdate(GameManager
-				.Instance
-				.ProgressBarManager
-				.CanvasScaleCache);
+		progressBar.CanvasScaleUpdate(GameManager.Instance.ProgressBarManager.CanvasScaleCache);
 		TaskState = State.Unlocked;
 		progress = 0;
 		onUnlockEvents?.Invoke();

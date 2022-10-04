@@ -48,7 +48,11 @@ public abstract class ProgressTask : Assignable
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 		base.Start();
 	}
-	public void UpdateBar() => progressBar.UpdateTaskPos(this);
+	public void UpdateBar()
+	{
+		progressBar.UpdateTaskPos(this);
+		progressBar.CanvasScaleUpdate(GameManager.Instance.ProgressBarManager.CanvasScaleCache);
+	}
 
 	public void Lock(bool locked)
 	{
