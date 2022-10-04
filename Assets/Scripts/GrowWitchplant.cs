@@ -14,7 +14,6 @@ public class GrowWitchplant : MonoBehaviour
 	public void IncrementGrowthState()
 	{
 		state++;
-		Debug.Log("State is now " + state);
 		foreach (Animator anim in anims)
 		{
 			anim.SetInteger("GrowthStage", state);

@@ -10,7 +10,6 @@ public class SpawnPickupable : MonoBehaviour
 
 	public void Spawn()
 	{
-		Debug.Log("Spawning");
 		BaseTask t = Instantiate(itemToSpawn, spawner.transform.position, Quaternion.identity).GetComponent<BaseTask>();
 		foreach (Assignable destination in destinations)
 		{
