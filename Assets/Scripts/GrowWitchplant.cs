@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GrowWitchplant : MonoBehaviour
@@ -9,8 +7,8 @@ public class GrowWitchplant : MonoBehaviour
 	[SerializeField] GreenhouseBar bar;
 	[SerializeField] TextAsset finalDialogue;
 
-	[SerializeField] Renderer[] runes1;
-	[SerializeField] Renderer[] runes2;
+	[SerializeField] Rune[] runes1;
+	[SerializeField] Rune[] runes2;
 	bool[] activeRunes = new bool[7];
 
 	public void IncrementGrowthState()
@@ -79,9 +77,7 @@ public class GrowWitchplant : MonoBehaviour
 
 	void ActivateRunes(int index)
 	{
-		runes1[index].material.SetFloat("_Saturation", 1);
-		runes1[index].material.SetFloat("_Intensity", 6);
-		runes2[index].material.SetFloat("_Saturation", 1);
-		runes2[index].material.SetFloat("_Intensity", 6);
+		runes1[index].Enable();
+		runes2[index].Enable();
 	}
 }

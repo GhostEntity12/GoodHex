@@ -8,6 +8,7 @@ public class RatWarp : Assignable
 	{
 		base.Start();
 		TaskState = State.Unlocked;
+		OnUnlock();
 	}
 
 	void Update()

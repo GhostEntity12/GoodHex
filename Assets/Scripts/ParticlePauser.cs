@@ -5,31 +5,22 @@ using UnityEngine;
 public class ParticlePauser : ComponentPauser
 {
 	ParticleSystem ps;
-	bool active;
 	protected override void Awake()
 	{
 		base.Awake();
 		ps = GetComponent<ParticleSystem>();
 	}
-	public void SetActive(bool active) => this.active = active;
 	protected override void Pause(bool paused)
 	{
 		base.Pause(paused);
-		if (paused)
-		{
-			active = ps.isPlaying;
-		}
 
-		if (active)
+		if (paused && ps.isPlaying)
 		{
-			if (paused)
-			{
-				ps.Pause();
-			}
-			else
-			{
-				ps.Play();
-			}
+			ps.Pause();
+		}
+		else if (!paused && ps.isPaused)
+		{
+			ps.Play();
 		}
 	}
 }

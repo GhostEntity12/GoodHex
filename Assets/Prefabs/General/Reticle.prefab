@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4688589039889342362}
   - component: {fileID: 5157395705313191925}
   - component: {fileID: 7908316076109033904}
+  - component: {fileID: 3220539998048699659}
   m_Layer: 0
   m_Name: EnergyReleaseTask
   m_TagString: Untagged
@@ -4871,6 +4872,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3220539998048699659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263211308102799000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f665cec76cd02e49ae26b0738973433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3282271370372319046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,6 +4895,7 @@ GameObject:
   - component: {fileID: 2241738642815266904}
   - component: {fileID: 6251238294695162290}
   - component: {fileID: 3780111024880326613}
+  - component: {fileID: 7828483055868699745}
   m_Layer: 0
   m_Name: EnergyDrawIn
   m_TagString: Untagged
@@ -9693,6 +9707,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7828483055868699745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282271370372319046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f665cec76cd02e49ae26b0738973433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4485944176701169688
 GameObject:
   m_ObjectHideFlags: 0
@@ -9704,6 +9730,7 @@ GameObject:
   - component: {fileID: 9080522207341813085}
   - component: {fileID: 855998565861113581}
   - component: {fileID: 6037641795142431080}
+  - component: {fileID: 1617722658726966567}
   m_Layer: 0
   m_Name: EnergyRelease
   m_TagString: Untagged
@@ -14564,6 +14591,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1617722658726966567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485944176701169688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f665cec76cd02e49ae26b0738973433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6281143918352306097
 GameObject:
   m_ObjectHideFlags: 0

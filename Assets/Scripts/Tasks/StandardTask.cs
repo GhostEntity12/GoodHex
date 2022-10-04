@@ -21,6 +21,11 @@ public class StandardTask : ProgressTask
 				}
 				break;
 			case State.Unlocked:
+				if (locked)
+				{
+					progressBar.SetActive(!locked && (TaskState == State.Unlocked));
+					return;
+				}
 				// Set the number of displayed rats
 				progressBar.SetRats(RatsInPlace);
 
