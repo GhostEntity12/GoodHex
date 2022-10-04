@@ -135,9 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTasks: []
   taskPoints:
-  - taskPosition: {x: -5.114769, y: 0.08698022, z: -0.026857138}
+  - taskPosition: {x: -5.114769, y: 0.08698022, z: 1.1}
     rat: {fileID: 0}
-  sparkle: {fileID: 0}
+  sparkle: {fileID: 1054233750625092709}
   <ItemId>k__BackingField: FlytrapSeed
   destinationSprite: {fileID: 21300000, guid: e7f9a9f4dadaf8a4db2ca5ca5557524a, type: 3}
   shadow: {fileID: 1480771672878527908}
