@@ -593,7 +593,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -345, y: 0}
-  m_SizeDelta: {x: 520.1643, y: 798.9764}
+  m_SizeDelta: {x: 520.1643, y: 952.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975674928
 MonoBehaviour:
@@ -616,10 +616,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Producer:\n\nArt Team:\n\n\nProgramming Team:\n\n\n\nDesign Team:\n\n\nTechnical
-    Manager: \n\nComposer:\n\nSpecial Thanks:"
+    Manager: \n\nComposer:"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7a933b53d1f867498933b5f9b278c8c, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0669def59c4da1d4f8c22359b9f71803, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d52cd272a34d85e48aa09f3a2fb9994e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -643,15 +643,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 33
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -729,7 +729,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 115.72978, y: 0}
-  m_SizeDelta: {x: 328.6436, y: 798.9764}
+  m_SizeDelta: {x: 328.6436, y: 952.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002517088
 MonoBehaviour:
@@ -775,13 +775,10 @@ MonoBehaviour:
     Aaron P
 
 
-    Jordan M
-
-
-    You! :)'
+    Jordan M'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7a933b53d1f867498933b5f9b278c8c, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0669def59c4da1d4f8c22359b9f71803, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d52cd272a34d85e48aa09f3a2fb9994e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -805,15 +802,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 33
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
