@@ -7,14 +7,22 @@ public class Pickupable : Assignable
 
     public Sprite destinationSprite;
 
-    [SerializeField]
-    public GameObject indicatorSprite;
+    [field: SerializeField]
+    public string SpriteName { get; private set; }
+
+    private GameObject indicatorSprite;
+
+    [SerializeField] GameObject shadow;
 
     protected new void Start()
     {
         base.Start();
         TaskState = State.Unlocked;
         ResetTaskPositions();
+        if (SpriteName != null)
+        {
+            indicatorSprite = GameObject.Find(SpriteName);
+        }
     }
 
     void Update()
@@ -23,9 +31,10 @@ public class Pickupable : Assignable
         {
             taskPoints[0].rat.Pickup(this);
             TaskState = State.Locked;
+            shadow.SetActive(false);
             if (indicatorSprite != null)
             {
-                indicatorSprite.SetActive(true);
+                indicatorSprite.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }

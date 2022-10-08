@@ -14708,8 +14708,8 @@ MonoBehaviour:
   rotationSpeed: 360
   rotationAngle: 30
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  ratsColor: {r: 1, g: 0.4575472, b: 0.8849465, a: 1}
-  taskColor: {r: 0.47803786, g: 0.8, b: 0.42745098, a: 1}
+  ratsColor: {r: 0.990566, g: 0.68592024, b: 0.9265462, a: 1}
+  taskColor: {r: 0.20286822, g: 0.7735849, b: 0.11238872, a: 1}
   colorChangeSpeed: 3
   requiredHoldTime: 0.35
 --- !u!82 &7461494828251755575

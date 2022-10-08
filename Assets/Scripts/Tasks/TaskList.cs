@@ -50,15 +50,15 @@ public class TaskList : MonoBehaviour
 			tli.transform.SetAsLastSibling();
 			taskDict.Add(task, tli);
 			tli.gameObject.SetActive(true);
-			tli.Populate(task.TaskImage);
+			tli.Populate(task);
 		}
 	}
 	public void Deregister(TaskListItem tli)
 	{
+		taskDict.Remove(tli.Task);
 		tliQueue.Enqueue(tli);
 		tli.transform.SetAsFirstSibling();
-		taskDict.Remove(tli.Task);
-		gameObject.SetActive(false);
+		tli.gameObject.SetActive(false);
 	}
 
 	public void AddTaskToList(ProgressTask task)
