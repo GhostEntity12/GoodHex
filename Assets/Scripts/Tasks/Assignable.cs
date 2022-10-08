@@ -11,6 +11,8 @@ public class Assignable : BaseTask
 
 	protected Renderer r;
 
+	public ParticleSystem sparkle;
+
 	new protected void Start()
 	{
 		r = GetComponent<Renderer>();
@@ -64,8 +66,14 @@ public class Assignable : BaseTask
 	}
 
 	protected override void OnActivate() { }
-	protected override void OnComplete() { }
-	protected override void OnUnlock() { }
+	protected override void OnComplete()
+	{
+		sparkle.Stop();
+	}
+	protected override void OnUnlock()
+	{
+		sparkle.Play();
+	}
 }
 
 [System.Serializable]

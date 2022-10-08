@@ -35,4 +35,9 @@ public abstract class BaseTask : MonoBehaviour
 			OnUnlock();
 		}
 	}
+
+	public void SetRequiredTasks(params BaseTask[] tasks)
+	{
+		requiredTasks = tasks;
+	}
 }

@@ -20,23 +20,39 @@ public class BGMManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		// Set the children's timesamples to the parent's timesamples
+		foreach (AudioSource child in children)
+		{
+			// Handling the problem that the parent is ever so slightly longer than some of the children
+			child.timeSamples = Mathf.Min(parent.timeSamples, child.clip.samples - 1);
+		}
+
 		if (endMusicActive)
-		{   
-			// Set the children's timesamples to the parent's timesamples
-			foreach (AudioSource child in children)
-			{
-				// Handling the problem that the parent is ever so slightly longer than some of the children
-				child.timeSamples = Mathf.Min(parent.timeSamples, child.clip.samples - 1);
-			}
+		{
 
 			// Fading in the volume of the children
 			if (children[0].volume < parent.volume)
-			{               
-				time += Time.deltaTime;
+			{
+				time = Mathf.Clamp01(time + (Time.deltaTime / childMusicRampTime));
 
 				foreach (AudioSource child in children)
 				{
-					child.volume = parent.volume * childMusicRampTime * time;
+					child.volume = time;
+					child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
+				}
+			}
+		}
+		else
+		{
+
+			// Fading in the volume of the children
+			if (children[0].volume > 0)
+			{
+				time = Mathf.Clamp01(time - (Time.deltaTime / childMusicRampTime));
+
+				foreach (AudioSource child in children)
+				{
+					child.volume = time;
 					child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
 				}
 			}
@@ -51,6 +67,8 @@ public class BGMManager : MonoBehaviour
 		}
 		parent.Stop();
 	}
-
-	public void TriggerEndMusic() => endMusicActive = true;
+	public void SetEndMusicStateActive(bool active)
+	{
+		endMusicActive = active;
+	}
 }

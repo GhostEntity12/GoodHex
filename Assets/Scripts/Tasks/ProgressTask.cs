@@ -30,10 +30,10 @@ public abstract class ProgressTask : Assignable
 	protected UnityEvent onDeactivateEvents;
 	[Space(20), SerializeField]
 	protected UnityEvent onCompleteEvents;
+	[Space(20), SerializeField]
+	protected UnityEvent onLockedUnlockEvents;
 
 	protected int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask()).Count();
-	[field: SerializeField] public bool RequiresItem { get; protected set; }
-	[field: SerializeField] public string TriggerId { get; private set; }
 	[SerializeField] public GameObject taskSprite;
 
 	protected Collider col;
@@ -50,7 +50,11 @@ public abstract class ProgressTask : Assignable
 		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
 		base.Start();
 	}
-	public void UpdateBar() => progressBar.UpdateTaskPos(this);
+	public void UpdateBar()
+	{
+		progressBar.UpdateTaskPos(this);
+		progressBar.CanvasScaleUpdate(GameManager.Instance.ProgressBarManager.CanvasScaleCache);
+	}
 
 	public void Lock(bool locked)
 	{
@@ -58,5 +62,10 @@ public abstract class ProgressTask : Assignable
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 		progressBar.SetActive(!locked && (TaskState == State.Unlocked));
 		progress = 0;
+
+		if (!locked)
+		{
+			onLockedUnlockEvents?.Invoke();
+		}
 	}
 }

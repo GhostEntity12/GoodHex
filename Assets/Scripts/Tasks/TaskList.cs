@@ -8,12 +8,14 @@ public class TaskList : MonoBehaviour
 
 	Dictionary<ProgressTask, TaskListItem> taskDict = new();
 	Queue<ProgressTask> taskQueue = new();
-	Queue<TaskListItem> tliQueue;
+	Queue<TaskListItem> tliQueue = new();
 
 	[SerializeField] TweenedElement listObject;
 	[SerializeField] TweenedElement revealObject;
 
 	bool paused;
+	bool isDown;
+	bool animDone = true;
 
 	private void Start()
 	{
@@ -32,6 +34,17 @@ public class TaskList : MonoBehaviour
 		if (taskQueue.Count > 0 && tliQueue.Count > 0)
 		{
 			Register(taskQueue.Dequeue());
+		}
+		if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			if (isDown)
+			{
+				RaiseUp();
+			}
+			else
+			{
+				DropDown();
+			}
 		}
 	}
 
@@ -73,18 +86,22 @@ public class TaskList : MonoBehaviour
 	[ContextMenu("In")]
 	public void DropDown()
 	{
-		if (paused) return;
+		if (paused || !animDone) return;
+		animDone = false;
+		isDown = true;
 		revealObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
-			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutBack, 0.4f),
+			listObject.SlideElement(TweenedElement.ScreenState.Onscreen, () => animDone = true, LeanTweenType.easeOutBack, 0.4f),
 			LeanTweenType.easeOutCubic, 0.2f);
 	}
 
 	[ContextMenu("Out")]
 	public void RaiseUp()
 	{
-		if (paused) return;
+		if (paused || !animDone) return;
+		animDone = false;
+		isDown = false;
 		listObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
-			revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, null, LeanTweenType.easeOutCubic, 0.2f),
+			revealObject.SlideElement(TweenedElement.ScreenState.Onscreen, () => animDone = true, LeanTweenType.easeOutCubic, 0.2f),
 		LeanTweenType.easeInBack, 0.4f);
 	}
 }

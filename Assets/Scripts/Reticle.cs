@@ -226,11 +226,11 @@ public class Reticle : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(1))
 		{
-			if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Unlocked) // Assign to task
+			if (hoveredAssignable && hoveredAssignable is not DeliveryTask && hoveredAssignable.TaskState == BaseTask.State.Unlocked) // Assign to task
 			{
 				int startRats = GameManager.Instance.RatManager.selectedRats.Count;
 				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(hoveredAssignable, ratManager.selectedRats.ToArray());
-				if (startRats - remainingRats.Count > 0)
+				if (remainingRats != null && startRats - remainingRats.Count > 0)
 				{
 					particleReleaseTask.Play();
 				}
@@ -244,27 +244,21 @@ public class Reticle : MonoBehaviour
 				anim.SetBool("Active", false);
 				GameManager.Instance.Highlighter.StopHighlight();
 			}
-			else if (hoveredAssignable && hoveredAssignable.TaskState == BaseTask.State.Locked)
+			else if (hoveredAssignable && hoveredAssignable is DeliveryTask dt && dt.TaskState == BaseTask.State.Unlocked)
 			{
-				if (hoveredAssignable is ProgressTask pt && pt.RequiresItem)
+				int startRats = GameManager.Instance.RatManager.selectedRats.Count;
+				List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(dt, GameManager.Instance.RatManager.selectedRats.ToArray());
+				if (remainingRats != null && startRats - remainingRats.Count > 0)
 				{
-					foreach (Rat r in GameManager.Instance.RatManager.selectedRats)
-					{
-						if (r.IsHoldingItem && r.heldItem.ItemId == pt.TriggerId)
-						{
-							particleReleaseTask.Play();
-							List<Rat> remainingRats = GameManager.Instance.TaskManager.AssignRats(pt, r);
-							// Clear selected rats
-							ratManager.ClearRats();
-							// Select the rats without tasks
-							ratManager.SelectRats(remainingRats);
-							break;
-						}
-					}
-
+					particleReleaseTask.Play();
 				}
+				// Clear selected rats
+				ratManager.ClearRats();
+				// Select the rats without tasks
+				ratManager.SelectRats(remainingRats);
 				ratManager.SetRatDestinations(transform.position);
 				ratManager.ClearRats();
+				GameManager.Instance.Highlighter.StopHighlight();
 			}
 			else if (Physics.Raycast(c.transform.position, reticlePosition - c.transform.position, out RaycastHit hit, Mathf.Infinity, 1 << 8) && hit.normal.y > 0)
 			{

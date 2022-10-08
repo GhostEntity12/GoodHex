@@ -2,7 +2,7 @@ Witch|Neutral|*mumble mumble*
 Apprentice Rat|Neutral|......
 Witch|Neutral|*mumble mumble mumble*
 Witch|Neutral|...and it's possible we could try growing me a new body from those seeds I bought-
-Witch|Angry|My garden! How? I've only been dead for an hour.
+Witch|Surprised|My garden! How? I've only been dead for an hour.
 Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0><sprite="Spr_Emote_Angry" index=0>
 Witch|Angry|Apprentice, it's time to do some gardening!
 Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0><sprite="Spr_Emote_Determined" index=0>

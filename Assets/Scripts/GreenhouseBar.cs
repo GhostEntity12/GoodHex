@@ -55,14 +55,13 @@ public class GreenhouseBar : MonoBehaviour
 			indicator.rectTransform.anchoredPosition = new(Mathf.Lerp(buffer / 2, sliderWidth - (buffer / 2), Percentage), 0);
 			vingnetteSun.alpha = Mathf.Clamp01(((value + vignetteHoldPercent) - (1 - vignetteAppearPercent)) * (1 / vignetteAppearPercent));
 			vingnetteWater.alpha = Mathf.Clamp01(-((value - vignetteHoldPercent) - (-1 + vignetteAppearPercent)) * (1 / vignetteAppearPercent));
+			GameManager.Instance.BGMManager.SetEndMusicStateActive(value < -0.5 || value > 0.5f);
 		}
 	}
-	[ContextMenu("QuickTrigger")]
-	void test() => SetActive(true);
 
 	public void TriggerWitchPlantDialogue(TextAsset dialogue)
 	{
-		GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () => SetActive(true));
+		LeanTween.delayedCall(2f, () => GameManager.Instance.DialogueManager.QueueDialogue(dialogue, onEndAction: () => SetActive(true)));
 	}
 
 	public void SetActive(bool active)

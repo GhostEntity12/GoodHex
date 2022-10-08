@@ -8,6 +8,7 @@ public class RatWarp : Assignable
 	{
 		base.Start();
 		TaskState = State.Unlocked;
+		OnUnlock();
 	}
 
 	void Update()
@@ -29,7 +30,7 @@ public class RatWarp : Assignable
 		}
 	}
 
-	protected override void OnActivate() { }
-	protected override void OnComplete() { }
-	protected override void OnUnlock() { }
+	protected override void OnActivate() { base.OnActivate(); }
+	protected override void OnComplete() { base.OnComplete(); }
+	protected override void OnUnlock() { base.OnUnlock(); }
 }

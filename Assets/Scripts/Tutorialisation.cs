@@ -67,16 +67,16 @@ public class Tutorialisation : MonoBehaviour
 				{
 					case InMovementState.Select:
 						mouseDownPrompts[0].transform.position = GameManager.Instance.RatManager.allRats[0].transform.position + Vector3.up * promptOffset;
-						holdText[0].enabled = true;
+						holdText[0].text = "Select\n)Hold(";
 						if (GameManager.Instance.RatManager.selectedRats.Count > 0)
 						{
-							movementState = InMovementState.Move;
 							r = GameManager.Instance.RatManager.selectedRats[0];
 							mouseDownRenderers[0].sprite = rightMouse;
-							holdText[0].enabled = false;
+							movementState = InMovementState.Move;
 						}
 						break;
 					case InMovementState.Move:
+						holdText[0].text = "Move";
 						mouseDownPrompts[0].transform.position = firstMoveSpherePos.position + Vector3.up * promptOffset;
 						if (r && !r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
 						{
@@ -85,8 +85,8 @@ public class Tutorialisation : MonoBehaviour
 						}
 						break;
 					case InMovementState.Deselect:
+						holdText[0].text = "Deselect";
 						mouseDownPrompts[0].transform.position = deselectPromptPosition.position + Vector3.up * promptOffset;
-						holdText[0].enabled = false;
 						if (GameManager.Instance.RatManager.selectedRats.Count == 0)
 						{
 							Rat r = GameManager.Instance.RatManager.SpawnRats(mouseHole.position)[0];
@@ -94,8 +94,6 @@ public class Tutorialisation : MonoBehaviour
 							r.SetDestination(mouseHoleExit.position);
 							dummy.SetState(BaseTask.State.Complete);
 							mouseDownPrompts[1].gameObject.SetActive(true);
-							holdText[0].enabled = true;
-							holdText[1].enabled = true;
 							IncrementState();
 						}
 						break;
@@ -106,8 +104,7 @@ public class Tutorialisation : MonoBehaviour
 			case TutorialState.MovementTask:
 				if (GameManager.Instance.RatManager.selectedRats.Count == 2)
 				{
-					holdText[0].enabled = false;
-					holdText[1].enabled = false;
+					holdText[1].text = "Assign";
 					mouseDownPrompts[0].gameObject.SetActive(false);
 					mouseDownPrompts[1].gameObject.SetActive(true);
 					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * (promptOffset + 0.1f);
@@ -121,6 +118,7 @@ public class Tutorialisation : MonoBehaviour
 							!GameManager.Instance.RatManager.selectedRats.Contains(GameManager.Instance.RatManager.allRats[i]) &&
 							!GameManager.Instance.RatManager.allRats[i].AssignedToTask;
 
+						holdText[i].text = "Select\n)Hold(";
 						mouseDownPrompts[i].gameObject.SetActive(showPrompt);
 						if (showPrompt)
 						{
@@ -136,12 +134,11 @@ public class Tutorialisation : MonoBehaviour
 				}
 				break;
 			case TutorialState.Task:
-				holdText[0].enabled = false;
-				holdText[1].enabled = false;
+				holdText[0].text = "Assign";
 				mouseDownPrompts[0].gameObject.SetActive(true);
 				mouseDownRenderers[0].sprite = rightMouse;
 				mouseDownPrompts[1].gameObject.SetActive(false);
-				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + 0.1f) + Vector3.right * 0.5f;
+				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + 0.2f) + Vector3.right * 0.25f;
 				break;
 			default:
 				break;

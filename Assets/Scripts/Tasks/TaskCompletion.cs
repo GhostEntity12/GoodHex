@@ -1,9 +1,10 @@
 using System.Linq;
+using UnityEngine;
 
 public class TaskCompletion : BaseTask
 {
 	bool gameComplete = false;
-
+	[SerializeField] TextAsset dialogue;
 
 	protected override void OnUnlock()
 	{

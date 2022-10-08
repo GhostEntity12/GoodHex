@@ -10,6 +10,8 @@ public class TaskManager : MonoBehaviour
 	{
 		switch (assignable)
 		{
+			case DeliveryTask dt:
+				return new();
 			case ProgressTask pt:
 				return AssignRats(pt, rats);
 			case RatWarp rw:
@@ -20,6 +22,23 @@ public class TaskManager : MonoBehaviour
 			default:
 				return rats.ToList();
 		}
+	}
+
+	public List<Rat> AssignRats(DeliveryTask task, params Rat[] rats)
+	{
+		// Get a list of the available slots
+		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
+		if (availableSlots.Count == 0) return rats.ToList();
+
+		Rat validRat = rats.FirstOrDefault(r => r.IsHoldingItem && r.heldItem.ItemId == task.TriggerId);
+		if (validRat)
+		{
+			RegisterRat(task, availableSlots.Dequeue(), validRat);
+			List<Rat> ratList = rats.ToList();
+			ratList.Remove(validRat);
+			return ratList;
+		}
+		else return rats.ToList();
 	}
 
 	public List<Rat> AssignRats(ProgressTask task, params Rat[] rats)
@@ -40,7 +59,7 @@ public class TaskManager : MonoBehaviour
 		while (availableSlots.Count > 0 && ratQueue.Count > 0)
 		{
 			Rat r = ratQueue.Dequeue();
-			if (!r.IsHoldingItem || (r.heldItem.ItemId == task.TriggerId))
+			if (!r.IsHoldingItem)
 			{
 				RegisterRat(task, availableSlots.Dequeue(), r);
 			}
@@ -48,16 +67,18 @@ public class TaskManager : MonoBehaviour
 			{
 				heldItemRats.Add(r);
 			}
+			//RegisterRat(task, availableSlots.Dequeue(), r);
 		}
 		List<Rat> unassigned = ratQueue.ToList();
 		unassigned.AddRange(heldItemRats);
-		return unassigned;
+		return ratQueue.ToList();
 	}
 
 	public void AssignRats(RatWarp warp, params Rat[] rats)
 	{
 		foreach (Rat rat in rats)
 		{
+			if (ratTasks.ContainsKey(rat) && ratTasks[rat] == warp) continue;
 			RegisterRat(warp, warp.TaskPoints[0], rat);
 		}
 	}
@@ -123,11 +144,11 @@ public class TaskManager : MonoBehaviour
 		{
 			rat.SetEmote(RatEmotes.Emotes.Idea);
 		}
-
-		if (Random.value > 0.75f)
+		else if (Random.value < 0.75f)
 		{
 			rat.SetEmote(RatEmotes.Emotes.Angry);
 		}
+
 		if (ratTasks.ContainsKey(rat) && task != ratTasks[rat])
 		{
 			UnassignRats(rat);
@@ -136,7 +157,7 @@ public class TaskManager : MonoBehaviour
 		// Register to dictionary
 		ratTasks.Add(rat, task);
 
-		if (task is ProgressTask || task is Pickupable)
+		if (task is ProgressTask or Pickupable or DeliveryTask)
 		{
 			// Assign to slot
 			slot.rat = rat;
@@ -173,6 +194,7 @@ public class TaskManager : MonoBehaviour
 				RatWarp rw => rw.TaskPoints[0].taskPosition,
 				ProgressTask pt => GetTaskPoint(r).taskPosition,
 				Pickupable p => GetTaskPoint(r).taskPosition,
+				DeliveryTask dt => GetTaskPoint(r).taskPosition,
 				_ => throw new System.Exception("Unexpected type")
 			};
 			return Vector3.Distance(r.transform.position, point);

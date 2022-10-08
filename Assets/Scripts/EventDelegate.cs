@@ -7,5 +7,5 @@ using UnityEngine.Events;
 public class EventDelegate : MonoBehaviour
 {
     [SerializeField] UnityEvent e;
-    public void Invoke() => e?.Invoke();
+    public void InvokeEvents() => e?.Invoke();
 }

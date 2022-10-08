@@ -706,7 +706,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1314446965314980678}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -742,18 +742,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &506401291 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1314446964944771405, guid: 8d134603935d37a4ea09da60349ce12d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1314446965314980678}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &575216384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +989,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &748748489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1391
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 685390268341143684, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933461796861011098, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700349638139139103, guid: c98919fc0cae94a4e9fd956326ad8e46,
+        type: 3}
+      propertyPath: m_Name
+      value: Rat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c98919fc0cae94a4e9fd956326ad8e46, type: 3}
 --- !u!1001 &774340494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1525,12 +1587,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 5
-  slider: {fileID: 506401291}
+  slider:
+    <rectTransform>k__BackingField: {fileID: 0}
   indicator: {fileID: 354146029}
   vingnetteWater: {fileID: 0}
   vingnetteSun: {fileID: 0}
   buffer: 20
   vignetteAppearPercent: 0.3
+  vignetteHoldPercent: 0.2
 --- !u!4 &1049134696
 Transform:
   m_ObjectHideFlags: 0
