@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2178948786866511387}
   - component: {fileID: 2178948786866511386}
   - component: {fileID: 6527159874632050681}
+  - component: {fileID: 7053297254355901622}
   m_Layer: 5
   m_Name: Canvas_ProgressBars
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBarPrefab: {fileID: 8292597689069479348, guid: f321877fdbfe7784183e34eca868ed53,
     type: 3}
+--- !u!225 &7053297254355901622
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178948786866511381}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
