@@ -168,6 +168,7 @@ public class Rat : MonoBehaviour
         Destroy(gameObject);
         // Leave corpse?
         //Invoke("Remove", pauseTime);
+        GameManager.Instance?.Scorer.AddDeath();
     }
 
     public void Select()

@@ -12,6 +12,7 @@ public class Assignable : BaseTask
 	protected Renderer r;
 
 	public ParticleSystem sparkle;
+	[SerializeField] int taskValue;
 
 	new protected void Start()
 	{
@@ -69,6 +70,7 @@ public class Assignable : BaseTask
 	protected override void OnComplete()
 	{
 		sparkle.Stop();
+		GameManager.Instance.Scorer?.AddTask(taskValue);
 	}
 	protected override void OnUnlock()
 	{
