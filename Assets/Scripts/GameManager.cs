@@ -44,6 +44,7 @@ public class GameManager : Singleton<GameManager>
 	public DialogueManager DialogueManager { get; private set; }
 	public Highlighter Highlighter { get; private set; }
 	public BGMManager BGMManager { get; private set; }
+	public Scorer Scorer { get; private set; }
 
 	public Camera mainCamera;
 	[Header("Prefabs")]
@@ -72,6 +73,11 @@ public class GameManager : Singleton<GameManager>
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
+		Scorer.MarkLevelComplete();
+		if (Scorer)
+		{
+			Debug.Log($"Final score: {Scorer.GetFinalScore()} stars");
+		}
 		BGMManager.StopAllTracks();
 		levelMenus.TriggerVictoryScreen();
 	}
@@ -99,6 +105,7 @@ public class GameManager : Singleton<GameManager>
 		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
 		DialogueManager = FindObjectOfType<DialogueManager>();
 		Highlighter = Instantiate(highlighterPrefab);
+		Scorer = FindObjectOfType<Scorer>();
 	}
 
 	void OnDisable() => SceneManager.sceneLoaded -= OnLoadNewScene;

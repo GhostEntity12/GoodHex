@@ -15,6 +15,7 @@ public class DialogueManager : Singleton<DialogueManager>
 	public bool DialogueActive { get; private set; }
 	bool isDisplayingText;
 	IEnumerator displayDialogueCoroutine;
+	bool doingAnimation;
 
 	[SerializeField, Tooltip("The post processing volume that blurs the background")] Volume blur;
 
@@ -305,7 +306,7 @@ public class DialogueManager : Singleton<DialogueManager>
 			skipDialogueDisplayActive = !skipDialogueDisplayActive;
 			return;
 		}
-		if (skipDialogueDisplayActive) return;
+		if (skipDialogueDisplayActive || doingAnimation) return;
 
 		if (GetAnyKeyDown(ProgressionKeys) && DialogueActive) // If enter is pressed and the textboxes are visible
 		{
@@ -459,9 +460,10 @@ public class DialogueManager : Singleton<DialogueManager>
 	/// <param name="uiData"></param>
 	public void SwapDialogue(CharacterPortraitContainer character)
 	{
+		doingAnimation = true;
 		dialogueUI.SlideElement(TweenedElement.ScreenState.Offscreen,
 			() => LoadDialogueSkin(character.bodyBox, character.nameBox,
-				() => dialogueUI.SlideElement(TweenedElement.ScreenState.Onscreen)));
+				() => dialogueUI.SlideElement(TweenedElement.ScreenState.Onscreen, () => doingAnimation = false))); 
 	}
 
 	/// <summary>

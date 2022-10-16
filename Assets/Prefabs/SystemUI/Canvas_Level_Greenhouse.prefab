@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 1294357490594793616}
   - component: {fileID: 2275422255647814960}
   m_Layer: 5
-  m_Name: Camera_swap
+  m_Name: SwapCameraButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,11 +679,11 @@ RectTransform:
   m_Father: {fileID: 1314446963943414703}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30, y: 50}
-  m_SizeDelta: {x: 300, y: 250}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 300, y: 187.8}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &1465226082311650450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3a9af1033359344b8656b70c7df2b01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c489a15223a90104b9d42cf7322588ce, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3.5
+  m_PixelsPerUnitMultiplier: 4
 --- !u!114 &2275422255647814960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1722932367487777491}
   - component: {fileID: 3560466194687116310}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: SwapButtonImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,10 +811,10 @@ RectTransform:
   m_Father: {fileID: 1376622714855249244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -18.2}
-  m_SizeDelta: {x: -60, y: -100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 220.581, y: 150.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1722932367487777491
 CanvasRenderer:

@@ -589,6 +589,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39c084bf6f3f5474a91dc8e58cc850bd, type: 3}
+--- !u!1 &271326828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271326830}
+  - component: {fileID: 271326829}
+  m_Layer: 0
+  m_Name: Scorer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &271326829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271326828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f97f60ead511684ca890f9777b5f451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time:
+    lowerBetter: 1
+    threeStarThreshold: 20
+    twoStarThreshold: 50
+    oneStarThreshold: 90
+  tasks:
+    lowerBetter: 0
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    oneStarThreshold: 0
+  deaths:
+    lowerBetter: 1
+    threeStarThreshold: 0
+    twoStarThreshold: 1
+    oneStarThreshold: 2
+--- !u!4 &271326830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271326828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325657705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,12 +1497,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bf7a8c25551cf045b2bdaaee9c88082, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dcaecaf1ff27f24b8d51e91c25e79b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1845, y: 0.11825}
+  m_Size: {x: 0.0319375, y: 0.0295625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1828,12 +1887,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bf7a8c25551cf045b2bdaaee9c88082, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dcaecaf1ff27f24b8d51e91c25e79b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1845, y: 0.11825}
+  m_Size: {x: 0.0319375, y: 0.0295625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2443,6 +2502,7 @@ MonoBehaviour:
   - taskPosition: {x: 0.23915401, y: 0.2, z: -0.35}
     rat: {fileID: 0}
   sparkle: {fileID: 2007462521}
+  taskValue: 1
   <TaskImage>k__BackingField: {fileID: 21300000, guid: d763b53922fb795408ffeaf04f3c5d82,
     type: 3}
   taskDuration: 1.5
@@ -2567,6 +2627,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onLockedUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   taskSprite: {fileID: 0}
 --- !u!65 &1197149821
 BoxCollider:
@@ -7995,8 +8058,8 @@ MonoBehaviour:
   mouseDownPrompts:
   - {fileID: 721538126}
   - {fileID: 1296380816}
-  leftMouse: {fileID: 21300000, guid: 1bf7a8c25551cf045b2bdaaee9c88082, type: 3}
-  rightMouse: {fileID: 21300000, guid: 85c3784a3fc40e14f8abc3897aacafb7, type: 3}
+  leftMouse: {fileID: 21300000, guid: 7dcaecaf1ff27f24b8d51e91c25e79b8, type: 3}
+  rightMouse: {fileID: 21300000, guid: 9679f5dc562fedf409ab0f650557ee86, type: 3}
 --- !u!4 &1743499482
 Transform:
   m_ObjectHideFlags: 0
@@ -19501,6 +19564,7 @@ MonoBehaviour:
   - taskPosition: {x: -1.4112568, y: 0, z: -0.3265784}
     rat: {fileID: 0}
   sparkle: {fileID: 1529976980}
+  taskValue: 1
   <TaskImage>k__BackingField: {fileID: 21300000, guid: b9f43d2cdaf589d46840f39524f414af,
     type: 3}
   taskDuration: 0
@@ -19541,6 +19605,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onLockedUnlockEvents:
+    m_PersistentCalls:
+      m_Calls: []
   taskSprite: {fileID: 0}
 --- !u!64 &8031366411091002826
 MeshCollider:
