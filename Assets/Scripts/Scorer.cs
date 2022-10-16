@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scorer : MonoBehaviour
 {
-	[SerializeField] Threshold time, tasks, deaths;
+	public Threshold time, tasks, deaths;
 
 	bool paused;
 	bool levelComplete;

@@ -712,8 +712,8 @@ MonoBehaviour:
   skipDialogueDisplay:
     <rectTransform>k__BackingField: {fileID: 3724190519200617865}
   ProgressionKeys: 0d0000004301000020000000
-  delay: 0.025
-  m_TweenSpeed: 0.2
+  delay: 0.01
+  m_TweenSpeed: 0.1
   clearAfterScene: 1
   defaultCharacterSprite: {fileID: 21300000, guid: f462e6c092fe3784ca241a76eb84bc7a,
     type: 3}
@@ -1564,7 +1564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -15}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &630933600727576342
@@ -1605,8 +1605,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279900698
-  m_fontColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
