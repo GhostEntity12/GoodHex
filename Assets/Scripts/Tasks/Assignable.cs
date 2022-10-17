@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(EventTrigger))]
 public class Assignable : BaseTask
 {
+
 	[SerializeField, Tooltip("The points at which rats stand to do the task")]
 	protected TaskPoint[] taskPoints = new TaskPoint[0];
 	public TaskPoint[] TaskPoints => taskPoints;
@@ -81,7 +82,13 @@ public class Assignable : BaseTask
 [System.Serializable]
 public class TaskPoint
 {
+	public enum TaskAnimation
+	{
+		Null, Pull, Spin, Push, Fish
+	}
+
 	public Vector3 taskPosition;
 	public Rat rat;
+	public TaskAnimation animationName;
 }
 

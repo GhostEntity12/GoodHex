@@ -15,6 +15,7 @@ public abstract class ProgressTask : Assignable
 	protected float progress;
 
 	[Header("Progress Bar")]
+	[SerializeField] bool showProgressBar = true;
 	[SerializeField, Tooltip("How high above the task the progress bar should appear")]
 	protected float progressBarOffset = 0.1f;
 	/// <summary>
@@ -47,7 +48,7 @@ public abstract class ProgressTask : Assignable
 		col.enabled = false;
 
 		progressBar = GameManager.Instance.CreateProgressBar();
-		progressBar.Setup(this, taskPoints.Length, progressBarOffset);
+		progressBar.Setup(this, taskPoints.Length, progressBarOffset, showProgressBar);
 		base.Start();
 	}
 	public void UpdateBar()

@@ -11,8 +11,10 @@ public class ProgressBar : MonoBehaviour
 	[SerializeField] Sprite mouseUnfilled;
 	[SerializeField] Sprite mouseFilled;
 
+	[SerializeField] Image background;
 	[SerializeField] Image fill;
 	[SerializeField] TextMeshProUGUI number;
+
 
 	readonly List<Image> ratSilhouettes = new();
 	Vector3 anchoredPos;
@@ -27,7 +29,7 @@ public class ProgressBar : MonoBehaviour
 	public void AddProgress(float amount) => fill.fillAmount += amount;
 	public void SetActive(bool active) => gameObject.SetActive(active);
 
-	public void Setup(ProgressTask t, int ratCount, float offsetHeight)
+	public void Setup(ProgressTask t, int ratCount, float offsetHeight, bool showBar)
 	{
 		for (int i = 0; i < ratCount; i++)
 		{
@@ -40,6 +42,11 @@ public class ProgressBar : MonoBehaviour
 		offset = offsetHeight;
 
 		offsetTime = Random.Range(0f, 3f);
+		if (!showBar)
+		{
+			background.enabled = false;
+			fill.enabled = false;
+		}
 	}
 
 	public void UpdateTaskPos(ProgressTask task) => taskPos = task.transform.position;
