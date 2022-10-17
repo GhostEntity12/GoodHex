@@ -4,4 +4,4 @@ Witch|Tired|I don't have any cheese on me... I'm still dead.
 Apprentice Rat|Tired| <sprite="Spr_Emote_Sad" index=0>
 Witch|Tired|Anyway, let's open up that grate. Please.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Annoyed" index=0>
-Witch|Neutral|Oh, but it looks like he'll need help turning that crank.
+Witch|Neutral|Oh, but it looks like our friend will need help turning that crank.
