@@ -17,6 +17,13 @@ public class TaskList : MonoBehaviour
 	bool isDown;
 	bool animDone = true;
 
+	[SerializeField] RectTransform exclamation;
+	[SerializeField] CanvasGroup exclamationCG;
+	bool exclamationActive;
+	float exclamationTimer;
+	float exclamationTimeHeld = 5f;
+
+
 	private void Start()
 	{
 		listObject.SetCachesAndPosition(new(0, 1100));
@@ -44,6 +51,20 @@ public class TaskList : MonoBehaviour
 			else
 			{
 				DropDown();
+			}
+		}
+
+		if (exclamationActive && !paused)
+		{
+			exclamation.localScale = Vector3.one + (Vector3.one * (0.2f * Mathf.Sin(Time.time * 3f)));
+			exclamationTimer -= Time.deltaTime;
+			if (exclamationTimer <= 0)
+			{
+				exclamationCG.alpha -= Time.deltaTime;
+				if (exclamationCG.alpha == 0)
+				{
+					exclamationActive = false;
+				}
 			}
 		}
 	}
@@ -78,6 +99,10 @@ public class TaskList : MonoBehaviour
 	{
 		if (tliQueue.Count == 0) taskQueue.Enqueue(task);
 		else Register(task);
+
+		exclamationCG.alpha = 1;
+		exclamationActive = true;
+		exclamationTimer = exclamationTimeHeld;
 	}
 
 	void Pause(bool paused) => this.paused = paused;
@@ -87,6 +112,8 @@ public class TaskList : MonoBehaviour
 	public void DropDown()
 	{
 		if (paused || !animDone) return;
+		exclamationCG.alpha = 0;
+		exclamationTimer = 0;
 		animDone = false;
 		isDown = true;
 		revealObject.SlideElement(TweenedElement.ScreenState.Offscreen, () =>
