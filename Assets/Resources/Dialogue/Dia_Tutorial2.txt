@@ -1,10 +1,10 @@
 Witch|Neutral|Oh and if you ever get stuck, you can use my divination orbs on the ribbon above you.
 Apprentice Rat|Neutral| <sprite="Spr_TaskListBacking" name="Spr_TaskList_Ribbon_Furled"><sprite="Spr_Emote_Happy" index=0>
-Witch|Neutral|That's the one.
+Witch|Neutral|Yes, that's the one.
 Witch|Neutral|Please don't break them though, I'm still paying off the loan.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Annoyed" index=0>
-Witch|Angry|Well we also wouldn't be in crushing financial debt if I was alive.
-Witch|Happy|But this is good! It's definitely progress.
+Witch|Angry|Well, we also wouldn't be in crushing financial debt if I was alive.
+Witch|Happy|But, this is progress and progress is good.
 Apprentice Rat|Happy| <sprite="Spr_Emote_Happy" index=0>
 Witch|Neutral|Alright Apprentice, that pipe leads through to the garden.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Flower" index=0>
