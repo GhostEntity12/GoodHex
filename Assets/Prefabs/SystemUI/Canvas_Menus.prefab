@@ -559,6 +559,11 @@ MonoBehaviour:
   - {fileID: 8821986246666873421}
   - {fileID: 3142142842913483709}
   - {fileID: 8181019685598408151}
+  trophies:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 05992f927ce598c4baff7503947b3647, type: 3}
+  - {fileID: 21300000, guid: 509ed317355c5af4ea614c5f3007ed26, type: 3}
+  - {fileID: 21300000, guid: 85ab286cc9d4ef84083f6daccada9468, type: 3}
   totalStars:
   - {fileID: 4392651763344453337}
   - {fileID: 7905006109835939545}

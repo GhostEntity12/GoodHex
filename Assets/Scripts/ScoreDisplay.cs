@@ -8,8 +8,8 @@ public class ScoreDisplay : MonoBehaviour
 	[SerializeField] Image[] timeStars;
 	[SerializeField] Image[] taskStars;
 	[SerializeField] Image[] deathStars;
+	[SerializeField] Sprite[] trophies;
 	[SerializeField] Image[] totalStars;
-
 	private void OnEnable()
 	{
 		Debug.Log("Calculating");
@@ -29,9 +29,12 @@ public class ScoreDisplay : MonoBehaviour
 
 	void SetStars(int activeStars, Image[] starImages)
 	{
-		for (int i = 0; i < totalStars.Length; i++)
-		{
-			starImages[i].gameObject.SetActive(i < activeStars);
-		}
+		starImages[0].sprite = trophies[activeStars];
+		starImages[0].gameObject.SetActive(true);
+		// For three trophies
+		//for (int i = 0; i < totalStars.Length; i++)
+		//{
+		//	starImages[i].gameObject.SetActive(i < activeStars);
+		//}
 	}
 }

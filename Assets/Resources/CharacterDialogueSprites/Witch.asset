@@ -16,5 +16,6 @@ MonoBehaviour:
   angry: {fileID: 21300000, guid: b524c2aea60bee740a9df1251b5d3f37, type: 3}
   happy: {fileID: 21300000, guid: 06c976126f2ccf6499aa791142411b2c, type: 3}
   surprised: {fileID: 21300000, guid: 24c2854a95eaacf4293247d307aa8c76, type: 3}
+  thinking: {fileID: 21300000, guid: 274f73d3e26a03142ab33d58c6a787f5, type: 3}
   bodyBox: {fileID: 21300000, guid: d3a9af1033359344b8656b70c7df2b01, type: 3}
   nameBox: {fileID: 21300000, guid: 26d8b58b4356edf4595dcc683072e7e5, type: 3}
