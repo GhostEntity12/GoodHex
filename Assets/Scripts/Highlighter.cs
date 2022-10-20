@@ -20,6 +20,9 @@ public class Highlighter : MonoBehaviour
 				shape = system.shape;
 				shape.meshRenderer = m;
 				break;
+			default:
+				Debug.Log(system);
+				break;
 		}
 		system.Play();
 	}

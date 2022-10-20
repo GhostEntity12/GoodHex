@@ -158,6 +158,7 @@ MonoBehaviour:
     type: 3}
   mouseUnfilled: {fileID: 21300000, guid: 8853bc53189841f48919e07ec179b647, type: 3}
   mouseFilled: {fileID: 21300000, guid: b17a78dac99bc73438b7e6b69b232d59, type: 3}
+  background: {fileID: 7792089526469095654}
   fill: {fileID: 2481356343361697588}
   number: {fileID: 7033351018530928365}
 --- !u!1 &3946539148808088095
