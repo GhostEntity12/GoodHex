@@ -7,7 +7,7 @@ public class BGMManager : MonoBehaviour
 	[SerializeField] float childMusicRampTime = 0.1f;
 
 	bool endMusicActive;
-	float time;
+	float childVolume;
 
 
 	private void Start()
@@ -27,35 +27,9 @@ public class BGMManager : MonoBehaviour
 			child.timeSamples = Mathf.Min(parent.timeSamples, child.clip.samples - 1);
 		}
 
-		if (endMusicActive)
+		foreach (AudioSource child in children)
 		{
-
-			// Fading in the volume of the children
-			if (children[0].volume < parent.volume)
-			{
-				time = Mathf.Clamp01(time + (Time.deltaTime / childMusicRampTime));
-
-				foreach (AudioSource child in children)
-				{
-					child.volume = time;
-					child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
-				}
-			}
-		}
-		else
-		{
-
-			// Fading in the volume of the children
-			if (children[0].volume > 0)
-			{
-				time = Mathf.Clamp01(time - (Time.deltaTime / childMusicRampTime));
-
-				foreach (AudioSource child in children)
-				{
-					child.volume = time;
-					child.volume = Mathf.Clamp(child.volume, 0, parent.volume);
-				}
-			}
+			child.volume = parent.volume / childVolume;
 		}
 	}
 
@@ -71,4 +45,5 @@ public class BGMManager : MonoBehaviour
 	{
 		endMusicActive = active;
 	}
+	public void SetChildVolume(float t) => childVolume = t;
 }

@@ -37,7 +37,9 @@ public class Tutorialisation : MonoBehaviour
 	List<TextMeshPro> holdText;
 	[SerializeField] Sprite leftMouse;
 	[SerializeField] Sprite rightMouse;
-
+	Material magicCircleMaterial;
+	float magicCircleOpacity;
+	bool magicCircleActive = false;
 	private void Start()
 	{
 		dm = FindObjectOfType<DialogueManager>();
@@ -46,11 +48,13 @@ public class Tutorialisation : MonoBehaviour
 
 		mouseDownRenderers = mouseDownPrompts.Select(p => p.transform.GetChild(0).GetComponent<SpriteRenderer>()).ToList();
 		holdText = mouseDownPrompts.Select(r => r.GetComponentInChildren<TextMeshPro>()).ToList();
+		magicCircleMaterial = firstMoveSpherePos.GetComponent<Renderer>().material;
 	}
 
 	void Update()
 	{
 		if (paused) return;
+		UpdateMagicCircle();
 
 		switch (state)
 		{
@@ -76,6 +80,7 @@ public class Tutorialisation : MonoBehaviour
 						}
 						break;
 					case InMovementState.Move:
+						magicCircleActive = true;
 						holdText[0].text = "Move";
 						mouseDownPrompts[0].transform.position = firstMoveSpherePos.position + Vector3.up * promptOffset;
 						if (r && !r.Wandering && Vector3.Distance(r.transform.position, firstMoveSpherePos.position) < firstMoveSphereRange)
@@ -85,6 +90,7 @@ public class Tutorialisation : MonoBehaviour
 						}
 						break;
 					case InMovementState.Deselect:
+						magicCircleActive = false;
 						holdText[0].text = "Deselect";
 						mouseDownPrompts[0].transform.position = deselectPromptPosition.position + Vector3.up * promptOffset;
 						if (GameManager.Instance.RatManager.selectedRats.Count == 0)
@@ -143,6 +149,26 @@ public class Tutorialisation : MonoBehaviour
 				break;
 			default:
 				break;
+		}
+	}
+
+	void UpdateMagicCircle()
+	{
+		if (magicCircleActive)
+		{
+			magicCircleOpacity = Mathf.Clamp01(magicCircleOpacity + (Time.deltaTime * 3));
+		}
+		else
+		{
+			magicCircleOpacity = Mathf.Clamp01(magicCircleOpacity - (Time.deltaTime * 3));
+
+		}
+		magicCircleMaterial.SetFloat("_Opacity", magicCircleOpacity);
+
+		if (magicCircleActive)
+		{
+			firstMoveSpherePos.Rotate(Vector3.up, 10f * Time.deltaTime, Space.World);
+			firstMoveSpherePos.localScale = (Mathf.Sin(Time.time * 2) * Vector3.one * 0.05f) + Vector3.one;
 		}
 	}
 
