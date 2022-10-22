@@ -21,19 +21,20 @@ public class GameManager : Singleton<GameManager>
 	};
 
 	public static Color[,] ratColors = {
-		{ new Color32(41, 78, 152, 255), new Color32(111, 144, 201, 255), new Color32(116, 87, 165, 255), new Color32(243, 230, 125, 255)},
-		{ new Color32(33, 40, 52, 255), new Color32(86, 91, 155, 255), new Color32(41, 78, 152, 255), new Color32(219, 172, 79, 255)}
+		{new Color32(43, 61, 99, 255), new Color32(41, 78, 152, 255), new Color32(74, 110, 176, 255), new Color32(111, 144, 201, 255), new Color32(159, 127, 183, 255), new Color32(116, 87, 165, 255), new Color32(75, 68, 89, 255), new Color32(127, 164, 172, 255), new Color32(107, 69, 106, 255), new Color32(146, 54, 85, 255), new Color32(156, 182, 189, 255), new Color32(87, 46, 58, 255), new Color32(72, 66, 64, 255), new Color32(82, 85, 160, 255), new Color32(243, 230, 125, 255)},
+		{new Color32(30, 31, 35, 255), new Color32(33, 40, 52, 255), new Color32(31, 80, 154, 255), new Color32(86, 81, 155, 255), new Color32(107, 69, 106, 255), new Color32(41, 78, 152, 255), new Color32(33, 40, 52, 255), new Color32(74, 110, 176, 255), new Color32(87, 46, 58, 255), new Color32(87, 46, 58, 255), new Color32(109, 146, 201, 255), new Color32(67, 22, 34, 255), new Color32(30, 28, 29, 255), new Color32(43, 61, 99, 255),  new Color32(219, 172, 79, 255)}
 	};
 	public static int RatIndex()
 	{
 		System.Random rand = new();
-		return rand.NextDouble() switch
-		{
-			<= 0.33f => 0,
-			<= 0.66f => 1,
-			<= 0.99f => 2,
-			_ => 3,
-		};
+		return Mathf.FloorToInt((float)rand.NextDouble() / (0.99f / (ratColors.GetLength(1) - 1)));
+		//return rand.NextDouble() switch
+		//{
+		//	<= 0.07f => 0,
+		//	<= 0.14f => 1,
+		//	<= 0.21f => 2,
+		//	_ => 3,
+		//};
 	}
 	static readonly string[] nonLevelScenes = new string[] { "MainMenu", "Controls", "Credits" };
 
