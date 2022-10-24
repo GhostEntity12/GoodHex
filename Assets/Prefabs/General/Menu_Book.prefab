@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 827935401539702978}
   - component: {fileID: 9049159065846243175}
   - component: {fileID: 8346785574803246714}
+  - component: {fileID: 461227319}
   m_Layer: 0
   m_Name: OBJ_Page
   m_TagString: Untagged
@@ -164,10 +165,10 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: -3126607695087724435, guid: b38f265b63b2ef44fb83e565bb4ef682, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
+  - 100
   - 0
-  - 4.2
   - 0
-  - 0.45
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: 0.058345985, z: 0.0000012740493}
@@ -193,6 +194,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &461227319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4737564789248615152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a54f7afe2dbcd041883e0f0b2ae75d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6947145179110862758
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 9157177658206696233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.226}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8930899121766865370}
