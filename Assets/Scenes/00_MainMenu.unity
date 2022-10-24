@@ -500,6 +500,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9049159065846243175, guid: 46bb49c07693bff41a7ce5decb3a00b9,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049159065846243175, guid: 46bb49c07693bff41a7ce5decb3a00b9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc269edec93489449ae3d48a3db1cbe5, type: 2}
     - target: {fileID: 9157177658206696233, guid: 46bb49c07693bff41a7ce5decb3a00b9,
         type: 3}
       propertyPath: m_Name
@@ -1192,7 +1202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ms: 0
-  _state: 
+  textures:
+  - {fileID: 2800000, guid: 4a9340e9047f4e9489a364e28884567d, type: 3}
 --- !u!1 &760033882
 GameObject:
   m_ObjectHideFlags: 0

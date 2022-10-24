@@ -6,9 +6,12 @@ public enum MenuState { Null, Play, Options };
 public class Listener : MonoBehaviour
 {
     public MenuState ms;
+    public Texture[] textures;
 
     public void SetState(int i)
     {
+        Renderer r = gameObject.GetComponent<Renderer>();
+        r.materials[0].SetTexture("_MainTex", textures[0]);
         ms = (MenuState)i;
         Debug.Log("State set to " + ms);
         switch (ms)
