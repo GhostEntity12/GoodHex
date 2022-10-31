@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: 05f3045496797c3418ed92ae3283520a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45361a96aec75d409b9e16ae3e60476
+      internalID: -611521346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e383f9e95728249a69d1ed0ca629c9
+      internalID: 1919478326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17633b826ce5ba4ab326787e9f718cc
+      internalID: -1772730110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d4aa191d3c5e04aa4979a626dc3161
+      internalID: 125616729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeca37c94f8fa04291aed9fad7579c3
+      internalID: 607815380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe206107927d614789a3f38222d2d59
+      internalID: -1788489212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_6
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98d5d4fbd891fe4da48c4d2078580eb
+      internalID: 1840499464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_7
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a299635227156a54c83b76c364f98bb7
+      internalID: -1000822102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_8
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5fc8823d71a674a8994da208922586
+      internalID: -336309436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_9
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 389
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e62442a2b2e104da0c031d3d67e28c
+      internalID: 1199887653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fbdaab27d09f5458b5dca11a1d03b9
+      internalID: -122922274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13b38b3154353d4397a8e2aeb533303
+      internalID: 1464763489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a56a14c355fa864aba6f84e39bc2770
+      internalID: 84551706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_13
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13d8a0d5a29f2943ba8c2020efee650
+      internalID: 106012397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47d18266f05467479edb9c5ac1a533e
+      internalID: -1575347589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_15
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e29db836c01b34aa113e36ff34d375
+      internalID: 1313580037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_16
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0449cccfb41ad4ebad155442b93d73
+      internalID: -445258080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_17
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b6d4595b04fa24291c9716a241b599
+      internalID: 173438948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_18
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b746cb01f90474bb819c036581b691
+      internalID: 888644770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_19
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 263
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db673200ed80a942afc6b469be9a03b
+      internalID: 1324212330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc823ec59c7f8b4478b3fdce5738c405
+      internalID: 791527182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_21
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78ec171f06e8de45b153f441d79d273
+      internalID: -1299075845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_22
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6902ab83970ad848b6a2bda2c8eb1cd
+      internalID: -361142169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_23
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672cd4c57cab5e64ea6c59727cb9c2d1
+      internalID: -1184801528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_24
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e8524127b24bc4caf0e7b0e8386d89
+      internalID: -301410041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106c608b2342a2e49ae794387136edad
+      internalID: -1336385339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_26
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b542fdcf897489478c021e4dc5caf1e
+      internalID: 1169255660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpS_Bar_Bubbles_27
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 137
+        width: 98
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f3fdefb2f8af94d81fb55a4220cb8b
+      internalID: -965605941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpS_Bar_Bubbles_6: 1840499464
+      SpS_Bar_Bubbles_17: 173438948
+      SpS_Bar_Bubbles_27: -965605941
+      SpS_Bar_Bubbles_15: 1313580037
+      SpS_Bar_Bubbles_4: 607815380
+      SpS_Bar_Bubbles_2: -1772730110
+      SpS_Bar_Bubbles_16: -445258080
+      SpS_Bar_Bubbles_22: -361142169
+      SpS_Bar_Bubbles_26: 1169255660
+      SpS_Bar_Bubbles_5: -1788489212
+      SpS_Bar_Bubbles_1: 1919478326
+      SpS_Bar_Bubbles_13: 106012397
+      SpS_Bar_Bubbles_25: -1336385339
+      SpS_Bar_Bubbles_7: -1000822102
+      SpS_Bar_Bubbles_24: -301410041
+      SpS_Bar_Bubbles_3: 125616729
+      SpS_Bar_Bubbles_11: 1464763489
+      SpS_Bar_Bubbles_23: -1184801528
+      SpS_Bar_Bubbles_12: 84551706
+      SpS_Bar_Bubbles_19: 1324212330
+      SpS_Bar_Bubbles_10: -122922274
+      SpS_Bar_Bubbles_20: 791527182
+      SpS_Bar_Bubbles_0: -611521346
+      SpS_Bar_Bubbles_14: -1575347589
+      SpS_Bar_Bubbles_18: 888644770
+      SpS_Bar_Bubbles_21: -1299075845
+      SpS_Bar_Bubbles_8: -336309436
+      SpS_Bar_Bubbles_9: 1199887653
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

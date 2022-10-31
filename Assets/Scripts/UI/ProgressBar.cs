@@ -14,6 +14,9 @@ public class ProgressBar : MonoBehaviour
 	[SerializeField] Image background;
 	[SerializeField] Image fill;
 	[SerializeField] TextMeshProUGUI number;
+	
+	[SerializeField] RectTransform bubbles;
+	[SerializeField] Vector2 bubblesXRange;
 
 
 	readonly List<Image> ratSilhouettes = new();
@@ -25,8 +28,16 @@ public class ProgressBar : MonoBehaviour
 	float canvasScale;
 
 	public bool Complete => fill.fillAmount == 1;
-	public void SetProgress(float amount) => fill.fillAmount = amount;
-	public void AddProgress(float amount) => fill.fillAmount += amount;
+	public void SetProgress(float amount)
+	{
+		fill.fillAmount = amount;
+		bubbles.transform.localPosition = new Vector3(Mathf.Lerp(bubblesXRange.x, bubblesXRange.y, fill.fillAmount), bubbles.transform.localPosition.y);
+	}
+	public void AddProgress(float amount)
+	{
+		fill.fillAmount += amount;
+		bubbles.transform.position = new Vector3(Mathf.Lerp(bubblesXRange.x, bubblesXRange.y, fill.fillAmount), bubbles.transform.position.y);
+	}
 	public void SetActive(bool active) => gameObject.SetActive(active);
 
 	public void Setup(ProgressTask t, int ratCount, float offsetHeight, bool showBar)
