@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class DeliveryTask : Assignable
 {
@@ -10,6 +11,7 @@ public class DeliveryTask : Assignable
 
 	public bool Locked => locked;
 	protected bool locked;
+	public List<DeliveryOption> DeliveryOptions;
 
 	new SpriteRenderer renderer;
 
@@ -49,10 +51,17 @@ public class DeliveryTask : Assignable
 					if (
 						taskPoint.rat &&
 						taskPoint.rat.ArrivedAtTask() &&
-						taskPoint.rat.IsHoldingItem &&
-						taskPoint.rat.heldItem.ItemId == TriggerId
+						taskPoint.rat.IsHoldingItem //&&
+						//taskPoint.rat.heldItem.ItemId == TriggerId
 					)
 					{
+                        foreach (var DeliveryOption in DeliveryOptions)
+                        {
+							if (taskPoint.rat.heldItem.ItemId == DeliveryOption.ID) {
+								DeliveryOption.dummyTask.SetState(BaseTask.State.Complete);
+								break;
+							}
+						}
 						Destroy(taskPoint.rat.heldItem.gameObject);
 						OnComplete();
 						break;
@@ -106,4 +115,10 @@ public class DeliveryTask : Assignable
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
+}
+[System.Serializable]
+public class DeliveryOption { 
+	public string ID;
+	public DummyTask dummyTask;
+
 }
