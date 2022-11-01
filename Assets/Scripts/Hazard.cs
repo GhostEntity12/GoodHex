@@ -94,6 +94,7 @@ public class Hazard : MonoBehaviour
     //     selectedSpawn = Random.Range(0, spawnPoints.Length);
     //     GameManager.Instance.RatManager.SpawnRats(spawnPoints[selectedSpawn]);
     // }
+
     void HazardActivate()
     {
         Queue<Rat> deadRats = new Queue<Rat>();
@@ -104,7 +105,7 @@ public class Hazard : MonoBehaviour
                 deadRats.Enqueue (rat);
             }
         }
-        while (deadRats.Count >= 0)
+        while (deadRats.Count > 0)
         {
             deadRats.Dequeue().Kill();
             if (deadRats.Count <= 0)

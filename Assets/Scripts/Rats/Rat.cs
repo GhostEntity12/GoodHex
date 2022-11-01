@@ -168,11 +168,12 @@ public class Rat : MonoBehaviour
 			}
 		}
 		GameManager.Instance.RatManager.RemoveRat(this);
-		Invoke("RespawnRats", 3f);
+		//Invoke(nameof(RespawnRats), 3f);
+		RespawnRats();
 		Destroy(gameObject);
 		// Leave corpse?
 		//Invoke("Remove", pauseTime);
-		GameManager.Instance?.Scorer.AddDeath();
+		//GameManager.Instance?.Scorer.AddDeath();
 	}
 
 	public void Select()
@@ -210,6 +211,8 @@ public class Rat : MonoBehaviour
 	{
 		selectedSpawn = Random.Range(0, spawnPoints.Length);
 		GameManager.Instance.RatManager.RespawnCheck(spawnPoints[selectedSpawn]);
+		Debug.Log("RESPAWNRATS CALLED");
+		
 	}
 
 	public void SetColor()

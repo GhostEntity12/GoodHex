@@ -12,6 +12,21 @@ public class RatManager : MonoBehaviour
 	public bool HasSelectedRats => selectedRats.Count > 0;
 	public int deadRats = 0;
 
+
+	int DeadRats
+	{
+		get
+		{
+			Debug.Log("retrieved");
+			return deadRats;
+		}
+		set
+		{
+			Debug.Log("set");
+			deadRats = value;
+		}
+	}
+
 	public void ClearRats()
 	{
 		selectedRats.ToList().ForEach(r => r.Deselect());
@@ -42,24 +57,26 @@ public class RatManager : MonoBehaviour
 		return spawnedRats;
 	}
 
-	public void RespawnCheck(params Vector3[] spawnPoints) {
+	public List<Rat> RespawnCheck(Vector3 spawnPoint) {
 
 		List<Rat> spawnedRats = new();
-		while (deadRats > 0)
+		while (DeadRats > 0)
 		{
-			for (int i = 0; i < spawnPoints.Length; i++)
-			{
+			//for (int i = 0; i < spawnPoints.Length; i++)
+			//{
 				RatData ratInfo = new();
-				Rat rat = Instantiate(RatPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
+				Rat rat = Instantiate(RatPrefab, spawnPoint, Quaternion.identity).GetComponent<Rat>();
 				rat.gameObject.name = ratInfo.Name;
 				rat.AssignInfo(ratInfo);
 				spawnedRats.Add(rat);
 				rat.SetColor();
 				AddRat(rat);
-				deadRats -= 1;
-			}
+				DeadRats -= 1;
+			//}
 		}
-	
+
+		return spawnedRats;
+
 	}
 
 	public void AddRat(Rat rat) => allRats.Add(rat);
@@ -68,7 +85,9 @@ public class RatManager : MonoBehaviour
 	{
 		allRats.Remove(rat);
 		selectedRats.Remove(rat);
-		deadRats += 1;
+		DeadRats += 1;
+		Debug.Log("LOG NO BUENO");
+		Debug.Log(DeadRats);
 	}
 
 	public void SetRatDestinations(Vector3 destination, List<Rat> rats = null)
