@@ -1,30 +1,21 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class KillZone : MonoBehaviour
 {
-    //private GameObject rat;
-    //NavMeshAgent agentCat;
+    Vector3[] spawnPoints;
 
-    //void Start()
-    //{
-    //    agentCat = transform.parent.GetComponent<NavMeshAgent>();
-    //}
+    void Start()
+    {
+        spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
+    }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.TryGetComponent(out Rat rat))
         {
-            //rat = collider.gameObject;
-            //Debug.Log (agentCat);
-            //agentCat.isStopped = true;
             rat.Kill(0.5f);
-            //Invoke("Resume", 0.5f);
         }
     }
-
-    //void Resume()
-    //{
-    //    agentCat.isStopped = false;
-    //}
 }
