@@ -10,6 +10,7 @@ public class RatManager : MonoBehaviour
 	public readonly List<Rat> allRats = new();
 	public readonly List<Rat> selectedRats = new();
 	public bool HasSelectedRats => selectedRats.Count > 0;
+	public int deadRats = 0;
 
 	public void ClearRats()
 	{
@@ -37,14 +38,37 @@ public class RatManager : MonoBehaviour
 			rat.SetColor();
 			AddRat(rat);
 		}
+		
 		return spawnedRats;
 	}
 
+	public void RespawnCheck(params Vector3[] spawnPoints) {
+
+		List<Rat> spawnedRats = new();
+		while (deadRats > 0)
+		{
+			for (int i = 0; i < spawnPoints.Length; i++)
+			{
+				RatData ratInfo = new();
+				Rat rat = Instantiate(RatPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
+				rat.gameObject.name = ratInfo.Name;
+				rat.AssignInfo(ratInfo);
+				spawnedRats.Add(rat);
+				rat.SetColor();
+				AddRat(rat);
+				deadRats -= 1;
+			}
+		}
+	
+	}
+
 	public void AddRat(Rat rat) => allRats.Add(rat);
+
 	public void RemoveRat(Rat rat)
 	{
 		allRats.Remove(rat);
 		selectedRats.Remove(rat);
+		deadRats += 1;
 	}
 
 	public void SetRatDestinations(Vector3 destination, List<Rat> rats = null)
