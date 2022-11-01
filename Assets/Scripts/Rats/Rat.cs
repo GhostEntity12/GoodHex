@@ -209,7 +209,7 @@ public class Rat : MonoBehaviour
 	private void RespawnRats()
 	{
 		selectedSpawn = Random.Range(0, spawnPoints.Length);
-		GameManager.Instance.RatManager.SpawnRats(spawnPoints[selectedSpawn]);
+		GameManager.Instance.RatManager.RespawnCheck(spawnPoints[selectedSpawn]);
 	}
 
 	public void SetColor()
