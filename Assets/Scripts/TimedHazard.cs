@@ -7,67 +7,64 @@ using UnityEngine.AI;
 public class TimedHazard : MonoBehaviour
 {
     float timer;
-    bool MurderTime;
-    //List<Rat> DangerRats;
-    //List<Rat> DangerRats;
+    bool KillZoneActive;
+    List<Rat> DangerRats = new List<Rat>();
 
     // Start is called before the first frame update
     void Start()
     {
-        MurderTime = false;
-        //List<Rat> DangerRats = new List<Rat>();
+        KillZoneActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
 
         if (timer > 10)
         {
-            MurderTime = true;
-            Debug.Log("MURDER TIME");
+            KillZoneActive = true;
+            Debug.Log("Killzone Active");
         }
 
         if (timer > 15)
         {
-            MurderTime = false;
+            KillZoneActive = false;
             timer = 0;
         }
 
-        
+        if (KillZoneActive)
+        {
+            
+            foreach (Rat rat in DangerRats)
+            {
+                rat.Kill(0.5f);
+            }
+
+            DangerRats.Clear();
+        }
+
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        //if (collider.TryGetComponent(out Rat rat))
-        //{
-        //DangerRats.Add(rat);
-        //Debug.Log("Rat Added OVER");
-        //}
-
         if (collider.TryGetComponent(out Rat rat))
         {
-            if (MurderTime == true)
-            {
-                //foreach (Rat rat in DangerRats)
-                //{
-                rat.Kill(0.5f);
-                //}
-
-            }
+            DangerRats.Add(rat);
+            Debug.Log("Rat Added to DangerRats List");
         }
+
     }
 
-    //void OnTriggerExit(Collider collider)
-    //{
-        //if (collider.TryGetComponent(out Rat rat))
-        //{
-            //DangerRats.Remove(rat);
-            //Debug.Log("Rat Removed OVER");
-        //}
-    //}
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.TryGetComponent(out Rat rat))
+        {
+            DangerRats.Remove(rat);
+            Debug.Log("Rat Removed from DangerRats List");
+        }
+    }
 }
 
 
