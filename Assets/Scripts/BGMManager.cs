@@ -27,7 +27,7 @@ public class BGMManager : MonoBehaviour
 
 		foreach (AudioSource child in children)
 		{
-			child.volume = parent.volume / childVolume;
+			child.volume = childVolume / parent.volume;
 		}
 	}
 

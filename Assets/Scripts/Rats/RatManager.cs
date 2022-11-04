@@ -14,12 +14,12 @@ public class RatManager : MonoBehaviour
 	readonly Queue<RatData> deadRats = new();
 
 	readonly float respawnTime = 5f;
-	float respawnTimer;
+	float respawnTimer = 4f;
 
 	Vector3[] spawnPoints;
-	Queue<Vector3> spawnPointBag;
+	Queue<Vector3> spawnPointBag = new();
 
-	private void Start()
+	private void Awake()
 	{
 		spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
 	}
@@ -33,7 +33,7 @@ public class RatManager : MonoBehaviour
 			{
 				respawnTimer = respawnTime;
 
-				SpawnRat();
+				SpawnRat(deadRats.Dequeue());
 			}
 		}
 	}

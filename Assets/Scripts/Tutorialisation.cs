@@ -96,9 +96,7 @@ public class Tutorialisation : MonoBehaviour
 						if (GameManager.Instance.RatManager.selectedRats.Count == 0)
 						{
 							Rat r = GameManager.Instance.RatManager.SpawnRat(mouseHole.position);
-							Debug.Log(r);
 							r.SetDestination(mouseHoleExit.position);
-							Debug.Log(r.NavAgent.destination);
 							dummy.SetState(BaseTask.State.Complete);
 							mouseDownPrompts[1].SetActive(true);
 							IncrementState();

@@ -57,6 +57,7 @@ public class ProgressBar : MonoBehaviour
 		{
 			background.enabled = false;
 			fill.enabled = false;
+			bubbles.gameObject.SetActive(false);
 		}
 	}
 

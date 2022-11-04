@@ -4,6 +4,7 @@ using UnityEngine;
 public class RatWarp : Assignable
 {
 	[SerializeField] Transform warpPosition;
+	[SerializeReference] AudioClip[] sounds;
 	protected new void Start()
 	{
 		base.Start();
@@ -24,6 +25,8 @@ public class RatWarp : Assignable
 				{
 					ratsToDeselect.Add(rat);
 					rat.NavAgent.Warp(warpPosition.position);
+					Debug.Log("Playing");
+					source.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
 				}
 			}
 			GameManager.Instance.TaskManager.UnassignRats(ratsToDeselect.ToArray());

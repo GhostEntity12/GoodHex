@@ -592,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: 0}
-  m_SizeDelta: {x: 520.1643, y: 952.9}
+  m_AnchoredPosition: {x: -529.7, y: 0}
+  m_SizeDelta: {x: 839.6, y: 952.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975674928
 MonoBehaviour:
@@ -615,8 +615,35 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Producer:\n\nArt Team:\n\n\nProgramming Team:\n\n\n\nDesign Team:\n\n\nTechnical
-    Manager: \n\nComposer:"
+  m_text: '<line-height=92%><cspace=0.075em>Oliver Bedier
+
+
+    Aaron Petrovski
+
+    James
+    Leung
+
+
+    Jordan C
+
+
+    Mitchell W
+
+
+    Cgerish Gray-Morrison
+
+
+    Josh
+    Hehir
+
+    Matthew Kennedy
+
+    Maziz Yamin Rahman
+
+
+    Jordan Moore
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d52cd272a34d85e48aa09f3a2fb9994e, type: 2}
@@ -643,8 +670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -728,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115.72978, y: 0}
-  m_SizeDelta: {x: 328.6436, y: 952.9}
+  m_AnchoredPosition: {x: 278.3, y: 0}
+  m_SizeDelta: {x: 656.57, y: 952.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002517088
 MonoBehaviour:
@@ -751,31 +778,32 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oliver B
+  m_text: 'Producer, Designer
 
 
-    Cherish G-M
+    Technical Manager
 
-    Jordan C
-
-
-    Josh H
-
-    Matthew K
-
-    Maziz
-    YR
+    Technical Gameplay Designer
 
 
-    James L
-
-    Mitchell W
-
-
-    Aaron P
+    Lead
+    Artist, Level Designer
 
 
-    Jordan M'
+    Level Designer, Writer
+
+
+    Artist
+
+
+    Programmer
+
+    Programmer
+
+    Programmer
+
+
+    Composer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c53a1c73f4f7b84d90555eb872a974c, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d52cd272a34d85e48aa09f3a2fb9994e, type: 2}
@@ -808,7 +836,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 33
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1196,7 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

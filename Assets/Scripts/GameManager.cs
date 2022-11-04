@@ -72,9 +72,9 @@ public class GameManager : Singleton<GameManager>
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
-		Scorer.MarkLevelComplete();
 		if (Scorer)
 		{
+			Scorer.MarkLevelComplete();
 			Debug.Log($"Final score: {Scorer.GetFinalScore()} stars");
 		}
 		BGMManager.StopAllTracks();

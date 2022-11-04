@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class TaskLooper : MonoBehaviour
 {
-	[SerializeField] List<Assignable> tasksToLoop;
+	[SerializeField] List<BaseTask> tasksToLoop;
 	[SerializeField] bool relockFirstTask = false;
 	// Update is called once per frame
 	void Update()
 	{
 		if (tasksToLoop[^1].IsComplete)
 		{
-			foreach (Assignable task in tasksToLoop)
+			foreach (BaseTask task in tasksToLoop)
 			{
 				task.SetState(BaseTask.State.Locked);
 			}

@@ -7,6 +7,7 @@ public class Rat : MonoBehaviour
 	public RatData Info { get; private set; }
 	Animator anim;
 	RatEmotes ratEmotes;
+	RatSounds sounds;
 
 	[Header("Navigation")]
 	private const float StoppingDistance = 0.07f;
@@ -28,6 +29,7 @@ public class Rat : MonoBehaviour
 
 	private float patience;
 	private bool isDead = false;
+	float appearTime = 0.7f;
 
 	bool paused;
 
@@ -37,6 +39,7 @@ public class Rat : MonoBehaviour
 	{
 		GameManager.Pause += SetPaused;
 		ratEmotes = GetComponentInChildren<RatEmotes>();
+		sounds = GetComponentInChildren<RatSounds>();
 		anim = GetComponentInChildren<Animator>();
 		NavAgent = GetComponent<NavMeshAgent>();
 		selectionCachePos = selectionSprite.transform.localPosition;
@@ -59,6 +62,16 @@ public class Rat : MonoBehaviour
 	{
 		if (paused) return;
 
+		// Makes the rat appear after appearTime seconds
+		if (appearTime > 0)
+		{
+			appearTime -= Time.deltaTime;
+			if (appearTime <= 0)
+			{
+				graphic.enabled = true;
+			}
+		}
+
 		if (isDead)
 		{
 			deathTimer -= Time.deltaTime;
@@ -76,7 +89,7 @@ public class Rat : MonoBehaviour
 		SetTaskAnimation(ArrivedAtTask());
 
 		// Reducing flicker
-		graphic.flipX = NavAgent.velocity.x switch
+		graphic.flipX = ArrivedAtTask() ? GameManager.Instance.TaskManager.GetTaskPoint(this).flipped : NavAgent.velocity.x switch
 		{
 			< 0.01f => true,
 			> -0.01f => false,
@@ -105,6 +118,7 @@ public class Rat : MonoBehaviour
 	/// <param name="position"></param>
 	public void SetDestination(Vector3 position)
 	{
+		sounds.PlayAssigned();
 		NavAgent.SetDestination(position);
 		patience = Info.PatienceDuration;
 		NavAgent.speed = (IsHoldingItem ? 1.5f : 2f) * Info.SpeedModifier;
@@ -170,10 +184,13 @@ public class Rat : MonoBehaviour
 				r.SetEmote(RatEmotes.Emotes.Sad);
 			}
 		}
+		NavAgent.enabled = false;
+		GetComponent<Rigidbody>().useGravity = true;
+		GetComponent<Collider>().enabled = true;
 
 		GameManager.Instance.RatManager.RemoveRat(this);
 		GameManager.Instance.RatManager.QueueRatForRespawn(Info);
-		anim.SetTrigger("Dead");
+		anim.SetTrigger("death");
 
 		if (GameManager.Instance.Scorer)
 		{
@@ -184,6 +201,7 @@ public class Rat : MonoBehaviour
 	public void Select()
 	{
 		LeanTween.scaleY(selectionSprite.gameObject, 1, 0.1f).setEaseOutBack();
+		sounds.PlaySelected();
 	}
 
 	public void Deselect()

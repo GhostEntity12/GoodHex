@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionEffectMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 325ddc871acf22944874d7c0456e0e4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -135,7 +135,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HueShift: 0.6
+    - _HueShift: 0
     - _Intensity: 1
     - _Metallic: 0
     - _Mode: 0

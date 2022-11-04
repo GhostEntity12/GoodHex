@@ -9,6 +9,8 @@ public class GrowWitchplant : MonoBehaviour
 
 	[SerializeField] Rune[] runes1;
 	[SerializeField] Rune[] runes2;
+	[SerializeField] AudioSource as1;
+	[SerializeField] AudioSource as2;
 
 	public void IncrementGrowthState()
 	{
@@ -27,18 +29,10 @@ public class GrowWitchplant : MonoBehaviour
 	}
 	public void IncrementGrowthState(int count)
 	{
-		state += count;
-		foreach (Animator anim in anims)
+		for (int i = 0; i < count; i++)
 		{
-			anim.SetInteger("GrowthStage", state);
+			IncrementGrowthState();
 		}
-
-		if (state >= 15)
-		{
-			GameManager.Instance.DialogueManager.QueueDialogue(finalDialogue, onEndAction: GameManager.Instance.AllTasksComplete);
-			bar.SetActive(false);
-		}
-		UpdateRunes();
 	}
 
 	void UpdateRunes()
@@ -77,5 +71,7 @@ public class GrowWitchplant : MonoBehaviour
 	{
 		runes1[index].Enable();
 		runes2[index].Enable();
+		as1.Play();
+		as2.Play();
 	}
 }
