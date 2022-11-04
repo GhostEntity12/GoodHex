@@ -131,7 +131,7 @@ public class DeliveryTask : Assignable
 [System.Serializable]
 public class DeliveryOption
 {
-	[field: SerializeField] public string ID { get; }
+	[field: SerializeField] public string ID { get; private set; }
 	[SerializeField] DummyTask dummyTask;
 
 	public void Trigger()
