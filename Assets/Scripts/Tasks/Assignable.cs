@@ -14,6 +14,8 @@ public class Assignable : BaseTask
 	public ParticleSystem sparkle;
 	[SerializeField] int taskValue;
 
+	[SerializeField] protected AudioSource source;
+
 	new protected void Start()
 	{
 		r = GetComponent<Renderer>();
@@ -70,7 +72,10 @@ public class Assignable : BaseTask
 	protected override void OnComplete()
 	{
 		sparkle.Stop();
-		GameManager.Instance.Scorer?.AddTask(taskValue);
+		if (GameManager.Instance.Scorer)
+		{
+			GameManager.Instance.Scorer.AddTask(taskValue);
+		}
 	}
 	protected override void OnUnlock()
 	{
@@ -89,5 +94,6 @@ public class TaskPoint
 	public Vector3 taskPosition;
 	public Rat rat;
 	public TaskAnimation animationName;
+	public bool flipped;
 }
 

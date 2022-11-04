@@ -15,6 +15,6 @@ public class UIBob : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		transform.localPosition = cache + (bobHeight * Vector3.up * Mathf.Sin(Time.time * bobTime));
+		transform.localPosition = cache + (bobHeight * Mathf.Sin(Time.time * bobTime) * Vector3.up);
 	}
 }

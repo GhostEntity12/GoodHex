@@ -14,7 +14,7 @@ public enum OffMeshLinkMoveMethod
 public class RatMeshLinkMover : MonoBehaviour
 {
     public OffMeshLinkMoveMethod m_Method = OffMeshLinkMoveMethod.Curve;
-    public AnimationCurve m_Curve = new AnimationCurve();
+    public AnimationCurve m_Curve = new();
 
     IEnumerator Start()
     {

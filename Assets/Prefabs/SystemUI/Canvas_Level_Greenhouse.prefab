@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 40
   slider:
-    <rectTransform>k__BackingField: {fileID: 1314446964944771407}
+    <RectTransform>k__BackingField: {fileID: 1314446964944771407}
   indicator: {fileID: 1314446965096537515}
   vingnetteWater: {fileID: 8875975116975122459}
   vingnetteSun: {fileID: 8100799071129069222}
@@ -384,8 +384,22 @@ MonoBehaviour:
   - {fileID: 0}
   bar: {fileID: 6968634418459656694}
   finalDialogue: {fileID: 4900000, guid: ec8ae1caf0fc2084299bd6d36eba1b9d, type: 3}
-  runes1: []
-  runes2: []
+  runes1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  runes2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1314446964944771406
 GameObject:
   m_ObjectHideFlags: 0

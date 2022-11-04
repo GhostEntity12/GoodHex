@@ -5,8 +5,8 @@ public class TaskList : MonoBehaviour
 {
 	[SerializeField] TaskListItem[] taskSlots;
 
-	Dictionary<ProgressTask, TaskListItem> taskDict = new();
-	Queue<ProgressTask> taskQueue = new();
+	readonly Dictionary<ProgressTask, TaskListItem> taskDict = new();
+	readonly Queue<ProgressTask> taskQueue = new();
 	Queue<TaskListItem> tliQueue = new();
 
 	[SerializeField] TweenedElement listObject;
@@ -20,7 +20,7 @@ public class TaskList : MonoBehaviour
 	[SerializeField] CanvasGroup exclamationCG;
 	bool exclamationActive;
 	float exclamationTimer;
-	float exclamationTimeHeld = 5f;
+	readonly float exclamationTimeHeld = 5f;
 
 
 	private void Start()

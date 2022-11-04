@@ -880,9 +880,9 @@ MonoBehaviour:
   - {fileID: 1807914524559465423}
   - {fileID: 1807914524559465422}
   listObject:
-    <rectTransform>k__BackingField: {fileID: 834436075}
+    <RectTransform>k__BackingField: {fileID: 834436075}
   revealObject:
-    <rectTransform>k__BackingField: {fileID: 1012754120}
+    <RectTransform>k__BackingField: {fileID: 1012754120}
   exclamation: {fileID: 8781493929964549570}
   exclamationCG: {fileID: 2683732742573098375}
 --- !u!1 &3588504280925845495

@@ -5,7 +5,7 @@ public class RatEmotes : MonoBehaviour
 {
 	public enum Emotes { Happy, Sad, Angry, Celebrate, Food, Idea, Love, Sleepy, Annoyed, Determined, Flower, Hypnotised, Shocked }
 
-	float demoTimer;
+	//float demoTimer;
 	float timer;
 	[SerializeField] float emoteDuration = 1.5f;
 	[SerializeField] Image bubbleImage;
@@ -25,7 +25,7 @@ public class RatEmotes : MonoBehaviour
 		cam = Camera.main;
 		c = GetComponent<Canvas>();
 		c.transform.rotation = Quaternion.Euler(-cam.transform.rotation.eulerAngles.x, 0, 0);
-		demoTimer = Random.Range(2f, 15f);
+		//demoTimer = Random.Range(2f, 15f);
 
 		GameManager.Pause += SetPaused;
 	}

@@ -491,7 +491,7 @@ public class TweenedElement
 {
 	public enum ScreenState { Onscreen, Offscreen }
 
-	[field: SerializeField] public RectTransform rectTransform { get; private set;}
+	[field: SerializeField] public RectTransform RectTransform { get; private set;}
 	internal Vector2[] cache = new Vector2[2];
 
 	/// <summary>
@@ -500,9 +500,9 @@ public class TweenedElement
 	/// <param name="offset">The offset for when the element is offscreen</param>
 	public void SetCachesAndPosition(Vector2 offset)
 	{
-		cache[0] = rectTransform.anchoredPosition;
+		cache[0] = RectTransform.anchoredPosition;
 		cache[1] = cache[0] + offset;
-		rectTransform.anchoredPosition = cache[1];
+		RectTransform.anchoredPosition = cache[1];
 	}
 
 	/// <summary>
@@ -513,8 +513,8 @@ public class TweenedElement
 	/// <param name="onComplete">Function on callback</param>
 	/// <param name="tweenType">Overides the twwn type</param>
 	public void SlideElement(ScreenState screenState, Action onComplete = null, LeanTweenType tweenType = LeanTweenType.easeInOutCubic, float tweenSpeed = 0.2f) =>
-		LeanTween.move(rectTransform, cache[(int)screenState], tweenSpeed).setEase(tweenType).setOnComplete(onComplete);
+		LeanTween.move(RectTransform, cache[(int)screenState], tweenSpeed).setEase(tweenType).setOnComplete(onComplete);
 
 	public void ScaleElement(ScreenState screenState, Action onComplete = null, LeanTweenType tweenType = LeanTweenType.easeInCubic, float tweenSpeed = 0.2f) =>
-		LeanTween.scale(rectTransform, screenState == ScreenState.Onscreen ? Vector3.one : Vector3.zero, tweenSpeed).setEase(tweenType).setOnComplete(onComplete);
+		LeanTween.scale(RectTransform, screenState == ScreenState.Onscreen ? Vector3.one : Vector3.zero, tweenSpeed).setEase(tweenType).setOnComplete(onComplete);
 }

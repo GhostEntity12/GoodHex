@@ -85,6 +85,10 @@ public class StandardTask : ProgressTask
 		TaskState = State.Unlocked;
 		progress = 0;
 		onUnlockEvents?.Invoke();
+		if (GameManager.Instance.Reticle.HoveredAssignable == this)
+		{
+			Highlight(true);
+		}
 	}
 
 	/// <summary>

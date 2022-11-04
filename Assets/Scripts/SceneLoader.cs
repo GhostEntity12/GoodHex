@@ -9,12 +9,12 @@ public class SceneLoader : MonoBehaviour
 	float timer = 0f;
 	AudioSource aS;
 
-	[SerializeField] public bool idleEnabled;
-	[SerializeField] public float idleTime;
-	[SerializeField] public int idleScene;
-	[SerializeField] public KeyCode idleKey = KeyCode.F12;
+	[SerializeField] bool idleEnabled;
+	[SerializeField] float idleTime;
+	[SerializeField] int idleScene;
+	[SerializeField] KeyCode idleKey = KeyCode.F12;
  	private float idleCounter = 0.0f;
-	[SerializeField] public bool idleScreen;
+	[SerializeField] bool idleScreen;
 
 	private void Awake()
 	{
@@ -66,7 +66,6 @@ public class SceneLoader : MonoBehaviour
 	public void LoadNextScene()
 	{
 		int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-		Debug.Log(SceneManager.sceneCountInBuildSettings);
 		sceneToLoad = nextScene >= SceneManager.sceneCountInBuildSettings ? 0 : SceneManager.GetActiveScene().buildIndex + 1;
 
 	}

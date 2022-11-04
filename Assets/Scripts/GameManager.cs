@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -69,14 +68,13 @@ public class GameManager : Singleton<GameManager>
 	public void Restart() => LoadSceneManager.LoadScene(0);
 
 	public ProgressBar CreateProgressBar() => ProgressBarManager.CreateProgressBar();
-	public void TriggerEndMusic() => BGMManager.SetEndMusicStateActive(false);
 
 	public void AllTasksComplete()
 	{
 		Debug.Log("All tasks complete");
-		Scorer.MarkLevelComplete();
 		if (Scorer)
 		{
+			Scorer.MarkLevelComplete();
 			Debug.Log($"Final score: {Scorer.GetFinalScore()} stars");
 		}
 		BGMManager.StopAllTracks();
@@ -103,7 +101,7 @@ public class GameManager : Singleton<GameManager>
 		RatManager = managers.AddComponent<RatManager>();
 		TaskManager = managers.AddComponent<TaskManager>();
 		RatManager.RatPrefab = ratPrefab;
-		RatManager.SpawnRats(GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray());
+		RatManager.SpawnRats();
 		DialogueManager = FindObjectOfType<DialogueManager>();
 		Highlighter = Instantiate(highlighterPrefab);
 		Scorer = FindObjectOfType<Scorer>();

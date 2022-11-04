@@ -10,7 +10,7 @@ public class TaskManager : MonoBehaviour
 	{
 		switch (assignable)
 		{
-			case DeliveryTask dt:
+			case DeliveryTask:
 				return new();
 			case ProgressTask pt:
 				return AssignRats(pt, rats);
@@ -30,7 +30,7 @@ public class TaskManager : MonoBehaviour
 		Queue<TaskPoint> availableSlots = new(task.TaskPoints.Where(p => p.rat == null));
 		if (availableSlots.Count == 0) return rats.ToList();
 
-		Rat validRat = rats.FirstOrDefault(r => r.IsHoldingItem && r.heldItem.ItemId == task.TriggerId);
+		Rat validRat = rats.FirstOrDefault(r => r.IsHoldingItem && (task is DeliveryTask dt && dt.ValidDelivery(r.heldItem.ItemId)));
 		if (validRat)
 		{
 			RegisterRat(task, availableSlots.Dequeue(), validRat);
@@ -192,9 +192,9 @@ public class TaskManager : MonoBehaviour
 			point = a switch
 			{
 				RatWarp rw => rw.TaskPoints[0].taskPosition,
-				ProgressTask pt => GetTaskPoint(r).taskPosition,
-				Pickupable p => GetTaskPoint(r).taskPosition,
-				DeliveryTask dt => GetTaskPoint(r).taskPosition,
+				ProgressTask => GetTaskPoint(r).taskPosition,
+				Pickupable => GetTaskPoint(r).taskPosition,
+				DeliveryTask => GetTaskPoint(r).taskPosition,
 				_ => throw new System.Exception("Unexpected type")
 			};
 			return Vector3.Distance(r.transform.position, point);

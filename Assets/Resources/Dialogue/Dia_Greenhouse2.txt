@@ -5,4 +5,6 @@ Witch|Neutral|This new body... It doesn't have arms. Or legs. Or a face.
 Apprentice Rat|Angry| <sprite="Spr_Emote_Flower" index=0>
 Witch|Neutral|Well then. Plan B it is.
 Apprentice Rat|Neutral| <sprite="Spr_Emote_Tired" index=0>
-Witch|Neutral|Maybe after PAX though. I think we need a bit of a break.
+Witch|Neutral|Maybe later though. I think we deserve a break.
+Witch|Neutral|And thank you for playing!
+Apprentice Rat|Neutral| <sprite="Spr_Emote_Happy" index=0>

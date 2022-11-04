@@ -7,12 +7,6 @@ public class LevelMenus : MonoBehaviour
 	[SerializeField] AudioClip victorySting;
 	[SerializeField] GameObject failureCanvas;
 	[SerializeField] AudioClip failureSting;
-	SceneLoader sl;
-
-	private void Awake()
-	{
-		sl = GetComponent<SceneLoader>();
-	}
 
 	public void TriggerPauseCanvas()
 	{

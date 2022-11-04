@@ -15,6 +15,7 @@ public class Reticle : MonoBehaviour
 	float circleSize = 1f;
 
 	Assignable hoveredAssignable;
+	public Assignable HoveredAssignable { get { return hoveredAssignable; } }
 
 	[SerializeField] AudioClip selectClip;
 
@@ -203,6 +204,10 @@ public class Reticle : MonoBehaviour
 				}
 				mouseLocked = false;
 				particleDrawIn.Stop();
+				if (hoveredAssignable)
+				{
+					hoveredAssignable.Highlight(true);
+				}
 			}
 		}
 		// Mouse release

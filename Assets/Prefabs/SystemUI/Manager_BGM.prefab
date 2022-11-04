@@ -55,7 +55,6 @@ MonoBehaviour:
   - {fileID: 9116655606047955400}
   - {fileID: 9116655606047955401}
   - {fileID: 9116655606047955402}
-  childMusicRampTime: 5
 --- !u!82 &9116655606047955406
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68,7 +67,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dc57a27bdf314ac4da39093eff3a9b81, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
