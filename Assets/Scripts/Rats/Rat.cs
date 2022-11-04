@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,10 +29,9 @@ public class Rat : MonoBehaviour
 	private float patience;
 	private bool isDead = false;
 
-	Vector3[] spawnPoints;
-	private int selectedSpawn;
-
 	bool paused;
+
+	[SerializeField] float deathTimer = 5f;
 
 	private void Awake()
 	{
@@ -47,8 +45,6 @@ public class Rat : MonoBehaviour
 
 	private void Start()
 	{
-		spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
-
 		if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
 		{
 			transform.position = hit.position;
@@ -62,6 +58,16 @@ public class Rat : MonoBehaviour
 	private void Update()
 	{
 		if (paused) return;
+
+		if (isDead)
+		{
+			deathTimer -= Time.deltaTime;
+			if (deathTimer <= 0)
+			{
+				Destroy(gameObject);
+			}
+			return;
+		}
 
 		anim.SetFloat("movementSpeed", NavAgent.velocity.magnitude);
 		anim.SetBool("wandering", Wandering);
@@ -89,7 +95,7 @@ public class Rat : MonoBehaviour
 				}
 			}
 		}
-		selectionSprite.transform.localPosition = selectionCachePos + (selectionBobHeight * Vector3.up * Mathf.Sin((Time.time + selectionBobOffset) * selectionBobSpeed));
+		selectionSprite.transform.localPosition = selectionCachePos + (Mathf.Sin((Time.time + selectionBobOffset) * selectionBobSpeed) * selectionBobHeight * Vector3.up);
 	}
 	public void AssignInfo(RatData ratInfo) => Info = ratInfo;
 
@@ -153,38 +159,35 @@ public class Rat : MonoBehaviour
 		else return GameManager.Instance.TaskManager.GetDistanceToTask(this) < 0.1f;
 	}
 
-	public void Kill(float timeBeforeDeath = 0f)
+	public void Kill()
 	{
 		isDead = true;
-		//NavAgent.isStopped = true;
-
 		Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f);
 		foreach (Collider collider in colliders)
 		{
-			Rat r = collider.gameObject.GetComponent<Rat>();
-			if (r)
+			if (collider.gameObject.TryGetComponent(out Rat r))
 			{
 				r.SetEmote(RatEmotes.Emotes.Sad);
 			}
 		}
+
 		GameManager.Instance.RatManager.RemoveRat(this);
-		//Invoke(nameof(RespawnRats), 3f);
-		RespawnRats();
-		Destroy(gameObject);
-		// Leave corpse?
-		//Invoke("Remove", pauseTime);
-		//GameManager.Instance?.Scorer.AddDeath();
+		GameManager.Instance.RatManager.QueueRatForRespawn(Info);
+		anim.SetTrigger("Dead");
+
+		if (GameManager.Instance.Scorer)
+		{
+			GameManager.Instance.Scorer.AddDeath();
+		}
 	}
 
 	public void Select()
 	{
-		//graphic.color = Color.green;
 		LeanTween.scaleY(selectionSprite.gameObject, 1, 0.1f).setEaseOutBack();
 	}
 
 	public void Deselect()
 	{
-		//graphic.color = Color.white;
 		LeanTween.scaleY(selectionSprite.gameObject, 0, 0.1f).setEaseInBack();
 	}
 
@@ -205,14 +208,6 @@ public class Rat : MonoBehaviour
 	private void OnDestroy()
 	{
 		GameManager.Pause -= SetPaused;
-	}
-
-	private void RespawnRats()
-	{
-		selectedSpawn = Random.Range(0, spawnPoints.Length);
-		GameManager.Instance.RatManager.RespawnCheck(spawnPoints[selectedSpawn]);
-		Debug.Log("RESPAWNRATS CALLED");
-		
 	}
 
 	public void SetColor()

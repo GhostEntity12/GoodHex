@@ -5,11 +5,10 @@ public class NarrativeScript : MonoBehaviour
     [SerializeField] CanvasGroup narrative;
     [SerializeField] float fadeSpeed;
     [SerializeField] CanvasGroup fade;
-    float delayTime;
     bool showing = false;
     bool completed = false;
     float timer;
-    float fadeTime = 1.5f;
+    readonly float fadeTime = 1.5f;
 
     // Update is called once per frame
     void Update()
@@ -23,7 +22,6 @@ public class NarrativeScript : MonoBehaviour
                     if (Input.GetMouseButtonDown(0)) {
                         showing = true;
                         timer = 0;
-                        delayTime = 0;
                     }
                 }
             } else {

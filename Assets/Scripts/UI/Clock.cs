@@ -42,10 +42,6 @@ public class Clock : MonoBehaviour
 
 			// Display the time in 12h time (has a bunch of handling for nighttime levels)
 			text.text = $"{((time24 + 23) % 12) + 1} {((time24 % 24) < 12 ? "AM" : "PM")}";
-
-			if (levelProgress >= 0.8f) {
-				GameManager.Instance.TriggerEndMusic();
-			}
 		}
 
 		if (levelProgress == 1)

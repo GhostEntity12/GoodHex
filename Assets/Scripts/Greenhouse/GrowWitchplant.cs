@@ -9,7 +9,6 @@ public class GrowWitchplant : MonoBehaviour
 
 	[SerializeField] Rune[] runes1;
 	[SerializeField] Rune[] runes2;
-	bool[] activeRunes = new bool[7];
 
 	public void IncrementGrowthState()
 	{

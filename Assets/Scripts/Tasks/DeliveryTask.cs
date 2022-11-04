@@ -1,17 +1,16 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
 
 public class DeliveryTask : Assignable
 {
-	[field: SerializeField] public string TriggerId { get; private set; }
+	public List<DeliveryOption> DeliveryOptions;
 
 	protected Collider col;
 
 	public bool Locked => locked;
 	protected bool locked;
-	public List<DeliveryOption> DeliveryOptions;
 
 	new SpriteRenderer renderer;
 
@@ -51,14 +50,15 @@ public class DeliveryTask : Assignable
 					if (
 						taskPoint.rat &&
 						taskPoint.rat.ArrivedAtTask() &&
-						taskPoint.rat.IsHoldingItem //&&
-						//taskPoint.rat.heldItem.ItemId == TriggerId
+						taskPoint.rat.IsHoldingItem &&
+						ValidDelivery(taskPoint.rat.heldItem.ItemId)
 					)
 					{
-                        foreach (var DeliveryOption in DeliveryOptions)
-                        {
-							if (taskPoint.rat.heldItem.ItemId == DeliveryOption.ID) {
-								DeliveryOption.dummyTask.SetState(BaseTask.State.Complete);
+						foreach (var deliveryOption in DeliveryOptions)
+						{
+							if (taskPoint.rat.heldItem.ItemId == deliveryOption.ID)
+							{
+								deliveryOption.Trigger();
 								break;
 							}
 						}
@@ -115,10 +115,27 @@ public class DeliveryTask : Assignable
 
 		GameManager.Instance.TaskManager.ClearRatsOnTask(this);
 	}
+
+	public bool ValidDelivery(string id)
+	{
+		foreach (DeliveryOption option in DeliveryOptions)
+		{
+			if (id == option.ID)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }
 [System.Serializable]
-public class DeliveryOption { 
-	public string ID;
-	public DummyTask dummyTask;
+public class DeliveryOption
+{
+	[field: SerializeField] public string ID { get; }
+	[SerializeField] DummyTask dummyTask;
 
+	public void Trigger()
+	{
+		dummyTask.SetState(BaseTask.State.Complete);
+	}
 }

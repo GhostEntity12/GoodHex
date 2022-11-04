@@ -4,9 +4,7 @@ public class BGMManager : MonoBehaviour
 {
 	[SerializeField] AudioSource parent;
 	[SerializeField] AudioSource[] children;
-	[SerializeField] float childMusicRampTime = 0.1f;
 
-	bool endMusicActive;
 	float childVolume;
 
 
@@ -40,10 +38,6 @@ public class BGMManager : MonoBehaviour
 			child.Stop();
 		}
 		parent.Stop();
-	}
-	public void SetEndMusicStateActive(bool active)
-	{
-		endMusicActive = active;
 	}
 	public void SetChildVolume(float t) => childVolume = t;
 }

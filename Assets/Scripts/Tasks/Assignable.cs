@@ -70,7 +70,10 @@ public class Assignable : BaseTask
 	protected override void OnComplete()
 	{
 		sparkle.Stop();
-		GameManager.Instance.Scorer?.AddTask(taskValue);
+		if (GameManager.Instance.Scorer)
+		{
+			GameManager.Instance.Scorer.AddTask(taskValue);
+		}
 	}
 	protected override void OnUnlock()
 	{

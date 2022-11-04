@@ -10,20 +10,31 @@ public class RatManager : MonoBehaviour
 	public readonly List<Rat> allRats = new();
 	public readonly List<Rat> selectedRats = new();
 	public bool HasSelectedRats => selectedRats.Count > 0;
-	public int deadRats = 0;
 
+	readonly Queue<RatData> deadRats = new();
 
-	int DeadRats
+	readonly float respawnTime = 5f;
+	float respawnTimer;
+
+	Vector3[] spawnPoints;
+	Queue<Vector3> spawnPointBag;
+
+	private void Start()
 	{
-		get
+		spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints").Select(t => t.transform.position).ToArray();
+	}
+
+	private void Update()
+	{
+		if (deadRats.Count > 0)
 		{
-			Debug.Log("retrieved");
-			return deadRats;
-		}
-		set
-		{
-			Debug.Log("set");
-			deadRats = value;
+			respawnTimer -= Time.deltaTime;
+			if (respawnTimer <= 0)
+			{
+				respawnTimer = respawnTime;
+
+				SpawnRat();
+			}
 		}
 	}
 
@@ -40,54 +51,46 @@ public class RatManager : MonoBehaviour
 		selectedRats.AddRange(ratsToSelect);
 	}
 
-	public List<Rat> SpawnRats(params Vector3[] spawnPoints)
+	public Rat SpawnRat(Vector3 position, RatData data = null)
+	{
+		data ??= new();
+		Rat rat = Instantiate(RatPrefab, position, Quaternion.identity).GetComponent<Rat>();
+		rat.gameObject.name = data.Name;
+		rat.AssignInfo(data);
+		rat.SetColor();
+		AddRat(rat);
+		return rat;
+	}
+
+	public Rat SpawnRat(RatData data = null)
+	{
+		data ??= new();
+		Rat rat = Instantiate(RatPrefab, GetSpawnPoint(), Quaternion.identity).GetComponent<Rat>();
+		rat.gameObject.name = data.Name;
+		rat.AssignInfo(data);
+		rat.SetColor();
+		AddRat(rat);
+		return rat;
+	}
+
+	public List<Rat> SpawnRats(params RatData[] data)
 	{
 		List<Rat> spawnedRats = new();
 		for (int i = 0; i < spawnPoints.Length; i++)
 		{
-			RatData ratInfo = new();
-			Rat rat = Instantiate(RatPrefab, spawnPoints[i], Quaternion.identity).GetComponent<Rat>();
-			rat.gameObject.name = ratInfo.Name;
-			rat.AssignInfo(ratInfo);
-			spawnedRats.Add(rat);
-			rat.SetColor();
-			AddRat(rat);
+			spawnedRats.Add(SpawnRat(data[i]));
 		}
-		
 		return spawnedRats;
 	}
 
-	public List<Rat> RespawnCheck(Vector3 spawnPoint) {
+	public List<Rat> SpawnRats() => SpawnRats(new RatData[spawnPoints.Length]);
 
-		List<Rat> spawnedRats = new();
-		while (DeadRats > 0)
-		{
-			//for (int i = 0; i < spawnPoints.Length; i++)
-			//{
-				RatData ratInfo = new();
-				Rat rat = Instantiate(RatPrefab, spawnPoint, Quaternion.identity).GetComponent<Rat>();
-				rat.gameObject.name = ratInfo.Name;
-				rat.AssignInfo(ratInfo);
-				spawnedRats.Add(rat);
-				rat.SetColor();
-				AddRat(rat);
-				DeadRats -= 1;
-			//}
-		}
-
-		return spawnedRats;
-
-	}
-
-	public void AddRat(Rat rat) => allRats.Add(rat);
+	void AddRat(Rat rat) => allRats.Add(rat);
 
 	public void RemoveRat(Rat rat)
 	{
 		allRats.Remove(rat);
 		selectedRats.Remove(rat);
-		DeadRats += 1;
-		Debug.Log("LOG NO BUENO");
-		Debug.Log(DeadRats);
 	}
 
 	public void SetRatDestinations(Vector3 destination, List<Rat> rats = null)
@@ -99,4 +102,16 @@ public class RatManager : MonoBehaviour
 			rat.SetDestination(destination);
 		}
 	}
+
+	Vector3 GetSpawnPoint()
+	{
+		if (spawnPointBag.Count == 0)
+		{
+			spawnPoints.Shuffle();
+			spawnPointBag = new Queue<Vector3>(spawnPoints);
+		}
+		return spawnPointBag.Dequeue();
+	}
+
+	public void QueueRatForRespawn(RatData data) => deadRats.Enqueue(data);
 }

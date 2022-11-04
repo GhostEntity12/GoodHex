@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RatColourStringGenerator : MonoBehaviour
 {
-	string s = @"30,31,35
+	readonly string s = @"30,31,35
 33,40,52
 31,80,154
 86,81,155

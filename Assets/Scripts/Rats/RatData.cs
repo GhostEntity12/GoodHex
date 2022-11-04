@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class RatData
 {
-	string name;
+	readonly string name;
 	int speed = 1;
 	int strength = 1;
 	int patience = 4;

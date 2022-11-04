@@ -34,7 +34,7 @@ public abstract class ProgressTask : Assignable
 	protected UnityEvent onLockedUnlockEvents;
 
 	protected int RatsInPlace => taskPoints.Where(p => p.rat != null && p.rat.ArrivedAtTask()).Count();
-	[SerializeField] public GameObject taskSprite;
+	[SerializeField] protected GameObject taskSprite;
 
 	protected Collider col;
 

@@ -95,12 +95,12 @@ public class Tutorialisation : MonoBehaviour
 						mouseDownPrompts[0].transform.position = deselectPromptPosition.position + Vector3.up * promptOffset;
 						if (GameManager.Instance.RatManager.selectedRats.Count == 0)
 						{
-							Rat r = GameManager.Instance.RatManager.SpawnRats(mouseHole.position)[0];
+							Rat r = GameManager.Instance.RatManager.SpawnRat(mouseHole.position);
 							Debug.Log(r);
 							r.SetDestination(mouseHoleExit.position);
 							Debug.Log(r.NavAgent.destination);
 							dummy.SetState(BaseTask.State.Complete);
-							mouseDownPrompts[1].gameObject.SetActive(true);
+							mouseDownPrompts[1].SetActive(true);
 							IncrementState();
 						}
 						break;
@@ -112,8 +112,8 @@ public class Tutorialisation : MonoBehaviour
 				if (GameManager.Instance.RatManager.selectedRats.Count == 2)
 				{
 					holdText[1].text = "Assign";
-					mouseDownPrompts[0].gameObject.SetActive(false);
-					mouseDownPrompts[1].gameObject.SetActive(true);
+					mouseDownPrompts[0].SetActive(false);
+					mouseDownPrompts[1].SetActive(true);
 					mouseDownPrompts[1].transform.position = exampleTask.transform.position + Vector3.up * (promptOffset + 0.1f);
 					mouseDownRenderers[1].sprite = rightMouse;
 				}
@@ -126,7 +126,7 @@ public class Tutorialisation : MonoBehaviour
 							!GameManager.Instance.RatManager.allRats[i].AssignedToTask;
 
 						holdText[i].text = "Select\n)Hold(";
-						mouseDownPrompts[i].gameObject.SetActive(showPrompt);
+						mouseDownPrompts[i].SetActive(showPrompt);
 						if (showPrompt)
 						{
 							mouseDownPrompts[i].transform.position = GameManager.Instance.RatManager.allRats[i].transform.position + Vector3.up * promptOffset;
@@ -142,9 +142,9 @@ public class Tutorialisation : MonoBehaviour
 				break;
 			case TutorialState.Task:
 				holdText[0].text = "Assign";
-				mouseDownPrompts[0].gameObject.SetActive(true);
+				mouseDownPrompts[0].SetActive(true);
 				mouseDownRenderers[0].sprite = rightMouse;
-				mouseDownPrompts[1].gameObject.SetActive(false);
+				mouseDownPrompts[1].SetActive(false);
 				mouseDownPrompts[0].transform.position = finishTask.transform.position + Vector3.up * (promptOffset + 0.2f) + Vector3.right * 0.25f;
 				break;
 			default:
@@ -168,7 +168,7 @@ public class Tutorialisation : MonoBehaviour
 		if (magicCircleActive)
 		{
 			firstMoveSpherePos.Rotate(Vector3.up, 10f * Time.deltaTime, Space.World);
-			firstMoveSpherePos.localScale = (Mathf.Sin(Time.time * 2) * Vector3.one * 0.05f) + Vector3.one;
+			firstMoveSpherePos.localScale = (0.05f * Mathf.Sin(Time.time * 2) * Vector3.one) + Vector3.one;
 		}
 	}
 

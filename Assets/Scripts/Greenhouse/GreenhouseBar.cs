@@ -27,7 +27,7 @@ public class GreenhouseBar : MonoBehaviour
 	{
 		GameManager.Pause += OnPaused;
 		slider.SetCachesAndPosition(new(0, 200));
-		sliderWidth = slider.rectTransform.sizeDelta.x;
+		sliderWidth = slider.RectTransform.sizeDelta.x;
 	}
 
 	// Update is called once per frame
