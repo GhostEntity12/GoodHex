@@ -1,9 +1,9 @@
 using UnityEngine;
 [System.Serializable]
-public enum MenuState { Null, Play, Instructions, Credits };
+public enum MenuState { Null, Play, Instructions, Credits, LevelSelect };
 public class MenuListener : MonoBehaviour
 {
-	public MenuState state;
+	public MenuState state = MenuState.Play;
 	[SerializeField] Renderer leftPage;
 	[SerializeField] Renderer centerPage;
 	[SerializeField] Renderer rightPage;
@@ -20,6 +20,7 @@ public class MenuListener : MonoBehaviour
 			MenuState.Play => pages[0],
 			MenuState.Instructions => pages[1],
 			MenuState.Credits => pages[2],
+			MenuState.LevelSelect => pages[3],
 			_ => throw new System.Exception("Unmanaged Stage")
 		};
 		Material[] ms = centerPage.materials;
@@ -39,6 +40,7 @@ public class MenuListener : MonoBehaviour
 			MenuState.Play => pages[0],
 			MenuState.Instructions => pages[1],
 			MenuState.Credits => pages[2],
+			MenuState.LevelSelect => pages[3],
 			_ => throw new System.Exception("Unmanaged Stage")
 		};
 
