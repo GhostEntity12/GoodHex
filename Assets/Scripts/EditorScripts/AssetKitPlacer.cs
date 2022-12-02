@@ -16,7 +16,8 @@ namespace Ghost
 			Quaternion rotation = transform.rotation;
 			for (int i = 1; i < m_Count; i++)
 			{
-				GameObject newObject = PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(gameObject), transform.parent) as GameObject;
+				//GameObject newObject = PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(gameObject), transform.parent) as GameObject;
+				GameObject newObject = Instantiate(gameObject);
 
 				newObject.transform.SetPositionAndRotation(position + m_Spacing, rotation);
 
